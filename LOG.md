@@ -489,3 +489,106 @@ The human asked for two changes:
    ML steps that compare against ioGAS output (e.g. ML-1 vs probability-plot breaks)
    leave a marked slot for it instead of waiting. §1 deliverable 2 and §2.3 now say the
    same. README "Who does what" and the stage table were updated to match.
+
+---
+
+## 2026-11-02 · Stage 3 plan: coordinates (approved)
+
+Full plan: `C:\Users\mauli\.claude\plans\plan-stage-3-rippling-puddle.md`. AGENTS §5
+step 2 "Coordinates" is this repo's Stage 3 (Stage 2 was the DEM). Summary:
+
+**Read-only profiling**
+- Surveys: 99 stations, station 0 always `CC` (= collar Dip/Az), spacing 20–52 m (median
+  30). All dips negative (−90 to −35); max dip change between stations 3.4° (RJDH002).
+  Azimuth jumps > 20° only in RJDH001 and RJDH019 (dips −88.5 to −89.7), as in AGENTS
+  §4.2.12.
+- Last station short of EOH: RJDH001 82.4, RJDH012 51.2, RJDH011 34.5, RJDH014 15.7,
+  RJDH003 2.0 m (= AGENTS §4.2.11), plus three small ones not listed in AGENTS: RJDH016
+  0.9, RJDH013 0.3, RJDH005 0.2 m. All eight are extrapolated and flagged.
+- Rock `Z_Average` is 0 in all 469 rows: AGENTS §4.2.8 "verify, then ignore" confirmed.
+- Rock duplicate XY: 21 rows in 8 groups (13 extra rows = AGENTS §4.2.6). One group of 4
+  spans 3 dates / 3 lab jobs (genuine re-samples); the other 7 are same date, job,
+  elevation and lithology (multi-sample site or copied coordinate; cannot tell). Soil:
+  none.
+
+**Method**
+1. Surface re-drape: `Elev_orig` kept; `Z` = bilinear lidar DEM value (original kept for
+   the 1 rock sample with no DEM). `flag_elev` = ok (|dz| ≤ 10 m) / dem_uncertain
+   (10–30) / elev_error (> 30) / no_dem; `dem_support_m` and `flag_dem_weak` (> 30 m).
+   `Z_Average` dropped. Duplicate-XY group id, size and type (resample /
+   same_day_same_point); precision is left to Stage 7 QAQC.
+2. Survey extrapolation: synthetic `EXTRAP` station at EOH with the last measured
+   Dip/Az; EOH difference vs continuing the measured drift reported as uncertainty.
+3. Desurvey by minimum curvature from collar UTM/RL with `AzimUTM`; exact arc
+   interpolation at any depth. XYZ at from/mid/to plus `survey_extrap` added to assays and
+   the four log tables. Collars get `Z_dem`, `RL_dz`, pad flag (RJDH002/006), RL unchanged.
+
+**Outputs:** `data/interim/03_*.csv` (rock, soil, assay, 4 logs, collar, survey),
+`gis/drillholes.gpkg`, `gis/surface_samples.gpkg`, QC figure
+`outputs/figures/qc/03_traces_v1.png`.
+
+**Checks:** row counts kept; station 0 = collar; Z decreasing downhole; chord ≤ arc;
+`AzimUTM − AzimOrig` constant per source; min-curvature vs tangential EOH difference;
+AGENTS facts reproduced (survey gaps, surface > 30 m rock 13 / soil 6, 10–30 m rock 35 /
+soil 13, 1 no-DEM rock, 13 duplicate rows, pads). Synthetic unit tests for desurvey.
+
+## 2026-11-02 · Stage 3 results: coordinates
+
+**Run:** `uv run python scripts/03_coords.py` (a few seconds). 36 unit tests pass (22 old +
+14 new: `tests/test_desurvey.py`, `tests/test_coords.py`). All checks pass, all AGENTS.md
+facts reproduced. Code: `src/desurvey.py`, `src/coords.py`.
+
+**Surface re-drape** (`Z` = lidar DEM, `Elev_orig` kept, `Elev_dz` = orig − DEM)
+| | ok (≤ 10 m) | dem_uncertain (10–30 m) | elev_error (> 30 m) | no_dem |
+|---|---|---|---|---|
+| rock (469) | 420 | 35 | 13 | 1 (keeps `Elev_orig`) |
+| soil (259) | 240 | 13 | 6 | 0 |
+- No sample sits on weakly supported DEM (support > 30 m from a contour): 0 rock, 0 soil.
+- Rock `Z_Average` verified all zero and dropped (AGENTS §4.2.8). `Elevation` renamed
+  `Elev_orig`; downstream stages must use `Z`.
+- Duplicate XY (rock only): 21 rows in 8 groups (13 extra rows). 1 group of 4 =
+  `resample` (3 dates / jobs; the AGENTS §4.2.6 example), 7 groups / 17 rows =
+  `same_day_same_point` (copied coordinate or several samples on one GPS fix; cannot be
+  told apart from the data). Precision is for Stage 7.
+
+**Surveys and desurvey** (minimum curvature, `AzimUTM`)
+- `AzimUTM − AzimOrig` = 0 for all 99 stations, with `GridOrig` = UTM_WGS84_47N. The
+  azimuths were stored in grid already. **Caveat:** whether the magnetic REFLEX readings were
+  declination-corrected before export cannot be checked from this data; we trust the
+  database.
+- Extrapolated holes (constant last tangent), with the EOH shift if the measured dip/az
+  drift continued instead, as positional uncertainty: RJDH001 82.4 m gap → 0.18 m;
+  RJDH012 51.2 → 0.52; RJDH011 34.5 → 0.53; RJDH014 15.7 → 0.02; RJDH003 2.0, RJDH016
+  0.9, RJDH013 0.3, RJDH005 0.2 → 0.00 m. **The extrapolation adds at most ~0.5 m of
+  position uncertainty.**
+- Intervals reaching below the last measured station (`survey_extrap`): assay 155,
+  lithology 21, alteration 34, mineralisation 108, oxide 190.
+- Near-vertical holes (AGENTS §4.2.12, not "fixed"): RJDH001 EOH is 2.69 m horizontally
+  from its collar over 282.4 m; RJDH019 1.23 m over 126.6 m. The 0–350° azimuth swings
+  cannot move a −89° hole more than this.
+- Sanity: min curvature vs balanced tangential differ by ≤ 0.026 m at EOH. vs plain
+  tangential: up to 3.24 m (RJDH002). That is higher than the plan's "< ~1 m" guess. It is the
+  known bias of plain tangential (it applies the lower station's direction to a whole
+  30–50 m segment), not a desurvey error.
+- Collars: 17 non-pad collars within 2.07 m of the DEM. RJDH002 / RJDH006 flagged by name
+  (`flag_collar_pad`, Stage 2 decision): RL − DEM −3.2 / 0.0 m on the chosen DEM. RL
+  unchanged; holes start at RL.
+
+**Outputs:** `data/interim/03_{rock,soil,assay,lithology,alteration,mineralisation,oxide,
+collar,survey}.csv` (row counts unchanged; survey has 8 extra `EXTRAP` stations, 107
+rows). New columns: surface `Z`, `Z_dem`, `Elev_orig`, `Elev_dz`, `flag_elev`,
+`dem_support_m`, `flag_dem_weak`, `dupxy_group/n/type`; intervals `X/Y/Z_{from,mid,to}`,
+`survey_extrap`; collar `Z_dem`, `RL_dz`, `dem_support_m`, `flag_collar_pad`,
+`collar_note`, `survey_gap_m`, `eoh_extrap_uncert_m`, EOH XYZ. GIS (EPSG:32647):
+`gis/drillholes.gpkg` (collars PointZ, traces LineStringZ at 1 m, assay_mid PointZ),
+`gis/surface_samples.gpkg` (rock, soil PointZ with flags). QC (not a report figure):
+`outputs/figures/qc/03_traces_v1.png`.
+
+**Plain-language explanation (for the presentation)**
+> Every sample needs a reliable position in 3D. For surface samples, the GPS heights were
+> sometimes far off, by up to 36 km in one typo, so we put all of them on the lidar
+> ground surface and kept the original height for the record, flagging the 19 that were
+> more than 30 m wrong. For drillholes, we turned the downhole survey readings into a 3D
+> path with the industry-standard minimum-curvature method. Where the survey stopped
+> before the end of the hole, we continued the last direction and checked that this adds
+> at most half a metre of uncertainty.
