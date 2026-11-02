@@ -720,3 +720,95 @@ of them changes a group used by ML except XUV-mn (its own "unclassified breccia"
 > always sits exactly on the surface-cover or cavity intervals, so it means "nothing to
 > log". One hole had no oxidation log, so we estimated it from the logged
 > percent-oxidised, and tested the rule on the other 18 holes first (91% agreement).
+
+## 2026-11-03 · Stage 5 plan: joins (approved)
+
+Full plan: `C:\Users\mauli\.claude\plans\plan-stage-3-rippling-puddle.md` (overwritten from
+the Stage 4 plan, which is logged above). Summary:
+
+**Profiling.** All four logs cover all 19 holes with no internal gaps (§4.1 holds).
+Interval lengths: lithology median 5.2 m (mean 10.8), alteration 2.5 (4.4),
+mineralisation 1.0, oxide 1.0, assays 1.0 (reproduces §9.2). Mineralisation and oxide
+logs sit on an integer-metre grid, while many assays start on half metres, so assay
+midpoints fall exactly on a log boundary in 11 / 35 / 311 / 304 rows (lith / alt / ox /
+min); the label differs across that boundary in only 7 / 14 / 11 / 22. Assays spanning
+more than one distinct label: 42 / 90 / 78 / 144. Mineralisation misses 14 assay
+midpoints (log starts below collar or ends before EOH in RJDH002/003/004/005/007).
+RJDH001's mineralisation log is a single `um` (not logged) interval, 0–282.4 m.
+
+**Method.**
+1. Midpoint in `[DepthFrom, DepthTo)`; a midpoint exactly on a boundary takes the deeper
+   interval.
+2. Attach the harmonised/derived label fields from `04_*` (not Comments/LoggedBy/XYZ).
+3. Join-quality columns per log (`lith_`, `alt_`, `ox_`, `min_`): matched from/to,
+   `frac` (share of assay length inside the matched interval), `mixed` (assay overlaps
+   >1 distinct key label), `missing`.
+4. Addition to the §5 midpoint rule (midpoint values kept): length-weighted
+   `WRAltOxidPcnt_lw`, `WRAltSulphIntensity_lw`, `DomMinPcnt_lw`.
+5. Mineral presence flags are NA (not False) where the matched interval is `um` or
+   missing; `min_logged` flag.
+
+**Outputs.** `data/interim/05_assay_joined.csv`; new layer `assay_mid_logs` in
+`gis/drillholes.gpkg`.
+
+**Checks.** Assay columns unchanged; one lith/alt/ox interval per assay; the 14
+mineralisation misses exactly as profiled; `ox_state` null only on RJDH019;
+reproduce §4.3 (106 NAG, 69 < 4.5; Sulphide 16 at 100%; Oxide 90 at 59%) or stop.
+
+---
+
+## 2026-11-03 · Stage 5 results: joins
+
+**Run:** `uv run python scripts/05_joins.py`. 48 unit tests pass (5 new,
+`tests/test_joins.py`). All checks pass; every `03_assay` column is unchanged. Code:
+`src/joins.py`.
+
+**Checks (all OK):** 2,476 rows; exactly one lithology, alteration and oxide interval per
+assay; 14 mineralisation misses, all in RJDH002/003/004/005/007 as profiled; `ox_state`
+null only on RJDH019 (114 assays), `ox_state_derived` filled everywhere; `frac` ≥ 0.5
+wherever the matched interval is at least as long as the assay; RJDH001 mineral flags NA.
+**AGENTS §4.3 reproduced from the joined table:** 106 NAG samples, 69 with NAG pH < 4.5;
+Sulphide 16 (100% < 4.5); Oxide 90 (58.9% < 4.5).
+
+**Join quality** (assays: midpoint on a boundary | spanning >1 label | frac < 0.5 | missing):
+lithology 11 | 42 | 2 | 0; alteration 35 | 90 | 5 | 0; oxide 311 | 69 | 134 | 0;
+mineralisation 304 | 144 | 120 | 14. The oxide/mineral `frac` < 0.5 rows are assays
+longer than the 1 m log grid, so no single log interval covers half of them. The
+oxide "mixed" count is 69 here vs 78 in profiling, because the join counts RJDH019's
+null `ox_state` as one label (profiling used the derived labels there).
+- `min_logged` False: 313 assays (RJDH001 280; `um` or missing elsewhere: 33).
+- Length-weighted vs midpoint `WRAltOxidPcnt`: differ in 389 assays, by ≥ 25 points in 37.
+
+**Sanity (sampled intervals, medians; context for the report, not tests):**
+- By alteration: SI Au 2.11 g/t, CN/Cu 0.63 (n 584); AA 0.35 (1,546); AR 0.03 (277);
+  PP 0.01 (26). Gold sits in the silica (vuggy) core, as the HS model predicts.
+- By oxidation: Transition Au 1.02, Cu 377 ppm, CN/Cu 0.77 (217); Oxide Au 0.48, Cu 40
+  (1,564); Sulphide Au 0.16, Cu 115 (571). Cu and Au are highest at the redox
+  transition, consistent with supergene enrichment.
+- By lithology: hydrothermal breccia Au 1.11, Cu 382 (150); porphyry 0.53 (1,226);
+  phreatomagmatic breccia 0.35 (819); fault zone 0.03 (137).
+- Cu with logged Cu minerals (`min_cu`): 614 ppm (71) vs 47 (2,084); not logged 68 (311).
+
+**Bug caught by the QGIS check (fixed before commit):** pandas nullable-bool flags written
+to the GeoPackage as object came out as the text "<NA>". They are now written as Int8
+(1/0/null) with an assert that the null count survives. The CSV was unaffected.
+
+**QGIS check (MCP), `outputs/maps/qc/05_joins_check.qgz`:** `assay_mid_logs` loads with
+2,476 points and the same Lith_group counts. A strip section of the RJDH005/RJDH014 pad
+(lith | oxidation | alteration) shows surface cover and UA aligned at the top of both
+holes, and SI over AA with AR bands. The two holes' lithologies differ below the cover,
+which is expected: same pad but dip −45/az 315 vs −85/az 340, ~100 m apart at EOH. So this
+pad is a short-range check only near surface (relevant to §9.2 twin-pad comparisons).
+
+**Outputs:** `data/interim/05_assay_joined.csv` (2,476 × 324), layer `assay_mid_logs` in
+`gis/drillholes.gpkg`.
+
+**Plain-language explanation (for the presentation)**
+> Each assay sample now carries the rock type, alteration, oxidation and minerals the
+> geologist logged at the same depth, taken at the centre of the sample. Where a sample
+> straddles two logged units we flag it rather than hide it (about 2–6% of samples). The
+> joined table reproduces the acid-drainage figures we checked earlier exactly, and the
+> chemistry agrees with the logs: gold is highest in silica alteration, and copper is
+> highest at the oxide–sulphide transition and where copper minerals were logged.
+
+---
