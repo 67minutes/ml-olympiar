@@ -9,47 +9,16 @@ Run: uv run python scripts/05_joins.py
 import geopandas as gpd
 import pandas as pd
 
-from src import codes, joins, loaders, paths
+from src import joins, loaders, paths
 
-MIN_FLAGS = list(codes.MINERAL_FLAGS)
-# log -> (prefix, mixed-label key, attached columns, length-weighted columns)
-LOGS = {
-    "lithology": ("lith_", "Lith_group",
-                  ["Lith1Interp", "Lith1Qual1_h", "Lith1Qual2_h", "Lith_group", "Lith_group_id"], []),
-    "alteration": ("alt_", "AltFacies",
-                   ["AltFacies", "Alt_facies_name", "Alt_facies_id", "alt_ml_label", "SilicaInt",
-                    "AluniteInt", "KaolinInt", "AltMin1_h", "AltMin2_h", "AltQual1_h"], []),
-    "oxide": ("ox_", "ox_state",
-              ["ox_state", "ox_rank", "ox_state_derived", "ox_state_source", "flag_ox_conflict",
-               "WRAltOxidPcnt", "WRAltSulphIntensity_h"],
-              [("WRAltOxidPcnt", "WRAltOxidPcnt_lw"), ("WRAltSulphIntensity_h", "WRAltSulphIntensity_lw")]),
-    "mineralisation": ("min_", "DomMin1_h",
-                       ["DomMin1_h", "DomMin2_h", "DomMin3_h", "SecMin1_h", "DomMinMode_h", "DomMinPcnt",
-                        *MIN_FLAGS], [("DomMinPcnt", "DomMinPcnt_lw")]),
-}
+MIN_FLAGS = joins.MIN_FLAGS
+LOGS = joins.LOGS
 # profiled 3 Nov: the mineralisation log does not reach these assay stretches
 MIN_UNCOVERED = {"RJDH002", "RJDH003", "RJDH004", "RJDH005", "RJDH007"}
 N_MIN_MISSING = 14
 GPKG_COLS = ["SiteID", "SampleID", "DepthFrom", "DepthTo", "AuPPM", "AgPPM", "AsPPM", "CuPPM", "no_sample",
              "Lith_group", "AltFacies", "alt_ml_label", "ox_state", "ox_state_derived", "WRAltOxidPcnt_lw",
              "DomMin1_h", "min_logged", *MIN_FLAGS, "lith_mixed", "alt_mixed", "ox_mixed", "min_mixed"]
-
-
-def attach(assay: pd.DataFrame, logs: dict) -> tuple[pd.DataFrame, dict]:
-    parts, ties = [], {}
-    for name, (p, key, cols, lw) in LOGS.items():
-        log = logs[name]
-        ov = joins.overlap_table(assay, log)
-        j = joins.midpoint_join(assay, log, cols, p)
-        j[f"{p}mixed"] = joins.mixed_labels(assay, log, key, ov)
-        for col, out in lw:
-            j[out] = joins.length_weighted(assay, log, col, ov)
-        if name == "mineralisation":
-            j = joins.mask_unlogged(j, j[f"{p}missing"], MIN_FLAGS)
-        mid = (assay.DepthFrom + assay.DepthTo) / 2
-        ties[name] = int((mid.eq(j[f"{p}from"]) & j[f"{p}from"].gt(0)).sum())
-        parts.append(j)
-    return pd.concat([assay, *parts], axis=1).copy(), ties
 
 
 def nag_check(t: pd.DataFrame) -> dict:
@@ -84,7 +53,7 @@ def main() -> None:
     assert not bad, f"raw files changed: {bad}"
     assay = pd.read_csv(paths.INTERIM / "03_assay.csv", low_memory=False)
     logs = {n: pd.read_csv(paths.INTERIM / f"04_{n}.csv", low_memory=False) for n in LOGS}
-    t, ties = attach(assay, logs)
+    t, ties = joins.attach(assay, logs)
 
     # --- checks -------------------------------------------------------------------
     miss = t[t.min_missing]

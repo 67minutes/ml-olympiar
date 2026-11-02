@@ -812,3 +812,85 @@ pad is a short-range check only near surface (relevant to §9.2 twin-pad compari
 > highest at the oxide–sulphide transition and where copper minerals were logged.
 
 ---
+
+## 2026-11-03 · Stage 6 plan: composites (approved)
+
+Full plan: `C:\Users\mauli\.claude\plans\plan-stage-3-rippling-puddle.md` (overwritten from
+the Stage 5 plan, logged above). Summary:
+
+**Profiling.** Sampled assays: 2,466 rows / 3,055 m (294 < 1 m, 1,390 = 1 m, 782 > 1 m,
+145 > 2 m); NS-SEL 10 rows / 45.8 m. Total drilled 3,100.9 m. A fixed 1 m grid from the
+collar gives 3,108 composites: 3,052 fully sampled, 15 partly, 41 unsampled; 7 final
+partials < 0.5 m. Oxide and mineralisation logs share the integer-metre grid.
+
+**Method.**
+1. Fixed `[k, k+1)` composites from the collar, last one to EOH; no domain breaks (HMM
+   needs regular spacing); lith/alt boundaries flagged.
+2. Length-weighted means of the `_ml` analytes over sampled, non-null parts; NaN when an
+   element covers < 0.5 m. NAGpH and NAG kg/t excluded (pH not additive; ML-5 uses the
+   original 106 samples).
+3. CN ratios recomputed as Σ(L·CN)/Σ(L·total) over the pairs Stage 1 defined.
+4. Labels joined at the composite midpoint with the Stage 5 functions (moved into
+   `src/joins.py`; Stage 5 output must stay byte-identical).
+5. Quality columns: `comp_len`, `comp_cov_m`, `comp_nsrc`, `comp_src_maxlen`,
+   `comp_shared_src`, `<el>_cens_frac`, `S_method_c`, `comp_ok` (cov ≥ 0.5 m).
+6. XYZ by `desurvey.add_interval_xyz`.
+
+**Checks.** Composites tile 0–EOH (3,100.9 m); metal balance per hole and element;
+single-source composites equal their source; values within source min–max; oxide and
+mineral `_mixed` all false.
+
+---
+
+## 2026-11-03 · Stage 6 results: composites
+
+**Run:** `uv run python scripts/06_composite.py`. 54 unit tests pass (6 new,
+`tests/test_composite.py`). Code: `src/composite.py`. `LOGS`/`attach()` moved from
+`scripts/05_joins.py` into `src/joins.py`; Stage 5 rerun gives a byte-identical
+`05_assay_joined.csv` (sha256 unchanged).
+
+**Checks (all OK):** composites tile 0–EOH in all 19 holes (3,108 composites, 3,100.9 m
+= summed EndDepth); metal balance per hole and element (rtol 1e-6); single-source
+full-cover composites equal their source; values within source min–max; `ox_state` null
+only on RJDH019; oxide and mineral labels never mixed (grid aligned); no NAG column
+composited.
+- First run failed the single-source check on the **7 final partial composites
+  (< 0.5 m)**: the 0.5 m rule blanks them by design. The check now compares only
+  composites the rule keeps and asserts that the others are blank.
+
+**Counts:**
+- `comp_ok` (sampled ≥ 0.5 m) 3,057; not ok 51 (41 NS-SEL-only, 7 short final partials,
+  3 partly sampled).
+- Sources per composite: 0 / 1 / 2 / 3 = 41 / 1,970 / 1,078 / 19.
+- **`comp_shared_src` 1,005:** a third of composites take their whole value from one
+  assay longer than 1 m, so neighbours repeat it. This is support, not information:
+  ML-4 must not read these repeats as continuity, and per-hole CV is still required.
+- 44 `_ml` columns composited. Core Au/Ag/Cu/As filled in 3,057 composites each.
+  Ratios: AuCN 836, AgCN 685, CuCN 938.
+- `S_method_c`: SCIS 2,350, S2 277, none 481 (no composite mixes methods).
+- Metal × length blanked by the 0.5 m rule: Au 0.07%, Ag 0.03%, Cu 0.11%, As 0.06%.
+- Labels: lith_mixed 119, alt_mixed 260 (composites cut across more logged boundaries than
+  the assays did, as expected for a fixed grid); `min_logged` False 360.
+- **Composite mean = length-weighted raw mean** (Au 0.809, Ag 3.831, Cu 198.3, As 132.5).
+  The plain raw means (Au 0.986, etc.) are higher because the many short samples
+  are in high grade. CV barely changes (Au 1.65 → 1.69, As 1.58 → 1.49). The composite
+  set weights each metre equally, so it is not a like-for-like count statistic.
+
+**QC:** `outputs/figures/qc/06_composite_v1.png` (RJDH008, RJDH012; Bahasa labels).
+Composites follow the raw Au profile and only smooth within 1 m. QGIS (MCP,
+`outputs/maps/qc/06_composite_check.qgz`): the `composites` layer (3,108 points) sits
+on the traces; 3D spacing between consecutive composites equals the expected spacing
+(max deviation 0.0 m).
+
+**Outputs:** `data/interim/06_composites.csv` (3,108 × 132), layer `composites` in
+`gis/drillholes.gpkg`, the QC figure.
+
+**Plain-language explanation (for the presentation)**
+> The lab samples range from 10 cm to 25 m long, so we cut every hole into equal 1 m
+> pieces and gave each piece the length-weighted average of the samples inside it. We
+> checked that no gold is created or lost: the total gold × length in each hole is the
+> same before and after. Pieces with less than half a metre of real sample are kept but
+> marked unusable, and pieces that just repeat one long sample are flagged so the models
+> don't mistake repetition for geology.
+
+---

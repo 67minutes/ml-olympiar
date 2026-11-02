@@ -7,7 +7,25 @@ record how well that single label describes the assay.
 import numpy as np
 import pandas as pd
 
+from src import codes
+
 UNLOGGED_MINERAL = "um"
+MIN_FLAGS = list(codes.MINERAL_FLAGS)
+# log -> (prefix, mixed-label key, attached columns, length-weighted columns)
+LOGS = {
+    "lithology": ("lith_", "Lith_group",
+                  ["Lith1Interp", "Lith1Qual1_h", "Lith1Qual2_h", "Lith_group", "Lith_group_id"], []),
+    "alteration": ("alt_", "AltFacies",
+                   ["AltFacies", "Alt_facies_name", "Alt_facies_id", "alt_ml_label", "SilicaInt",
+                    "AluniteInt", "KaolinInt", "AltMin1_h", "AltMin2_h", "AltQual1_h"], []),
+    "oxide": ("ox_", "ox_state",
+              ["ox_state", "ox_rank", "ox_state_derived", "ox_state_source", "flag_ox_conflict",
+               "WRAltOxidPcnt", "WRAltSulphIntensity_h"],
+              [("WRAltOxidPcnt", "WRAltOxidPcnt_lw"), ("WRAltSulphIntensity_h", "WRAltSulphIntensity_lw")]),
+    "mineralisation": ("min_", "DomMin1_h",
+                       ["DomMin1_h", "DomMin2_h", "DomMin3_h", "SecMin1_h", "DomMinMode_h", "DomMinPcnt",
+                        *MIN_FLAGS], [("DomMinPcnt", "DomMinPcnt_lw")]),
+}
 
 
 def overlap_table(assay: pd.DataFrame, log: pd.DataFrame) -> pd.DataFrame:
@@ -70,3 +88,22 @@ def mask_unlogged(m: pd.DataFrame, missing: pd.Series, flags: list[str]) -> pd.D
     for f in flags:
         m[f] = m[f].astype("boolean").where(logged)
     return m
+
+
+def attach(assay: pd.DataFrame, logs: dict) -> tuple[pd.DataFrame, dict]:
+    """All LOGS joined to `assay` intervals (assays or composites); also returns the
+    number of midpoints on a log boundary per log."""
+    parts, ties = [], {}
+    for name, (p, key, cols, lw) in LOGS.items():
+        log = logs[name]
+        ov = overlap_table(assay, log)
+        j = midpoint_join(assay, log, cols, p)
+        j[f"{p}mixed"] = mixed_labels(assay, log, key, ov)
+        for col, out in lw:
+            j[out] = length_weighted(assay, log, col, ov)
+        if name == "mineralisation":
+            j = mask_unlogged(j, j[f"{p}missing"], MIN_FLAGS)
+        mid = (assay.DepthFrom + assay.DepthTo) / 2
+        ties[name] = int((mid.eq(j[f"{p}from"]) & j[f"{p}from"].gt(0)).sum())
+        parts.append(j)
+    return pd.concat([assay, *parts], axis=1).copy(), ties
