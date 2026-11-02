@@ -609,3 +609,114 @@ styling and summary checks ran through MCP; no attribute tables were pulled into
   hole; last-vertex Z = `EOH_Z`; surface PointZ Z = the `Z` field (max diff 0).
 - The one `no_dem` rock sample sits just outside the W edge of the lidar hull, as
   expected.
+
+---
+
+## 2026-11-02 · Stage 4 plan: codes (approved)
+
+Full plan: `C:\Users\mauli\.claude\plans\plan-stage-3-rippling-puddle.md` (overwritten from
+the Stage 3 plan, which is logged above). Summary:
+
+**Profiling.** Case duplicates in mineral (`hm`/`Hm`, `py`/`Py`, `lm`/`Lm`, `cy`/`Cy`),
+alteration-mineral, qualifier and mode codes. Undefined in the resume: SCR, SCL, UA, CAV,
+XUV-mn, VSS, SST, rock QTZ and several mineral codes. **RJDH019 has no oxidation label**
+(all 127 `Comments` nulls), but `WRAltOxidPcnt` is filled. `WRAltSulphIntensity` uses
+−999 as null (30 rows).
+
+**Human decisions (2 Nov):**
+1. RJDH019: keep `ox_state` null and add a separate `ox_state_derived` from
+   `WRAltOxidPcnt`, with cut-offs chosen by leave-one-hole-out on the 18 logged holes. ML-2
+   trains on logged labels only.
+2. Undefined codes: "infer and verify yourself as best as you can". No public
+   Martabe/Agincourt legend was found by web search (code names only, no data), so
+   meanings come from data evidence:
+   - SCR/SCL are always the first interval from 0 m: surface cover.
+   - UA ⇔ SCR/SCL: 98% / 100% length overlap in the same 17 holes; the one other UA
+     interval = CAV (RJDH013 59–60.1 m, NS-SEL). So UA = no alteration logged
+     (cover/void).
+   - `co`: Cu 3,135 ppm, CN/Cu 0.79, unoxidised: Cu sulfide `[VERIFY]`.
+   - `ca`: Cu 16 ppm: calcite. `cy`: clay. `ma`/`cl`/`cp`: one row each, unresolved.
+   - XUV-mn: unclassified unstratified breccia (`mn` most likely monomict).
+
+**Method.** `_h` case-harmonised columns next to the originals; `Lith_group`
+(+ Bahasa label); `Alt_facies_name` with `alt_ml_label` (UA → NaN); `ox_state`,
+`ox_rank`, `flag_ox_conflict`, `ox_state_derived`, `ox_state_source`;
+mineral presence flags (`min_py`, `min_cu`, `min_fe_ox`, `min_ja`, `min_su`, `min_al`);
+`data/processed/code_dictionary.csv` with meaning (EN/ID), source and evidence.
+
+**Checks.** Originals unchanged; no unmapped code; no case-only duplicates; AGENTS
+§3 facies counts; the evidence above re-run in the script; the derived-oxidation
+balanced accuracy must beat the majority class.
+
+---
+
+## 2026-11-02 · Public GitHub code publication plan (user-authorized)
+
+**Authorization and rule exception.** The human explicitly requested: "push this repo to github, public so i can share with my teammates". This supersedes the no-remote/no-publication instruction for a reviewed public code copy only. Confidential-data and licence/contact protections remain in force. The request authorizes preparing and publishing that copy without an additional approval round.
+
+**Inputs and method.** Review tracked files and history locally. The original history contains the committee brief, and AGENTS/LOG and numbered runners contain dataset-specific findings. Create a separate sibling checkout at `../ml-olympiar-public`, with fresh Git history. Allowlist reusable `src/*.py`, synthetic unit tests (exclude `test_raw.py`), `pyproject.toml`, and `uv.lock`; write public README, AGENTS, LOG and strict ignores. Do not attach a public remote to this confidential working checkout. Do not alter raw data, cleaning rules, source modules or existing commits.
+
+**Outputs.** Public `67minutes/ml-olympiar` repository and a local publication checkout. Omit data, GIS/figure/map outputs, committee documents, private logs/instructions, raw manifest, MCP configuration, and dataset-specific numbered runners. Explain these omissions in the public README.
+
+**Checks.** Run existing synthetic tests against the publication copy using the local Python environment; inspect its complete staged file list; scan text for credential patterns and dataset identifiers; verify fresh one-commit history, public visibility, pushed commit, and remote file list.
+
+## 2026-11-02 · Public code publication completed
+
+- Created public `https://github.com/67minutes/ml-olympiar`, default branch `main`, from the separate `C:\Users\mauli\Documents\ml-olympiar-public` checkout.
+- Published a fresh single root commit `dcb897541cbba9cc562c82100499288e8e025f1a`: 17 allowlisted text files (7 source modules, 4 synthetic test modules, dependency definitions, and public-only documentation/ignores).
+- The public modules and synthetic tests have identical Python ASTs to this working checkout. A private profiling observation was removed from a source comment only. No original source, cleaning rule, raw file, stage runner, or existing commit was changed.
+- `uv sync --locked --offline` succeeded in the publication checkout. `uv run --no-sync pytest -q`: **35 passed**. Text scans found no blocked credential patterns, private hole/sample identifiers, private UTM coordinates or local user paths in the allowlisted files.
+- Confirmed GitHub visibility is PUBLIC and remote `main` matches the reviewed commit. The public README explicitly explains the snapshot's omissions and lack of automatic synchronization.
+- This confidential working checkout retains its full history and has no remote. Future publication must go through the separate reviewed code checkout; never push this checkout's history or import it into the public repository.
+
+## 2026-11-02 · Stage 4 results: codes
+
+**Run:** `uv run python scripts/04_codes.py`. 43 unit tests pass (7 new,
+`tests/test_codes.py`). All checks pass; all original Stage 3 columns unchanged. Code:
+`src/codes.py`.
+
+**Case harmonisation** (`<col>_h`, originals kept): 33 code pairs/triples merged. Largest:
+DomMin1 `hm` ← Hm/hm (1,697), `py` ← Py/py (932); DomMinMode `ds` ← Ds/ds (2,260),
+`fr` ← FR/Fr/fr (293); AltMin1 `si` ← SI/si (521); AltMin2 `al` ← AL/al (371); AltQual1
+`PRV` ← PRV/prv (342). No case-only duplicates remain, and every code is in a vocabulary.
+
+**Lithology groups** (downhole intervals | rock samples): coherent dacite-andesite
+porphyry 131 | 388; phreatomagmatic breccia 92 | 68; fault zone 25 | 10; surface cover
+17 | 0; unclassified breccia (XUV-mn) 10 | 0; hydrothermal breccia 5 | 2;
+sedimentary/volcaniclastic 4 | 0; void 1 | 0; Angkola andesite 1 | 0; quartz 0 | 1.
+
+**Alteration:** AltFacies reproduces AGENTS §3 (AA 442, SI 158, AR 77, UA 18, PP 12).
+UA is 100% inside SCR/SCL/CAV intervals, and SCR/SCL lie inside UA (≥ 0.95), so the
+"no alteration logged (cover/void)" reading is confirmed. `alt_ml_label` drops UA.
+
+**Oxidation:** logged Oxide 1,783 / Sulphide 863 / Transition 244; 11 label-vs-%
+conflicts flagged; 30 `WRAltSulphIntensity` −999 → NaN.
+- **Derived state for RJDH019** (human decision): cut-offs Sulphide ≤ 15% < Transition ≤
+  70% < Oxide. Leave-one-hole-out on 18 logged holes: accuracy 0.906, balanced accuracy
+  0.788 (baseline 0.333).
+- **Transition is the weak class:** only 128 of 244 logged Transition rows are recovered;
+  107 logged Sulphide rows come out as Transition.
+- RJDH019 derived: Oxide 81, Transition 17, Sulphide 29 rows. Use it as context only, with
+  `ox_state_source` = derived_pct.
+
+**Mineral flags** (mineralisation intervals): `min_fe_ox` 2,003, `min_py` 1,112,
+`min_ja` 124, `min_cu` 73, `min_su` 54, `min_al` 15.
+
+**Code dictionary** `data/processed/code_dictionary.csv` (191 field×code rows), with
+sources conventional 51, resume 15, inferred 9, **VERIFY 25**. The VERIFY list that
+matters most by count: texture qualifier MSP (75 intervals), SecMinMode `sng` (22),
+lith qualifiers `csp` (16) and `tob` (12), XUV-mn (10). The rest are 1–8 rows each. None
+of them changes a group used by ML except XUV-mn (its own "unclassified breccia" group).
+
+**Outputs:** `data/interim/04_{lithology,alteration,mineralisation,oxide,rock}.csv`,
+`data/processed/code_dictionary.csv`.
+
+**Plain-language explanation (for the presentation)**
+> The core logs were typed by different geologists over 20 years, so the same mineral
+> appears as "Hm" and "hm", which a computer would treat as two minerals. We merged these
+> without changing the original columns, grouped the rock codes into the families of
+> the geological resume, and wrote a dictionary that says where each meaning comes from.
+> Codes nobody defined were checked against the data. For example, "UA" alteration
+> always sits exactly on the surface-cover or cavity intervals, so it means "nothing to
+> log". One hole had no oxidation log, so we estimated it from the logged
+> percent-oxidised, and tested the rule on the other 18 holes first (91% agreement).
