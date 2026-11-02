@@ -342,3 +342,10 @@ updater). Two cautions:
 **AGENTS.md §7 note.** §7 says QGIS "will be installed later". It is now installed. The
 "check your tools before any map step" rule still applies, because the server needs QGIS
 open with the plugin started.
+
+**Verified (2026-11-02, after Claude Code restart).** `diagnose`: healthy. QGIS 4.2.3,
+Python 3.12.16, Qt 6.11.1. Plugin and server both v0.15.2, 1 client connected, no project
+loaded. Processing providers active: native (350 algorithms), GRASS (307, so
+`r.watershed` / `r.stream.extract` are available for drainage), GDAL (59), PDAL, 3D.
+SAGA is not exposed as a Processing provider (it would need the "Processing Saga
+NextGen" plugin); not needed for the current plan.
