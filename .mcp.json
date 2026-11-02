@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "qgis": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--no-sync",
+        "--directory",
+        "C:\\Users\\mauli\\tools\\qgis-mcp",
+        "qgis-mcp-server"
+      ]
+    }
+  }
+}
