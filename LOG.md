@@ -592,3 +592,20 @@ rows). New columns: surface `Z`, `Z_dem`, `Elev_orig`, `Elev_dz`, `flag_elev`,
 > path with the industry-standard minimum-curvature method. Where the survey stopped
 > before the end of the hole, we continued the last direction and checked that this adds
 > at most half a metre of uncertainty.
+
+## 2026-11-02 · Stage 3 checked in QGIS (via QGIS MCP)
+
+QGIS 4.2.3 + MCP v0.15.2 healthy. QC project `outputs/maps/qc/03_coords_check.qgz`
+(hillshade, rock, soil, traces, collars; samples coloured by `flag_elev`). Only layer
+styling and summary checks ran through MCP; no attribute tables were pulled into context.
+
+- Feature counts and `flag_elev` counts read inside QGIS match the script: rock 420 / 35 /
+  13 / 1, soil 240 / 13 / 6. Pads RJDH002 (−3.2 m) and RJDH006 (0.0 m) flagged; 8 holes
+  with extrapolated tails.
+- Directions: holes at az 315° run NW from the collar, RJDH002 and RJDH004 (135°) run SE,
+  RJDH006 (325°) runs NNW, the steep holes (013, 014, 016) are short stubs, and RJDH001 is
+  a point. This matches the collar table.
+- Geometry: traces are LineStringZ; 3D length = `EndDepth` and top Z = collar RL in every
+  hole; last-vertex Z = `EOH_Z`; surface PointZ Z = the `Z` field (max diff 0).
+- The one `no_dem` rock sample sits just outside the W edge of the lidar hull, as
+  expected.
