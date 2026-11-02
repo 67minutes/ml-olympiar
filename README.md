@@ -61,6 +61,10 @@ Outputs are never overwritten once they go into the report. Write `_v2` instead.
 | GIS | `15_drainage.py` | derived drainage network | report §6, bonus |
 | ML-6 | `16_targeting.py` | GP (kriging) Au + uncertainty, ranked collars | report §7, bonus |
 
+Each ML stage writes its outputs to `data/processed/ml/<target>__<task>.csv` (target = `assay`,
+`komposit`, `batuan` or `tanah`; the key plus `ML_*` columns only), then reruns `07_export.py`, which
+merges them into the ioGAS CSVs in `data/processed/iogas/`.
+
 Stages 1–7 run strictly in order. After stage 7, ML-1, ML-2, ML-3, ML-5 and drainage are
 independent and can run in parallel. ML-4 needs stage 6. ML-6 needs ML-3, ML-5 and
 drainage.

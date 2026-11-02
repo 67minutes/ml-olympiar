@@ -894,3 +894,120 @@ on the traces; 3D spacing between consecutive composites equals the expected spa
 > don't mistake repetition for geology.
 
 ---
+
+## 2026-11-03 · Stage 7 plan: deliverables (approved)
+
+Full plan: `C:\Users\mauli\.claude\plans\plan-stage-3-rippling-puddle.md` (overwritten from
+the Stage 6 plan, logged above). Summary:
+
+**Profiling.** Flags already sit in 10 interim tables. Surface samples outside RJ: rock
+87 (Purnama 51, Tor Uluala 31, Parbotikan 5), soil 71 (Purnama 64, Tor Uluala 7); kept
+and flagged. The only genuine rock re-sample group (4 samples, Au 25.8–58 g/t) is the
+only field-duplicate evidence; the 7 same-day groups differ like separate samples.
+Near-vertical azimuth swings > 20°: 6 stations (RJDH001 3, RJDH019 3), all at dip ≤ −85°.
+**Lab era is confounded with hole** (each hole assayed in one year), and RJDH002/003
+have no comparable neighbour from another era, so lab bias cannot be separated from
+location: we show the evidence and state the limit.
+
+**Outputs.**
+1. `data/processed/validation_flags.csv`: long audit trail (one row per record ×
+   issue), check IDs S1–S5 (surface), D1–D14 (drillhole), severity, action, AGENTS ref.
+2. `data/processed/validation_summary.csv`: one row per check, including the §4.1 clean
+   checks recomputed on the raw tables and dataset-level items.
+3. `data/processed/qaqc_precision.csv`: rock duplicate-XY group CVs; CN vs total pairs.
+4. `outputs/figures/07_au_lubang_tahun_v1.png`: Au by hole coloured by lab year.
+5. `data/processed/iogas/`: assay, 1 m composites, rock, soil, collar, survey CSVs;
+   `El_unit` element headers on harmonised values plus `_cens` Y/N; Bahasa category
+   columns; Y/N flags; `kolom_iogas.csv` dictionary; README; `ML_*` merge hook from
+   `data/processed/ml/`.
+
+**Checks.** Inventory guard (every flag column mapped); §4 facts reproduced; §4.1 clean
+checks pass on raw; ioGAS round-trip equality, unique keys, ASCII headers.
+
+---
+
+## 2026-11-03 · Stage 7 results: deliverables
+
+**Run:** `uv run python scripts/07_export.py`. 60 unit tests pass (6 new,
+`tests/test_export.py`). Code: `src/export.py`. All checks pass.
+
+**Checks (all OK):**
+- §4.1 clean checks recomputed on the raw tables: no overlaps, gaps, zero/negative
+  lengths or depths past EndDepth in assay and the 4 logs; no duplicate SampleIDs (assay,
+  rock, soil); collar dip/az = first survey station.
+- §4 facts reproduced: elevation > 30 m rock 13 / soil 6, 10–30 m rock 35 / soil 13;
+  duplicate XY 21 rows (13 extra); NS-SEL 10; AuCN > 1.1×Au 125/979, AgCN 173/1,267;
+  pads RJDH002/006; RJDH001 no sulfur; azimuth swings only in RJDH001/019.
+- Inventory guard: every flag-type column in the 8 source tables maps to a check. On
+  the first run it caught 4 composite columns (`comp_cov_m`, `comp_len`, `comp_nsrc`,
+  `comp_src_maxlen`), now mapped to Q5.
+- ioGAS files: row counts equal their sources, unique keys, ASCII headers and labels,
+  every element column equal to its source `_ml` column.
+
+**Refinement of AGENTS §4.2.11 (not a contradiction):** survey stops short of EOH in
+**8** holes, not 5. The 5 listed in AGENTS are the gaps ≥ 1 m; RJDH005 (0.2 m),
+RJDH013 (0.3 m) and RJDH016 (0.9 m) are sub-metre and EOH uncertainty is 0.0 m. They
+are flagged `info`; the AGENTS five are `warning`.
+
+**validation_flags.csv:** 1,397 rows (error 19, warning 90, info 1,288). Errors are the 19
+surface elevations > 30 m off lidar (rock 13, soil 6). Warnings: 48 surface elevations
+10–30 m, 17 same-day duplicate-XY rows, collar pads 2, survey gaps ≥ 1 m 5, sulfur method
+per hole 6 (RJDH001 none; S2 in 004, 006, 007, 009, 019), oxidation conflicts 11, RJDH019
+derived oxidation 1.
+
+**validation_summary.csv:** 165 rows: 19 per-check rows (S1–S5, D1–D14), 9 clean-check
+rows (C1–C3, all pass), Q1 no QAQC samples, Q2 surface zeros (rock 20,275, soil 12,826
+values), Q3 per-element censoring and harmonised DL (one row per dataset × analysed
+element), Q4 codes (25 VERIFY), Q5 composites, Q6/Q7 pointers, Q8 weak DEM (pass).
+Written UTF-8 with BOM and ASCII text so Excel opens it cleanly ("§" dropped from refs).
+
+**qaqc_precision.csv:**
+- Field duplicates: the only genuine re-sample group (4 samples, 3 dates/jobs) has CV
+  Au 31% (mean 47.3 g/t), Cu 41%, As 21%. The 7 same-day groups average CV Au 92%,
+  Cu 87%, As 71%. They behave like different samples at one GPS fix, not duplicates.
+  n is tiny (1 group); report it as indicative only. Average-CV method after Stanley &
+  Lawie (2007) `[VERIFY citation]`.
+- CN/total (drillholes): AuCN/Au 979 pairs, median 0.86, 5–95% 0.34–2.5, 12.8% > 1.1;
+  AgCN/Ag 1,267, median 0.79, 13.7% > 1.1; CuCN/Cu 1,268, median 0.17, 0.6% > 1.1.
+  Au and Ag CN often exceed total: aliquot heterogeneity (nugget effect) of the order of
+  tens of percent. Cu almost never does, so it is a gold/silver sampling issue, not a
+  lab mix-up.
+
+**Era check** (`outputs/figures/07_au_lubang_tahun_v1.png`, Bahasa labels). Median Au of
+usable composites by lab year: 1998 0.43, **2004 0.02**, 2010 0.32, 2015 0.18, 2016 0.39,
+2017 0.55. Each hole was assayed in one year, so era and location cannot be separated.
+For context only: low-median holes also occur in other eras (RJDH009 2010, RJDH015 2016),
+and RJDH002's only nearby data is the RJDH006 collar from the same pad, drilled the
+opposite way. **No conclusion claimed; the report states the confounding.**
+
+**ioGAS hand-off** (`data/processed/iogas/`):
+
+| File | Rows × cols |
+|---|---|
+| `RJ_DH_assay.csv` | 2,476 × 122 |
+| `RJ_DH_komposit_1m.csv` | 3,108 × 88 |
+| `RJ_batuan.csv` | 469 × 93 |
+| `RJ_tanah.csv` | 259 × 59 |
+| `RJ_DH_collar.csv` | 19 × 13 |
+| `RJ_DH_survey.csv` | 107 × 9 |
+| `kolom_iogas.csv` (dictionary) | 384 rows |
+| `README_iogas.txt` | — |
+
+- Element headers are `El_unit` on harmonised values, with `_cens` Y/N where any value
+  is censored.
+- Category columns are in Bahasa Indonesia: `Kelompok_Litologi`, `Fasies_Alterasi`,
+  `Status_Oksidasi`, `Status_Oksidasi_turunan`. Flags are Y/N.
+- `ML_*` merge hook: `data/processed/ml/<target>__<task>.csv` (noted in README).
+- QGIS (MCP, `outputs/maps/qc/07_iogas_check.qgz`): soil and rock CSVs loaded as delimited
+  text land exactly on `surface_samples.gpkg` (259/259 and 469/469, max offset 0.0 m).
+
+**Plain-language explanation (for the presentation)**
+> Every problem we found in the data, from wrong elevations to samples that were never
+> analysed, is listed in one table: what it is, which sample, how serious, and what we
+> did about it. We deleted nothing. The database has no standards, blanks or duplicates,
+> so we used what it does have: four re-samples of one outcrop (gold agrees within about
+> 30%), and cyanide-soluble gold that sometimes exceeds total gold, which shows how
+> uneven gold is between two splits of the same sample. The same clean, labelled tables
+> go to our ioGAS teammate, with legends already in Bahasa Indonesia.
+
+---
