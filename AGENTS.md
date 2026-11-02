@@ -259,6 +259,7 @@ General ML rules:
   justified; subcomposition CLR is acceptable only with that caveat stated.
 - Never claim performance from leaky validation (random K-fold on downhole data is leaky).
 - Every model output exported as an ioGAS-ready CSV column (`ML_*` prefix) for plotting.
+- Stretch comparators against published workflows: see §9 (gated, not core).
 
 ---
 
@@ -304,3 +305,82 @@ LOG.md             # append-only decision and results log
   plain-language explanation (in `LOG.md`) that a teammate could say aloud in the
   presentation.
 - When unsure whether something is an error or geology, flag it and ask. Don't guess.
+
+---
+
+## 9. Literature comparators (STRETCH — gated)
+
+### Gate
+Start §9 work only when ALL of these are done:
+- the five cleaning stages in §5 (semantics → compositing),
+- `data/processed/validation_flags.csv`,
+- ML tasks 1–5 in §6, with their `ML_*` outputs exported.
+
+**Hard stop: end of 6 Nov 2026 WIB**, whatever the progress. 7 Nov is reserved for the
+report. If the gate is not met, §9 becomes one paragraph in the report's discussion
+instead of experiments.
+
+Timebox each experiment at about half a day. For each comparator, log the results and a
+3–5 line spoken explanation for the presentation in `LOG.md`.
+
+### 9.1 Comparator 1: Jansson, Allen, Skogsmo & Tavakoli (2022) `[VERIFY]`
+*Journal of Geochemical Exploration* 233, 106909.
+
+What we may say about it (nothing more until the full text is read):
+- 181 dolomite marble samples, 64 variables; clr transform; robust PCA (3 PCs, ~80% of
+  variance); k-means with the elbow method (K = 7).
+- Validated qualitatively: spatial pattern vs known deposits and geological
+  interpretability. No labels.
+- Variable-selection criteria, **as summarised by a citing paper** (not read in the
+  original): ≥70% of samples above DL, median > 10 × DL, normal or log-normal
+  distribution. `[VERIFY: identify the citing paper]`
+
+**Experiment: "Jansson-style baseline".** Same cleaned inputs as our model → clr → robust
+PCA → k-means, k chosen by elbow. Compare it with our GMM (BIC) wherever we use a GMM:
+ML-3 surface zonation and ML-5 PAF/NAF clustering.
+- Fair k for the baseline: elbow picked by a stated, reproducible rule on the
+  within-cluster sum of squares (k = 2–10, fixed seeds). Also report k-means at the GMM's
+  BIC-selected k, so a difference is not just a difference in k.
+- Compare:
+  - ARI vs logged alteration (rock `IntrpAltFa`, downhole `AltFacies`) and oxidation
+    (downhole);
+  - recovery of the RJDH012 NAG classes (NAF / PAF-LC / PAF-HC);
+  - elbow (WCSS vs k) and BIC vs k curves, side by side;
+  - bootstrap cluster stability (ARI of bootstrap refits vs the full-data partition;
+    log B and seeds).
+- Limitation, stated for both methods: clr is applied to a small trace-element
+  subcomposition, so results depend on which elements are included (see §6 transform
+  rule).
+- **Propose, don't apply:** whether the ≥70% > DL and median > 10 × DL criteria should
+  replace our current element selection (Stage 1 `ml_usable`: ≥50% analysed, ≤50%
+  censored). Write the proposal in `LOG.md` with the element lists each rule selects per
+  dataset. Changing core §6 needs human approval.
+
+### 9.2 Comparator 2: Fontana, Hill, Huang, Stromberg & Sinclair, Golden Mile Dolerite `[VERIFY]`
+Abstract level only:
+- Feature engineering + PCA → Random Forest on 2 m samples; 82.5% accuracy vs logging.
+- Errors attributed to model discrepancy, logging ambiguity, and the scale mismatch
+  between logged intervals and 2 m samples.
+- Class probabilities smoothed downhole with CSIRO Data Mosaic (wavelet tessellation).
+
+**Experiment: "simplified analogue".** PCA → Random Forest on our 1 m composites → a
+simple downhole smoother of class probabilities (a stated, fixed rule, tuned on training
+folds only). Compare with our Gaussian HMM (ML-4). Validate with GroupKFold by `SiteID`
+(§6 rule). **Never claim to replicate Data Mosaic.**
+- Compare:
+  - agreement with the logs (logged alteration and oxidation; lithology expected to be
+    poor, §6 task 2);
+  - fragmentation: class/state switches per 100 m, with the logs' own switch rate as
+    reference;
+  - consistency on the twin pads 005/014, 010/011, 016/017.
+- Quantify our own scale mismatch: lithology intervals average 10.8 m (median 5.2 m),
+  alteration 4.4 m (median 2.5 m), vs assays ~1 m (median 1.0 m).
+- **Do not benchmark our accuracy against their 82.5%.** Context only: different deposit,
+  sample support, classes and validation.
+
+### 9.3 Citation rules
+- Both papers stay `[VERIFY]` until the human supplies the PDFs.
+- The Fontana title differs between the competition slide ("Drill Hole") and ResearchGate
+  ("drill core"); its venue and year are unconfirmed. Do not fill them in.
+- Attribute no detail beyond §9.1 and §9.2 without the full text (§2.5: no invented
+  references, titles, years, DOIs or quotes).
