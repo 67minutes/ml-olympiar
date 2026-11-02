@@ -36,8 +36,8 @@ Every stage follows the same loop:
    assertion checks after each step (row counts kept, flags filled, no silent NaN).
 4. **Run and log.** The agent records the numbers and a 3–5 line plain-language
    explanation in `LOG.md`, written so a teammate can say it aloud in the presentation.
-5. **Review.** A human checks the outputs (ioGAS, QGIS, or the CSV) before the next
-   stage starts.
+5. **Review.** The repo owner checks the outputs (CSV, figures, or the layers in QGIS)
+   before the next stage starts.
 
 Outputs are never overwritten once they go into the report. Write `_v2` instead.
 
@@ -52,7 +52,7 @@ Outputs are never overwritten once they go into the report. Write `_v2` instead.
 | 4 Codes | `04_codes.py` | harmonised lith/alt/min codes (originals kept) | 5 |
 | 5 Joins | `05_joins.py` | logs attached to assays by midpoint | 6, ML |
 | 6 Composites | `06_composite.py` | 1 m length-weighted composites | HMM, classifiers |
-| 7 Deliverables | `07_export.py` | `validation_flags.csv`, ioGAS-ready CSVs | **ioGAS (human)** |
+| 7 Deliverables | `07_export.py` | `validation_flags.csv`, ioGAS-ready CSVs | **hand-off to ioGAS teammate** |
 | ML-1 | `10_thresholds.py` | GMM thresholds per element | report §3 |
 | ML-2 | `11_logging_clf.py` | alteration/oxidation from chemistry, GroupKFold by hole | report §3 |
 | ML-3 | `12_surface_zones.py` | soil/rock H/M/L zones + membership probability | report §4, targeting |
@@ -69,6 +69,9 @@ drainage.
 
 - **Agents:** cleaning, ML, Python charts, GIS layers (GeoTIFF/GeoPackage), ioGAS-ready
   CSVs, `LOG.md`.
-- **Humans:** ioGAS project (probability plots, downhole plots, classification diagrams),
-  final maps and sections in QGIS, report text in Bahasa Indonesia, checking every
-  reference, approving each stage plan.
+- **Repo owner (ML lead):** the ML and data analysis only. Approves each stage plan,
+  reviews outputs, and hands the ioGAS-ready CSVs to the ioGAS teammate.
+- **ioGAS teammate (not this repo):** the ioGAS project (probability plots, downhole
+  plots, classification diagrams) on the team's one licensed machine.
+- **Rest of the team:** final maps and sections in QGIS, report text in Bahasa Indonesia,
+  checking every reference.

@@ -476,3 +476,16 @@ brief, with how to read it. No other section changed.
 
 **Confidentiality:** the PDF holds the ioGAS licence key. It is committed only to this
 local repo, which has no remote.
+
+## 2026-11-02 · AGENTS.md §2.4 landscape rule and team roles (human instruction)
+
+The human asked for two changes:
+1. **§2.4:** portrait stays the default, but some maps or sections may be landscape if
+   needed, as the committee brief allows. The matching bullet was removed from the
+   §1 "Source documents" list, since §2.4 now states it.
+2. **Roles:** the repo owner is responsible for the **ML and data analysis only, not
+   ioGAS**. A new §1 "Roles" block says another team member builds the ioGAS project on
+   the team's one licensed machine. This repo only hands over ioGAS-ready CSVs, and
+   ML steps that compare against ioGAS output (e.g. ML-1 vs probability-plot breaks)
+   leave a marked slot for it instead of waiting. §1 deliverable 2 and §2.3 now say the
+   same. README "Who does what" and the stage table were updated to match.

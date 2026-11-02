@@ -30,13 +30,24 @@ Novelty matters only if it stays accurate and reliable.
 - Points from the brief not stated elsewhere in this file:
   - Machine Learning is the main theme, weighted **5%** of the score (technical, 100).
   - The bonus counts only **if all sub-parameters are complete**.
-  - Report pages are portrait, but some maps or sections may be landscape if needed.
   - Every reference must be linked and attached in the reference list.
   - The presentation is a PowerPoint exported to PDF.
-  - ioGAS v8.3.1; **one licence per team, on one laptop/PC**. ioGAS work is
-    single-machine, so plan the human's ioGAS time early.
+  - ioGAS v8.3.1; **one licence per team, on one laptop/PC**. Only the ioGAS teammate's
+    machine runs it (see "Roles" below).
 - The brief contains the ioGAS licence key and committee contacts. Never copy them into
   logs, code or replies, and never push this repo to any remote.
+
+### Roles
+- **This repo's owner (the human agents work with) is responsible for the ML and data
+  analysis only:** cleaning, validation flags, the ML in §6, and the CSV/GIS outputs that
+  feed the report.
+- **ioGAS is not the repo owner's job.** Another team member builds the ioGAS project
+  (probability plots, downhole plots, classification diagrams) on the team's single
+  licensed machine. Agents and the repo owner deliver ioGAS-ready CSVs as a
+  **hand-off**; they never plan, schedule or wait on ioGAS work inside this repo.
+- Where an ML step compares against ioGAS output (e.g. probability-plot breaks in §6
+  task 1), produce the ML side on its own and leave a clearly marked slot for the
+  teammate's ioGAS result. Never block on it.
 
 ### Deadlines
 - Submission: **7 Nov 2026, 23:59 WIB** by email to the committee.
@@ -45,7 +56,8 @@ Novelty matters only if it stays accurate and reliable.
 
 ### Required deliverables
 1. Data validation (CSV)
-2. ioGAS project (built by a human in ioGAS; agents prepare inputs)
+2. ioGAS project (built in ioGAS by the ioGAS teammate, not the repo owner; this repo
+   only supplies the input CSVs; see "Roles")
 3. Geochemistry analysis (CSV)
 4. Comprehensive report (PDF)
 5. Presentation (PDF)
@@ -88,11 +100,12 @@ Novelty matters only if it stays accurate and reliable.
    is **free and not pirated**. Python and its open-source libraries are fine. Every
    output must be reproducible locally.
 3. **ioGAS must visibly do real work** (Software is worth 25 points). Prepare
-   ioGAS-ready CSVs (clean headers, flag columns, cluster labels) so humans can do the
-   plotting, probability plots, downhole plots, and classification diagrams in ioGAS.
-   Agents cannot drive ioGAS.
+   ioGAS-ready CSVs (clean headers, flag columns, cluster labels) so the ioGAS teammate
+   can do the plotting, probability plots, downhole plots, and classification diagrams in
+   ioGAS. Agents cannot drive ioGAS, and the repo owner does not run it (§1 "Roles").
 4. **Report language is Bahasa Indonesia (EYD), Times New Roman** (16 heading /
    14 subheading / 12 body and captions), black text, portrait, one column, HD figures.
+   Some maps or sections may be landscape if needed (allowed by the committee brief, §1).
    Figure titles, axis labels and legends go in **Bahasa Indonesia**. Code, comments and
    logs stay in English.
 5. **Plagiarism is punished.** Never invent references, DOIs, or quotes. Every claim
