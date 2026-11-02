@@ -18,6 +18,26 @@ Judges are **mining engineers/geologists**. Optimise for: geological defensibili
 transparent uncertainty, decision relevance (where to drill, how to handle waste).
 Novelty matters only if it stays accurate and reliable.
 
+### Source documents
+- **`Technical Meeting 2nd Round OlympiAR 2026.pdf`** (repo root, 21 slides): the
+  committee's own explanation of Round 2. It sets the theme ("Orebody to Ecosystem:
+  Integrating Mining Performance and Environmental Resilience"), the data package, the
+  report structure and sub-items, the formatting rules, the deliverables, the grading
+  rubric, ioGAS licensing, example ioGAS outputs (slide 19) and the reference papers
+  (slide 20). When this file and the brief disagree, **the brief wins on competition
+  rules**; flag the difference to the human and log it.
+- `data/raw/Geological Resume_OlympiAR_2026.pdf`: geology (see §3).
+- Points from the brief not stated elsewhere in this file:
+  - Machine Learning is the main theme, weighted **5%** of the score (technical, 100).
+  - The bonus counts only **if all sub-parameters are complete**.
+  - Report pages are portrait, but some maps or sections may be landscape if needed.
+  - Every reference must be linked and attached in the reference list.
+  - The presentation is a PowerPoint exported to PDF.
+  - ioGAS v8.3.1; **one licence per team, on one laptop/PC**. ioGAS work is
+    single-machine, so plan the human's ioGAS time early.
+- The brief contains the ioGAS licence key and committee contacts. Never copy them into
+  logs, code or replies, and never push this repo to any remote.
+
 ### Deadlines
 - Submission: **7 Nov 2026, 23:59 WIB** by email to the committee.
 - Presentation: 14–15 Nov 2026. Grading is **60% presentation, 40% report**, so every

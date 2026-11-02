@@ -446,3 +446,33 @@ folds only). Compare with our Gaussian HMM (ML-4). Validate with GroupKFold by `
 
 **Approved (2 Nov) and applied:** §9 added to AGENTS.md verbatim from the draft above,
 plus the one §6 line. No other AGENTS.md section changed.
+
+## 2026-11-02 · Committee brief added to the repo and referenced
+
+The human added `Technical Meeting 2nd Round OlympiAR 2026.pdf` (21 slides) to the repo
+root and asked that AGENTS.md and CLAUDE.md point to it. Read in full (pypdf text, plus
+rendered slides 19 and 20).
+
+**Checked against AGENTS.md.** These match: mission and region, deadlines (7 Nov 23:59 WIB
+by email; presentations 14–15 Nov), the 60/40 presentation/report split, the five
+deliverables, the 9-part report structure and its sub-items, the language and font rules,
+the rubric weights, and the data list (River shp, DEMNAS tiff and Topography dxf are listed
+in the brief but missing from the package, as §3 already says).
+
+**New or different in the brief (now listed in AGENTS §1 "Source documents"):**
+- ML main theme is weighted 5% (technical 100); AGENTS only gave the 100.
+- The bonus counts only if all sub-parameters are complete.
+- Some maps/sections may be landscape. §2.4 says portrait only and was left unchanged.
+  The brief wins on competition rules.
+- References must be linked and attached in the reference list.
+- The presentation is a PowerPoint exported to PDF.
+- ioGAS v8.3.1, one licence per team on one machine.
+- Slide 20 shows the full titles and author lists of the two §9 papers. §9.3 is unchanged:
+  both stay `[VERIFY]` until the full texts are supplied.
+
+**Edits:** AGENTS.md §1 gets a "Source documents" block (the brief wins on competition
+rules; never copy its licence key or contacts). CLAUDE.md gets one line pointing to the
+brief, with how to read it. No other section changed.
+
+**Confidentiality:** the PDF holds the ioGAS licence key. It is committed only to this
+local repo, which has no remote.

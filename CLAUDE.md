@@ -9,6 +9,11 @@ duplicate it here.
 ## Claude Code specifics
 
 - Start every session by reading the tail of `LOG.md` to see where work stopped.
+- The committee's brief is `Technical Meeting 2nd Round OlympiAR 2026.pdf` (repo root;
+  see AGENTS.md §1 "Source documents"). Check it for competition rules (structure,
+  format, rubric, deliverables). Read it with `pypdf` text extraction; render a page
+  with OSGeo4W `gswin64c` only when a slide is mostly images. Never quote its ioGAS
+  licence key or contact numbers.
 - Use plan mode for any step that touches cleaning rules, joins, or model design.
   Write the plan to `LOG.md`, then wait for approval (AGENTS.md §8).
 - Never `cat` whole data files into context. Inspect with pandas (`.head()`,
