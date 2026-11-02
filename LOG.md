@@ -1011,3 +1011,152 @@ opposite way. **No conclusion claimed; the report states the confounding.**
 > go to our ioGAS teammate, with legends already in Bahasa Indonesia.
 
 ---
+
+## 2026-11-03 · ML-1 plan: element thresholds (approved)
+
+Full plan: `C:\Users\mauli\.claude\plans\cleaning-is-done-let-s-wise-flamingo.md`. Summary:
+
+**Profiling (read-only).** Elements = Stage 1 `ml_usable` (CN columns skipped): drillhole
+Au, Ag, Cu, As, SCIS_PCT; rock (RJ) Au, Cu, As, Hg, Pb, Sb, Zn; soil (RJ) Au, Ag, Cu, As, Ba,
+Hg, Pb, Sb, W, Zn. Rock Ag "not determinable" (65.7% censored). A plain GMM on log10 fits the
+lab's **reporting steps** (drillhole Ag K=5 at 1, 2, 3, 6, 16 ppm; soil W, rock Zn K=5);
+dequantising removes most of it.
+
+**Decisions (defaults, approved).** Surface fits and classes on RJ only (`is_RJ`); drillhole
+on raw sampled assays (not composites); censored values excluded from the GMM fit and put in
+population 1; MAD/Tukey on all values (censored at DL/2), flagged where censoring > 25%.
+
+**Method** (`src/thresholds.py`). Dequantise (uniform jitter within each value's reporting
+step) → GMM K = 1..5 on log10 (`n_init` 10, seed 0, `reg_covar` 0.05²), admissible only if
+every component holds ≥ 5 samples; BIC averaged over 20 dequantisation draws. Thresholds =
+density crossings between adjacent component means (none → pair not resolved); Ashman's D
+per pair; K = 1 → 10^(μ+2σ). Bootstrap B = 200 (resample + new jitter): K frequency and
+5–95% threshold CI at fixed K. Comparators: median+2·MAD and Tukey fence on log10; empty
+`thr_probplot_iogas` slot for the ioGAS teammate. Heuristic confidence label.
+
+**Outputs.** `data/processed/element_thresholds.csv`;
+`data/processed/ml/{assay,batuan,tanah}__ml1_thresholds.csv` (`ML_thr_<El>_populasi`,
+`ML_thr_<El>_p_atas`); figures `outputs/figures/08_ambang_{bor,batuan,tanah}_v1.png`,
+`08_bic_v1.png`; rerun `07_export.py`.
+
+**Checks.** T1 > harmonised DL; thresholds increase; CI contains estimate; ML file rows/keys;
+07 checks pass; synthetic unit tests.
+
+---
+
+## 2026-11-03 · ML-1 results: element thresholds
+
+**Run:** `uv run python scripts/08_ml1_thresholds.py` (96 s, joblib over elements), then
+`scripts/07_export.py` (all checks pass). 70 unit tests pass (10 new,
+`tests/test_thresholds.py`). Code: `src/thresholds.py`. A rerun gives an identical table
+(deterministic).
+
+**Hyperparameters:** seed 0; K = 1–5; `reg_covar` 0.05² (log10); admissible only if every
+component holds ≥ 5 samples; K = argmin of BIC averaged over 20 dequantisation draws
+(`n_init` 5); final fit `n_init` 10 on draw 0; bootstrap B = 200 (`n_init` 3), each draw
+resampled and re-dequantised. Fits: drillhole 2,466 sampled assays, rock 382 RJ, soil 188 RJ.
+
+**Checks (all OK):** lowest threshold > harmonised DL for every element; thresholds increase;
+every point estimate inside its bootstrap 5–95% interval; ML files keyed 1:1 to their
+tables, non-RJ / NS-SEL rows blank; ioGAS files gain `ML_*` columns (assay 10, batuan 14,
+tanah 20).
+
+**Thresholds** (geometric means of populations; T with bootstrap 5–95%; confidence label):
+
+| Data | El | K (boot share) | Populations | GMM thresholds | MAD / Tukey | Conf. |
+|---|---|---|---|---|---|---|
+| Drillhole | Au g/t | 3 (0.58; K=2 0.39) | 0.056 / 0.49 / 1.85 | **0.16** (0.15–0.18), **0.96** (0.85–1.18) | 22 / 94 | medium |
+| Drillhole | Cu ppm | 2 (0.82) | 30 / 203 | 118 (100–138) | 918 / 2,911 | medium |
+| Drillhole | S SCIS % | 3 (0.65) | 0.07 / 0.69 / 2.6 | 0.21 (0.17–0.24), 1.15 (0.89–1.31) | 20 / 73 | medium |
+| Drillhole | As ppm | 2, nested (D 0.19) | 87 / 104 | none; μ+2σ 567 | 423 / 754 | low |
+| Drillhole | Ag ppm | 2 (0.33; K 2–4 unstable) | 2.0 / 7.5 | 4.1 (3.8–4.7) | 82 / 447 | low |
+| Rock | Au g/t | 1 (0.97) | 0.25 | μ+2σ 7.1 (5.6–9.3) | 7.3 / 20 | high |
+| Rock | Cu ppm | 1 (0.75) | 52 | μ+2σ 517 (427–625) | 481 / 1,092 | high |
+| Rock | As ppm | 1 (0.54) | 159 | μ+2σ 2,220 | 1,387 / 2,894 | medium |
+| Rock | Hg ppm | 2 (0.89) | 0.06 / 0.17 | 0.12 (0.10–0.21) | 0.37 / 0.76 | medium |
+| Rock | Pb ppm | 2 (0.72) | 23 / 166 | 42 (34–54) | 846 / 1,796 | high |
+| Rock | Sb ppm | 3 (0.68) | 11 / 50 / 1,450 | 26 (17–39), 464 (114–1,119) | 162 / 364 | medium |
+| Rock | Zn ppm | 2 (0.78) | 5.6 / 24 | 22 (13–36) | 36 / 77 | medium |
+| Soil | Au ppm | 1 (0.83) | 0.10 | μ+2σ 1.41 (1.12–1.75) | 2.25 / 6.2 | high |
+| Soil | Cu / Sb ppm | 1 / 1 | 35 / 4.8 | μ+2σ 165 / 60 | 223 / 326; 74 / 132 | high |
+| Soil | As ppm | 2 (0.65) | 22 / 81 | 24 (12–37) | 326 / 585 | medium |
+| Soil | Pb ppm | 2 (0.82) | 22 / 88 | 32 (26–48) | 396 / 731 | medium |
+| Soil | Zn ppm | 2 (0.89) | 6.8 / 28 | 12 (10–14) | 104 / 171 | high |
+| Soil | Ba / Hg | 2 nested each | — | none; μ+2σ 527 / 0.61 | 418 / 496; 0.48 / 0.80 | medium |
+| Soil | Ag ppm | 3 (0.91) | 0.23 / 0.51 / 1.05 | 0.32, 0.88 | 1.36 / 1.98 | low (15 distinct values) |
+| Soil | W ppm | 1 (0.72) | 5.2 | μ+2σ 20 | 37 / 249 | low (32% censored) |
+
+Rock Ag: not determinable (65.7% censored). `thr_probplot_iogas` is empty for the ioGAS
+teammate to fill.
+
+**What the numbers say**
+- **Two kinds of threshold.** GMM thresholds split *populations*; MAD/Tukey cut the *upper
+  tail* (they flag 0–6% of samples everywhere). Where an element has one population
+  (K = 1), the GMM fallback μ+2σ and median+2·MAD agree closely (rock Au 7.1 vs 7.3 g/t,
+  rock Cu 517 vs 481 ppm). Where it has several, the GMM breaks sit far below MAD/Tukey.
+- **RJ surface gold is one log-normal population** in rock (K = 1, bootstrap 0.97) and soil
+  (0.83). Gold anomalies at surface are the upper tail of one population, not a separate
+  population, so ML-3 zonation should rank by grade within it.
+- **Soil As, Pb, Zn: the *low* population is the minority** (As 24, Pb 44, Zn 44 of 188
+  samples). Most of the RJ soil grid sits on the mineralised/altered footprint, and the GMM
+  threshold separates a background fringe from it (77–87% of soils lie above it). To be
+  checked spatially in ML-3 (where the low population lies).
+- **Drillhole populations are grade populations, not background vs anomaly.** Au breaks at
+  0.16 and 0.96 g/t (low / medium / high grade); Cu at 118 ppm (likely the supergene /
+  sulfide-Cu population, cf. Stage 5: Transition Cu median 377 ppm); sulfide S at 0.21% and
+  1.15%. The near-zero S population (0.07%) is relevant to ML-5 (oxidised material).
+- **Reporting-step artefact found and handled.** Without dequantising, drillhole Ag gave
+  K = 5 at 1, 2, 3, 6, 16 ppm, i.e. the lab's reporting steps. Dequantising plus the
+  ≥ 5-sample rule removed this for W and Zn; drillhole Ag and soil Ag remain unstable and are
+  labelled low confidence.
+- Raw drillhole assays are not length-weighted (short samples are over-represented in high
+  grade, Stage 6), and censored values are outside the fit. Both are stated limits.
+
+**Outputs:** `data/processed/element_thresholds.csv` (23 rows); `data/processed/ml/
+{assay,batuan,tanah}__ml1_thresholds.csv` (`ML_thr_<El>_populasi`, `ML_thr_<El>_p_atas`;
+`p_atas` blank where there is no distinct top population); merged into
+`data/processed/iogas/`; figures `outputs/figures/08_ambang_{bor,batuan,tanah}_v1.png`,
+`08_bic_v1.png`.
+
+References for the report `[VERIFY]`: Sinclair (1974) J. Geochem. Explor. 3:129–149;
+Reimann, Filzmoser & Garrett (2005) Sci. Total Environ. 346:1–16; Ashman, Bird & Zepf
+(1994) Astron. J. 108:2348.
+
+**Plain-language explanation (for the presentation)**
+> Instead of picking anomaly thresholds by eye on a probability plot, we let a mixture
+> model find how many overlapping populations each element has and where they cross. We
+> first removed a trap: labs report values in steps like 1, 2, 3 ppm, which the model would
+> otherwise mistake for populations. Each threshold comes with a bootstrap range and a
+> confidence label. Surface gold at RJ turns out to be a single population, so the
+> classic "mean + 2 SD" cut-off (about 7 g/t in rock) is the right one there, while
+> arsenic, lead and zinc in soil show a clear background group below the main
+> mineralised population. Downhole, gold splits naturally at about 0.16 and 1 g/t.
+
+---
+
+## 2026-11-03 · ML-1 checked in QGIS (via QGIS MCP)
+
+Project `outputs/maps/qc/08_ml1_check.qgz` (hillshade, traces, collars, ioGAS rock and soil
+CSVs as delimited text, filter `prospek_RJ = 'Y'`). QC renders (not report figures):
+`outputs/maps/qc/08_tanah_As_v1.png`, `08_tanah_Zn_v1.png`, `08_batuan_Au_v1.png`. Only
+counts, distances and renders came back through MCP; no attribute tables.
+
+- **Counts:** 382 rock and 188 soil RJ points load; population counts per element equal the
+  Python output.
+- **Distance to drill traces** (median, m; all soil 168, all rock 153):
+  - Soil Zn: **low population 48 (n 44) vs main 212 (n 144)**. The low-Zn soils form a
+    continuous corridor along the drilled ridge (RJDH007 → RJDH015/003 and further SSE) with
+    an arm to the WSW. Reading: Zn leached from the acid, altered HS core. This is the
+    clearest spatial signal in ML-1 and a candidate input/explanation for ML-3.
+  - Soil As: low population 258 (n 24) vs main 163. Mostly on the southern soil lines
+    (edge of the footprint), plus a few points inside the drilled area.
+  - Soil Pb: low 198 vs main 164 (weak). Rock Hg: upper population 69 (n 80) vs lower 149.
+- **Rock Au > 7.1 g/t (μ+2σ):** 10 samples at 7 locations; 4 are the re-sampled outcrop
+  (Stage 7 duplicate-XY group, 25.8–58 g/t) on the northern knoll. The others are isolated
+  points (N, near RJDH007/013, W, two S). Not a trend.
+- **NE-trend test: not possible from class point clouds.** The principal axis of every
+  class (~105–145°) follows the soil sampling lines (E–W lines) and rock traverses, not the
+  geochemistry. The NE structural check is deferred to ML-3 (interpolated surfaces /
+  zonation maps), where sampling geometry can be separated from the signal.
+
+---
