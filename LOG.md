@@ -2217,3 +2217,17 @@ from a clone. Some layer-tree attributes still carry the owner's absolute path; 
 relative datasource.
 
 ---
+
+## 2026-11-04 · Team repo pushed and verified
+
+- `67minutes/ml-olympiar` set to **PRIVATE** before any push (confirmed by `gh repo view`; 0 forks);
+  description "OlympiAR 2026 R2 Ramba Joring: team repo (private)".
+- `git push --force -u origin main`: the public snapshot `dcb8975` was replaced by `f83bec0`. The only
+  remote branch is `main`.
+- Remote `main` SHA equals local HEAD; remote tree 284 files equals `git ls-files`; `data/raw/` has
+  15 files on the remote.
+- A fresh clone with `core.autocrlf=true` (the Windows default, worst case): `git status` clean and
+  `sha256sum -c RAW_MANIFEST.sha256` passes 15/15, so `.gitattributes` protects the CRLF raw files.
+- Teammates are invited by the repo owner (Settings → Collaborators). Agents do not invite anyone.
+
+---
