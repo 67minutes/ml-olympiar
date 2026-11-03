@@ -88,7 +88,8 @@ def merge_ml(df: pd.DataFrame, key: list[str], ml_dir: Path, target: str) -> pd.
     task and target table, keyed like the target)."""
     out = df
     for f in sorted(Path(ml_dir).glob(f"{target}__*.csv")) if Path(ml_dir).exists() else []:
-        m = pd.read_csv(f, low_memory=False)
+        # text keys stay text even when this file's subset happens to be all-numeric
+        m = pd.read_csv(f, low_memory=False, dtype={k: str for k in key if not pd.api.types.is_numeric_dtype(df[k])})
         if not set(key) <= set(m.columns):
             raise ValueError(f"{f.name}: missing key columns {key}")
         extra = [c for c in m.columns if c not in key]

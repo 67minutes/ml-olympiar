@@ -2003,3 +2003,169 @@ equal; NaN counts unchanged.
 > example, silica-altered core has a median of about 2 g/t Au against 0.03 g/t in argillic rock.
 
 ---
+
+## 2026-11-04 · §9.1 results: Jansson-style baseline vs our GMMs
+
+**Run.** `PYTHONIOENCODING=utf-8 uv run python -W ignore scripts/19_s9_jansson.py` (about 1.5 min).
+New module `src/comparators.py` and `tests/test_comparators.py` (5 tests). Two runs give identical
+sha256 for every output. The paper stays `[VERIFY]`; nothing beyond AGENTS §9.1 is attributed to it.
+
+**Method (fixed, seed 0).**
+- Inputs: exactly the cleaned feature matrices of our GMMs. ML-3 soil (RJ, n 188) and rock (RJ,
+  Au-Cu-As, n 352; also a 7-element rock variant, n 261). ML-5 U1 (RJDH012, n 118) and U2 (SCIS
+  rows, n 1,898).
+- clr on the subcomposition, computed as ilr (Helmert basis). ilr is an isometry of clr, so
+  distances and k-means partitions are the same; it avoids the singular clr covariance in MCD.
+- Robust PCA: eigen-decomposition of the `MinCovDet` covariance; the fewest PCs reaching 80% of the
+  robust variance, at most 3.
+- k-means, k = 2–10, n_init 20. Elbow rule: the k farthest from the chord joining k=2 and k=10 on
+  the WCSS curve (both axes scaled to [0, 1]).
+- k-means is also run at the K our GMM *used* (soil 3, rock 3, U1 2, U2 5). Deviation from the plan
+  ("at the BIC k"): for the surface the BIC-best K differs from the K we used (soil BIC-best 2, rock
+  BIC-best 1, so K=1 is not a partition). Using the K we actually mapped is the fair comparison.
+- Bootstrap stability: B = 200 refits, ARI of each refit vs the full-data partition.
+- Outputs:
+  - `data/processed/s9_jansson_scores.csv`, `s9_jansson_curves.csv`, `s9_seleksi_unsur.csv`;
+  - `data/processed/ml/{tanah,batuan}__s9_jansson.csv` (`ML_s9_kmeans`, `ML_s9_kmeans_k`,
+    `ML_s9_kmeans_k3`);
+  - figure `outputs/figures/14_jansson_vs_gmm_v1.png`.
+
+**Results.**
+
+| Case | n | robust PCs (var) | elbow k | GMM K | ARI k-means vs GMM (K / elbow) | bootstrap ARI median, k-means K / elbow / GMM |
+|---|---|---|---|---|---|---|
+| Soil | 188 | 2 (83%) | 5 | 3 | 0.23 / 0.29 | 0.80 / 0.76 / 0.65 |
+| Rock Au-Cu-As | 352 | 1 (82%) | 4 | 3 | 0.00 / 0.00 | 0.90 / 0.71 / 0.76 |
+| Rock 7 elements | 261 | 3 (77%) | 5 | 3 | 0.17 / 0.10 | — |
+| U1 (RJDH012) | 118 | 3 (88%) | 4 | 2 | 0.00 / 0.15 | 0.58 / 0.69 / 0.91 |
+| U2 (SCIS rows) | 1,898 | 3 (91%) | 4 | 5 | 0.25 / 0.23 | 0.82 / 0.90 / 0.66 |
+
+Agreement with logged or measured labels (ARI, with Cramér's V in brackets):
+- Rock vs logged alteration (`IntrpAltFa`): GMM −0.01 (0.17); k-means 0.03 (0.17) and 0.02 (0.15).
+  Neither method recovers the logged alteration from Au-Cu-As alone.
+- U1 vs NAG 3 classes (n 106): GMM 0.15 (0.61); k-means K=2 0.03 (0.31); elbow 0.16 (0.54).
+- U1 vs oxidation: GMM 0.56 (0.65); k-means K=2 0.02 (0.35); elbow 0.24 (0.75).
+- U2 vs NAG 3 classes: GMM 0.18 (0.58); k-means 0.15–0.18 (0.58). U2 vs oxidation: GMM 0.15 (0.51);
+  k-means 0.05 (0.36–0.40).
+
+**Interpretation.**
+- clr removes the overall magnitude of each sample, so k-means on clr groups samples by element
+  *ratios*, not by grade. That is why it does not reproduce our grade-ordered H/M/L zones (rock ARI
+  ≈ 0): the two methods answer different questions. For grade zonation our log-scale GMM is the
+  right tool; the ratio view is a useful complement (signature, not tenor).
+- The elbow curves are smooth, so the elbow k is weakly defined (see the figure's left panels).
+  BIC gives a stated, likelihood-based choice.
+- k-means partitions are often *more* bootstrap-stable than the GMM on the surface data, because
+  hard spherical clusters move less. Stability is not the same as geological meaning.
+- On RJDH012 the GMM at K=2 recovers oxidation far better (ARI 0.56 vs 0.02 at the same K). The
+  elbow k=4 partly closes the gap in V (0.75) but not in ARI (0.24), because it splits oxide
+  further.
+- Limitation for both methods: clr on a small trace-element subcomposition, so results depend on
+  which elements are included (AGENTS §6 transform rule).
+
+**Element-selection proposal (logged, NOT applied; needs human approval).** Jansson's rule as
+summarised by a citing paper (`[VERIFY: identify the citing paper]`): ≥ 70% of samples above DL and
+median > 10 × DL. The normality criterion was not evaluated. Per dataset:
+
+| Dataset | Jansson rule selects | Our `ml_usable` (≥ 50% analysed, ≤ 50% censored) |
+|---|---|---|
+| Drill assay | Au, Cu, As, SCIS | adds Ag, AgCN, CuCN |
+| Rock | Au, As, Pb | Au, As, Cu, Hg, Pb, Sb, Zn |
+| Soil | Au, Cu, Hg, Pb, Sb, Zn | Au, Ag, As, Ba, Cu, Hg, Pb, Sb, W, Zn |
+
+The stricter rule would drop Ag everywhere (its median is only 4–5 × DL), and soil As (median
+9.5 × DL, just under the cut). Recommendation: keep `ml_usable` for the core models, because Ag and
+As are key pathfinders for an HS epithermal system. Cite the stricter rule as a sensitivity check.
+
+**Plain-language explanation (for the presentation)**
+> We repeated a published workflow, k-means on log-ratio data, on exactly the same samples as our
+> own model. Log-ratios ask "which elements are high relative to the others", not "how much metal is
+> there", so this method groups samples by chemical signature, not by grade. That is why its groups
+> do not match our high/medium/low gold zones. In the drill hole with acid tests, our model
+> separated oxide from sulphide rock much better at the same number of groups.
+
+---
+
+## 2026-11-04 · §9.2 results: simplified Fontana analogue (RF + downhole smoother) vs HMM
+
+**Run.** `PYTHONIOENCODING=utf-8 uv run python -W ignore scripts/20_s9_rf_smoother.py`. Two runs
+give identical sha256 for all four CSV outputs. The paper stays `[VERIFY]`. This is a simplified
+analogue; it does **not** replicate CSIRO Data Mosaic, and we do **not** compare our accuracy with
+their 82.5% (different deposit, support, classes and validation).
+
+**Method (fixed, seed 0).**
+- Inputs: 1 m `comp_ok` composites (3,057, 12 pads, 22 contiguous segments) with the ML-4 features
+  (log Au, Ag, Cu, As; same draw rule, draw 0). Targets joined at the midpoint: logged alteration
+  (`alt_ml_label`: AA/SI/AR/PP) and oxidation (`ox_state`).
+- Per fold: PCA fit on the training pads → RF (`classify.rf`, leaf size tuned as in ML-2; mostly 20).
+- Smoother: centred moving average of the RF class probabilities, within contiguous segments only.
+- Outer CV: leave-one-pad-out (12 pads; never random K-fold). The window is chosen on the training
+  pads only, by an inner GroupKFold.
+- **Deviations from the plan (logged):**
+  1. Grid extended from {1, 3, 5, 9, 15} to {1, 3, 5, 9, 15, 25, 41} m, because every fold picked
+     the grid edge (15).
+  2. Window criterion changed from inner log loss to inner balanced accuracy (ties → smaller w).
+     Under log loss the choice ran to the new edge (41 m) in every fold, while label accuracy fell
+     and the switch rate dropped below the logs' own. Log loss rewards blurry probabilities; we
+     want labels.
+- Windows chosen: alteration {5 m: 5 folds, 3: 2, 9: 2, 25: 2, 15: 1}; oxidation {5: 5, 9: 4, 3: 2,
+  15: 1}.
+- Outputs:
+  - `data/processed/s9_rf_smoother_{scores,folds,kembar}.csv`;
+  - `data/processed/ml/komposit__s9_rf.csv` (`ML_s9_rf_alt`, `ML_s9_rf_alt_p_maks`,
+    `ML_s9_rf_oks`, `ML_s9_rf_oks_p_maks`);
+  - figure `outputs/figures/14_rf_vs_hmm_v1.png`.
+
+**Results (out-of-pad).**
+
+| Target | Method | Bal. acc | κ | ARI | Cramér's V | Switches / 100 m |
+|---|---|---|---|---|---|---|
+| Alteration | RF raw | 0.692 | 0.482 | 0.285 | 0.528 | 23.4 |
+| Alteration | RF smoothed | 0.665 | 0.473 | 0.276 | 0.539 | 6.9 |
+| Alteration | HMM (ML-4) | — | — | 0.104 | 0.446 | 6.3 |
+| Alteration | Log | — | — | — | — | 10.3 |
+| Oxidation | RF raw | 0.608 | 0.463 | 0.325 | 0.429 | 22.3 |
+| Oxidation | RF smoothed | 0.630 | 0.538 | 0.432 | 0.492 | 7.2 |
+| Oxidation | HMM (ML-4) | — | — | 0.113 | 0.462 | 6.3 |
+| Oxidation | Log | — | — | — | — | 2.9 |
+
+Twin pads 005/014, 010/011, 016/017: share of cross-hole composite pairs with the same label, by 3D
+distance.
+
+| Distance | HMM | Logged alteration | RF smoothed (alteration) |
+|---|---|---|---|
+| 0–10 m | 0.93 | 0.40 | 0.40 |
+| 10–20 m | 0.91 | 0.71 | 0.57 |
+| 20–50 m | 0.31 | 0.63 | 0.42 |
+| 50–100 m | 0.22 | 0.57 | 0.36 |
+| chance (Σp²) | 0.24 | 0.34 | 0.34 |
+
+Scale mismatch (stated for the report): lithology intervals average 10.8 m (median 5.2 m),
+alteration 4.4 m (median 2.5 m), assays ~1 m (median 1.0 m).
+
+**Interpretation.**
+- The RF is *supervised* by the logs, so it naturally agrees with them more than the unsupervised
+  HMM does (V 0.54 vs 0.45 for alteration). The HMM was never shown the logs.
+- Raw RF labels flicker (23 switches per 100 m against the logs' 10). A 3–9 m smoother brings
+  fragmentation down to the HMM's level (7 vs 6) with little loss in accuracy for alteration and a
+  gain for oxidation (κ 0.46 → 0.54).
+- Oxidation logs switch only 2.9 times per 100 m: oxidation is a thick blanket. Both methods are
+  still more fragmented than the logged blanket.
+- On the twin pads the HMM states agree across neighbouring holes far more at short range (0.93 at
+  < 10 m) than the logs themselves (0.40) or the RF (0.40). This means the HMM captures a chemical
+  stratigraphy that is laterally continuous. The logged alteration is less consistent between holes
+  only metres apart, which may reflect logging differences between geologists and the ~4 m logging
+  scale.
+- Conclusion for the report: the two methods are complementary. Use the RF + smoother to predict
+  logged classes in unlogged or poorly logged intervals. Use the HMM for correlation sections
+  (ML-4), where cross-hole consistency matters.
+
+**Plain-language explanation (for the presentation)**
+> We tested a second published idea: a random forest that learns the logged alteration from
+> chemistry, followed by smoothing down the hole. It matches the geologists' logs better than our
+> HMM, as expected, because it was trained on them. But its raw answers flicker metre by metre, so
+> it needs smoothing. Our HMM, which never saw the logs, gives almost the same answer in twin holes
+> a few metres apart, more consistently than the logs themselves. That is why we use the HMM for the
+> correlation sections.
+
+---
