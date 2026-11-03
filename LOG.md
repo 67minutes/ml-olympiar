@@ -2231,3 +2231,64 @@ relative datasource.
 - Teammates are invited by the repo owner (Settings → Collaborators). Agents do not invite anyone.
 
 ---
+
+## 2026-11-04 · Plan: ML findings report for teammates (approved)
+
+Full plan: `C:\Users\mauli\.claude\plans\the-work-is-done-swift-beacon.md`. Summary:
+
+**Why.** `PANDUAN_TIM.md` is a dense file map; teammates who write the report and present need one
+readable document that explains each ML result: the question, the answer, how sure we are, why it
+matters and how to defend it out loud.
+
+**Human decisions.** Audience teammates (not the competition report text); bilingual (Bahasa
+Indonesia main text, English technical terms in brackets); one self-contained local HTML file,
+never published online (AGENTS §2.1); `PANDUAN_TIM.md` kept but trimmed to a file map that points
+to the report.
+
+**Method.** Hand-written source `reports/laporan_ml_src.html` with `{{key}}` placeholders for the
+headline numbers; `src/report.py` (fill placeholders, fail on any unresolved one; embed figures as
+base64, downscaled with Pillow; check internal links); `scripts/21_laporan_ml.py` reads the facts from
+the processed CSVs so the text cannot drift from the results. Existing figures only, no new ones.
+
+**Output.** `outputs/laporan_ml/laporan_ml_v1.html`. Checks: unit tests, no unresolved placeholders,
+no missing images, internal links resolve, local browser check, spot-check of numbers against this log.
+
+---
+
+## 2026-11-04 · ML findings report for teammates: results
+
+**Run.** `PYTHONIOENCODING=utf-8 uv run python scripts/21_laporan_ml.py` (~9 s). New `src/report.py`,
+`tests/test_report.py` (4 tests); full suite 131 pass. Two builds give the same sha256 (9a992f82…).
+
+**Output.** `outputs/laporan_ml/laporan_ml_v1.html`, 9.1 MB, self-contained (19 figures embedded as PNG,
+longest side ≤ 1,800 px; no external requests). Source text `reports/laporan_ml_src.html`; 117 numbers
+filled from `data/processed/` (ML-2 scores, ML-3 zones, ML-4 states, ML-5 classes/coverage/metres/NAG list,
+ML-6 kernel and CV, §9 scores, validation counts). The build stops on an unresolved placeholder, a missing
+figure or a dangling internal link.
+
+**Structure.** One-page summary (six cards with confidence badges), how to read + glossary, data
+foundations, one section per ML task (question, short answer, method in plain words, key-number table,
+figures with "how to read" captions, confidence, limits, why it matters, spoken script, likely judge
+questions, chapter and files), literature comparators, synthesis (flow diagram + five-sentence prospect
+story), a "don't say / say" table, appendix of the other figures.
+
+**Checks.** Opened in the local browser pane through a localhost-only static server (`.claude/launch.json`,
+127.0.0.1:8765; nothing sent off the machine): 19/19 images decode, 0 placeholders left, no horizontal
+scroll at 375 px, light and dark themes readable, sidebar contents at ≥ 1,100 px. Numbers spot-checked
+against this log: ML-2 0.70 / 0.71 / 0.30 / 0.84; soil zones 30 / 92 / 66 with median Au 0.007 / 0.065 /
+0.335 ppm; HMM state sizes 533 / 776 / 368 / 643 / 737; NAG classes 37 / 48 / 21; management metres 43 /
+797 / 2,216 (confident 866); NAG list 736 runs / 2,412 m, priority 1 375 / 1,350 m; GP length scales
+22.5 / 12.2 / 8.2 m; §9 ARI 0.56 vs 0.02, twin-pad 0.93 / 0.40 / 0.40. All equal.
+- Bug caught while building: `ml5_per_hole.csv` has a TOTAL row, so summing the column doubled the
+  metres; the script now reads the TOTAL row.
+
+**Docs.** `PANDUAN_TIM.md` trimmed to a file map: per-chapter "Angka kunci", "Ucapan presentasi",
+outlier and limitation paragraphs removed (they live in the report) and replaced by a link to the
+matching report section; intro and open-work table point to the report. `README.md` lists the report and
+script 21.
+
+**Caveats.** The report is team material, not report text: the final Bahasa report still needs formal EYD
+wording. `10_tanah_zona_v1.png` is a QGIS QC render (no legend) and is captioned as such; the final zonation
+map is still the map team's job. All `[VERIFY]` references remain unverified.
+
+---

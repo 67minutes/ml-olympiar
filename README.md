@@ -9,14 +9,16 @@ Joring (RJ) high-sulfidation epithermal Au-Cu prospect, Martabe district, North 
 > never upload the data to cloud ML services or chatbots, and never paste the licence key or
 > committee contacts anywhere. See [AGENTS.md](AGENTS.md) §2.
 
-**Bahasa Indonesia:** report writers and presenters should start with
-[PANDUAN_TIM.md](PANDUAN_TIM.md), which maps every result to its report chapter.
+**Bahasa Indonesia:** report writers and presenters should start with the ML findings report
+[outputs/laporan_ml/laporan_ml_v1.html](outputs/laporan_ml/laporan_ml_v1.html) (one local file, open in
+a browser), then [PANDUAN_TIM.md](PANDUAN_TIM.md), which maps every file to its report chapter.
 
 ## Where things are
 
 | File | What it is |
 |---|---|
-| [PANDUAN_TIM.md](PANDUAN_TIM.md) | Team guide (Bahasa): what to use per report chapter, key numbers, spoken explanations, open items |
+| [outputs/laporan_ml/laporan_ml_v1.html](outputs/laporan_ml/laporan_ml_v1.html) | ML findings report for teammates (Bahasa, English terms in brackets): per ML task the question, answer, figures with reading notes, confidence, limits, spoken script and likely judge questions. Built by `scripts/21_laporan_ml.py` from `reports/laporan_ml_src.html` |
+| [PANDUAN_TIM.md](PANDUAN_TIM.md) | Team guide (Bahasa): files per report chapter, open items, references to verify, repo usage |
 | [AGENTS.md](AGENTS.md) | Rules, data facts, verified findings and the ML plan. Single source of truth for coding agents (Claude Code, Codex) |
 | [LOG.md](LOG.md) | Append-only log of every plan, decision, deviation, number and spoken explanation, in order |
 | [CLAUDE.md](CLAUDE.md) | Claude Code specifics (it loads AGENTS.md) |
@@ -31,7 +33,7 @@ Joring (RJ) high-sulfidation epithermal Au-Cu prospect, Martabe district, North 
 | `outputs/maps/` | QGIS projects (`.qgz`) and exported maps/sections; `qc/` holds check projects |
 | `src/` | Importable functions (small, tested) |
 | `scripts/` | Numbered runnable steps |
-| `tests/` | pytest suite (127 tests), including `test_raw.py`, which fails if any raw file changes |
+| `tests/` | pytest suite (131 tests), including `test_raw.py`, which fails if any raw file changes |
 
 ## Status (4 Nov 2026)
 
@@ -58,6 +60,7 @@ Everything on the ML and data side is done. Each row has a plan entry and a resu
 | Deliverable 3 | `18_geochem_analysis.py` | `geochem_analysis.csv` + statistics, group medians, column dictionary | 3–6 |
 | §9.1 comparator | `19_s9_jansson.py` | Jansson-style k-means baseline vs our GMMs | discussion |
 | §9.2 comparator | `20_s9_rf_smoother.py` | RF + downhole smoother vs our HMM | discussion |
+| ML findings report | `21_laporan_ml.py` | `outputs/laporan_ml/laporan_ml_v1.html` (numbers read from `data/processed/`) | team |
 
 Still for humans (details in [PANDUAN_TIM.md](PANDUAN_TIM.md)): the ioGAS project, the report and
 deck, the regional location map (DEMNAS), a satellite check of the derived drainage, and verifying

@@ -1,9 +1,14 @@
 # Panduan Tim: Ramba Joring, OlympiAR 2026 Babak 2
 
 Panduan ini untuk anggota tim yang menulis laporan, membuat peta akhir, menyusun slide, dan
-presentasi. Isinya: untuk setiap bab laporan, file mana yang dipakai, angka kunci, dan penjelasan
-singkat yang bisa diucapkan saat presentasi. Rincian teknis lengkap ada di `LOG.md` (bahasa
-Inggris). Ringkasan teknis ada di `README.md`.
+presentasi. Isinya: untuk setiap bab laporan, file mana yang dipakai, pekerjaan yang masih terbuka,
+referensi yang harus diverifikasi, dan cara memakai repo.
+
+**Temuan ML, angka kunci, cara membaca gambar, keterbatasan, ucapan presentasi dan pertanyaan juri
+yang mungkin ada di Laporan ML:
+[`outputs/laporan_ml/laporan_ml_v1.html`](outputs/laporan_ml/laporan_ml_v1.html)** (satu file, buka
+dengan browser; bisa dicetak ke PDF). Rincian teknis lengkap ada di `LOG.md` (bahasa Inggris).
+Ringkasan teknis ada di `README.md`.
 
 > **Repo ini PRIVAT, khusus tim.** Isinya data rahasia dari panitia dan file brief (yang memuat
 > kunci lisensi ioGAS kita). Jangan jadikan publik, jangan unggah data ke layanan AI/ML daring,
@@ -58,38 +63,7 @@ kimia).
   `08_ambang_{bor,batuan,tanah}_v1.png`, `08_bic_v1.png`, `09_skor_v1.png`,
   `09_matriks_konfusi_v1.png`, `09_shap_v1.png`, `09_shap_dependensi_v1.png`,
   `09_reliabilitas_v1.png`, `09_skor_pad_v1.png`.
-- **Angka kunci:**
-  - Tidak ada sampel QAQC (standar, blank, duplikat) di basis data. Kolom repeat/split kosong.
-    Kita memakai pemeriksaan internal sebagai gantinya.
-  - Nilai 0 di data permukaan berarti "tidak dianalisis": 20.275 nilai batuan dan 12.826 nilai
-    tanah diubah menjadi kosong. Tanpa ini, ML akan mengelompokkan batch lab, bukan geologi.
-  - Batas deteksi berbeda antar-era lab (1998–2017) diseragamkan ke batas tertinggi per unsur.
-  - Elevasi sampel permukaan: 68 sampel menyimpang > 10 m dari lidar, 19 di antaranya > 30 m
-    (satu sampel tanah tercatat 36.076 m). Semua di-drape ulang ke lidar, nilai asli disimpan.
-  - Presisi emas: Au sianida > 1,1 × Au total pada 125 dari 979 pasangan (Ag 173 dari 1.267).
-    Ini efek nugget, bukan kesalahan. Satu kelompok sampel ulang singkapan (4 sampel): CV Au 31%.
-  - Ambang ML-1: Au bor terpisah alami pada ~0,16 dan ~1 g/t. Au batuan permukaan RJ satu
-    populasi, jadi batas klasik rerata + 2 SD (~7 g/t) yang tepat. As, Pb, Zn tanah memiliki
-    kelompok latar di bawah populasi termineralisasi.
-  - ML-2 (kimia → log): alterasi dan oksidasi benar ~70% (akurasi seimbang 0,70 dan 0,71;
-    peluang acak 25–33%), pirit 84%. Litologi hanya 0,30 (acak 0,20): alterasi telah menghapus
-    jejak batuan asal. Ini **temuan geologi, bukan kegagalan**.
-  - Validasi jujur: model tidak pernah melihat pad bor yang diujikan (leave-one-pad-out, 12 pad).
-  - Daftar tinjauan ML vs log: misalnya RJDH009 10–57 m dilog Oksida, tetapi kimianya Sulfida.
-- **Outlier:** dua jenis. *Outlier kesalahan* (elevasi mustahil, dsb.) diperbaiki atau ditandai.
-  *Outlier geologi* (mis. 36,5 g/t Au di RJDH015) adalah bijih: tidak pernah dipotong. Untuk ML
-  dipakai transformasi log dan penskalaan robust (median/MAD), bukan pemotongan.
-- **Ucapan presentasi:**
-  > Laporan lab lama tidak menulis "di bawah deteksi"; mereka mencetak angka di batas bawah, dan
-  > batasnya berbeda tiap lab selama 20 tahun. Kami mendeteksi batas tiap pekerjaan lab lalu
-  > menyeragamkannya. Tanpa ini, ML akan mengelompokkan sampel menurut tahun lab, bukan geologi.
-  > Semua masalah data tercatat di satu tabel; tidak ada yang kami hapus.
-
-  > Kami bertanya apakah kimia saja bisa menebak apa yang dilog ahli geologi. Agar jujur, model
-  > tidak pernah melihat pad yang diujikan. Alterasi dan oksidasi benar sekitar 70%, pirit 84%,
-  > dan model menjelaskan dirinya secara geologi: emas di atas ~1 g/t berarti silika vuggy,
-  > sulfur di atas ~2% berarti batuan sulfida segar. Jenis batuan tidak bisa dibaca dari empat
-  > logam ini karena alterasi telah menimpa batuan asal.
+- **Temuan, angka kunci dan ucapan presentasi:** [Laporan ML](outputs/laporan_ml/laporan_ml_v1.html#fondasi), [ML-1](outputs/laporan_ml/laporan_ml_v1.html#ml1) dan [ML-2](outputs/laporan_ml/laporan_ml_v1.html#ml2)
 
 ### Bab 4. Data Permukaan
 Bobot rubrik: tanah 25, batuan 25, zonasi 50.
@@ -99,24 +73,7 @@ Bobot rubrik: tanah 25, batuan 25, zonasi 50.
 - **Gambar:** `10_pca_biplot_v1.png`, `10_bic_stabilitas_v1.png`, `10_zona_unsur_v1.png`,
   `10_variogram_arah_v1.png`, `10_gp_cv_v1.png`. Peta zonasi akhir dibuat di QGIS dari layer
   `gis/` (proyek pemeriksaan: `outputs/maps/qc/10_ml3_check.qgz`).
-- **Angka kunci:**
-  - Tanah RJ (188 sampel): satu indeks mineralisasi (PC1, 57,5% varians) dari Au, As, Pb, Hg, Sb,
-    Cu yang naik bersama. Uji Horn: hanya satu gradien nyata.
-  - Zona GMM K = 3: Rendah 30 / Sedang 92 / Tinggi 66. Median Au: 0,007 / 0,065 / 0,34 g/t.
-    BIC sebenarnya memilih 2 kelompok (latar vs jejak mineralisasi); kami tampilkan stabilitas
-    tiap sampel (zona Tinggi bertahan pada 96% pengulangan).
-  - Batuan RJ (352 sampel): satu populasi (BIC K = 1), median Au zona R/S/T 0,12 / 0,53 / 5,0
-    g/t. Zona batuan berubah jika unsur ditambah: **keyakinan rendah**.
-  - Peta GP (kriging) indeks tanah: memanjang **E–ENE (75°)**, bukan NE seperti dugaan awal.
-    Area Tinggi 27,4 ha. **Zona Tinggi terbesar (barat-tengah) sebagian besar belum dibor.**
-  - Catatan jujur: lintasan tanah juga berarah E–W, jadi efek lintasan belum bisa dipisahkan dari
-    geologi.
-- **Ucapan presentasi:**
-  > Tujuh unsur tanah kami gabungkan menjadi satu indeks mineralisasi. Emas, arsen, timbal,
-  > antimon, merkuri dan tembaga naik bersama, dan uji statistik menunjukkan hanya ada satu
-  > gradien ini. Model campuran membaginya menjadi zona rendah, sedang dan tinggi, dan kami
-  > tunjukkan seberapa stabil zona tiap sampel. Kriging memberi peta beserta ketidakpastiannya.
-  > Zona tinggi memanjang timur–barat sampai ENE, dan sebagian besar di barat pemboran belum diuji.
+- **Temuan, angka kunci dan ucapan presentasi:** [Laporan ML](outputs/laporan_ml/laporan_ml_v1.html#ml3)
 
 ### Bab 5. Data Pemboran
 Bobot rubrik: validasi 20, korelasi 40, geokimia-stratigrafi 40. Maksimal 3 penampang.
@@ -127,26 +84,7 @@ Bobot rubrik: validasi 20, korelasi 40, geokimia-stratigrafi 40. Maksimal 3 pena
   `11_strip_log_v1.png`, `11_kontinuitas_v1.png`.
 - **Peta/penampang (siap pakai):** `outputs/maps/11_penampang_{A,B,C}_v1.png`,
   `11_peta_indeks_penampang_v1.png`; proyek QGIS `outputs/maps/11_ml4_penampang.qgz`.
-- **Angka kunci:**
-  - 19 lubang, 2.476 interval assay, dikomposit 1 m (3.057 komposit layak).
-  - Variasi basis data: Au, Ag, As, Cu lengkap; unsur lain hanya di RJDH001 dan RJDH012; metode
-    sulfur berbeda antar-lubang (SCIS vs S2); RJDH001 tanpa sulfur.
-  - HMM (hidden Markov model) menemukan **5 satuan kimia**, dipilih dengan validasi silang per pad:
-    - S1 Au rendah, Cu rendah (Sulfida): dasar argilik tandus, sangat stabil;
-    - S2 Au rendah, Cu rendah (Oksida);
-    - S3 Au sedang, Cu rendah (Oksida);
-    - S4 Au sedang, Cu tinggi (Sulfida): zona Cu ~30 m, stabil;
-    - S5 Au tinggi, Cu rendah (Oksida): nyata, tetapi batasnya paling tidak stabil.
-  - Fragmentasi: HMM 6,3 pergantian per 100 m, mirip log litologi (5,2); GMM tanpa memori
-    bawah-lubang 28,1 (empat kali lebih "berisik").
-  - Korelasi antarlubang (pad kembar 005/014, 007/013, 010/011, 016/017, 008/019): satuan sama
-    pada 71–72% pasangan < 20 m, tetap di atas peluang acak sampai ~40–50 m.
-- **Ucapan presentasi:**
-  > Model HMM membaca tiap lubang meter demi meter memakai emas, perak, tembaga dan arsen. Ia
-  > menemukan lima satuan kimia dan belajar bahwa satuan cenderung berlanjut ke bawah, seperti
-  > cara ahli geologi melog. Dua satuan jelas dan kokoh: dasar sulfida argilik yang tandus dan
-  > zona sulfida kaya tembaga setebal ~30 m. Tiga lainnya satuan oksida dengan emas meningkat.
-  > Satuan-satuan ini cocok antar-lubang kembar dan berkorelasi sampai 40–50 m ke samping.
+- **Temuan, angka kunci dan ucapan presentasi:** [Laporan ML](outputs/laporan_ml/laporan_ml_v1.html#ml4)
 
 ### Bab 6. Analisis Lingkungan
 Bobot rubrik: unsur AMD 40, klasifikasi PAF/NAF dan penanganan 60. **Diagram alir wajib.**
@@ -158,33 +96,7 @@ Bobot rubrik: unsur AMD 40, klasifikasi PAF/NAF dan penanganan 60. **Diagram ali
   `12_nag_ph_kapasitas_v1.png`, `12_profil_rjdh012_v1.png`, `12_cakupan_konformal_v1.png`,
   `12_matriks_kebingungan_v1.png`, `12_shap_lengkap_v1.png`, `12_gmm_u1_u2_v1.png`,
   `12_ringkasan_lubang_v1.png`, `12_napp_proksi_v1.png`.
-- **Angka kunci:**
-  - Hanya RJDH012 punya data NAG (106 sampel). Tiga kelas: **NAF 37 / PAF-LC 48 / PAF-HC 21**
-    (PAF-LC = kapasitas rendah, PAF-HC = kapasitas tinggi ≥ 10 kg H₂SO₄/t pada pH 4,5).
-  - Zona sulfida: 16 sampel, 100% NAG pH < 4,5, kapasitas tinggi (~50–90 kg/t). Zona oksida:
-    59% NAG pH < 4,5 tetapi kapasitas sangat rendah (~1–2 kg/t), kemungkinan keasaman tersimpan
-    (jarosit/alunit), bukan sulfida.
-  - Sulfur tidak membedakan NAF dan PAF-LC di zona oksida (AUC ≈ 0,51). PAF-HC mudah dikenali
-    (AUC SCIS 0,97).
-  - Prediksi konformal (Mondrian, α 0,10): tiap sampel mendapat himpunan kelas yang memuat kelas
-    benar 90% kali. PAF-HC sering tunggal (71%); batuan oksida biasanya "NAF atau PAF-LC".
-  - Kelas pengelolaan konservatif seluruh basis data: NAF 43 m (hanya yang terukur), PAF-LC
-    797 m, PAF-HC 2.216 m, di antaranya PAF-HC yakin 866 m. **Tidak ada interval yang diberi NAF
-    tanpa uji NAG.**
-  - Daftar uji NAG: 736 run, 2.412 m; prioritas 1: 375 run / 1.350 m.
-  - Pengelompokan tanpa label (GMM): U1 (RJDH012) memisahkan PAF-HC dari sisanya; di zona oksida
-    tidak ada struktur kimia (BIC K = 1).
-  - Aliran dan reseptor: jaringan sungai **turunan dari DEM lidar** (bukan data resmi), sempadan
-    50 m (Permen PUPR 28/PRT/M/2015 `[VERIFY]`).
-- **Keterbatasan yang wajib ditulis:** satu lubang, 16 sampel sulfida, tidak ada ANC terukur
-  (NAPP tidak bisa dihitung langsung), hasil berlaku untuk material mirip RJDH012.
-- **Ucapan presentasi:**
-  > Hanya satu lubang, RJDH012, yang punya uji asam (NAG). Dari situ kami bentuk tiga kelas:
-  > bukan pembentuk asam, pembentuk asam kapasitas rendah, dan kapasitas tinggi. Model mengenali
-  > batuan kapasitas tinggi yang kaya sulfida dengan andal, tetapi tidak ada unsur yang bisa
-  > membedakan batuan oksida non-asam dari yang kapasitas rendah. Prediksi konformal membuat ini
-  > eksplisit, jadi batuan yang belum diuji kami kelola menurut kelas terburuk dalam himpunannya,
-  > dan kami daftar interval yang perlu uji NAG.
+- **Temuan, angka kunci dan ucapan presentasi:** [Laporan ML](outputs/laporan_ml/laporan_ml_v1.html#ml5)
 
 ### Bab 7. Sintesis Eksplorasi (+ Bonus desain eksplorasi)
 Bobot rubrik: prospeksi 50, eksplorasi lanjutan 50; bonus desain 100. Maksimal 4 penampang.
@@ -196,27 +108,14 @@ Bobot rubrik: prospeksi 50, eksplorasi lanjutan 50; bonus desain 100. Maksimal 4
   `13_peringkat_kandidat_v1.png`.
 - **Peta/penampang bonus (siap pakai):** `outputs/maps/13_peta_desain_v1.png`,
   `13_penampang_desain_v1.png` (D–D'); proyek QGIS `outputs/maps/13_ml6_desain.qgz`.
-- **Angka kunci:**
-  - Gaussian process = kriging (secara matematis setara). Kontinuitas emas pendek, **~10–25 m**.
-    Di antara pad, model tidak lebih baik dari rata-rata; arah tren tidak dapat ditentukan dari
-    data bor.
-  - **5 usulan lubang** (semua 200 m, dip −60°, azimut 315°):
-    - RJ-U01, RJ-U02: perluasan di dekat intersep terbaik (RJDH012/016/017);
-    - RJ-U03: penutup celah antar-pad, untuk mengukur kontinuitas yang belum diketahui;
-    - RJ-U04, RJ-U05 (tier B): uji anomali tanah ML-3, tanpa menjanjikan kadar.
-  - Semua kolar di lereng landai, di luar sempadan sungai 50 m, dengan penanganan PAF
-    (sump berlapis, cutting PAF-HC dikantongi, uji NAG pada inti baru).
-- **Ucapan presentasi:**
-  > Kami memakai Gaussian process, yang secara matematis sama dengan kriging, untuk menaksir emas
-  > di antara lubang beserta tingkat keyakinannya. Temuan jujurnya: kontinuitas emas pendek,
-  > sekitar 10–25 m. Karena itu kami usulkan lubang dengan tugas berbeda: dua perluasan di dekat
-  > intersep terbaik, satu pengisi celah untuk mengukur kontinuitas, dan dua untuk menguji anomali
-  > tanah. Semua kolar berada di luar sempadan sungai 50 m dengan penanganan PAF.
+- **Temuan, angka kunci dan ucapan presentasi:** [Laporan ML](outputs/laporan_ml/laporan_ml_v1.html#ml6)
 
 ### Bab 8. Kesimpulan
 Rangkum per bab di atas. Tekankan tema "ML yang tahu apa yang tidak diketahuinya": setiap peta
 dan kelas punya ukuran ketidakpastian (probabilitas, stabilitas bootstrap, himpunan konformal,
 deviasi standar kriging).
+
+- **Temuan, angka kunci dan ucapan presentasi:** [Laporan ML](outputs/laporan_ml/laporan_ml_v1.html#sintesis)
 
 ### Bab 9. Daftar Pustaka
 Lihat bagian 4 di bawah. **Semua referensi wajib diperiksa dari sumber aslinya.**
@@ -225,20 +124,9 @@ Lihat bagian 4 di bawah. **Semua referensi wajib diperiksa dari sumber aslinya.*
 Dapat dimasukkan sebagai subbab diskusi (Bab 3/5) atau satu slide cadangan.
 
 - **Gambar:** `14_jansson_vs_gmm_v1.png`, `14_rf_vs_hmm_v1.png`. File: `s9_*.csv`.
-- **Jansson dkk. (2022) `[VERIFY]`** (k-means pada data log-rasio): rasio log menghapus besaran
-  kadar, jadi kelompoknya mengikuti "tanda tangan" kimia, bukan kadar; tidak cocok dengan zona
-  H/M/L kita. Di RJDH012, GMM kita memisahkan oksida dan sulfida jauh lebih baik pada jumlah
-  kelompok yang sama (ARI 0,56 vs 0,02).
-- **Fontana dkk. `[VERIFY]`** (Random Forest + penghalusan bawah-lubang; analog sederhana, bukan
-  replikasi Data Mosaic): RF lebih cocok dengan log (V 0,54 vs 0,45) karena dilatih dengan log;
-  setelah dihaluskan fragmentasinya setara HMM (6,9 vs 6,3 per 100 m). HMM jauh lebih konsisten
-  antar-lubang kembar < 10 m (0,93 vs 0,40). Jangan bandingkan akurasi kita dengan 82,5% mereka.
-- **Ucapan presentasi:**
-  > Kami mengulang dua alur kerja dari literatur pada sampel yang sama. Yang pertama mengelompokkan
-  > menurut rasio unsur, bukan kadar, jadi tidak menggantikan zonasi kadar kami. Yang kedua, random
-  > forest yang dihaluskan, cocok dengan log ahli geologi, tetapi HMM kami memberi jawaban yang
-  > sama pada lubang kembar yang berjarak beberapa meter. Karena itu HMM kami pakai untuk penampang
-  > korelasi.
+- Kedua makalah (Jansson dkk. 2022; Fontana dkk.) masih `[VERIFY]`. Jangan bandingkan akurasi kita
+  dengan 82,5% Fontana.
+- **Temuan, angka kunci dan ucapan presentasi:** [Laporan ML](outputs/laporan_ml/laporan_ml_v1.html#pembanding)
 
 ## 3. Pekerjaan terbuka untuk manusia
 
@@ -251,7 +139,8 @@ Dapat dimasukkan sebagai subbab diskusi (Bab 3/5) atau satu slide cadangan.
 | Tinjau nama satuan HMM S1–S5 | Tim geologi | Nama dibuat dari emisi dan tabulasi silang log; sesuaikan istilah bila perlu |
 | Cek foto inti untuk daftar tinjauan ML-2 | Opsional | `ml2_review_list.csv` (mis. RJDH009 10–57 m) |
 | Verifikasi semua referensi `[VERIFY]` | Semua | Lihat bagian 4 |
-| Laporan dan slide | Tim | Ikuti format brief |
+| Laporan dan slide | Tim | Ikuti format brief. Laporan ML adalah bahan, bukan teks laporan final: tulis ulang dalam gaya EYD formal |
+| Ubah teks Laporan ML | Siapa saja | Sunting `reports/laporan_ml_src.html`, lalu jalankan `scripts/21_laporan_ml.py` (perlu Python). Jangan sunting file HTML hasil |
 
 ## 4. Referensi yang harus diverifikasi
 
@@ -295,7 +184,7 @@ dan algoritma GRASS `r.watershed` / `r.stream.extract`.
 - **Jangan mengubah `data/raw/`**: uji otomatis akan gagal.
 - **Cara membaca `LOG.md`:** entri berurutan waktu, tidak pernah ditulis ulang. Setiap langkah
   punya entri "plan" lalu "results". Di akhir tiap entri hasil ada "Plain-language explanation":
-  itulah bahan ucapan presentasi (versi Bahasa ada di panduan ini). Cari dengan judul `## <tanggal>
+  itulah bahan ucapan presentasi (versi Bahasa ada di Laporan ML). Cari dengan judul `## <tanggal>
   · <langkah>`.
 - Untuk agen AI (Claude Code, Codex): aturan ada di `AGENTS.md`; agen membaca ekor `LOG.md` lebih
   dulu dan mencatat setiap keputusan di sana. Jangan memakai layanan AI daring untuk mengolah data.

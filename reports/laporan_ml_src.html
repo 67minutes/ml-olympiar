@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Temuan ML Ramba Joring</title>
+<style>
+:root {
+  --bg: #fbfaf7; --surface: #ffffff; --ink: #1d1d1b; --muted: #5d5b55; --line: #e3e0d8;
+  --accent: #1f5fa8; --accent-soft: #e8f0fa;
+  --ok: #1f7a4a; --ok-soft: #e6f4ec; --mid: #9a6a00; --mid-soft: #fbf1dc;
+  --low: #b2362b; --low-soft: #fbe9e7; --say: #5b3d99; --say-soft: #f1ecfa;
+  --code: #f2f0ea; --fig-bg: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #16171a; --surface: #1e2024; --ink: #ecebe7; --muted: #a9a7a0; --line: #33353b;
+    --accent: #7db3f0; --accent-soft: #1c2a3b;
+    --ok: #6fcf97; --ok-soft: #17291f; --mid: #e6b450; --mid-soft: #2d2513;
+    --low: #f08a7e; --low-soft: #331b18; --say: #b9a3ef; --say-soft: #251f36;
+    --code: #2a2c31; --fig-bg: #f4f3ef;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #16171a; --surface: #1e2024; --ink: #ecebe7; --muted: #a9a7a0; --line: #33353b;
+  --accent: #7db3f0; --accent-soft: #1c2a3b;
+  --ok: #6fcf97; --ok-soft: #17291f; --mid: #e6b450; --mid-soft: #2d2513;
+  --low: #f08a7e; --low-soft: #331b18; --say: #b9a3ef; --say-soft: #251f36;
+  --code: #2a2c31; --fig-bg: #f4f3ef;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 17px/1.65 "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.layout { display: grid; grid-template-columns: 1fr; max-width: 1240px; margin: 0 auto; }
+nav.toc {
+  padding: 16px; border-bottom: 1px solid var(--line); background: var(--surface); font-size: 15px;
+}
+nav.toc h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 8px; }
+nav.toc ol { margin: 0; padding-left: 20px; }
+nav.toc li { margin: 2px 0; }
+nav.toc a { color: var(--ink); text-decoration: none; }
+nav.toc a:hover { color: var(--accent); text-decoration: underline; }
+main { padding: 0 16px 80px; min-width: 0; }
+@media (min-width: 1100px) {
+  .layout { grid-template-columns: 270px 1fr; }
+  nav.toc { position: sticky; top: 0; height: 100vh; overflow-y: auto; border-bottom: 0;
+            border-right: 1px solid var(--line); padding: 28px 20px; }
+  main { padding: 0 48px 120px; }
+}
+article { max-width: 860px; }
+header.cover { padding: 40px 0 16px; border-bottom: 2px solid var(--ink); margin-bottom: 8px; }
+header.cover .kicker { color: var(--muted); font-size: 14px; letter-spacing: .05em; text-transform: uppercase; }
+h1 { font-size: 34px; line-height: 1.2; margin: 6px 0 10px; }
+h2 { font-size: 26px; line-height: 1.25; margin: 56px 0 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+h3 { font-size: 19px; margin: 28px 0 6px; }
+h4 { font-size: 16px; margin: 18px 0 4px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+p, li { max-width: 72ch; }
+a { color: var(--accent); }
+.en { color: var(--muted); font-style: italic; }
+code { background: var(--code); padding: 1px 5px; border-radius: 4px; font-size: .88em; overflow-wrap: anywhere; }
+.lead { font-size: 19px; color: var(--muted); }
+.box { border-radius: 10px; padding: 14px 18px; margin: 16px 0; border-left: 5px solid; }
+.box > :first-child { margin-top: 0; } .box > :last-child { margin-bottom: 0; }
+.box .label { font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; display: block; margin-bottom: 4px; }
+.answer { background: var(--accent-soft); border-color: var(--accent); }
+.answer .label { color: var(--accent); }
+.warn { background: var(--low-soft); border-color: var(--low); }
+.warn .label { color: var(--low); }
+.why { background: var(--ok-soft); border-color: var(--ok); }
+.why .label { color: var(--ok); }
+.say { background: var(--say-soft); border-color: var(--say); font-style: italic; }
+.say .label { color: var(--say); font-style: normal; }
+.qa dt { font-weight: 700; margin-top: 12px; }
+.qa dd { margin: 2px 0 0 0; padding-left: 14px; border-left: 2px solid var(--line); }
+.badge { display: inline-block; font-size: 12px; font-weight: 700; padding: 2px 9px; border-radius: 99px;
+         text-transform: uppercase; letter-spacing: .04em; vertical-align: middle; }
+.b-hi { background: var(--ok-soft); color: var(--ok); border: 1px solid var(--ok); }
+.b-mid { background: var(--mid-soft); color: var(--mid); border: 1px solid var(--mid); }
+.b-lo { background: var(--low-soft); color: var(--low); border: 1px solid var(--low); }
+.cards { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 18px 0; }
+@media (min-width: 700px) { .cards { grid-template-columns: 1fr 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+.card h3 { margin: 0 0 4px; font-size: 17px; }
+.card h3 a { color: var(--ink); text-decoration: none; }
+.card .q { color: var(--muted); font-size: 15px; margin: 0 0 6px; }
+.card .a { margin: 0 0 8px; }
+.card .meta { font-size: 13px; color: var(--muted); }
+.tablewrap { overflow-x: auto; margin: 12px 0; }
+table { border-collapse: collapse; font-size: 15px; min-width: 100%; background: var(--surface); }
+th, td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
+th { background: var(--code); }
+td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+figure { margin: 20px 0; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+figure img { width: 100%; height: auto; display: block; background: var(--fig-bg); border-radius: 6px; }
+figcaption { font-size: 15px; margin-top: 8px; }
+figcaption b.t { display: block; }
+figcaption .how { display: block; margin-top: 4px; color: var(--muted); }
+figcaption .file { display: block; margin-top: 4px; font-size: 13px; color: var(--muted); }
+dl.gloss dt { font-weight: 700; margin-top: 10px; }
+dl.gloss dd { margin: 2px 0 0 0; }
+.flow svg { width: 100%; height: auto; }
+.flow .node rect { fill: var(--surface); stroke: var(--accent); stroke-width: 1.5; }
+.flow .node text { fill: var(--ink); font: 13px "Segoe UI", system-ui, sans-serif; }
+.flow .node text.s { fill: var(--muted); font-size: 11.5px; }
+.flow .arrow { stroke: var(--muted); stroke-width: 1.5; fill: none; marker-end: url(#ah); }
+.flow #ah path { fill: var(--muted); }
+.theme-btn { float: right; font: inherit; font-size: 13px; padding: 4px 10px; border-radius: 6px;
+             border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+footer { margin-top: 60px; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; }
+@media print {
+  nav.toc, .theme-btn { display: none; }
+  .layout { display: block; }
+  body { font-size: 11pt; background: #fff; color: #000; }
+  h2 { break-before: page; border-top: 0; }
+  figure, .box, .card, table { break-inside: avoid; }
+  a { color: inherit; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav class="toc" aria-label="Daftar isi">
+  <h2>Daftar isi</h2>
+  <ol>
+    <li><a href="#ringkasan">Ringkasan satu halaman</a></li>
+    <li><a href="#cara-membaca">Cara membaca laporan ini</a></li>
+    <li><a href="#fondasi">Fondasi data</a></li>
+    <li><a href="#ml1">ML-1 Ambang unsur</a></li>
+    <li><a href="#ml2">ML-2 Kimia → log geologi</a></li>
+    <li><a href="#ml3">ML-3 Zonasi permukaan</a></li>
+    <li><a href="#ml4">ML-4 Geokimia-stratigrafi</a></li>
+    <li><a href="#ml5">ML-5 PAF/NAF</a></li>
+    <li><a href="#ml6">ML-6 Target bor (bonus)</a></li>
+    <li><a href="#pembanding">Pembanding literatur</a></li>
+    <li><a href="#sintesis">Sintesis: cerita prospek</a></li>
+    <li><a href="#keterbatasan">Keterbatasan &amp; jangan diklaim</a></li>
+    <li><a href="#lampiran">Lampiran: gambar &amp; file</a></li>
+  </ol>
+</nav>
+<main>
+<article>
+
+<header class="cover">
+  <button class="theme-btn" type="button" id="themeBtn">Terang / gelap</button>
+  <div class="kicker">OlympiAR 2026 Babak 2 · Prospek Ramba Joring, Martabe · Dokumen internal tim</div>
+  <h1>Temuan Machine Learning: apa yang kami tanyakan, apa jawabannya, dan seberapa yakin kami</h1>
+  <p class="lead">Penjelasan sederhana untuk anggota tim yang menulis laporan dan presentasi. Teks utama
+  berbahasa Indonesia; istilah teknis bahasa Inggris ada di dalam kurung <span class="en">(seperti ini)</span>.</p>
+  <p><b>Rahasia.</b> Dokumen ini memuat hasil dari data panitia. Simpan hanya di repo privat tim; jangan
+  diunggah ke layanan daring. Semua angka diambil otomatis dari tabel hasil (<code>data/processed/</code>)
+  saat dokumen dibuat, jadi selalu sama dengan hasil model.</p>
+</header>
+
+<!-- ================================================================== -->
+<h2 id="ringkasan">Ringkasan satu halaman</h2>
+<p>Tema kami: <b>ML yang tahu apa yang tidak diketahuinya</b> <span class="en">(ML that knows what it
+doesn't know)</span>. Setiap hasil di bawah membawa ukuran ketidakpastian, dan setiap validasi dibuat
+jujur: model tidak pernah diuji pada pad bor yang ikut dilatih.</p>
+
+<div class="cards">
+  <div class="card">
+    <h3><a href="#ml1">ML-1 · Ambang unsur</a> <span class="badge b-mid">sedang</span></h3>
+    <p class="q">Di mana batas antara latar dan anomali untuk tiap unsur?</p>
+    <p class="a">Au bor terbagi alami pada ~0,16 dan ~1 g/t. Au permukaan satu populasi, jadi batas klasik
+    rerata + 2 SD (~7 g/t batuan) yang tepat.</p>
+    <div class="meta">Bab 3 · <code>element_thresholds.csv</code></div>
+  </div>
+  <div class="card">
+    <h3><a href="#ml2">ML-2 · Kimia → log</a> <span class="badge b-hi">tinggi</span></h3>
+    <p class="q">Bisakah kimia saja menebak apa yang dilog ahli geologi?</p>
+    <p class="a">Alterasi {{ml2_alt}} dan oksidasi {{ml2_oks}} (akurasi seimbang; acak 0,25–0,33), pirit
+    {{ml2_py}}. Litologi hanya {{ml2_lit}}: alterasi menghapus jejak batuan asal.</p>
+    <div class="meta">Bab 3 · <code>ml2_scores.csv</code>, <code>ml2_review_list.csv</code></div>
+  </div>
+  <div class="card">
+    <h3><a href="#ml3">ML-3 · Zonasi permukaan</a> <span class="badge b-mid">sedang</span></h3>
+    <p class="q">Di mana zona Tinggi / Sedang / Rendah di permukaan?</p>
+    <p class="a">Tanah punya satu indeks mineralisasi. Zona Tinggi memanjang <b>E–ENE</b>, dan bagian
+    terbesarnya (barat-tengah) <b>belum dibor</b>. Zona batuan: keyakinan rendah.</p>
+    <div class="meta">Bab 4 · <code>ml3_summary.csv</code>, <code>gis/ml3_*</code></div>
+  </div>
+  <div class="card">
+    <h3><a href="#ml4">ML-4 · Geokimia-stratigrafi</a> <span class="badge b-hi">tinggi</span></h3>
+    <p class="q">Satuan kimia apa yang ada di bawah permukaan, dan apakah berlanjut antar-lubang?</p>
+    <p class="a">{{ml4_K}} satuan kimia. Dua sangat kokoh: dasar sulfida tandus (S1) dan zona Cu ~30 m
+    (S4). Berkorelasi antar-lubang sampai ~40–50 m.</p>
+    <div class="meta">Bab 5 · penampang A, B, C · <code>ml4_states.csv</code></div>
+  </div>
+  <div class="card">
+    <h3><a href="#ml5">ML-5 · PAF/NAF</a> <span class="badge b-mid">sedang</span></h3>
+    <p class="q">Batuan mana yang membentuk asam, dan seberapa banyak?</p>
+    <p class="a">PAF kapasitas tinggi (batuan sulfida) mudah dikenali. NAF vs PAF kapasitas rendah di zona
+    oksida <b>tidak bisa</b> dibedakan dari kimia, jadi kami kelola secara konservatif dan minta uji NAG.</p>
+    <div class="meta">Bab 6 · diagram alir · <code>ml5_uji_nag.csv</code></div>
+  </div>
+  <div class="card">
+    <h3><a href="#ml6">ML-6 · Target bor</a> <span class="badge b-lo">rendah antar-pad</span></h3>
+    <p class="q">Di mana lubang bor berikutnya sebaiknya dibuat?</p>
+    <p class="a">Kontinuitas emas pendek (~10–25 m). Lima usulan lubang dengan tugas berbeda: 2 perluasan, 1
+    penutup celah, 2 uji anomali tanah. Semua di luar sempadan sungai 50 m.</p>
+    <div class="meta">Bab 7 + bonus · <code>ml6_usulan_lubang.csv</code></div>
+  </div>
+</div>
+
+<div class="box why"><span class="label">Satu kalimat untuk juri</span>
+Kami memakai ML bukan untuk "menebak" geologi, tetapi untuk menguji secara objektif apa yang didukung data
+dan apa yang tidak: setiap peta, satuan dan kelas datang bersama ukuran keyakinannya, dan bagian yang tidak
+pasti kami ubah menjadi rekomendasi kerja (uji NAG, lubang penutup celah, uji anomali tanah).</div>
+
+<!-- ================================================================== -->
+<h2 id="cara-membaca">Cara membaca laporan ini</h2>
+<p>Setiap bagian ML memakai susunan yang sama, supaya mudah dicari saat menulis atau berlatih presentasi:</p>
+<ol>
+  <li><b>Pertanyaan</b>: satu kalimat, apa yang ingin kami ketahui.</li>
+  <li><b>Jawaban singkat</b> (kotak biru): hasil yang boleh diucapkan.</li>
+  <li><b>Apa yang kami lakukan</b>: metode dalam bahasa sederhana.</li>
+  <li><b>Hasil utama</b>: tabel angka dan gambar, dengan petunjuk <i>cara membaca gambar</i>.</li>
+  <li><b>Seberapa yakin?</b> dan <b>Keterbatasan</b> (kotak merah): yang wajib disebut, dan yang <b>tidak
+  boleh</b> diklaim.</li>
+  <li><b>Kenapa penting</b> (kotak hijau): keputusan apa yang didukung.</li>
+  <li><b>Ucapan presentasi</b> (kotak ungu) dan <b>pertanyaan juri yang mungkin</b>.</li>
+</ol>
+<p>Lencana keyakinan: <span class="badge b-hi">tinggi</span> hasil kokoh terhadap validasi dan uji
+sensitivitas; <span class="badge b-mid">sedang</span> hasil nyata tetapi sebagian bergantung pada pilihan
+model; <span class="badge b-lo">rendah</span> hasil ditampilkan untuk transparansi, jangan dijadikan dasar
+keputusan sendiri.</p>
+
+<h3>Kamus singkat</h3>
+<dl class="gloss">
+  <dt>Validasi tinggalkan-satu-pad <span class="en">(leave-one-pad-out cross-validation)</span></dt>
+  <dd>Model dilatih tanpa satu pad bor, lalu diuji pada pad itu; diulang untuk ke-12 pad. Dua lubang pada satu
+  pad menembus batuan yang hampir sama, jadi menguji lubang kembar dari pad yang ikut dilatih sama dengan
+  "menyontek". Validasi acak <span class="en">(random K-fold)</span> pada data bor tidak kami pakai karena bocor.</dd>
+  <dt>Akurasi seimbang <span class="en">(balanced accuracy)</span></dt>
+  <dd>Rata-rata persentase benar per kelas. Kelas kecil dihitung sama pentingnya dengan kelas besar. Tebakan
+  acak = 1 / jumlah kelas (0,25 untuk empat kelas alterasi).</dd>
+  <dt>Model campuran Gauss <span class="en">(Gaussian mixture model, GMM)</span></dt>
+  <dd>Menganggap data adalah campuran beberapa "populasi" berbentuk lonceng, lalu menemukan berapa populasi
+  dan di mana batasnya. Ini versi objektif dari membaca patahan pada plot probabilitas.</dd>
+  <dt>BIC <span class="en">(Bayesian information criterion)</span></dt>
+  <dd>Skor untuk memilih jumlah populasi: menghargai kecocokan, tetapi menghukum model yang terlalu rumit.
+  Makin rendah makin baik.</dd>
+  <dt>Bootstrap</dt>
+  <dd>Mengulang analisis ratusan kali pada sampel acak-ulang dari data. Jika hasil bertahan, hasil itu stabil.
+  "Stabilitas 0,96" berarti sampel mendapat zona yang sama pada 96% pengulangan.</dd>
+  <dt>PCA <span class="en">(principal component analysis)</span></dt>
+  <dd>Merangkum banyak unsur yang naik-turun bersama menjadi satu atau beberapa sumbu, misalnya satu "indeks
+  mineralisasi".</dd>
+  <dt>Random Forest (RF) dan SHAP</dt>
+  <dd>RF = ratusan pohon keputusan yang memberi suara. SHAP menunjukkan seberapa besar setiap unsur mendorong
+  jawaban model, dalam satuan unsur (mis. "Au di atas ~1 g/t mendorong ke kelas silika").</dd>
+  <dt>Hidden Markov model (HMM)</dt>
+  <dd>Model yang membaca lubang bor meter demi meter dan belajar bahwa satuan cenderung berlanjut ke bawah,
+  seperti cara ahli geologi melog. Tanpa "memori" ini, hasil berkedip-kedip tiap meter.</dd>
+  <dt>Prediksi konformal Mondrian <span class="en">(Mondrian conformal prediction)</span></dt>
+  <dd>Alih-alih satu jawaban, setiap sampel mendapat <i>himpunan</i> kelas yang dijamin memuat kelas benar
+  pada ~90% kasus, untuk setiap kelas. Himpunan berisi satu kelas = model yakin; dua atau tiga kelas = model
+  jujur bahwa ia tidak tahu.</dd>
+  <dt>Gaussian process (GP) = kriging</dt>
+  <dd>Penaksir spasial yang memberi nilai taksiran dan simpangan bakunya di setiap titik. Secara matematis
+  sama dengan kriging sederhana; kami membuktikannya secara numerik.</dd>
+  <dt>ARI dan Cramér's V</dt>
+  <dd>Ukuran kesesuaian dua pengelompokan. ARI 0 = sama dengan acak, 1 = identik. V 0 = tidak berhubungan,
+  1 = berhubungan sempurna.</dd>
+</dl>
+
+<!-- ================================================================== -->
+<h2 id="fondasi">Fondasi data: kenapa pembersihan menentukan ML</h2>
+<p class="lead">ML hanya sebaik datanya. Tiga masalah data akan membuat model mengelompokkan
+<i>tahun lab</i>, bukan geologi, seandainya tidak kami tangani lebih dulu.</p>
+<div class="tablewrap"><table>
+  <tr><th>Masalah</th><th>Yang kami lakukan</th><th>Kenapa penting untuk ML</th></tr>
+  <tr><td>Nilai 0 pada data permukaan berarti "tidak dianalisis", bukan 0 ppm</td>
+      <td>{{val_zero_rock}} nilai batuan dan {{val_zero_soil}} nilai tanah diubah menjadi kosong</td>
+      <td>Tanpa ini, model memisahkan sampel yang dianalisis lengkap dari yang tidak: batch lab, bukan geologi</td></tr>
+  <tr><td>Batas deteksi berbeda antar-era lab (1998–2017)</td>
+      <td>Batas tiap pekerjaan lab dideteksi lalu diseragamkan ke batas tertinggi per unsur; nilai di bawahnya = DL/2 dan ditandai</td>
+      <td>Lab lama mencetak angka di batas bawah, bukan "di bawah deteksi"; tanpa penyeragaman, era lab tampak seperti populasi</td></tr>
+  <tr><td>Elevasi sampel permukaan salah (satu tercatat 36.076 m)</td>
+      <td>{{val_elev}} sampel menyimpang &gt; 10 m dari lidar; semua di-<i>drape</i> ulang ke DEM lidar, nilai asli disimpan</td>
+      <td>Posisi 3D yang benar diperlukan untuk peta, penampang dan kriging</td></tr>
+  <tr><td>Panjang sampel bor 0,1–25 m</td>
+      <td>Komposit 1 m berbobot panjang; total Au × panjang per lubang tetap sama</td>
+      <td>Model bawah-lubang butuh satuan yang seragam</td></tr>
+  <tr><td>Tidak ada sampel QAQC (standar, blank, duplikat)</td>
+      <td>Dinyatakan terbuka; diganti pemeriksaan internal (sampel ulang singkapan, Au sianida vs total)</td>
+      <td>Presisi emas tetap bisa diperkirakan (efek nugget)</td></tr>
+</table></div>
+<p>Semua masalah tercatat di satu tabel audit (<code>validation_flags.csv</code>, ringkasan
+{{val_n_checks}} jenis pemeriksaan di <code>validation_summary.csv</code>). <b>Tidak ada data yang dihapus</b>:
+setiap masalah diberi tanda, dan baris hanya dikeluarkan di dalam analisis tertentu, dengan alasan tercatat.</p>
+<p><b>Outlier dua jenis.</b> <i>Outlier kesalahan</i> (elevasi mustahil) diperbaiki atau ditandai.
+<i>Outlier geologi</i> (mis. 36,5 g/t Au di RJDH015) adalah bijih dan tidak pernah dipotong; untuk ML
+kami memakai transformasi log dan penskalaan robust <span class="en">(median/MAD)</span>, bukan pemotongan
+<span class="en">(capping)</span>.</p>
+
+<!-- ================================================================== -->
+<h2 id="ml1">ML-1 · Ambang unsur <span class="badge b-mid">sedang</span></h2>
+<p><b>Pertanyaan.</b> Untuk tiap unsur, berapa populasi yang ada, dan di mana batas antara latar
+<span class="en">(background)</span> dan anomali?</p>
+<div class="box answer"><span class="label">Jawaban singkat</span>
+Au bor terbagi alami menjadi tiga populasi kadar dengan batas <b>~0,16 g/t</b> dan <b>~0,96 g/t</b>. Au permukaan
+(batuan dan tanah) adalah <b>satu populasi</b>, jadi anomali permukaan adalah ekor atas populasi itu dan batas
+klasik rerata + 2 SD yang tepat (<b>~7,1 g/t</b> batuan, ~1,4 ppm tanah). As, Pb dan Zn tanah punya kelompok
+latar kecil di bawah populasi termineralisasi.</div>
+
+<h3>Apa yang kami lakukan</h3>
+<p>Untuk setiap unsur di setiap data (bor, batuan, tanah), kami memasang model campuran Gauss pada nilai
+log10 dan membiarkan BIC memilih jumlah populasi (1–5). Batas ambang adalah titik ketika populasi yang paling
+mungkin berganti. Sebelumnya kami menghapus jebakan: lab melaporkan nilai bertingkat (1, 2, 3 ppm), yang
+oleh model akan dikira populasi; nilai itu "diratakan" sedikit secara acak <span class="en">(dequantisation)</span>.
+Setiap ambang diberi selang bootstrap (200 ulangan) dan label keyakinan, lalu dibandingkan dengan
+median + 2·MAD dan pagar Tukey.</p>
+
+<h3>Hasil utama</h3>
+<div class="tablewrap"><table>
+  <tr><th>Data</th><th>Unsur</th><th>Populasi</th><th>Ambang GMM (selang 5–95%)</th><th>Keyakinan</th></tr>
+  <tr><td>Bor</td><td>Au g/t</td><td class="n">3</td><td>0,16 (0,15–0,18) dan 0,96 (0,85–1,18)</td><td>sedang</td></tr>
+  <tr><td>Bor</td><td>Cu ppm</td><td class="n">2</td><td>118 (100–138)</td><td>sedang</td></tr>
+  <tr><td>Bor</td><td>S sulfida (SCIS) %</td><td class="n">3</td><td>0,21 dan 1,15</td><td>sedang</td></tr>
+  <tr><td>Batuan</td><td>Au g/t</td><td class="n">1</td><td>rerata + 2 SD: 7,1 (5,6–9,3)</td><td>tinggi</td></tr>
+  <tr><td>Tanah</td><td>Au ppm</td><td class="n">1</td><td>rerata + 2 SD: 1,41 (1,12–1,75)</td><td>tinggi</td></tr>
+  <tr><td>Tanah</td><td>As / Pb / Zn ppm</td><td class="n">2</td><td>24 / 32 / 12</td><td>sedang / sedang / tinggi</td></tr>
+</table></div>
+<figure>
+  <img src="outputs/figures/08_ambang_bor_v1.png" alt="Histogram log unsur bor dengan model campuran dan ambang">
+  <figcaption><b class="t">Ambang unsur data bor (GMM pada log10).</b>
+  <span class="how">Cara membaca: batang biru = sampel terukur, abu-abu = di bawah batas deteksi. Garis hitam =
+  model campuran, garis putus-putus = tiap populasi. Garis jingga tegas = ambang GMM (perpotongan populasi),
+  pita jingga pucat = selang bootstrap. Garis abu-abu putus-putus dan bertitik = median + 2·MAD dan pagar Tukey,
+  yang selalu jauh di kanan: keduanya memotong ekor atas, bukan memisahkan populasi.</span>
+  <span class="file">outputs/figures/08_ambang_bor_v1.png</span></figcaption>
+</figure>
+<figure>
+  <img src="outputs/figures/08_ambang_tanah_v1.png" alt="Histogram log unsur tanah dengan model campuran dan ambang">
+  <figcaption><b class="t">Ambang unsur data tanah.</b>
+  <span class="how">Cara membaca: sama seperti gambar bor. Perhatikan Au (satu populasi) dibanding As, Pb dan Zn
+  (dua populasi, dengan populasi rendah yang kecil di kiri).</span>
+  <span class="file">outputs/figures/08_ambang_tanah_v1.png</span></figcaption>
+</figure>
+
+<h3>Seberapa yakin?</h3>
+<p>Setiap ambang punya selang bootstrap dan label keyakinan. Ambang Au bor <b>sedang</b>: model 3 populasi
+menang pada 58% ulangan, 2 populasi pada 39%. Ag bor dan tanah <b>rendah</b> (tingkat pelaporan lab masih
+mengganggu). Ag batuan tidak bisa ditentukan (66% di bawah batas deteksi).</p>
+<div class="box warn"><span class="label">Keterbatasan</span>
+<ul>
+  <li>Assay bor mentah tidak berbobot panjang; sampel pendek berkadar tinggi sedikit terlalu terwakili.</li>
+  <li>Nilai di bawah batas deteksi tidak ikut dalam pemasangan model.</li>
+  <li>Ambang dari plot probabilitas ioGAS belum ada: kolom <code>thr_probplot_iogas</code> disiapkan untuk rekan
+  ioGAS. <b>Jangan klaim</b> GMM "lebih baik" dari plot probabilitas sebelum keduanya dibandingkan.</li>
+</ul></div>
+<div class="box why"><span class="label">Kenapa penting</span>
+Ambang menentukan apa yang disebut "anomali" di peta. Karena Au permukaan satu populasi, zonasi permukaan
+(ML-3) harus mengurutkan kadar di dalam satu populasi, bukan mencari populasi anomali terpisah.</div>
+<div class="box say"><span class="label">Ucapan presentasi</span>
+"Daripada memilih ambang anomali dengan mata pada plot probabilitas, kami membiarkan model campuran mencari
+berapa populasi yang tumpang-tindih dan di mana mereka bersilangan. Setiap ambang datang dengan selang
+bootstrap dan label keyakinan. Emas permukaan di RJ ternyata satu populasi, jadi batas klasik rerata ditambah
+dua simpangan baku, sekitar 7 g/t pada batuan, yang tepat. Di bawah permukaan, emas terbagi alami pada sekitar
+0,16 dan 1 g/t."</div>
+<h4>Pertanyaan juri yang mungkin</h4>
+<dl class="qa">
+  <dt>Kenapa tidak cukup memakai plot probabilitas?</dt>
+  <dd>Plot probabilitas tetap dibuat di ioGAS. GMM memberi versi yang bisa diulang dan punya selang
+  ketidakpastian; keduanya kami bandingkan, bukan saling menggantikan.</dd>
+  <dt>Kenapa median + 2·MAD jauh lebih tinggi dari ambang GMM?</dt>
+  <dd>Karena keduanya menjawab hal berbeda: MAD/Tukey memotong ekor atas (hanya 0–6% sampel), GMM memisahkan
+  populasi. Jika unsur hanya punya satu populasi, keduanya hampir sama (Au batuan 7,1 vs 7,3 g/t).</dd>
+</dl>
+<p><b>Bab laporan &amp; file:</b> Bab 3 (nilai ambang). <code>element_thresholds.csv</code>, gambar
+<code>08_ambang_{bor,batuan,tanah}_v1.png</code>, <code>08_bic_v1.png</code>.</p>
+
+<!-- ================================================================== -->
+<h2 id="ml2">ML-2 · Kimia → log geologi <span class="badge b-hi">tinggi</span></h2>
+<p><b>Pertanyaan.</b> Jika hanya melihat kimia (Au, Ag, Cu, As, dan S bila ada), bisakah model menebak
+alterasi, oksidasi, litologi dan mineral yang dilog ahli geologi?</p>
+<div class="box answer"><span class="label">Jawaban singkat</span>
+Ya untuk alterasi (akurasi seimbang <b>{{ml2_alt}}</b>, acak 0,25) dan oksidasi (<b>{{ml2_oks}}</b>, acak 0,33),
+dan pirit (<b>{{ml2_py}}</b>, acak 0,50). Tidak untuk litologi (<b>{{ml2_lit}}</b>, acak 0,20): alterasi hidrotermal
+telah menghapus jejak batuan asal dari empat logam ini. Ini <b>temuan geologi, bukan kegagalan</b>.</div>
+
+<h3>Apa yang kami lakukan</h3>
+<p>Random Forest dilatih pada log10 unsur dan rasio log (Cu/Au, As/Au, Cu/As), dengan sulfur (SCIS) atau rasio
+sianida sebagai tambahan bila tersedia. Validasi tinggalkan-satu-pad (12 pad): model tidak pernah melihat pad
+yang diujikan. Pembanding: regresi logistik dan tebakan berdasarkan proporsi kelas. SHAP menjelaskan
+keputusan model dalam satuan unsur.</p>
+
+<h3>Hasil utama</h3>
+<div class="tablewrap"><table>
+  <tr><th>Target</th><th>Akurasi seimbang (selang pad 5–95%)</th><th>Acak</th><th>Catatan</th></tr>
+  <tr><td>Alterasi (AA/SI/AR/PP)</td><td class="n">{{ml2_alt}} ({{ml2_alt_ci}})</td><td class="n">0,25</td><td>recall tiap kelas 0,67–0,72</td></tr>
+  <tr><td>Oksidasi</td><td class="n">{{ml2_oks}} ({{ml2_oks_ci}})</td><td class="n">0,33</td><td>Oksida 0,91, Sulfida 0,74, Transisi hanya 0,41</td></tr>
+  <tr><td>Pirit ada/tidak</td><td class="n">{{ml2_py}} ({{ml2_py_ci}})</td><td class="n">0,50</td><td>sulfur adalah petunjuk utama</td></tr>
+  <tr><td>Mineral Cu ada/tidak</td><td class="n">{{ml2_cu}} ({{ml2_cu_ci}})</td><td class="n">0,50</td><td>hanya 3% sampel positif, hampir semua di dua lubang</td></tr>
+  <tr><td>Litologi (5 kelompok)</td><td class="n">{{ml2_lit}} ({{ml2_lit_ci}})</td><td class="n">0,20</td><td>breksi hidrotermal tidak pernah dikenali</td></tr>
+  <tr><td>Alterasi batuan permukaan</td><td class="n">{{ml2_rock}}</td><td class="n">0,33</td><td>tidak lebih baik dari acak</td></tr>
+</table></div>
+<figure>
+  <img src="outputs/figures/09_matriks_konfusi_v1.png" alt="Matriks konfusi prediksi ML terhadap log geologi">
+  <figcaption><b class="t">Matriks konfusi: log geologi (baris) terhadap prediksi ML (kolom).</b>
+  <span class="how">Cara membaca: tiap baris dijumlah 1; diagonal biru tua = benar. Alterasi dan oksidasi punya
+  diagonal kuat; litologi tidak. Angka akurasi di judul panel adalah model ekspor (set fitur per baris), sedikit
+  berbeda dari tabel di atas (set fitur terbaik).</span>
+  <span class="file">outputs/figures/09_matriks_konfusi_v1.png</span></figcaption>
+</figure>
+<figure>
+  <img src="outputs/figures/09_shap_dependensi_v1.png" alt="Grafik ketergantungan SHAP untuk kelas silika dan sulfida">
+  <figcaption><b class="t">Bagaimana nilai unsur mengubah keputusan model (SHAP).</b>
+  <span class="how">Cara membaca: sumbu datar = nilai unsur (log); sumbu tegak = dorongan terhadap peluang kelas
+  (di atas 0 = mendorong ke kelas itu). Baris atas, kelas silika: naik tajam saat Au &gt; ~1 g/t, turun saat
+  As/Au &gt; ~100, naik dengan Ag &gt; ~3 ppm. Baris bawah, zona sulfida: naik saat S (SCIS) &gt; ~2%, Cu/Au &gt;
+  ~1.000 dan As/Au &gt; ~1.000. Model "berpikir" seperti ahli geologi.</span>
+  <span class="file">outputs/figures/09_shap_dependensi_v1.png</span></figcaption>
+</figure>
+
+<h3>Seberapa yakin?</h3>
+<p>Selang pad-bootstrap sempit untuk alterasi, oksidasi dan pirit. Per pad yang ditinggalkan, alterasi
+0,56–0,80, oksidasi 0,56–0,81. Kebocoran pad kembar kecil tetapi nyata (alterasi 0,72 bila hanya satu lubang
+ditinggalkan, 0,70 bila satu pad), itulah alasan kami memakai validasi per pad. Probabilitas model cukup andal
+untuk alterasi dan oksidasi, tidak bermakna untuk litologi.</p>
+<p><b>Apakah oksidasi hanya soal kedalaman?</b> Tidak: menambah kedalaman sebagai fitur tidak menambah
+akurasi setelah sulfur diketahui (0,709 → 0,710).</p>
+<div class="box warn"><span class="label">Keterbatasan</span>
+<ul>
+  <li>Hanya 12 pad independen; propilitik hanya 26 sampel; mineral Cu hampir semua di RJDH007/018.</li>
+  <li>Skala berbeda: interval alterasi median 2,5 m vs assay 1 m. Sampel di batas kontak skornya lebih rendah,
+  jadi sebagian "galat" berasal dari log, bukan model.</li>
+  <li>Label alterasi batuan permukaan (pengamatan lapangan pada singkapan lapuk) tidak setara dengan fasies inti
+  bor: model bor menyebut 250 dari 352 batuan "argilik lanjut", padahal pemetaan permukaan hanya memakai AA dua
+  kali. <b>Kolom ML alterasi batuan harus ditampilkan sebagai keyakinan rendah.</b></li>
+</ul></div>
+<div class="box why"><span class="label">Kenapa penting</span>
+Memenuhi sub-butir rubrik "litologi/alterasi/mineralisasi dari ML dan perbandingan ML vs log". Daftar tinjauan
+(<code>ml2_review_list.csv</code>) menunjukkan tempat model sangat yakin tetapi berbeda dari log, misalnya
+<b>RJDH009 10–57 m dilog Oksida, kimianya Sulfida</b> (25 m). Itu kandidat untuk cek ulang foto inti, bukan koreksi.</div>
+<div class="box say"><span class="label">Ucapan presentasi</span>
+"Kami bertanya apakah kimia saja bisa menebak apa yang dilog ahli geologi. Agar jujur, model tidak pernah
+melihat pad yang diujikan, karena dua lubang pada satu pad menembus batuan yang sama. Alterasi dan oksidasi
+benar sekitar 70%, padahal tebakan acak 25–33%, dan pirit 84%. Model menjelaskan dirinya secara geologi: emas
+di atas sekitar 1 g/t berarti silika vuggy, sulfur di atas sekitar 2% berarti batuan sulfida segar. Jenis
+batuan tidak bisa dibaca dari empat logam ini, karena alterasi telah menimpa batuan asal. Itu hasil geologi,
+bukan kegagalan."</div>
+<h4>Pertanyaan juri yang mungkin</h4>
+<dl class="qa">
+  <dt>70% kedengarannya rendah. Kenapa itu bagus?</dt>
+  <dd>Acak untuk empat kelas adalah 25%, dan model diuji pada pad yang tidak pernah dilihatnya. Log sendiri
+  tidak sempurna: interval log ~2,5 m vs sampel 1 m, dan sampel di batas kontak memang lebih sulit.</dd>
+  <dt>Kenapa tidak memakai unsur imobil untuk litologi?</dt>
+  <dd>Unsur imobil (Ti, Zr, dll.) hanya ada di RJDH012. Dengan validasi per pad, fitur yang hanya ada di satu
+  lubang tidak bisa diuji. Kami nyatakan sebagai keterbatasan data.</dd>
+  <dt>Kenapa Random Forest, bukan deep learning?</dt>
+  <dd>Fitur hanya 4–8 unsur dan 12 pad. Model klasik cukup, lebih mudah dijelaskan (SHAP), dan regresi logistik
+  sebagai pembanding memberi skor setara.</dd>
+</dl>
+<p><b>Bab laporan &amp; file:</b> Bab 3 (ML vs log). <code>ml2_scores.csv</code>, <code>ml2_per_pad.csv</code>,
+<code>ml2_review_list.csv</code>, gambar <code>09_*_v1.png</code>.</p>
+
+<!-- ================================================================== -->
+<h2 id="ml3">ML-3 · Zonasi permukaan Tinggi / Sedang / Rendah <span class="badge b-mid">sedang</span></h2>
+<p><b>Pertanyaan.</b> Di mana zona mineralisasi tinggi, sedang dan rendah di permukaan, dan seberapa yakin
+kita tentang batasnya?</p>
+<div class="box answer"><span class="label">Jawaban singkat</span>
+Tanah RJ hanya punya <b>satu gradien kimia nyata</b>: Au, As, Pb, Hg, Sb dan Cu naik bersama menjadi satu indeks
+mineralisasi. Indeks itu dibagi menjadi zona Rendah {{ml3_tanah_n_R}} / Sedang {{ml3_tanah_n_S}} / Tinggi
+{{ml3_tanah_n_T}} sampel (median Au {{ml3_tanah_au_R}} / {{ml3_tanah_au_S}} / {{ml3_tanah_au_T}} ppm). Zona Tinggi
+memanjang <b>timur–barat sampai ENE (75°)</b>, bukan NE, dan <b>area Tinggi terbesar (barat-tengah) sebagian besar
+belum dibor</b>.</div>
+
+<h3>Apa yang kami lakukan</h3>
+<p>Tujuh unsur tanah (log, diskalakan robust) diringkas dengan PCA. Uji Horn <span class="en">(parallel
+analysis)</span> memeriksa berapa sumbu yang nyata, bukan derau. GMM membagi sumbu pertama (indeks mineralisasi)
+menjadi tiga zona; bootstrap 200 kali mengukur stabilitas zona tiap sampel. Lalu indeks dipetakan dengan
+Gaussian process (kriging) beserta simpangan bakunya, dan arah kontinuitas diuji terhadap 200 simulasi tanpa arah.
+Batuan (Au-Cu-As, {{ml3_batuan_n}} sampel) diolah dengan cara yang sama.</p>
+
+<h3>Hasil utama</h3>
+<div class="tablewrap"><table>
+  <tr><th>Data</th><th>Zona</th><th>n</th><th>Median Au</th><th>Stabilitas rata-rata</th></tr>
+  <tr><td rowspan="3">Tanah (ppm)</td><td>Rendah</td><td class="n">{{ml3_tanah_n_R}}</td><td class="n">{{ml3_tanah_au_R}}</td><td class="n">{{ml3_tanah_stabil_R}}</td></tr>
+  <tr><td>Sedang</td><td class="n">{{ml3_tanah_n_S}}</td><td class="n">{{ml3_tanah_au_S}}</td><td class="n">{{ml3_tanah_stabil_S}}</td></tr>
+  <tr><td>Tinggi</td><td class="n">{{ml3_tanah_n_T}}</td><td class="n">{{ml3_tanah_au_T}}</td><td class="n">{{ml3_tanah_stabil_T}}</td></tr>
+  <tr><td rowspan="3">Batuan (g/t)</td><td>Rendah</td><td class="n">{{ml3_batuan_n_R}}</td><td class="n">{{ml3_batuan_au_R}}</td><td class="n">{{ml3_batuan_stabil_R}}</td></tr>
+  <tr><td>Sedang</td><td class="n">{{ml3_batuan_n_S}}</td><td class="n">{{ml3_batuan_au_S}}</td><td class="n">{{ml3_batuan_stabil_S}}</td></tr>
+  <tr><td>Tinggi</td><td class="n">{{ml3_batuan_n_T}}</td><td class="n">{{ml3_batuan_au_T}}</td><td class="n">{{ml3_batuan_stabil_T}}</td></tr>
+</table></div>
+<p>Indeks tanah (PC1) menjelaskan 57,5% varians dan berkorelasi r 0,87 dengan log Au. Area di dalam 60 m dari
+sampel tanah: Rendah 6,3 ha, Sedang 41,3 ha, <b>Tinggi 27,4 ha</b>. Kolar bor yang jatuh di zona Tinggi hanya lima
+(RJDH004, 010, 011, 012, 018).</p>
+<figure>
+  <img src="outputs/figures/10_pca_biplot_v1.png" alt="Biplot PCA tanah dan batuan dengan analisis paralel">
+  <figcaption><b class="t">Satu indeks mineralisasi (PCA) untuk tanah (atas) dan batuan (bawah).</b>
+  <span class="how">Cara membaca: kiri, setiap titik = sampel, diwarnai zona; panah = arah tiap unsur. Hampir
+  semua panah tanah searah sumbu datar (PC1), kecuali Zn. Kanan, analisis paralel: titik hitam di atas garis
+  abu-abu = komponen nyata. Hanya komponen pertama yang lolos, jadi hanya ada satu gradien.</span>
+  <span class="file">outputs/figures/10_pca_biplot_v1.png</span></figcaption>
+</figure>
+<figure>
+  <img src="outputs/figures/10_bic_stabilitas_v1.png" alt="BIC, ambang zona dan stabilitas bootstrap">
+  <figcaption><b class="t">Berapa zona yang didukung data, dan seberapa stabil.</b>
+  <span class="how">Cara membaca: kiri, ΔBIC per jumlah populasi (0 = terbaik, batang hitam = K yang kami pakai).
+  Tengah, histogram indeks dengan batas zona dan pita bootstrap. Kanan, stabilitas zona tiap sampel (proporsi
+  bootstrap yang memberi zona sama; makin ke kanan makin stabil). Untuk tanah BIC memilih 2 (latar vs jejak
+  mineralisasi); untuk batuan BIC memilih 1.</span>
+  <span class="file">outputs/figures/10_bic_stabilitas_v1.png</span></figcaption>
+</figure>
+<figure>
+  <img src="outputs/maps/qc/10_tanah_zona_v1.png" alt="Render peta zona tanah hasil kriging di atas hillshade">
+  <figcaption><b class="t">Zona tanah hasil kriging (render pemeriksaan QGIS, bukan peta akhir laporan).</b>
+  <span class="how">Cara membaca: biru = Rendah, jingga = Sedang, merah = Tinggi; titik = sampel tanah dengan zona
+  masing-masing; latar = hillshade lidar; utara ke atas. Peta akhir (dengan legenda, skala, grid) dibuat tim peta di
+  QGIS dari <code>gis/ml3_tanah_zona.tif</code> dan <code>gis/ml3_tanah_p_tinggi.tif</code>.</span>
+  <span class="file">outputs/maps/qc/10_tanah_zona_v1.png</span></figcaption>
+</figure>
+<figure>
+  <img src="outputs/figures/10_variogram_arah_v1.png" alt="Variogram berarah indeks tanah dan profil arah GP">
+  <figcaption><b class="t">Uji arah: apakah anomali tanah berarah NE?</b>
+  <span class="how">Cara membaca: kiri, semivarians menurut azimut (makin rendah = makin menerus); minimum di
+  90° (E–W), di luar pita abu-abu simulasi tanpa arah. Pita merah muda = jendela NE yang kami uji. Tengah,
+  geometri sampel saja sudah menaruh 30% simulasi di NE, jadi uji harus dibandingkan dengan simulasi. Kanan,
+  kecocokan GP terbaik pada rotasi 75° (ENE).</span>
+  <span class="file">outputs/figures/10_variogram_arah_v1.png</span></figcaption>
+</figure>
+
+<h3>Seberapa yakin?</h3>
+<p>Tanah: zona Tinggi stabil (bertahan pada 96% pengulangan, median per sampel), tetapi BIC sebenarnya memilih
+<b>dua</b> populasi. Tiga zona adalah <i>zonasi keputusan</i> di sepanjang satu gradien, dengan stabilitas
+ditampilkan. Batuan: BIC memilih <b>satu</b> populasi, dan zonanya berubah besar bila unsur ditambah (ARI 0,14),
+jadi <b>keyakinan rendah</b>. Peta kriging: validasi blok 150 m, galat lebih kecil dari rata-rata saja (RMSE 1,56
+vs 2,30), cakupan selang 90% = 94%.</p>
+<div class="box warn"><span class="label">Keterbatasan</span>
+<ul>
+  <li><b>Lintasan sampel tanah juga berarah E–W.</b> Efek lintasan (kru, horizon sampel) belum bisa dipisahkan
+  dari geologi. Kalimat aman: "indeks tanah memanjang E sampai ENE, bukan NE; bisa mencerminkan geologi, dispersi
+  menuruni lereng, atau efek lintasan (belum diuji)."</li>
+  <li>Satu kampanye tanah 1997–99; ada komponen batch/lintasan yang sedang.</li>
+  <li>Peta hanya berlaku dalam 60 m dari sampel tanah.</li>
+  <li>Sampel batuan adalah sampel titik yang dipilih (termasuk 46 float), jadi peringkat lokalnya berbeda dari
+  tanah; tetapi 12 dari 16 batuan Tinggi berada di tanah Tinggi.</li>
+</ul></div>
+<div class="box why"><span class="label">Kenapa penting</span>
+Menjawab rubrik zonasi (50 poin) dan menunjukkan area eksplorasi berikutnya: zona tanah Tinggi di barat-tengah
+yang belum dibor menjadi dasar dua lubang uji anomali (RJ-U04, RJ-U05) di ML-6.</div>
+<div class="box say"><span class="label">Ucapan presentasi</span>
+"Tujuh unsur tanah kami gabungkan menjadi satu indeks mineralisasi. Emas, arsen, timbal, antimon, merkuri dan
+tembaga naik bersama, dan uji statistik menunjukkan hanya ada satu gradien ini. Model campuran membaginya
+menjadi zona rendah, sedang dan tinggi, dan kami tunjukkan seberapa stabil zona tiap sampel; zona tinggi
+bertahan pada 96% pengulangan. Kriging memberi peta beserta ketidakpastiannya. Zona tinggi memanjang timur–barat
+sampai ENE, bukan NE seperti dugaan awal, dan sebagian besar di barat pemboran belum diuji."</div>
+<h4>Pertanyaan juri yang mungkin</h4>
+<dl class="qa">
+  <dt>Kalau BIC memilih dua, kenapa memakai tiga zona?</dt>
+  <dd>Rubrik meminta H/M/L. Kami tidak menyembunyikan bahwa data paling kuat mendukung dua kelompok; dengan tiga
+  zona, batas Sedang–Tinggi dilaporkan bersama selang dan stabilitas tiap sampel.</dd>
+  <dt>Resume geologi menyebut struktur NE. Kenapa anomali Anda E–ENE?</dt>
+  <dd>Kami menguji NE secara eksplisit dan tidak terkonfirmasi di tanah. Tetapi lintasan tanah juga E–W, jadi
+  kami tidak mengklaim ini membantah struktur NE.</dd>
+  <dt>Kenapa tidak memakai k-means seperti di literatur?</dt>
+  <dd>Kami coba (lihat <a href="#pembanding">pembanding</a>): k-means pada rasio log mengelompokkan "tanda tangan"
+  kimia, bukan kadar, jadi tidak menjawab pertanyaan zonasi kadar.</dd>
+</dl>
+<p><b>Bab laporan &amp; file:</b> Bab 4. <code>ml3_summary.csv</code>, <code>ml3_comparisons.csv</code>,
+<code>gis/ml3_zonasi.gpkg</code>, <code>gis/ml3_tanah_*.tif</code>, gambar <code>10_*_v1.png</code>.</p>
+
+<!-- ================================================================== -->
+<h2 id="ml4">ML-4 · Geokimia-stratigrafi bawah permukaan <span class="badge b-hi">tinggi</span></h2>
+<p><b>Pertanyaan.</b> Satuan kimia apa yang ada di sepanjang lubang bor, dan apakah satuan itu bisa
+dikorelasikan antar-lubang?</p>
+<div class="box answer"><span class="label">Jawaban singkat</span>
+HMM menemukan <b>{{ml4_K}} satuan kimia</b> dari Au, Ag, Cu dan As pada {{ml4_n}} komposit 1 m. Dua satuan sangat
+kokoh: <b>S1</b>, dasar sulfida argilik yang tandus, dan <b>S4</b>, zona sulfida kaya tembaga setebal ~30 m. Tiga
+lainnya satuan oksida dengan emas meningkat (S2 → S3 → S5). Satuan cocok di lubang kembar dan tetap berkorelasi
+sampai ~40–50 m ke samping.</div>
+
+<h3>Apa yang kami lakukan</h3>
+<p>Satu model Gaussian HMM untuk semua lubang (supaya satuan bisa dibandingkan antar-lubang). Jumlah satuan dipilih
+dengan validasi tinggalkan-satu-pad: kemampuan model meramal lubang yang tidak dilihatnya. K = 5 adalah K terkecil
+yang skornya dalam 1 simpangan baku dari yang terbaik. Pembanding: GMM dengan unsur dan K yang sama tetapi tanpa
+"memori" bawah-lubang. Stabilitas diukur dengan bootstrap pad (100 ulangan). Hasilnya digambar di tiga penampang
+(A, B, C).</p>
+
+<h3>Hasil utama</h3>
+<div class="tablewrap"><table>
+  <tr><th>Satuan</th><th>n komposit</th><th>Lubang</th><th>Au g/t (rerata geometrik)</th><th>Cu ppm</th><th>Tebal tipikal (m)</th><th>Stabilitas</th></tr>
+  <tr><td>S1 Au rendah, Cu rendah (Sulfida)</td><td class="n">{{ml4_S1_n}}</td><td class="n">{{ml4_S1_holes}}</td><td class="n">{{ml4_S1_au}}</td><td class="n">{{ml4_S1_cu}}</td><td class="n">{{ml4_S1_run}}</td><td class="n">{{ml4_S1_stabil}}</td></tr>
+  <tr><td>S2 Au rendah, Cu rendah (Oksida)</td><td class="n">{{ml4_S2_n}}</td><td class="n">{{ml4_S2_holes}}</td><td class="n">{{ml4_S2_au}}</td><td class="n">{{ml4_S2_cu}}</td><td class="n">{{ml4_S2_run}}</td><td class="n">{{ml4_S2_stabil}}</td></tr>
+  <tr><td>S3 Au sedang, Cu rendah (Oksida)</td><td class="n">{{ml4_S3_n}}</td><td class="n">{{ml4_S3_holes}}</td><td class="n">{{ml4_S3_au}}</td><td class="n">{{ml4_S3_cu}}</td><td class="n">{{ml4_S3_run}}</td><td class="n">{{ml4_S3_stabil}}</td></tr>
+  <tr><td>S4 Au sedang, Cu tinggi (Sulfida)</td><td class="n">{{ml4_S4_n}}</td><td class="n">{{ml4_S4_holes}}</td><td class="n">{{ml4_S4_au}}</td><td class="n">{{ml4_S4_cu}}</td><td class="n">{{ml4_S4_run}}</td><td class="n">{{ml4_S4_stabil}}</td></tr>
+  <tr><td>S5 Au tinggi, Cu rendah (Oksida)</td><td class="n">{{ml4_S5_n}}</td><td class="n">{{ml4_S5_holes}}</td><td class="n">{{ml4_S5_au}}</td><td class="n">{{ml4_S5_cu}}</td><td class="n">{{ml4_S5_run}}</td><td class="n">{{ml4_S5_stabil}}</td></tr>
+</table></div>
+<p>"Tebal tipikal" = panjang rata-rata satuan sebelum berganti, dari matriks transisi HMM. Nama satuan relatif
+(Cu "rendah" = di bawah S4) dan disusun dari kimia serta tabulasi silang dengan log; tim geologi boleh
+menyesuaikan istilah.</p>
+<figure>
+  <img src="outputs/figures/11_profil_status_v1.png" alt="Diagram kotak Au, Ag, Cu, As per satuan HMM">
+  <figcaption><b class="t">Kimia tiap satuan HMM.</b>
+  <span class="how">Cara membaca: tiap baris = satu satuan; kotak = kuartil, garis = persentil 5–95, skala log.
+  Lihat Cu: S4 jelas paling tinggi. Lihat Au: naik dari S1 ke S5.</span>
+  <span class="file">outputs/figures/11_profil_status_v1.png</span></figcaption>
+</figure>
+<figure>
+  <img src="outputs/maps/11_penampang_B_v1.png" alt="Penampang B-B' satuan HMM dibandingkan alterasi dan oksidasi log">
+  <figcaption><b class="t">Penampang B–B' (azimut 135°, pandangan ke timur laut).</b>
+  <span class="how">Cara membaca: tiap lubang digambar sebagai tiga pita. Pita tengah = satuan HMM (warna
+  legenda atas, nomor satuan tertulis pada pita), di kanannya alterasi lalu oksidasi hasil log. Arsiran = satuan
+  ambigu. Garis hitam = topografi lidar. Skala 1:2.500 tanpa pembesaran vertikal; komposit diproyeksikan dari
+  koridor ±40 m.</span>
+  <span class="file">outputs/maps/11_penampang_B_v1.png (juga A dan C)</span></figcaption>
+</figure>
+<figure>
+  <img src="outputs/figures/11_kontinuitas_v1.png" alt="Kesinambungan satuan antar-lubang terhadap jarak">
+  <figcaption><b class="t">Kesinambungan antar-lubang.</b>
+  <span class="how">Cara membaca: sumbu datar = jarak 3D antara dua komposit dari lubang berbeda; sumbu tegak =
+  proporsi pasangan yang satuannya sama. Garis bertitik = peluang acak. HMM (hitam) tinggi (0,71–0,72) di bawah
+  20 m, lalu turun dan masih di atas acak sampai ~40–50 m. GMM tanpa memori (putus-putus) cepat jatuh ke acak.</span>
+  <span class="file">outputs/figures/11_kontinuitas_v1.png</span></figcaption>
+</figure>
+
+<h3>Seberapa yakin?</h3>
+<ul>
+  <li><b>Memori bawah-lubang benar-benar membantu:</b> HMM meramal pad yang ditinggalkan lebih baik dari GMM pada
+  setiap K (+0,86 nats per komposit pada K = 5).</li>
+  <li><b>Tidak berisik:</b> HMM berganti satuan 6,3 kali per 100 m, mirip log litologi (5,2). GMM tanpa memori 28,1:
+  empat kali lebih berkedip.</li>
+  <li><b>Stabilitas:</b> ARI bootstrap {{ml4_boot_ari}} (selang {{ml4_boot_ari_ci}}). S1 (1,00) dan S4 (0,89) kokoh;
+  <b>batas S5 paling tidak stabil</b> (0,50). Kolom yang dipakai untuk menunjukkan ketidakpastian adalah
+  <code>ML_hmm_stabil</code>, bukan probabilitas model (yang hampir selalu ~1).</li>
+  <li>Tanpa Ag hasilnya hampir sama (ARI 0,77): sensor Ag tidak menggerakkan satuan.</li>
+</ul>
+<div class="box warn"><span class="label">Keterbatasan</span>
+<ul>
+  <li>Satuan HMM adalah <b>satuan kimia, bukan litologi</b> (hubungan dengan log litologi lemah, V 0,30).</li>
+  <li>Sepertiga komposit mengulang satu sampel panjang; sebagian "ketebalan" S1, S2, S5 berasal dari dukungan
+  sampel ini (dikuantifikasi di LOG).</li>
+  <li>Sulfur tidak masuk model utama. Menambahkannya mengubah satuan dan meningkatkan kecocokan dengan oksidasi,
+  tetapi hanya ada di 16 lubang (dilaporkan sebagai sensitivitas).</li>
+  <li>Hanya 12 pad independen; penampang adalah proyeksi dalam koridor ±40 m.</li>
+</ul></div>
+<div class="box why"><span class="label">Kenapa penting</span>
+Menjawab rubrik korelasi (40) dan geokimia-stratigrafi (40) dengan maksimal 3 penampang. Satuan kimia yang
+konsisten antar-lubang adalah dasar korelasi yang objektif, dan zona Cu (S4) serta dasar sulfida (S1) penting
+untuk pengolahan bijih dan pengelolaan batuan asam (ML-5).</div>
+<div class="box say"><span class="label">Ucapan presentasi</span>
+"Model HMM membaca tiap lubang meter demi meter memakai emas, perak, tembaga dan arsen. Ia menemukan lima satuan
+kimia dan belajar bahwa satuan cenderung berlanjut ke bawah, seperti cara ahli geologi melog. Dua satuan jelas
+dan kokoh: dasar sulfida argilik yang tandus dan zona sulfida kaya tembaga setebal sekitar 30 m. Tiga lainnya
+satuan oksida dengan emas meningkat; yang terkaya nyata, tetapi batasnya bergeser saat lubang diambil ulang, jadi
+kami tunjukkan stabilitasnya. Satuan-satuan ini cocok antar-lubang kembar dan berkorelasi sampai 40–50 m ke
+samping, dan HMM empat kali lebih tidak berisik dibanding pengelompokan tanpa memori bawah-lubang."</div>
+<h4>Pertanyaan juri yang mungkin</h4>
+<dl class="qa">
+  <dt>Kenapa lima satuan?</dt>
+  <dd>Dipilih dengan validasi per pad (bukan BIC, yang terus turun karena komposit 1 m saling berkorelasi):
+  K terkecil yang skornya dalam 1 simpangan baku dari yang terbaik. K = 4 dan 6 memberi pola mirip (ARI 0,74 dan 0,69).</dd>
+  <dt>Kenapa HMM tidak dilatih dengan log, seperti Random Forest?</dt>
+  <dd>Agar satuan berasal dari kimia saja dan bisa dibandingkan secara jujur dengan log. Hasilnya, di lubang kembar
+  &lt; 10 m HMM lebih konsisten daripada log itu sendiri (lihat <a href="#pembanding">pembanding</a>).</dd>
+  <dt>Apakah ketebalan satuan bisa dipercaya?</dt>
+  <dd>Untuk S3 dan S4 ya (bertahan saat sampel panjang diciutkan). Untuk S1, S2, S5 sebagian ketebalan berasal dari
+  sampel panjang yang diulang; kami sebutkan.</dd>
+</dl>
+<p><b>Bab laporan &amp; file:</b> Bab 5. <code>ml4_states.csv</code>, <code>ml4_comparisons.csv</code>,
+<code>ml4_sections.csv</code>, <code>gis/ml4_*.gpkg</code>, penampang <code>outputs/maps/11_penampang_{A,B,C}_v1.png</code>,
+proyek QGIS <code>outputs/maps/11_ml4_penampang.qgz</code>.</p>
+
+<!-- ================================================================== -->
+<h2 id="ml5">ML-5 · Klasifikasi PAF/NAF dan prediksi konformal <span class="badge b-mid">sedang</span></h2>
+<p><b>Pertanyaan.</b> Batuan buangan mana yang berpotensi membentuk air asam tambang (AMD), seberapa besar
+kapasitasnya, dan seberapa yakin kita untuk interval yang belum pernah diuji?</p>
+<div class="box answer"><span class="label">Jawaban singkat</span>
+Dari 106 uji NAG di RJDH012 kami bentuk tiga kelas: <b>NAF {{ml5_n_NAF}}</b> (tidak membentuk asam), <b>PAF-LC
+{{ml5_n_PAFLC}}</b> (pembentuk asam kapasitas rendah) dan <b>PAF-HC {{ml5_n_PAFHC}}</b> (kapasitas tinggi, ≥ 10 kg
+H₂SO₄/t). Batuan PAF-HC yang kaya sulfida <b>mudah dikenali</b> dari kimia. NAF dan PAF-LC di zona oksida <b>tidak
+bisa dibedakan</b> oleh unsur mana pun. Karena itu batuan yang belum diuji dikelola menurut kelas terburuk dalam
+himpunan prediksinya, dan tidak ada interval yang diberi NAF tanpa uji NAG.</div>
+
+<h3>Apa yang kami lakukan</h3>
+<ol>
+  <li><b>Label dari uji NAG</b> (hanya RJDH012): NAG pH ≥ 4,5 → NAF; di bawahnya, kapasitas NAG pada pH 4,5
+  ≥ 10 kg/t → PAF-HC, selain itu PAF-LC. Batas 5 dan 20 kg/t diuji: hanya 1 sampel berpindah kelas.</li>
+  <li><b>Model terawasi</b> (Random Forest) dari S, Cu, Au, As, Ag, oksidasi dan alterasi, divalidasi per blok
+  kedalaman 10 m.</li>
+  <li><b>Prediksi konformal Mondrian</b> (α 0,10): setiap interval mendapat himpunan kelas, bukan satu tebakan.</li>
+  <li><b>Pengelompokan tanpa label</b> (GMM): U1 pada kimia lengkap RJDH012; U2 pada semua baris dengan sulfur.</li>
+  <li>Kelas pengelolaan konservatif untuk seluruh basis data, plus daftar interval yang perlu uji NAG.</li>
+</ol>
+
+<h3>Hasil utama</h3>
+<figure>
+  <img src="outputs/figures/12_nag_ph_kapasitas_v1.png" alt="NAG pH terhadap kapasitas NAG dengan tiga kelas">
+  <figcaption><b class="t">Tiga kelas dari uji NAG (RJDH012, n 106).</b>
+  <span class="how">Cara membaca: sumbu datar = NAG pH, sumbu tegak = kapasitas asam (skala log). Garis tegak =
+  pH 4,5, garis datar = 10 kg H₂SO₄/t. Merah = zona oksida, hitam = sulfida. Semua sampel sulfida ada di kiri atas
+  (PAF-HC). Sampel oksida asam sebagian besar berkapasitas sangat rendah (~1–2 kg/t): kemungkinan keasaman
+  tersimpan (jarosit/alunit), bukan sulfida. Baris paling bawah = kapasitas di bawah batas deteksi.</span>
+  <span class="file">outputs/figures/12_nag_ph_kapasitas_v1.png</span></figcaption>
+</figure>
+<div class="tablewrap"><table>
+  <tr><th>Kelas sebenarnya</th><th>Cakupan himpunan (target 0,90)</th><th>Ukuran himpunan rata-rata</th><th>Himpunan berisi satu kelas</th></tr>
+  <tr><td>NAF</td><td class="n">{{ml5_cov_NAF}}</td><td class="n">{{ml5_size_NAF}}</td><td class="n">{{ml5_single_NAF}}%</td></tr>
+  <tr><td>PAF-LC</td><td class="n">{{ml5_cov_PAFLC}}</td><td class="n">{{ml5_size_PAFLC}}</td><td class="n">{{ml5_single_PAFLC}}%</td></tr>
+  <tr><td>PAF-HC</td><td class="n">{{ml5_cov_PAFHC}}</td><td class="n">{{ml5_size_PAFHC}}</td><td class="n">{{ml5_single_PAFHC}}%</td></tr>
+  <tr><td>Semua</td><td class="n">{{ml5_cov_semua}}</td><td class="n">{{ml5_size_semua}}</td><td class="n">{{ml5_single_semua}}%</td></tr>
+</table></div>
+<p>Cara membaca tabel: cakupan ~0,90 untuk setiap kelas berarti jaminan konformal terpenuhi. Untuk PAF-HC,
+71% himpunan hanya berisi satu kelas (model yakin). Untuk NAF dan PAF-LC himpunannya biasanya
+"NAF atau PAF-LC" (dua kelas): model jujur bahwa kimia tidak bisa memisahkan keduanya.</p>
+<figure>
+  <img src="outputs/figures/12_cakupan_konformal_v1.png" alt="Cakupan dan ukuran himpunan prediksi konformal per kelas">
+  <figcaption><b class="t">Prediksi konformal: cakupan (kiri) dan ukuran himpunan (kanan).</b>
+  <span class="how">Cara membaca: warna = set fitur (transfer, lengkap, tanpa S); batang polos α 0,10, arsir
+  α 0,20. Garis putus-putus = target 0,90. Ukuran himpunan PAF-HC paling kecil = paling yakin.</span>
+  <span class="file">outputs/figures/12_cakupan_konformal_v1.png</span></figcaption>
+</figure>
+<div class="tablewrap"><table>
+  <tr><th>Kelas pengelolaan (seluruh basis data)</th><th>Panjang (m)</th></tr>
+  <tr><td>NAF (hanya yang terukur NAG)</td><td class="n">{{ml5_m_NAF}}</td></tr>
+  <tr><td>PAF-LC</td><td class="n">{{ml5_m_PAFLC}}</td></tr>
+  <tr><td>PAF-HC (batas atas, konservatif)</td><td class="n">{{ml5_m_PAFHC}}</td></tr>
+  <tr><td>… di antaranya PAF-HC yakin (terukur atau himpunan tunggal; batas bawah)</td><td class="n">{{ml5_m_PAFHC_pasti}}</td></tr>
+  <tr><td>Daftar uji NAG: {{ml5_nag_runs}} interval</td><td class="n">{{ml5_nag_m}}</td></tr>
+  <tr><td>… prioritas 1 (mungkin PAF-HC, belum pasti): {{ml5_nag_p1_runs}} interval</td><td class="n">{{ml5_nag_p1_m}}</td></tr>
+</table></div>
+<figure>
+  <img src="outputs/figures/12_diagram_alir_paf_naf_v1.png" alt="Diagram alir klasifikasi PAF/NAF">
+  <figcaption><b class="t">Diagram alir klasifikasi PAF/NAF (wajib menurut brief).</b>
+  <span class="how">Cara membaca: kiri, jalur sampel yang punya uji NAG (langsung ke kelas). Kanan, jalur tanpa
+  NAG: tingkat data, model ML dan prediksi konformal; himpunan tunggal di tier 1 menjadi kelas ML, sisanya masuk
+  usulan uji NAG; semuanya dikelola menurut kelas paling berisiko dalam himpunannya. Bawah, pengelolaan indikatif
+  per kelas.</span>
+  <span class="file">outputs/figures/12_diagram_alir_paf_naf_v1.png</span></figcaption>
+</figure>
+<figure>
+  <img src="outputs/figures/12_ringkasan_lubang_v1.png" alt="Ringkasan PAF/NAF per lubang bor">
+  <figcaption><b class="t">Ringkasan per lubang.</b>
+  <span class="how">Cara membaca: kiri, panjang tiap kelas pengelolaan per lubang (merah tua = PAF-HC yakin,
+  arsir = PAF-HC mungkin). Kanan, tingkat data (tier 1 hijau tua = sulfur SCIS dalam rentang latih; ungu = tanpa
+  sulfur, mis. RJDH001) dan tanda hitam = panjang yang diusulkan untuk uji NAG.</span>
+  <span class="file">outputs/figures/12_ringkasan_lubang_v1.png</span></figcaption>
+</figure>
+<p><b>Tanpa label (GMM).</b> U1 (RJDH012) memisahkan sekelompok PAF-HC dari sisanya; di zona oksida saja BIC
+memilih <b>satu</b> kelompok: tidak ada struktur kimia yang memisahkan NAF dari PAF-LC. U2 (1.898 baris
+bersulfur) menemukan satu kelompok kaya sulfur (14 dari 15 anggota RJDH012 adalah PAF-HC). Hasil tanpa label dan
+terawasi sepakat.</p>
+
+<h3>Seberapa yakin?</h3>
+<p>Cakupan konformal diverifikasi dengan validasi bersarang per blok 10 m. Probabilitas RF sendiri tidak
+terkalibrasi antar-blok kedalaman, jadi <b>keluaran keputusan adalah himpunan konformal, bukan probabilitas</b>.
+Proksi NAPP dari Ca/Mg lab tidak bisa dipakai di zona oksida (proksi itu menyebut sebagian besar NAF sebagai PAF,
+karena sulfur SCIS di oksida bukan sulfida reaktif).</p>
+<div class="box warn"><span class="label">Keterbatasan (wajib ditulis di laporan)</span>
+<ul>
+  <li><b>Hanya satu lubang</b> (RJDH012) dengan uji NAG; hanya 16 sampel sulfida. Jaminan konformal berlaku untuk
+  material yang mirip RJDH012.</li>
+  <li>Tidak ada ANC terukur, jadi NAPP tidak bisa dihitung langsung; kapasitas NAG dipakai sebagai gantinya
+  (batas AMIRA 2002 <code>[VERIFY]</code>).</li>
+  <li>Tidak ada sampel Transisi dalam data latih; sebagian besar sulfur basis data di atas rentang latih
+  (diberi tier lebih rendah). RJDH004/019 memakai metode sulfur S2 (tidak terkalibrasi), RJDH001 tanpa sulfur.</li>
+  <li>Kelas pengelolaan sengaja konservatif: {{ml5_m_PAFHC}} m PAF-HC adalah batas atas, {{ml5_m_PAFHC_pasti}} m batas bawah.</li>
+</ul></div>
+<div class="box why"><span class="label">Kenapa penting</span>
+Menjawab rubrik terbesar di bab lingkungan (klasifikasi dan penanganan, 60 poin) dengan diagram alir wajib.
+Ketidakpastian diubah menjadi tindakan: daftar {{ml5_nag_runs}} interval ({{ml5_nag_m}} m) yang perlu uji NAG,
+diurutkan prioritas, sehingga anggaran uji dipakai di tempat yang benar-benar mengubah keputusan.</div>
+<div class="box say"><span class="label">Ucapan presentasi</span>
+"Hanya satu lubang, RJDH012, yang punya uji asam NAG. Dari situ kami bentuk tiga kelas: bukan pembentuk asam,
+pembentuk asam kapasitas rendah, dan kapasitas tinggi. Model mengenali batuan kapasitas tinggi yang kaya sulfida
+dengan andal, tetapi tidak ada unsur yang bisa membedakan batuan oksida non-asam dari yang kapasitas rendah.
+Prediksi konformal membuat ini eksplisit: setiap sampel mendapat himpunan kelas yang memuat kelas benar 90% kali,
+dan untuk batuan oksida himpunan itu biasanya 'non-asam atau kapasitas rendah'. Jadi batuan yang belum diuji kami
+kelola menurut kelas terburuk dalam himpunannya, dan kami daftar interval tempat uji NAG baru akan mengubah
+keputusan."</div>
+<h4>Pertanyaan juri yang mungkin</h4>
+<dl class="qa">
+  <dt>Kenapa tiga kelas, bukan PAF/NAF biasa?</dt>
+  <dd>Karena sampel oksida asam punya kapasitas ~1–2 kg/t, sedangkan sulfida ~50–90 kg/t. Penanganannya berbeda
+  jauh; dua kelas akan menyamakan keduanya.</dd>
+  <dt>Kenapa sulfur tidak cukup untuk memisahkan PAF dan NAF?</dt>
+  <dd>Di zona oksida, sulfur hampir tidak membedakan (AUC ≈ 0,51): sebagian besar sulfur ada dalam sulfat
+  (alunit/jarosit), bukan sulfida reaktif. Di RJDH012, S total median 1,10% vs SCIS 0,32%.</dd>
+  <dt>Bagaimana Anda tahu jaminan 90% benar dengan data sesedikit ini?</dt>
+  <dd>Cakupan diuji dengan validasi bersarang per blok 10 m; hasilnya 0,88–0,95 per kelas. Batasannya kami
+  sebutkan: berlaku untuk material mirip RJDH012.</dd>
+</dl>
+<p><b>Bab laporan &amp; file:</b> Bab 6. <code>ml5_summary.csv</code>, <code>ml5_conformal.csv</code>,
+<code>ml5_per_hole.csv</code>, <code>ml5_uji_nag.csv</code>, <code>ml5_clusters.csv</code>, <code>gis/ml5_paf.gpkg</code>,
+gambar <code>12_*_v1.png</code>.</p>
+
+<!-- ================================================================== -->
+<h2 id="ml6">ML-6 · Penargetan bor dengan Gaussian process = kriging (bonus) <span class="badge b-lo">rendah antar-pad</span></h2>
+<p><b>Pertanyaan.</b> Di mana lubang bor berikutnya memberi informasi atau kadar paling banyak, tanpa melanggar
+batasan lingkungan?</p>
+<div class="box answer"><span class="label">Jawaban singkat</span>
+Kontinuitas emas di bawah permukaan <b>pendek: ~10–25 m</b> (skala panjang {{ml6_ls_along}} / {{ml6_ls_across}} /
+{{ml6_ls_vert}} m). Di antara pad, model tidak lebih baik dari rata-rata, dan data bor tidak bisa menentukan arah
+tren. Karena itu kami usulkan <b>lima lubang dengan tugas berbeda</b>: dua perluasan di dekat intersep terbaik,
+satu penutup celah untuk mengukur kontinuitas, dan dua untuk menguji anomali tanah ML-3 tanpa menjanjikan kadar.</div>
+
+<h3>Apa yang kami lakukan</h3>
+<p>Gaussian process pada log Au (blok 2 m) dengan kernel Matérn anisotropik dan efek nugget. Arah kernel tidak
+dipaksa NE: kami bandingkan NE 45° (resume), ENE 75° (ML-3), isotropik dan arah terbaik dengan validasi
+tinggalkan-satu-pad. Kesetaraan dengan kriging ditunjukkan: sistem kriging sederhana dengan kovarians yang sama
+memberi taksiran identik (selisih maksimum 2×10⁻¹⁰). Lalu {{ml6_collar_A}} calon kolar disaring (lereng ≤ 25°, di
+luar sempadan sungai 50 m dari jaringan aliran turunan lidar) menjadi {{ml6_collar_A_pass}}, dan desain lubang
+dipilih bertahap dengan pembaruan varians kriging.</p>
+
+<h3>Hasil utama</h3>
+<figure>
+  <img src="outputs/figures/13_cv_lopo_v1.png" alt="Validasi silang tinggalkan-satu-pad untuk beberapa model GP">
+  <figcaption><b class="t">Validasi tinggalkan-satu-pad: apakah GP lebih baik dari rata-rata?</b>
+  <span class="how">Cara membaca: tiap baris = satu model; garis bertitik = model "rata-rata saja". Kiri, skor
+  densitas prediktif (lebih tinggi lebih baik, ±1 SE): semua model tumpang-tindih dengan rata-rata. Tengah, RMSE.
+  Kanan, cakupan selang 90% (ideal 90%). Kesimpulan: antar-pad, GP tidak punya kemampuan lebih dari rata-rata
+  (selisih {{ml6_dmlpd}} ± {{ml6_dmlpd_se}}; lebih baik di {{ml6_pads_better}} dari {{ml6_n_pads}} pad).</span>
+  <span class="file">outputs/figures/13_cv_lopo_v1.png</span></figcaption>
+</figure>
+<div class="tablewrap"><table>
+  <tr><th>Lubang</th><th>Tugas</th><th>Kolar E / N</th><th>Az / dip, panjang</th><th>Catatan</th></tr>
+  <tr><td>RJ-U01</td><td>Perluasan (tier A)</td><td class="n">507280 / 168600</td><td>315 / −60, 200 m</td><td>dekat RJDH012/016/017; harapan ~72 m ≥ 0,5 g/t</td></tr>
+  <tr><td>RJ-U02</td><td>Perluasan (tier A)</td><td class="n">507280 / 168560</td><td>315 / −60, 200 m</td><td>idem; 78 m perlu uji NAG prioritas 1</td></tr>
+  <tr><td>RJ-U03</td><td>Penutup celah (tier A)</td><td class="n">507400 / 168420</td><td>315 / −60, 200 m</td><td>antara pad, rata-rata 45 m dari data; mengukur kontinuitas 20–100 m</td></tr>
+  <tr><td>RJ-U04</td><td>Uji anomali tanah (tier B)</td><td class="n">507000 / 168340</td><td>315 / −60, 200 m</td><td>zona tanah Tinggi, indeks 2,93</td></tr>
+  <tr><td>RJ-U05</td><td>Uji anomali tanah (tier B)</td><td class="n">507700 / 168120</td><td>315 / −60, 200 m</td><td>zona tanah Sedang, indeks 1,98</td></tr>
+</table></div>
+<figure>
+  <img src="outputs/maps/13_peta_desain_v1.png" alt="Peta desain eksplorasi lanjutan dengan lubang usulan dan batasan lingkungan">
+  <figcaption><b class="t">Peta desain eksplorasi lanjutan (bonus).</b>
+  <span class="how">Cara membaca: bintang kuning = lubang tier A, segitiga = tier B, garis hitam = jejak 200 m.
+  Ungu = meter harapan Au ≥ 0,5 g/t dari GP; jingga = zona tanah Tinggi (ML-3); garis biru = aliran turunan lidar
+  ({{ml6_reaches}} ruas, {{ml6_drain_m}} m; garis putus-putus = {{ml6_ragu}} ruas ragu), biru pucat = sempadan 50 m.
+  Titik merah = interval PAF-HC (ML-5) di lubang yang ada.</span>
+  <span class="file">outputs/maps/13_peta_desain_v1.png (penampang: 13_penampang_desain_v1.png)</span></figcaption>
+</figure>
+
+<h3>Seberapa yakin?</h3>
+<p>Jujur rendah untuk prediksi antar-pad: pad yang diuji rata-rata 46–115 m dari data pad lain, jauh di luar
+jangkauan kontinuitas (~10–25 m). Jauh dari data, model kembali ke distribusi global (lubang 200 m di batuan baru
+"mengharapkan" ~62,5 m ≥ 0,5 g/t hanya dari statistik umum). Lubang perluasan hanya ~10 m di atas angka itu:
+keuntungannya nyata tetapi lokal. Profil arah berperiode 90°, jadi data bor bahkan tidak bisa membedakan arah jurus
+dari arah tegak lurusnya; NE 45° dipakai karena aturan seri (semua model dalam 1 SE).</p>
+<div class="box warn"><span class="label">Keterbatasan</span>
+<ul>
+  <li><b>Jangan klaim</b> bahwa GP "memprediksi kadar" di antara pad atau "mengonfirmasi tren NE".</li>
+  <li>Tanah tidak meramal Au bawah permukaan di kolar yang ada (r = −0,30, n 19), jadi tier B tidak menjanjikan
+  kadar; diberi label "uji anomali tanah, anggap PAF sampai diuji".</li>
+  <li>RJ-U03 dipilih dengan aturan pemecah seri di antara 138 desain yang setara (aturan tertulis, bukan optimum).</li>
+  <li>Jaringan sungai diturunkan dari DEM kontur, bukan data resmi; 5 ruas ragu belum dicek citra satelit.
+  Sempadan 50 m mengacu Permen PUPR 28/PRT/M/2015 <code>[VERIFY]</code>.</li>
+</ul></div>
+<div class="box why"><span class="label">Kenapa penting</span>
+Menjawab eksplorasi lanjutan (50) dan bonus desain (100). Temuan "kontinuitas pendek" adalah informasi
+keputusan: program berikutnya perlu spasi lebih rapat dan lubang penutup celah, bukan hanya mengejar kadar.
+Setiap kolar membawa rencana penanganan PAF (sump berlapis, cutting PAF-HC dikantongi, uji NAG pada inti baru).</div>
+<div class="box say"><span class="label">Ucapan presentasi</span>
+"Kami memakai Gaussian process, yang secara matematis sama dengan kriging, untuk menaksir emas di antara lubang
+beserta tingkat keyakinannya. Temuan jujurnya: kontinuitas emas pendek, sekitar 10–25 m, jadi di antara pad model
+tidak lebih baik dari rata-rata, dan data bor tidak bisa menentukan arah tren. Karena itu kami usulkan lubang
+dengan tugas berbeda: dua perluasan di dekat intersep terbaik, tempat model memang tahu sesuatu, satu pengisi
+celah untuk mengukur kontinuitas yang belum kami ketahui, dan dua untuk menguji anomali tanah tanpa menjanjikan
+kadar. Semua kolar berada di lereng landai, di luar sempadan sungai 50 m, dengan penanganan PAF."</div>
+<h4>Pertanyaan juri yang mungkin</h4>
+<dl class="qa">
+  <dt>Kalau model tidak lebih baik dari rata-rata, kenapa dipakai?</dt>
+  <dd>Karena di dekat data model memang tahu sesuatu (lubang perluasan), dan karena varians kriging menunjukkan
+  di mana informasi paling kurang (lubang penutup celah). Kegagalan antar-pad adalah temuan tentang spasi bor.</dd>
+  <dt>Apa bukti GP sama dengan kriging?</dt>
+  <dd>Kami menyelesaikan sistem kriging sederhana dengan kovarians hasil GP; taksirannya identik dengan GP
+  (selisih 2×10⁻¹⁰), dan variogram tersirat GP cocok dengan variogram eksperimental.</dd>
+  <dt>Kenapa semua lubang azimut 315°?</dt>
+  <dd>Mengikuti orientasi lubang yang ada (315/135) agar data baru bisa langsung dibandingkan; desain lain diuji
+  dan tidak lebih baik.</dd>
+</dl>
+<p><b>Bab laporan &amp; file:</b> Bab 7 + bonus. <code>ml6_usulan_lubang.csv</code> (format kolar/survei),
+<code>ml6_cv.csv</code>, <code>gis/ml6_target.gpkg</code>, <code>gis/drainage.gpkg</code>, peta
+<code>outputs/maps/13_peta_desain_v1.png</code>, <code>13_penampang_desain_v1.png</code>, proyek
+<code>outputs/maps/13_ml6_desain.qgz</code>.</p>
+
+<!-- ================================================================== -->
+<h2 id="pembanding">Pembanding literatur</h2>
+<p>Kami mengulang dua alur kerja dari makalah rujukan panitia pada <b>sampel yang sama persis</b> dengan model
+kami. Keduanya masih <code>[VERIFY]</code>: hanya hal yang tertulis di sini yang boleh dikutip sampai PDF aslinya
+dibaca.</p>
+
+<h3>1. Gaya Jansson dkk. (2022) <code>[VERIFY]</code>: clr → PCA robust → k-means</h3>
+<div class="box answer"><span class="label">Jawaban singkat</span>
+Rasio log (clr) menghapus besaran kadar, jadi k-means mengelompokkan "tanda tangan" kimia, bukan kadar. Karena itu
+kelompoknya tidak cocok dengan zona H/M/L kita (batuan ARI {{s9_rock_km_gmm}}). Di RJDH012, GMM kita memisahkan
+oksida dan sulfida jauh lebih baik pada jumlah kelompok yang sama (ARI {{s9_u1_gmm_oks}} vs {{s9_u1_km_oks}}).</div>
+<figure>
+  <img src="outputs/figures/14_jansson_vs_gmm_v1.png" alt="Kurva siku k-means dan BIC GMM pada data yang sama">
+  <figcaption><b class="t">Kurva siku k-means (atas) vs BIC GMM kami (bawah), empat kasus.</b>
+  <span class="how">Cara membaca: atas, lingkaran merah = k pilihan aturan siku; kurvanya halus, jadi "siku"
+  lemah. Bawah, ΔBIC per K (segitiga = BIC terbaik): pilihan berbasis kecocokan statistik.</span>
+  <span class="file">outputs/figures/14_jansson_vs_gmm_v1.png</span></figcaption>
+</figure>
+
+<h3>2. Analog sederhana Fontana dkk. <code>[VERIFY]</code>: PCA → Random Forest → penghalusan</h3>
+<div class="box answer"><span class="label">Jawaban singkat</span>
+RF yang dihaluskan lebih cocok dengan log (V {{s9_rf_alt_V}} vs HMM {{s9_hmm_alt_V}}), wajar karena dilatih dengan log.
+Setelah dihaluskan, pergantian label setara HMM ({{s9_sw_rf_smooth}} vs {{s9_sw_hmm}} per 100 m; RF mentah
+{{s9_sw_rf_raw}}). Pada lubang kembar &lt; 10 m, HMM jauh lebih konsisten ({{s9_twin_hmm}}) daripada RF
+({{s9_twin_rf}}) atau log alterasi itu sendiri ({{s9_twin_log}}). Keduanya saling melengkapi: RF untuk mengisi log
+yang hilang, HMM untuk penampang korelasi.</div>
+<figure>
+  <img src="outputs/figures/14_rf_vs_hmm_v1.png" alt="Perbandingan RF dihaluskan dan HMM terhadap log">
+  <figcaption><b class="t">RF + penghalusan vs HMM.</b>
+  <span class="how">Cara membaca: kiri, kesesuaian dengan log (Cramér's V). Tengah, pergantian label per 100 m
+  (log sebagai acuan: alterasi {{s9_sw_log_alt}}, oksidasi {{s9_sw_log_oks}}). Kanan, kesesuaian label antar-lubang
+  pada pad kembar menurut jarak; garis bertitik = peluang acak.</span>
+  <span class="file">outputs/figures/14_rf_vs_hmm_v1.png</span></figcaption>
+</figure>
+<div class="box warn"><span class="label">Jangan diklaim</span>
+Ini analog sederhana, <b>bukan replikasi</b> CSIRO Data Mosaic. <b>Jangan bandingkan</b> akurasi kami dengan 82,5%
+mereka: endapan, ukuran sampel, kelas dan cara validasi berbeda.</div>
+<div class="box say"><span class="label">Ucapan presentasi</span>
+"Kami mengulang dua alur kerja dari literatur pada sampel yang sama. Yang pertama mengelompokkan menurut rasio
+unsur, bukan kadar, jadi tidak menggantikan zonasi kadar kami. Yang kedua, random forest yang dihaluskan, cocok
+dengan log ahli geologi, tetapi HMM kami memberi jawaban yang sama pada lubang kembar yang berjarak beberapa meter.
+Karena itu HMM kami pakai untuk penampang korelasi."</div>
+
+<!-- ================================================================== -->
+<h2 id="sintesis">Sintesis: bagaimana semua hasil saling terhubung</h2>
+<div class="flow" role="img" aria-label="Alur hasil: data bersih ke ambang, zonasi permukaan, satuan HMM, kelas PAF, dan target bor">
+<svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker></defs>
+  <g class="node"><rect x="10" y="115" width="140" height="70" rx="8"/><text x="80" y="143" text-anchor="middle">Data bersih</text><text class="s" x="80" y="162" text-anchor="middle">0→kosong, DL, drape</text></g>
+  <g class="node"><rect x="200" y="20" width="160" height="70" rx="8"/><text x="280" y="48" text-anchor="middle">ML-1 Ambang</text><text class="s" x="280" y="67" text-anchor="middle">populasi per unsur</text></g>
+  <g class="node"><rect x="200" y="115" width="160" height="70" rx="8"/><text x="280" y="143" text-anchor="middle">ML-3 Zona tanah</text><text class="s" x="280" y="162" text-anchor="middle">indeks + kriging</text></g>
+  <g class="node"><rect x="200" y="210" width="160" height="70" rx="8"/><text x="280" y="238" text-anchor="middle">ML-2 / ML-4 Bor</text><text class="s" x="280" y="257" text-anchor="middle">kimia→log, satuan HMM</text></g>
+  <g class="node"><rect x="420" y="210" width="160" height="70" rx="8"/><text x="500" y="238" text-anchor="middle">ML-5 PAF/NAF</text><text class="s" x="500" y="257" text-anchor="middle">himpunan konformal</text></g>
+  <g class="node"><rect x="420" y="115" width="160" height="70" rx="8"/><text x="500" y="143" text-anchor="middle">ML-6 GP = kriging</text><text class="s" x="500" y="162" text-anchor="middle">kontinuitas Au</text></g>
+  <g class="node"><rect x="650" y="115" width="200" height="70" rx="8"/><text x="750" y="143" text-anchor="middle">5 usulan lubang</text><text class="s" x="750" y="162" text-anchor="middle">+ sempadan + uji NAG</text></g>
+  <path class="arrow" d="M150,140 C175,140 175,55 198,55"/>
+  <path class="arrow" d="M150,150 L198,150"/>
+  <path class="arrow" d="M150,160 C175,160 175,245 198,245"/>
+  <path class="arrow" d="M280,90 L280,113"/>
+  <path class="arrow" d="M360,245 L418,245"/>
+  <path class="arrow" d="M360,235 C390,235 390,165 418,165"/>
+  <path class="arrow" d="M360,150 C390,150 390,140 418,140"/>
+  <path class="arrow" d="M580,150 L648,150"/>
+  <path class="arrow" d="M580,245 C620,245 620,170 648,170"/>
+  <path class="arrow" d="M360,130 C500,60 640,80 700,113"/>
+</svg>
+</div>
+<h3>Cerita prospek dalam lima kalimat</h3>
+<ol>
+  <li><b>Permukaan:</b> tanah RJ menunjukkan satu jejak mineralisasi (Au-As-Pb-Hg-Sb-Cu) yang memanjang E–ENE;
+  bagian terbesar zona Tinggi di barat-tengah belum dibor.</li>
+  <li><b>Bawah permukaan:</b> 30 m teratas tercuci (median Au 0,05 g/t vs 0,64 g/t pada 60–100 m); di bawahnya
+  satuan oksida dengan emas meningkat, zona Cu sulfida ~30 m, dan dasar sulfida argilik yang tandus.</li>
+  <li><b>Kimia vs log:</b> alterasi dan oksidasi bisa dibaca dari kimia (~70%), litologi tidak, karena alterasi
+  sulfidasi tinggi telah menimpa batuan asal.</li>
+  <li><b>Lingkungan:</b> batuan sulfida adalah PAF kapasitas tinggi; batuan oksida "NAF atau PAF-LC" tidak bisa
+  dipisahkan dari kimia, jadi dikelola konservatif dan diuji NAG.</li>
+  <li><b>Langkah berikutnya:</b> kontinuitas emas pendek, jadi program bor menggabungkan perluasan, penutup celah
+  dan uji anomali tanah, semuanya di luar sempadan sungai dan dengan penanganan PAF.</li>
+</ol>
+
+<!-- ================================================================== -->
+<h2 id="keterbatasan">Keterbatasan menyeluruh &amp; "jangan diklaim"</h2>
+<div class="tablewrap"><table>
+  <tr><th>Jangan katakan</th><th>Katakan</th></tr>
+  <tr><td>"Model kami 70% akurat seperti Fontana 82,5%."</td><td>"Alterasi 0,70 akurasi seimbang, diuji pada pad yang tidak pernah dilihat model; acak 0,25." Tanpa pembandingan angka dengan makalah.</td></tr>
+  <tr><td>"Anomali tanah membuktikan struktur E–ENE."</td><td>"Indeks tanah memanjang E–ENE; lintasan sampel juga E–W, jadi efek lintasan belum bisa dipisahkan."</td></tr>
+  <tr><td>"Data bor mengonfirmasi tren NE."</td><td>"Data bor tidak bisa menentukan arah; NE dari resume geologi tetap dugaan."</td></tr>
+  <tr><td>"GP memprediksi kadar di antara pad."</td><td>"Antar-pad, GP tidak lebih baik dari rata-rata; kontinuitas ~10–25 m."</td></tr>
+  <tr><td>"Interval X adalah NAF."</td><td>"NAF hanya dari uji NAG; interval tanpa uji dikelola menurut kelas terburuk dalam himpunannya."</td></tr>
+  <tr><td>"Satuan HMM adalah litologi."</td><td>"Satuan HMM adalah satuan kimia; hubungannya dengan litologi lemah."</td></tr>
+  <tr><td>"Peta sungai resmi."</td><td>"Aliran turunan dari DEM lidar" (label wajib di setiap gambar).</td></tr>
+  <tr><td>"Data sudah lolos QAQC."</td><td>"Tidak ada sampel QAQC di basis data; kami memakai pemeriksaan internal."</td></tr>
+</table></div>
+<p>Keterbatasan umum: 12 pad independen; satu lubang dengan uji NAG; satu kampanye tanah 1997–99; unsur
+multi-elemen lengkap hanya di RJDH001 dan RJDH012; metode sulfur berbeda antar-lubang. Semua referensi bertanda
+<code>[VERIFY]</code> harus diperiksa dari sumber aslinya sebelum masuk Daftar Pustaka (daftar di
+<code>PANDUAN_TIM.md</code> §4).</p>
+
+<!-- ================================================================== -->
+<h2 id="lampiran">Lampiran: gambar dan file lain</h2>
+<p>Gambar yang tidak dimuat di atas (semua 300 dpi, label Bahasa Indonesia, di <code>outputs/figures/</code>):</p>
+<div class="tablewrap"><table>
+  <tr><th>File</th><th>Isi</th></tr>
+  <tr><td><code>07_au_lubang_tahun_v1.png</code></td><td>Au per lubang dan per tahun lab (cek bias era lab RJDH002/003)</td></tr>
+  <tr><td><code>08_ambang_batuan_v1.png</code>, <code>08_bic_v1.png</code></td><td>Ambang batuan; BIC per unsur</td></tr>
+  <tr><td><code>09_skor_v1.png</code>, <code>09_shap_v1.png</code>, <code>09_reliabilitas_v1.png</code>, <code>09_skor_pad_v1.png</code></td><td>Skor ML-2 per target, kepentingan SHAP, keandalan probabilitas, skor per pad</td></tr>
+  <tr><td><code>10_zona_unsur_v1.png</code>, <code>10_gp_cv_v1.png</code></td><td>Unsur per zona ML-3; validasi peta GP tanah</td></tr>
+  <tr><td><code>11_pemilihan_K_v1.png</code>, <code>11_matriks_transisi_v1.png</code>, <code>11_strip_log_v1.png</code></td><td>Pemilihan K HMM, matriks transisi, strip log 19 lubang</td></tr>
+  <tr><td><code>12_profil_rjdh012_v1.png</code>, <code>12_matriks_kebingungan_v1.png</code>, <code>12_shap_lengkap_v1.png</code>, <code>12_gmm_u1_u2_v1.png</code>, <code>12_napp_proksi_v1.png</code></td><td>Profil RJDH012, matriks konfusi PAF, SHAP, klaster U1/U2, proksi NAPP</td></tr>
+  <tr><td><code>13_profil_theta_v1.png</code>, <code>13_variogram_gp_v1.png</code>, <code>13_peringkat_kandidat_v1.png</code></td><td>Profil arah GP, variogram GP vs eksperimental, peringkat kandidat</td></tr>
+  <tr><td><code>outputs/maps/11_penampang_{A,C}_v1.png</code>, <code>11_peta_indeks_penampang_v1.png</code>, <code>13_penampang_desain_v1.png</code></td><td>Penampang lain dan peta indeks</td></tr>
+</table></div>
+<p>Untuk peta file per bab laporan, pekerjaan terbuka dan referensi yang harus diverifikasi, lihat
+<code>PANDUAN_TIM.md</code>. Untuk rincian teknis (hiperparameter, semua skor, deviasi dari rencana), lihat
+<code>LOG.md</code>.</p>
+
+<footer>Dibuat otomatis oleh <code>scripts/21_laporan_ml.py</code> dari <code>reports/laporan_ml_src.html</code>
+dan tabel <code>data/processed/</code>. Untuk mengubah teks, sunting sumbernya lalu jalankan ulang skrip;
+jangan menyunting file HTML hasil.</footer>
+
+</article>
+</main>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById("themeBtn"), root = document.documentElement;
+  try { var t = localStorage.getItem("laporan-theme"); if (t) root.setAttribute("data-theme", t); } catch (e) {}
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("laporan-theme", next); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>
