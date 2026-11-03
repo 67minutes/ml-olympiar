@@ -1711,3 +1711,206 @@ figure (866 m) a lower bound.
 > gets a set of classes that contains the true one 90% of the time, and for oxide rock that set is
 > usually "non-acid or low-capacity". So we manage untested rock by the worst class in its set and list
 > the intervals where a new NAG test would change the decision.
+
+---
+
+## 2026-11-03 · ML-6 plan: drill targeting by Gaussian process (= kriging) + derived drainage (approved)
+
+Full plan: `C:\Users\mauli\.claude\plans\plan-ml-6-cheeky-koala.md`. Summary:
+
+**Profiling (read-only).** 3,057 `comp_ok` composites, 19 holes, 12 pads (footprint ≈ E 507100–507500,
+N 168310–168760; to 282 m). Au median g/t / share ≥ 0.5 by depth: 0–30 m 0.05 / 17%, 30–60 0.27 / 42%,
+60–100 0.64 / 56%, 100–150 0.31 / 41%, 150–250 0.34 / 40% (leached top 30 m). **Soil does not predict
+downhole Au at the collars:** top-30 m mean log Au vs ML-3 soil index at the collar r = −0.30
+(whole hole −0.21), n = 19, so no soil drift term in the 3D GP. Holes mostly az 315/135.
+
+**Human decisions.** (1) Two tiers: A = 3D GP on downhole log Au, UCB ranks infill/extension holes
+near drilling; B = step-out holes ranked by the ML-3 soil-index GP in the undrilled soil high, labelled
+"uji anomali tanah", no grade promised. (2) Kernel orientation estimated and compared, not fixed NE:
+profile likelihood over strike, then leave-one-pad-out CV of NE 45° (resume), ENE 75° (ML-3), best
+angle, isotropic; CV winner used (AGENTS §6 "aligned NE" is updated in the log if NE loses).
+(3) Derive drainage now (QGIS GRASS `r.watershed` + `r.stream.extract`, 2 ha threshold, 1/5 ha
+sensitivity, reaches with DEM support > 30 m flagged `ragu`), 50 m pad buffer (Permen PUPR
+28/PRT/M/2015 `[VERIFY]`).
+
+**Method** (`src/targeting.py`, `scripts/15_drainage_qgis.py`, `16_ml6_targeting.py`,
+`17_ml6_qgis_layouts.py`). log10 Au, censored spread on [DL/3, DL] (ML-4 rule), regularised to 2 m
+within contiguous segments. Kernel Constant × Matérn ν 1.5 (along strike, across strike, vertical
+length scales) + White nugget; θ 0–165° step 15 by LML; leave-one-pad-out CV (refit per fold) by mean
+log predictive density, RMSE, 90% coverage; RBF sensitivity. Kriging equivalence shown by solving the
+simple-kriging system and by GP-implied vs experimental variograms. Block model 10 × 10 × 5 m within
+100 m of data: μ, σ, P(Au ≥ 0.5 g/t) (0.3 sensitivity), UCB μ + 2σ. Tier A: collars on a 20 m grid
+within 150 m of drilling, slope ≤ 25°, outside the 50 m buffer; az 315/135 (+ across θ), dip −60/−75/−90,
+200 m; score = optimistic metres with UCB ≥ log10 0.5; greedy batch of 3 with posterior-variance
+update (kriging believer). Tier B: soil-index UCB within 50 m of the collar, > 150 m from drilling,
+2 holes ≥ 150 m apart. Per hole: distance to drainage, basin, slope, expected PAF-HC metres and ML-5
+NAG-priority metres (reported, not scored).
+
+**Outputs.** `data/processed/ml/komposit__ml6_gp.csv` (`ML_gp_*`), `ml6_{summary,cv,profil_theta,
+kandidat,usulan_lubang}.csv`, `gis/drainage.gpkg`, `gis/ml6_target.gpkg`, `gis/ml6_*.tif`, figures
+`13_*_v1.png`, QGIS `outputs/maps/13_ml6_desain.qgz` (design map + one section).
+
+---
+
+## 2026-11-03 · ML-6 results: drill targeting by Gaussian process (= kriging) + derived drainage
+
+**Run.** In QGIS 4.2.3 via MCP: `scripts/15_drainage_qgis.py` (GRASS 8.5, 40 s). Then
+`uv run python scripts/15b_drainage_post.py`, `PYTHONIOENCODING=utf-8 uv run python -W ignore
+scripts/16_ml6_targeting.py --stage all` (8.5 min) and `scripts/17_ml6_qgis_layouts.py` in QGIS.
+`scripts/07_export.py`: all checks pass; `RJ_DH_komposit_1m.csv` gains 7 `ML_gp_*` columns.
+Tests: `tests/test_targeting.py` (11); full suite 118 pass. Determinism: two full runs give the same
+sha256 for `komposit__ml6_gp.csv` (174a4f85…), `ml6_usulan_lubang.csv`, `ml6_cv.csv` and
+`ml6_kandidat.csv`. After the tie-break change (below), two design-stage runs give the same hashes.
+QGIS read-back: 26 reaches, 26 basins, 5 proposals/traces, 4,574 section cells and 457 composites,
+all equal to Python.
+
+**Human decisions during execution (2026-11-03).** (1) Tier A = **mixed portfolio**: 2 extension holes
+by expected metres ≥ 0.5 g/t plus 1 gap-closing hole by kriging variance, greedy with variance update.
+The no-skill CV result is stated openly. (2) **Orientation NE 45° by the tie rule**: all four CV scores
+are reported, with the statement that the drill data neither confirm nor refute NE.
+
+**Data.** 3,057 `comp_ok` composites → 1,532 2 m blocks (length-weighted within contiguous segments),
+12 pads. log10 Au: censored values spread uniform on [DL/3, DL] and the rest dequantised (ML-4 rule),
+20 draws. Censored share 9.1%; mean −0.684, SD 0.821.
+
+**Hyperparameters.**
+- Seed 0. Kernel Constant × Matérn ν = 1.5 + WhiteKernel. Length scales are in a rotated frame (along
+  strike, across strike, vertical), bounds 5–1,000 m. `normalize_y` (= simple kriging with the sample
+  mean); 3 restarts (2 in CV).
+- θ profile 0–165° step 15. Leave-one-pad-out CV (12 folds, hyperparameters refit per fold). Winner
+  rule: best mean log predictive density (mlpd); within 1 SE prefer NE, then isotropic.
+- Block model 10 × 10 × 5 m, ≤ 100 m horizontal from data, down to min data Z − 50 m.
+- Cutoffs: 0.5 g/t (0.3 as sensitivity); κ = 2 (0, 1, 3 shown).
+- Designs: 200 m long, 2 m step; az 315/135 (+ vertical); dip −60/−75/−90. Collars on a 20 m grid,
+  ≤ 150 m from drilling, pad slope ≤ 25° (median of 9 points ± 8 m), outside the 50 m stream buffer.
+- New rock = trace points ≥ 20 m (3D) from every sample. Tier B: 2 picks ≥ 150 m apart, soil-index
+  UCB within 50 m of the collar.
+
+**θ profile.** LML −959.4 (15° and 105°) to −962.1 (150°); isotropic −963.3; NE 45° −961.9. The profile
+has **period 90°**: θ and θ + 90° give identical LML with the two horizontal length scales swapped. So
+the data cannot even tell strike from across-strike. Spread 2.7 log units, isotropic within 4: the
+orientation is not identified.
+
+**Pad CV (12 pads).**
+
+| Model | mlpd ± SE | RMSE | cov90 |
+|---|---|---|---|
+| ENE 75° | −1.262 ± 0.080 | 0.823 | 0.863 |
+| NE 45° (chosen) | −1.266 ± 0.081 | 0.824 | 0.860 |
+| isotropic | −1.266 ± 0.076 | 0.828 | 0.867 |
+| mean only | −1.262 ± 0.069 | 0.828 | 0.884 |
+| best θ 105° | −1.281 ± 0.106 | 0.820 | 0.841 |
+| RBF NE 45° | −1.275 ± 0.082 | 0.828 | 0.855 |
+| nested NE 45° | −1.267 ± 0.092 | 0.821 | 0.869 |
+
+- **The GP has no between-pad skill.** Paired GP − mean: Δ mlpd −0.005 ± 0.013, 8/12 pads better.
+  Held-out pads lie a median 46–115 m from other pads' data, beyond the fitted ranges (≈ 8–23 m).
+- Scratch diagnostics (not adopted): depth-trend mean Δ −0.026 ± 0.042; depth trend + GP −0.042 ±
+  0.051; 10 m support GP −0.003 ± 0.033.
+- Nested and RBF do not beat the single Matérn by > 1 SE, so they are not adopted.
+- **Orientation verdict:** all within 1 SE, so NE 45° by the tie rule. This does not contradict
+  AGENTS §4 or §6 ("aligned NE" remains the resume prior, unconfirmed by the drill data). ML-3 soil
+  favoured E–ENE; that is noted and not resolved.
+
+**Final model.** `0.921² · Matern([22.5, 12.2, 8.17] m, ν = 1.5) + White(0.061)`, LML −961.9.
+- Nugget 0.041, sill 0.572 (log10²). Origin E 507303, N 168517, RL 524.
+- **Kriging equivalence shown:** the simple-kriging system with the fitted covariance reproduces the
+  GP mean (max |Δ| 2.1e-10). Figure `13_variogram_gp_v1` plots the GP-implied γ(h) against
+  experimental variograms: a good fit vertically and across strike to ~120 m; along strike the pairs
+  are sparse and erratic.
+
+**Block model.** 128,124 nodes in 2,557 columns; P(≥ 0.5 g/t) ≥ 0.5 at 2,391 nodes; σ median 0.757.
+**Far from data the model returns the prior:** a 200 m hole in unknown rock "expects" ≈ 62.5 m
+≥ 0.5 g/t, purely from the global distribution.
+
+**Drainage (lidar DEM 2 m).**
+- `r.watershed` (MFD, convergence 5, least-cost, no sink fill), then `r.stream.extract`.
+- 2 ha: 26 reaches, 3,421 m, Strahler {1: 18, 2: 7, 3: 1}. All reaches run downhill (tolerance
+  0.5 m). `ragu` (mean DEM support > 30 m) on 5 reaches (93 m). 26 basins, 94.9 ha; 50 m buffer
+  35.4 ha (Permen PUPR 28/PRT/M/2015 `[VERIFY]`).
+- Sensitivity: 1 ha 55 reaches / 5,190 m; 5 ha 14 / 1,970 m. One single-vertex line dropped per
+  network.
+- **Click-note for the human:** in `outputs/maps/qc/13_drainage_check.qgz` add a satellite basemap
+  (XYZ tiles, e.g. Esri World Imagery; nothing is uploaded). Check the 5 dashed (`ragu`) reaches and
+  the 3rd-order trunk in the SE. Flag disagreements in a note; do not delete reaches.
+
+**Tier A.** 946 collars, 127 pass (699 slope > 25°, 94 outside DEM, 26 buffer) → 635 designs, 34,126
+in-domain trace points (89% new rock).
+
+| Hole | Collar E / N / RL | az / dip | Basis | Score at pick | Expected m ≥ 0.5 | PAF-HC m (confident) | NAG priority-1 m | Stream / basin |
+|---|---|---|---|---|---|---|---|---|
+| RJ-U01 (A00535) | 507280 / 168600 / 579.8 | 315 / −60 | extension | 71.8 m | 71.8 | 20 (20) | 0 | 233 m / 7 |
+| RJ-U02 (A00470) | 507280 / 168560 / 600.8 | 315 / −60 | extension | 71.4 m | 71.7 | 96 (18) | 78 | 237 m / 7 |
+| RJ-U03 (A00275) | 507400 / 168420 / 611.6 | 315 / −60 | gap-closing | 114.4 m·log10² | 62.8 | 0 | 0 | 144 m / 14 |
+
+- Extension picks are only ≈ 10 m above the prior (62.5). Their advantage comes from the high-grade
+  RJDH012/016/017 data next to them; it is real but local.
+- Top κ ≥ 1 design is A00075: optimistic metres saturate at 200 m far from data, so κ = 2 UCB cannot
+  rank holes. This is why the gap-closing score uses plausible variance.
+
+**Deviation: tie-break for the gap-closing hole.** Plausible variance also saturates at the prior: at
+round 3, **138 designs lie within 1% of the best** (all fully in new rock, σ at the prior). Before this
+fix the pick (A00089, 507480 / 168220) was an arbitrary choice among them.
+- Rule now (`greedy_portfolio`, `tie_tol = 0.01`, ucb rounds only): among tied designs, take the one
+  whose new-rock points lie closest to existing samples.
+- RJ-U03 = A00275: mean 45 m from data, between pads, inside the drilled footprint.
+- Why: it closes a gap between drilled ground, and its assays give pairs at the 20–100 m lags that the
+  variogram cannot resolve now (the cause of the no-skill CV).
+- Extension rounds are unaffected: next design 1.7% below.
+
+**Tier B (uji anomali tanah, no grade promised).** 1,134 collars, 333 pass (604 slope, 192 buffer,
+5 outside DEM). The test is soil vs downhole Au, r = −0.30 at the existing collars.
+
+| Hole | Collar E / N / RL | az / dip | Soil zone, index | UCB score | Stream / basin |
+|---|---|---|---|---|---|
+| RJ-U04 | 507000 / 168340 / 427.6 | 315 / −60 | Tinggi, 2.93 | 4.19 | 166 m / 17 |
+| RJ-U05 | 507700 / 168120 / 489.7 | 315 / −60 | Sedang, 1.98 | 3.81 | 192 m / none |
+
+Every hole: slope ≤ 25° and > 50 m from any reach (asserted). Handling note: lined sumps; PAF-HC cuttings
+bagged; NAG on the new core (feeds the ML-5 list); Tier B "anggap PAF sampai diuji".
+
+**Section D–D'.** In the plane of RJ-U01, az 135° (view NE), 510 m: from 250 m SE to 260 m NW of the
+collar (extended from 120 m SE so RJ-U03 is on it). 4,574 GP cells (5 m); 457 HMM composites from
+RJDH005/012/016/017 (±40 m); proposed traces RJ-U01, U02 and U03. U03 is projected 42 m, so proposed
+traces use ±50 m, labelled with the offset; collars must lie on the section length.
+
+**Other deviations from the plan.**
+- Draws are averaged before fitting (plan: draw 0). Kriging is linear in the data, so the mean of the
+  draws is the right input.
+- `scripts/15b_drainage_post.py` added (Strahler, checks, buffer in uv Python).
+- Tier A score: approved mixed portfolio (expected metres + plausible variance) instead of κ = 2
+  optimistic metres; scores count new rock only.
+- Nested Matérn tested as a sensitivity. 2 m support kept. Section az 135 (ML-4 convention).
+- Extra outputs: `ml6_cv_per_pad.csv`, `data/interim/ml6_kolar_saring.csv`, `drainase_ringkasan.csv`.
+
+**Outputs.**
+- `data/processed/ml/komposit__ml6_gp.csv` (`ML_gp_mu`, `_sd`, `_cv_mu`, `_cv_sd`, `_cv_resid`,
+  `_cv_p05`, `_blok2m`).
+- `data/processed/ml6_{summary,cv,cv_per_pad,profil_theta,kandidat,usulan_lubang}.csv`. `usulan` is
+  in collar/survey style for the ioGAS teammate.
+- `data/processed/drainase_ringkasan.csv`; `gis/drainage.gpkg` (`sungai_turunan`, `das`,
+  `sempadan_50m`); `gis/ml6_target.gpkg` (`kolar_usulan`, `jejak_usulan`, `kandidat`, `kolar_saring`);
+  `gis/ml6_penampang.gpkg`; `gis/ml6_{ucb_maks,meter_cutoff,sd_rerata}.tif`.
+- Figures `outputs/figures/13_{profil_theta,cv_lopo,variogram_gp,peringkat_kandidat}_v1.png`. Maps
+  `outputs/maps/13_{peta_desain,penampang_desain}_v1.png`, `13_ml6_desain.qgz`;
+  QC `outputs/maps/qc/13_drainase_turunan_v1.png`, `13_drainage_check.qgz`.
+
+**Limits to state.**
+- 12 pads, so CV SEs are wide. The GP does not beat the mean between pads; grade predictions are
+  local (≲ 25 m).
+- Stationary constant mean, although Au varies with depth (leached top). A depth trend did not help in CV.
+- Orientation not identified (90° periodic profile). 2 m support.
+- Gap-closing pick is a tie-break among 138 equal designs: a stated rule, not an optimum.
+- Tier B is soil-led and grade-free. Drainage comes from a contour DEM (5 doubtful reaches, no satellite
+  check yet). PAF comes from one NAG hole (ML-5). Buffer regulation `[VERIFY]`.
+
+**Plain-language explanation (for the presentation)**
+> We used a Gaussian process, which is mathematically the same as kriging, to estimate gold between our
+> drillholes and how sure we are. The honest finding is that gold continuity is short, about 10–25 m,
+> so between pads the model is no better than the average grade, and the drill data cannot tell which
+> way the ore trends. So we propose three holes for different jobs. Two step out next to the best
+> intercepts (RJDH012/016/017), where the model does know something. The third fills a gap between
+> pads, to measure the continuity we are missing. Two more holes test the soil anomaly without promising
+> grade. Every collar sits on gentle ground, outside the 50 m stream buffer, with PAF handling planned.
+
+---
