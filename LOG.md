@@ -1914,3 +1914,92 @@ traces use ±50 m, labelled with the offset; collars must lie on the section len
 > grade. Every collar sits on gentle ground, outside the 50 m stream buffer, with PAF handling planned.
 
 ---
+
+## 2026-11-04 · Plan: remaining repo-owner work + team GitHub repo (approved)
+
+Full plan: `C:\Users\mauli\.claude\plans\plan-ml-6-cheeky-koala.md` (overwritten from the ML-6 plan,
+which is logged above). **Human instruction (2026-11-04):** "push the entire repo to github … a shared
+repo containing everything so that my team members have the entire context … Confidentiality is fine
+since I'm only sharing this with my teammates."
+
+**Decisions.**
+- Convert the existing `67minutes/ml-olympiar` (public code snapshot) to **PRIVATE** first, then
+  force-push this checkout over it.
+- The human invites teammates.
+- Docs in English (README) + Bahasa Indonesia (team guide).
+- Both §9 experiments.
+
+**What this supersedes.**
+- The "no remote / never push" rule (AGENTS §1, §2.1; README; 2026-11-02 publication entry) and the
+  data `.gitignore` rule, for this private team repo only.
+- Unchanged: no public repos, no cloud ML, never quote the brief's licence key or contacts, never
+  modify `data/raw/`.
+
+**A1 — deliverable 3 "Geochemistry analysis (csv)"** (`scripts/18_geochem_analysis.py`,
+`src/geochem.py`):
+1. `geochem_analysis.csv`: soil 259 + rock 469 + drill assay 2,476 stacked, one row per sample.
+   - Common keys and coordinates.
+   - Harmonised key elements with `_cens`; logged classes.
+   - ML-1/2/3/5 columns.
+   - For drill rows, the ML-4 HMM state and ML-6 GP from the composite holding the assay midpoint.
+2. `geochem_statistik.csv`: descriptive statistics + thresholds per dataset × element.
+3. `geochem_statistik_kelompok.csv`: medians by zone, logged class, HMM state and PAF class.
+4. `geochem_analysis_kolom.csv`: column dictionary.
+
+Checks: counts, unique keys, round-trip equality with the ioGAS files, no new NaN.
+
+**A2/A3 — §9.1 and §9.2** as in the plan; each gets its own results entry.
+
+**B — docs, git hygiene (`.gitattributes` so raw CSV bytes never change), push and verification** as
+in the plan.
+
+---
+
+## 2026-11-04 · Deliverable 3 results: geochemistry analysis CSV
+
+**Run.** `PYTHONIOENCODING=utf-8 uv run python -W ignore scripts/18_geochem_analysis.py`, after
+`07_export.py`. New module `src/geochem.py` (`describe`, `containing_interval`, `group_medians`) and
+`tests/test_geochem.py` (4 tests). Two runs give identical sha256 for all four outputs.
+
+**Outputs.**
+1. `data/processed/geochem_analysis.csv`: 3,204 rows × 75 columns (soil 259, rock 469, drill assay
+   2,476), one row per sample.
+   - Keys `dataset, SampleID, HoleID, From, To, X, Y, Z`.
+   - Metadata: prospect, RJ flag, year, NS-SEL, S method, elevation flag.
+   - 14 harmonised key elements with `_cens` where the source has it. S keeps SCIS, S2 and total
+     apart (never mixed).
+   - CN/total ratios, NAG pH and capacity; logged lithology, alteration and oxidation groups.
+   - ML-1 populations, ML-2 predictions, ML-3 zone, ML-5 PAF set and management class.
+   - For drill rows: the ML-4 HMM state and ML-6 GP μ/σ (log10 Au) from the 1 m composite holding
+     the assay midpoint. All 2,476 midpoints fall in a composite, 2,472 of them `comp_ok`.
+2. `geochem_statistik.csv`: 62 rows, dataset × subset (all, RJ-only for surface) × element.
+   - n, n analysed, % censored, min, P25/50/75/90/95/98, geometric mean, max.
+   - ML-1 thresholds with K, threshold type, T1/T2, MAD, Tukey, the empty `thr_probplot_iogas` slot,
+     and % above.
+3. `geochem_statistik_kelompok.csv`: 40 rows, medians by group:
+   - soil and rock: ML-3 zone (RJ only);
+   - rock: alteration and lithology;
+   - drill: alteration, oxidation, lithology, HMM state, PAF management class.
+4. `geochem_analysis_kolom.csv`: 75 columns with Bahasa meaning, unit, source stage and fill counts
+   per dataset.
+
+**Checks (asserted).** Row counts equal the ioGAS files; keys unique; every carried value round-trips
+equal; NaN counts unchanged.
+
+**Selected numbers.**
+- Median Au by ML-3 zone (Rendah / Sedang / Tinggi): soil 0.007 / 0.065 / 0.335 g/t; rock 0.12 /
+  0.53 / 5.04 g/t.
+- Drill median Au: silica 2.11 vs advanced argillic 0.35 vs argillic 0.03 g/t; transition 1.02 vs
+  oxide 0.48 vs sulphide 0.16 g/t. Sulphide and transition carry Cu: medians 115 and 377 ppm.
+- Note for readers: some ML-1 GMM thresholds are a *lower* population break, not an anomaly cut. For
+  example soil As crosses at 23.8 ppm with 87% of samples above it. The `threshold_type` and `T1/T2`
+  columns show which; this is ML-1's logged result, unchanged.
+
+**Plain-language explanation (for the presentation)**
+> The geochemistry deliverable puts every soil, rock and drill sample in one table: cleaned element
+> values, a flag wherever a value is below detection, the logged geology, and the label each of our
+> models gave the sample. A second table gives the usual statistics and thresholds for each element,
+> and a third compares grades between zones, alteration types, oxidation states and acid classes. For
+> example, silica-altered core has a median of about 2 g/t Au against 0.03 g/t in argillic rock.
+
+---
