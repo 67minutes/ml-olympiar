@@ -1296,3 +1296,139 @@ sit in two holes; sulfur exists by one method in 16 holes; boundary and support 
 > original rock: that is a geological result, not a failure. Where the model confidently
 > disagrees with the log, for example 25 m of "oxide" in RJDH009 that chemically looks like
 > sulphide, we list it for a second look at the core.
+
+---
+
+## 2026-11-03 · ML-3 plan: surface H/M/L zonation (approved)
+
+Full plan: `C:\Users\mauli\.claude\plans\plan-ml-3-recursive-boot.md`. Summary:
+
+**Profiling (read-only).** RJ soil 188 samples (1997–99 jobs, 5 from 2009); features Au, Cu,
+As, Hg, Pb, Sb, Zn (complete; Ba job-dependent, W 32% censored, Ag 17 distinct values: left
+out). Robust-scaled log10: PC1 57.5% (Au-As-Pb-Hg-Sb-Cu, Zn ≈ 0), PC2 Zn+Hg 17%; Horn
+parallel analysis keeps **PC1 only**; PC1 vs log Au r 0.87. GMM on PC1: BIC K = 2 (K1 +4.5,
+K3 +15); bootstrap ARI K2 0.79, K3 0.69. Multi-PC GMMs unstable (ARI 0.1–0.5). Lab jobs sit
+on separate lines; neighbours < 60 m differ slightly more across jobs (|Δlog Au| 0.38 vs
+0.30): weak batch component, confounded with location. Rock RJ 382 (Au-Cu-As in 352; Hg/Pb/
+Sb/Zn 261), very clustered (nearest neighbour median 5 m); BIC K 1–2.
+
+**Human decisions.** H/M/L = GMM **K = 3 on the PC1 index** (ranked by Au: Tinggi/Sedang/
+Rendah), with BIC (prefers 2) and bootstrap stability reported openly. GP surface of the soil
+index plus an NE-trend test against an isotropic null on the same sample layout.
+
+**Method** (`src/zonation.py`, `scripts/10_ml3_zonation.py`). Dequantise (ML-1) → log10 →
+median/MAD scale → PCA + Horn → GMM K 1–5 (BIC over 20 draws, ≥ 5 per component), zones at
+K = 3 sorted by index, Au ordering asserted; posteriors averaged over draws; bootstrap B = 200
+of the whole pipeline (per-sample stability, threshold CI, ARI); K = 2 partition alongside.
+Rock: own pipeline on Au-Cu-As (sensitivity with Hg, Pb, Sb, Zn), float flagged, points only.
+Comparisons: ML-1 classes, lab job (Cramér's V, neighbour test), rock alteration/outcrop,
+rock vs soil-surface zone; sensitivities CLR and censored-excluded. GP: Constant × RBF(2
+length scales, rotated θ by profile LML 0–165°) + White, 10 m grid masked > 60 m from soil,
+spatial block CV (150 m, 5 folds). NE test: directional variograms (12 directions, ±22.5°,
+40 m lags) vs 200 isotropic simulations on the sample locations.
+
+**Outputs.** `data/processed/ml/{tanah,batuan}__ml3_zonation.csv`, `ml3_summary.csv`,
+`ml3_model.csv`, `gis/ml3_zonasi.gpkg`, `gis/ml3_tanah_*.tif`, figures `10_*_v1.png`, rerun
+`07_export.py`, QGIS QC project `outputs/maps/qc/10_ml3_check.qgz`.
+
+---
+
+## 2026-11-03 · ML-3 results: surface H/M/L zonation
+
+**Run:** `uv run python scripts/10_ml3_zonation.py` (~50 s), then `scripts/07_export.py` (all
+checks pass). 89 unit tests pass (11 new, `tests/test_zonation.py`). Code: `src/zonation.py`.
+A rerun gives identical sha256 for the ML and summary tables.
+
+**Hyperparameters:** seed 0; features soil Au, Cu, As, Hg, Pb, Sb, Zn (n 188 RJ); rock Au, Cu,
+As (n 352 RJ; 30 without As left blank). Dequantised log10 → median/MAD scale → PCA; Horn 200
+permutations, 95th percentile. GMM on PC1, K 1–5, BIC averaged over 20 draws, `n_init` 10,
+`reg_covar` = (0.05 × Σ|w|/MAD)² (soil 0.110, rock 0.024), ≥ 5 samples per component.
+Zones = K 3, posterior averaged over 20 draws; `ambigu` p_maks < 0.5. Bootstrap B = 200 (full
+refit for stability/ARI; fixed transform for boundary CI and BIC-K). GP: Constant × RBF(2
+scales) + White, `normalize_y`, 3 restarts, θ 0–165° step 15; 10 m grid, mask 60 m; CV 150 m
+blocks (38), GroupKFold 5. NE test: 12 directions ±22.5°, lags 40–400 m, 200 isotropic sims.
+
+**Deviation from the plan (implementation, not method):** zone boundaries on the index are the
+points where the most probable zone changes (`zonation.boundaries`), not ML-1 density crossings
+between adjacent means. In rock the top component is wide, so its boundary lies beyond its own
+mean and the crossing rule returned NaN. The function asserts the zones are ordered along the
+index (they are, in both datasets).
+
+**Bug caught by the QGIS check (fixed):** the rock GeoPackage layer was written in append mode
+and held 1,760 features after 5 runs. Now both layers are written with `mode="w"` (replaces the
+layer only), and the script reads the feature count back and checks it.
+
+**Soil (RJ, 188):**
+- PC1 = 57.5% of variance (loadings Au .38, As .49, Pb .43, Hg .41, Sb .40, Cu .31, Zn −.07);
+  Horn keeps 1 PC (eig 5.0 vs 1.99; PC2 1.50 vs 1.65). PC1 vs log Au r 0.87.
+- ΔBIC: K1 +4.5, **K2 0**, K3 +15.3, K4–5 inadmissible. Bootstrap BIC-K: K2 0.72, K1 0.28.
+- K = 3 zones: Rendah 30 / Sedang 92 / Tinggi 66. Boundaries on the index −2.23 (5–95%
+  −4.21 to −1.41) and 1.06 (−0.25 to 1.98); Ashman D 2.07 and 1.69. Bootstrap ARI median 0.65
+  (5–95% 0.27–0.92); per-sample stability median: R 0.88, S 0.84, T 0.96; 1 ambiguous sample.
+- Median Au / As / Pb / Sb ppm: R 0.007 / 13 / 17 / 0.6; S 0.065 / 54 / 57 / 4.0; T 0.34 /
+  129 / 129 / 16.5. Zn flat (22 / 25 / 18.5) and Hg weakly rising.
+- **The BIC split (K = 2) is background vs footprint:** it puts all 30 Rendah plus 6 Sedang in
+  one population; K = 3 splits the footprint into Sedang and Tinggi (ARI K2 vs K3 0.33).
+- Sensitivities (ARI vs main): CLR 0.27, censored rows excluded 0.43 (n 170). The middle split
+  moves with the transform, which is expected for a continuum.
+- vs ML-1: As and Pb populations agree (Cramér's V 0.66, 0.77; all Tinggi in the upper As/Pb
+  population); soil Au > μ+2σ (1.41 ppm) is only 1 sample (V 0.10); Zn populations not aligned
+  (V 0.15).
+- Lab job: V 0.42, but jobs are lines (location). Neighbours < 60 m: |Δ index| median 0.93 within
+  one job vs 1.24 across jobs (Mann–Whitney p 0.017): a modest batch/line component.
+
+**Rock (RJ, 352, Au-Cu-As):** PC1 68% (Au .48, Cu .54, As .69), Horn 1 PC; **BIC K = 1** (K2
++2.4, K3 +17.9; bootstrap K1 0.49, K2 0.45). Zones R 204 / S 131 / T 17; boundaries 0.17
+(−1.88 to 0.37) and 2.63 (0.73 to 4.16). ARI median 0.76 (0.23–0.93). Median Au g/t R 0.12,
+S 0.53, T 5.0; As 86 / 351 / 2,270; Sb rises too (8 / 29 / 256; not a model input).
+Sensitivities: censored excluded 0.94; **+Hg, Pb, Sb, Zn 0.14 (n 261); CLR −0.02**. Rock
+zones depend on the element set: **low confidence.** vs logged alteration V 0.17, outcrop type
+0.06; Au > 7.1 g/t: 7 of 17 Tinggi (V 0.59). Rock zone vs soil-GP zone at the same place
+(345 inside the mask): κ −0.06, agreement 0.19. Rock grabs are point samples of selected
+outcrop; soil is a spatial average. They rank locally differently, but 12 of 16 rock Tinggi
+sit in soil Tinggi.
+
+**GP surface (soil index):** best rotation 75°, major axis **75° (ENE)**, length scales
+171 / 69 m (ratio 0.40), nugget 0.34 of normalised variance. LML: anisotropic −204.6 vs
+isotropic −210.6; 60–90° within 1.2 of the best, 30° and 45° 4.7–5.9 lower. Block CV RMSE:
+anisotropic 1.56, isotropic 1.66, mean-only 2.30; 90% interval coverage 94% / 93%. Area within
+60 m of soil: Rendah 6.3 ha, Sedang 41.3, Tinggi 27.4. Collars in the GP zone: 14 Sedang, 5
+Tinggi (RJDH004, 010, 011, 012, 018). **The largest soil Tinggi area (W–central) is
+largely undrilled.**
+
+**NE test: NOT confirmed.** Directional variograms: greatest continuity at **90° (E–W)**,
+ratio 0.51, stronger than all 200 isotropic simulations on the same points (null ratio
+5–95% 0.64–0.86; p < 0.005); only 7% of simulations put the maximum at 90°, while 30% fall in
+the NE window by geometry alone. Centring the index per lab job leaves it unchanged (90°, 0.51),
+so it is not a lab-batch offset. **But soil lines run E–W:** a per-line effect (crew, sampled
+horizon) cannot be separated from geology with these data. This does not contradict AGENTS §4
+(the NE trend was a check to run, not a verified finding). Report it as: "the soil index is
+elongated E to ENE, not NE; it may reflect geology, downslope dispersion or line effects
+(untested)."
+
+**Outputs:** `data/processed/ml/{tanah,batuan}__ml3_zonation.csv` (`ML_zona`, `_id`,
+`_p_T/S/R`, `_p_maks`, `_ambigu`, `_stabil`, `_indeks`, `_K2`; rock `_float`), merged into
+`data/processed/iogas/` (tanah +10, batuan +11 columns); `data/processed/ml3_summary.csv`,
+`ml3_model.csv`, `ml3_comparisons.csv` (crosstabs; not in the plan, added for the report
+tables); `gis/ml3_zonasi.gpkg` (`tanah_zona` 188, `batuan_zona` 352);
+`gis/ml3_tanah_{indeks,indeks_sd,p_tinggi,p_rendah,zona}.tif`; figures
+`outputs/figures/10_{pca_biplot,bic_stabilitas,zona_unsur,variogram_arah,gp_cv}_v1.png`.
+QGIS (MCP) `outputs/maps/qc/10_ml3_check.qgz`: layer counts and zone counts equal Python;
+sampling the zone raster at rock points reproduces the Python crosstab (1 cell differs by one,
+raster vs point). QC render `outputs/maps/qc/10_tanah_zona_v1.png` (not a report figure).
+
+**Limits to state.** Soil has one gradient and BIC prefers 2 populations, so K = 3 is a decision
+zoning with stability shown; rock is one population (BIC K = 1) and its zones change with the
+element set; one 1997–99 soil campaign with line/job effects confounded with location;
+clustered rock sampling mixing float (46) with outcrop; CLR subcomposition caveat; the surface is
+valid only within 60 m of soil samples, and SD is for the latent field (nugget excluded).
+
+**Plain-language explanation (for the presentation)**
+> We combined seven soil elements into one "mineralisation index" with PCA. Gold, arsenic,
+> lead, antimony, mercury and copper all rise together, and a statistical test says that this
+> single gradient is the only real structure. A mixture model cut the index into low, medium
+> and high zones. The data only firmly support two groups (background vs the mineralised
+> footprint), so we show how stable each sample's zone is (high-zone soils keep their zone in
+> 96% of re-runs). Kriging the index gives a map with its uncertainty. The high zone is
+> elongated east–west to ENE, not NE as we expected, and most of it west of the drilling is
+> still untested.
