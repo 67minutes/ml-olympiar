@@ -1160,3 +1160,139 @@ counts, distances and renders came back through MCP; no attribute tables.
   zonation maps), where sampling geometry can be separated from the signal.
 
 ---
+
+---
+
+## 2026-11-03 · ML-2 plan: classes from chemistry (approved)
+
+Full plan: `C:\Users\mauli\.claude\plans\plan-ml-2-frolicking-rabbit.md`. Summary:
+
+**Human decisions.** Train on raw sampled assays (composites repeat long samples); depth
+only as an oxidation ablation; add a separate surface rock alteration model.
+
+**Profiling (read-only).** 2,466 sampled assays. Au/Ag/Cu/As in all 19 holes, SCIS_PCT in
+16, S2 in 5 (never mixed with SCIS), CN ratios in 11–12; the full ICP suite only in RJDH001
+and RJDH012 (unusable under group CV). **Collars within 30 m form 7 pairs** (002/006,
+005/014, 007/013, 008/019, 010/011, 016/017, 012/018 at 27 m), so **12 pad groups**; twin
+holes share near-surface geology and leave-one-hole-out would leak. Rock RJ grabs: SI 207,
+AR 135, PP 38, AA 2. Surface logging almost never uses AA (1,781 composites downhole).
+
+**Method** (`src/classify.py`, `scripts/09_ml2_classify.py`).
+- Features: log10 of harmonised `_ml` values. Tier A = Au, Ag, Cu, As + log-ratios Cu/Au,
+  As/Au, Cu/As (all holes); tier B = A + SCIS_PCT; tier C = A + AuCN and CuCN ratios. Each
+  tier is fitted only on rows with all its features (no imputation, so missingness cannot
+  act as a hole ID).
+- Targets: alteration AA/SI/AR/PP (UA excluded); logged oxidation (RJDH019 predicted,
+  compared descriptively with the derived state); lithology (4 main groups + other,
+  surface cover excluded); `min_py`, `min_cu` (rows with logged mineralogy).
+- RandomForest (300 trees, balanced_subsample, sqrt features, seed 0), `min_samples_leaf`
+  {1, 5, 20} by inner GroupKFold(4) on pads. Comparators: Dummy (prior), logistic regression.
+- Outer leave-one-pad-out; leave-one-hole-out once to show the leakage gap. Balanced
+  accuracy, macro-F1, κ, per-class recall/precision, confusion matrices, pad-bootstrap 90% CI,
+  clean vs boundary assays, PR-AUC for binary targets.
+- OOF probabilities, `p_maks`, `ambigu` (p < 0.5), reliability curve; review list where
+  OOF p ≥ 0.7 disagrees with the log, runs ≥ 3 m.
+- SHAP on the all-data RF (tiers A, B) in element units. Depth ablation for oxidation.
+- Rock: SI/AR/PP on Au, Cu, As (+ Hg, Pb, Sb, Zn), 150 m spatial-block GroupKFold(5); apply
+  the drillhole alteration model to rock as a descriptive label-mismatch check.
+
+**Outputs.** `data/processed/ml/{assay,batuan}__ml2_classify.csv`, `ml2_scores.csv`,
+`ml2_review_list.csv`, figures `09_*_v1.png`, rerun `07_export.py`.
+
+**Checks.** No pad in both train and test; one OOF prediction per eligible row; ML files
+1:1 keyed; deterministic rerun; 07 checks pass; synthetic unit tests.
+
+---
+
+## 2026-11-03 · ML-2 results: classes from chemistry
+
+**Run:** `uv run python scripts/09_ml2_classify.py` (8.6 min, 16 cores), then
+`scripts/07_export.py` (all checks pass). 78 unit tests pass (8 new, `tests/test_classify.py`).
+Code: `src/classify.py`. A second run gives byte-identical outputs (sha256 of all 7 tables).
+
+**Hyperparameters:** seed 0; RF 300 trees, `class_weight="balanced_subsample"`,
+`max_features="sqrt"`, `min_samples_leaf` from {1, 5, 20} by inner GroupKFold(4) on pads
+(chosen leaf: mostly 20, 5 for oxidation/pyrite tier B; **20 is the grid edge**, so a
+coarser leaf might score slightly higher: not tuned further). Logistic regression
+(standardised, balanced weights); Dummy (prior). Outer CV leave-one-pad-out (12 pads; pyrite/Cu
+11, RJDH001 has no mineral log); pad bootstrap B = 1,000. Rock: 150 m blocks (33),
+GroupKFold(5). Tier rows: A 2,466 (19 holes, 12 pads), B 1,898 (16, 10), C 500 (11, 9).
+
+**Scores** (balanced accuracy, out-of-fold, RF unless stated; 90% pad-bootstrap interval;
+prior baseline = 1/classes):
+
+| Target | Best set | RF | Logistic | Baseline | κ | Note |
+|---|---|---|---|---|---|---|
+| Alteration AA/SI/AR/PP | A (C on its 500 rows) | **0.70** (0.65–0.76) | 0.71 | 0.25 | 0.49 | recall AA 0.71, SI 0.72, AR 0.67, PP 0.69 (n 26) |
+| Oxidation | B (+S) | **0.71** (0.66–0.77) | 0.70 | 0.33 | 0.65 | export mix 0.69; Oxide 0.91, Sulphide 0.74, **Transition 0.41** |
+| Lithology (5 groups) | B | 0.30 (0.27–0.35) | 0.35 | 0.20 | 0.13 | hydrothermal breccia recall 0 (86% called porphyry) |
+| Pyrite present | B (+S) | **0.84** (0.81–0.87) | 0.75 | 0.50 | 0.68 | PR-AUC 0.87 vs prevalence 0.37 |
+| Cu minerals present | A | 0.62 (0.51–0.71) | 0.79 | 0.50 | 0.12 | PR-AUC 0.10 vs prevalence 0.03; 61 of 71 positives in RJDH007/018 |
+| Surface rock alteration SI/AR/PP | R2 | 0.36 (0.31–0.43) | 0.37 | 0.33 | 0.07 | **no better than chance** |
+
+- **Twin-pad leak is small but real:** leave-one-hole-out vs leave-one-pad-out, tier A:
+  alteration 0.72 vs 0.70, lithology 0.30 vs 0.26, oxidation and pyrite equal.
+- **Adding sulfur (SCIS) helps where sulfur is the process:** oxidation +0.08 and pyrite
+  +0.07 over tier A on the same rows. It *lowers* RF alteration (−0.08) and Cu minerals
+  (−0.09) on the same rows. CN ratios (tier C) help alteration (+0.08) and oxidation (+0.09)
+  but exist in only 9 pads. The export uses, per row, the richer set only where it beat
+  set A on the same rows (`ML_<t>_tier`).
+- **"Is oxidation just depth?" No.** Adding vertical depth: A 0.646 → 0.674, B 0.709 → 0.710.
+  Sulfur and Cu chemistry carry the information; depth adds nothing once S is known.
+- **Boundary assays** (spanning a logged contact or < 50% inside one interval) score lower
+  everywhere (e.g. oxidation B 0.71 clean vs 0.59 boundary): part of the "error" is the
+  log, not the model.
+- Logistic regression matches RF for alteration and is better for lithology and Cu
+  minerals (rare classes, where RF with leaf 20 rarely predicts the minority). RF is kept
+  as the exported model as planned; the logistic scores are in `ml2_scores.csv`.
+- Per held-out pad: alteration 0.56–0.80 (median 0.68), oxidation 0.56–0.81 (0.71),
+  pyrite 0.60–0.82, lithology 0.10–0.54.
+
+**Uncertainty.** Probabilities are reasonably reliable for oxidation and alteration
+(observed agreement close to or above the top-class probability; RF is under-confident above
+0.6) and meaningless for lithology (agreement ~0.4 at every confidence).
+`ML_<t>_ambigu` (p < 0.5): alteration 150, oxidation 273, lithology 1,398 of the predicted
+assays; rock 161 of 352.
+
+**SHAP (in element units, `09_shap_dependensi_v1.png`).** Silica (vuggy) alteration:
+probability rises sharply once Au > ~1 g/t, falls when As/Au > ~100, rises with Ag
+> ~3 ppm. Sulphide zone: probability rises once SCIS S > ~2%, Cu/Au > ~1,000 and
+As/Au > ~1,000. Oxidation tier A leans on Cu and Cu/Au (Cu is leached in the oxide zone).
+Pyrite: S (SCIS), then Cu/As.
+
+**RJDH019 oxidation (no log):** ML agrees with the state derived from % oxidised in 61%
+(n 114). The derived rule itself agreed 91% with logs elsewhere, so this is a weak check.
+
+**ML vs logged review list** (`ml2_review_list.csv`, OOF p ≥ 0.7 against the log, runs
+≥ 3 m): alteration 40 runs / 190 m, lithology 19 / 97 m, oxidation 12 / 57 m. Notable:
+**RJDH009 10–57 m is logged Oxide but chemistry says Sulphide** in four runs (25 m);
+several "Transition" intervals in RJDH003/004/007/013 read as clean oxide or sulphide. These
+are candidates for re-checking core photos, not corrections.
+
+**Surface rock vs core: different label conventions.** Rock alteration cannot be learned
+from chemistry (0.36 vs 0.33 baseline). The drillhole alteration model (Au, Cu, As only)
+applied to rock calls 250 of 352 RJ rocks advanced argillic, while surface mapping uses AA
+for only 2. Surface "SI" and "AR" are field calls on weathered outcrop that do not map onto
+the core facies. Rock `ML_alt_*` columns are exported but must be shown as low confidence.
+
+**Outputs:** `data/processed/ml/assay__ml2_classify.csv` (`ML_{alt,oks,lit}_prediksi`,
+`_p_maks`, `_ambigu`, `_entropi`, `_p_<class>`, `_tier`; `ML_{py,cu}_p`, `_tier`),
+`data/processed/ml/batuan__ml2_classify.csv`, `data/processed/ml2_{scores,review_list,
+shap_importance,per_pad,rock_transfer}.csv`; figures `outputs/figures/09_{skor,
+matriks_konfusi,shap,shap_dependensi,reliabilitas,skor_pad}_v1.png`; merged into
+`data/processed/iogas/` (assay +31 ML-2 columns, batuan +7).
+
+**Limits to state in the report.** 12 independent pads; PP has 26 assays and Cu minerals
+sit in two holes; sulfur exists by one method in 16 holes; boundary and support effects
+(alteration intervals median 2.5 m vs 1 m assays); RF leaf at the grid edge.
+
+**Plain-language explanation (for the presentation)**
+> We asked whether the chemistry alone can tell what the geologist logged. To keep it
+> honest, the model never sees the drill pad it is tested on, because two holes on one pad
+> share the same rocks. Alteration and oxidation come out right about 70% of the time
+> (chance is 25–33%), and pyrite 84%, and the model explains itself in geological terms:
+> gold above about 1 g/t means vuggy silica, sulfur above about 2% means fresh sulphide rock.
+> Rock type cannot be read from these four metals, because alteration has overprinted the
+> original rock: that is a geological result, not a failure. Where the model confidently
+> disagrees with the log, for example 25 m of "oxide" in RJDH009 that chemically looks like
+> sulphide, we list it for a second look at the core.
