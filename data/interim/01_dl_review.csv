@@ -1,0 +1,442 @@
+dataset,column,job,year,n,floor,n_at_floor,repeats,standard_value,is_censoring_floor,n_between_f_2f,n_in_2f_4f,floor_is,method,true_dl,share_of_column,harmonised_dl
+assay,AuPPM,100341,2010,80,0.005,1,False,True,False,0,7,,,,0.032,0.01
+assay,AuPPM,100626,2010,98,0.005,4,True,True,True,0,11,DL,pattern,0.005,0.04,0.01
+assay,AuPPM,100750,2010,100,0.005,3,True,True,True,0,5,DL,pattern,0.005,0.041,0.01
+assay,AuPPM,100869,2010,111,0.01,5,True,True,True,0,17,DL,pattern,0.01,0.045,0.01
+assay,AuPPM,101189,2010,187,0.01,1,False,True,False,0,16,,,,0.076,0.01
+assay,AuPPM,104580,2010,164,0.01,12,True,True,True,0,42,DL,pattern,0.01,0.067,0.01
+assay,AuPPM,104844,2010,241,0.02,4,False,True,False,1,14,,,,0.098,0.01
+assay,AuPPM,104942,2010,113,0.03,1,False,False,False,6,32,,,,0.046,0.01
+assay,AuPPM,40720,2004,89,0.005,16,True,True,True,0,21,DL,pattern,0.005,0.036,0.01
+assay,AuPPM,41099,2004,73,0.005,3,True,True,True,0,27,DL,pattern,0.005,0.03,0.01
+assay,AuPPM,AR1902039,2015,106,0.01,3,True,True,True,0,17,DL,pattern,0.01,0.043,0.01
+assay,AuPPM,EXP17-00196,2017,71,0.005,2,False,True,False,0,6,,,,0.029,0.01
+assay,AuPPM,EXP17-00197,2017,43,0.16,1,False,False,False,0,14,,,,0.017,0.01
+assay,AuPPM,MDN160067,2016,124,0.005,1,False,True,False,0,2,,,,0.05,0.01
+assay,AuPPM,PD150107,2015,12,0.02,3,True,True,True,1,6,DL,gap,0.02,0.005,0.01
+assay,AuPPM,PD160175,2016,86,0.005,1,False,True,False,0,6,,,,0.035,0.01
+assay,AuPPM,PD160193,2016,109,0.005,9,True,True,True,0,10,DL,pattern,0.005,0.044,0.01
+assay,AuPPM,PD160216,2016,154,0.005,1,False,True,False,0,11,,,,0.062,0.01
+assay,AuPPM,PD160228,2016,99,0.02,1,False,True,False,2,20,,,,0.04,0.01
+assay,AuPPM,PD160248,2016,127,0.01,1,False,True,False,0,16,,,,0.052,0.01
+assay,AuPPM,SUM98APDC14.1,1998,97,0.03,2,False,False,False,3,12,,,,0.039,0.01
+assay,AuPPM,SUM98APDC14.2,1998,104,0.01,5,True,True,True,0,4,DL,pattern,0.01,0.042,0.01
+assay,AuPPM,SUM98APDC14.3,1998,78,0.005,2,False,True,False,0,7,,,,0.032,0.01
+assay,AgPPM,100341,2010,80,0.5,24,True,True,True,0,27,DL,pattern,0.5,0.032,0.5
+assay,AgPPM,100626,2010,98,0.5,35,True,True,True,0,9,DL,pattern,0.5,0.04,0.5
+assay,AgPPM,100750,2010,100,0.5,36,True,True,True,0,15,DL,pattern,0.5,0.041,0.5
+assay,AgPPM,100869,2010,111,0.5,36,True,True,True,0,12,DL,pattern,0.5,0.045,0.5
+assay,AgPPM,101189,2010,187,0.5,48,True,True,True,0,39,DL,pattern,0.5,0.076,0.5
+assay,AgPPM,104580,2010,164,0.5,98,True,True,True,0,32,DL,pattern,0.5,0.067,0.5
+assay,AgPPM,104844,2010,241,0.5,82,True,True,True,0,53,DL,pattern,0.5,0.098,0.5
+assay,AgPPM,104942,2010,113,0.5,28,True,True,True,0,26,DL,pattern,0.5,0.046,0.5
+assay,AgPPM,40720,2004,89,0.5,55,True,True,True,0,18,DL,pattern,0.5,0.036,0.5
+assay,AgPPM,41099,2004,73,0.5,35,True,True,True,0,16,DL,pattern,0.5,0.03,0.5
+assay,AgPPM,AR1902039,2015,106,0.25,17,True,True,True,0,15,DL/2,gap,0.5,0.043,0.5
+assay,AgPPM,EXP17-00196,2017,71,0.5,37,True,True,True,0,10,DL,pattern,0.5,0.029,0.5
+assay,AgPPM,EXP17-00197,2017,43,0.5,6,True,True,True,0,9,DL,pattern,0.5,0.017,0.5
+assay,AgPPM,MDN160067,2016,124,0.25,2,False,True,False,0,15,,,,0.05,0.5
+assay,AgPPM,PD150107,2015,12,0.25,4,True,True,True,0,6,DL/2,gap,0.5,0.005,0.5
+assay,AgPPM,PD160175,2016,86,0.25,6,True,True,True,0,14,DL/2,gap,0.5,0.035,0.5
+assay,AgPPM,PD160193,2016,109,0.25,33,True,True,True,0,14,DL/2,gap,0.5,0.044,0.5
+assay,AgPPM,PD160216,2016,154,0.25,63,True,True,True,0,20,DL/2,gap,0.5,0.062,0.5
+assay,AgPPM,PD160228,2016,99,0.25,8,True,True,True,0,27,DL/2,gap,0.5,0.04,0.5
+assay,AgPPM,PD160248,2016,127,0.25,4,True,True,True,0,17,DL/2,gap,0.5,0.052,0.5
+assay,AgPPM,SUM98APDC14.1,1998,97,0.5,55,True,True,True,0,14,DL,pattern,0.5,0.039,0.5
+assay,AgPPM,SUM98APDC14.2,1998,104,0.5,13,True,True,True,0,29,DL,pattern,0.5,0.042,0.5
+assay,AgPPM,SUM98APDC14.3,1998,78,0.5,29,True,True,True,0,36,DL,pattern,0.5,0.032,0.5
+assay,CuPPM,100341,2010,80,18.0,3,True,False,False,4,5,,,,0.032,
+assay,CuPPM,100626,2010,98,5.0,2,False,True,False,15,13,,,,0.04,
+assay,CuPPM,100750,2010,100,7.0,1,False,False,False,9,17,,,,0.041,
+assay,CuPPM,100869,2010,111,7.0,1,False,False,False,5,22,,,,0.045,
+assay,CuPPM,101189,2010,187,3.0,3,False,False,False,20,48,,,,0.076,
+assay,CuPPM,104580,2010,164,5.0,1,False,True,False,5,23,,,,0.067,
+assay,CuPPM,104844,2010,241,9.0,1,False,False,False,9,58,,,,0.098,
+assay,CuPPM,104942,2010,113,11.0,1,False,False,False,2,14,,,,0.046,
+assay,CuPPM,40720,2004,89,11.0,1,False,False,False,23,22,,,,0.036,
+assay,CuPPM,41099,2004,73,8.0,1,False,False,False,6,24,,,,0.03,
+assay,CuPPM,AR1902039,2015,106,4.0,2,False,False,False,6,28,,,,0.043,
+assay,CuPPM,EXP17-00196,2017,71,1.0,15,True,True,True,0,22,DL,pattern,1.0,0.029,
+assay,CuPPM,EXP17-00197,2017,43,9.0,1,False,False,False,2,3,,,,0.017,
+assay,CuPPM,MDN160067,2016,124,1.0,1,False,True,False,0,2,,,,0.05,
+assay,CuPPM,PD150107,2015,12,4.0,2,False,False,False,0,1,,,,0.005,
+assay,CuPPM,PD160175,2016,86,4.0,1,False,False,False,0,7,,,,0.035,
+assay,CuPPM,PD160193,2016,109,13.0,1,False,False,False,12,16,,,,0.044,
+assay,CuPPM,PD160216,2016,154,3.0,3,False,False,False,3,21,,,,0.062,
+assay,CuPPM,PD160228,2016,99,1.0,1,False,True,False,0,5,,,,0.04,
+assay,CuPPM,PD160248,2016,127,2.0,3,True,True,True,12,55,DL,gap,2.0,0.052,
+assay,CuPPM,SUM98APDC14.1,1998,97,2.0,3,True,True,True,3,9,DL,gap,2.0,0.039,
+assay,CuPPM,SUM98APDC14.2,1998,104,10.0,1,False,True,False,2,15,,,,0.042,
+assay,CuPPM,SUM98APDC14.3,1998,78,30.0,1,False,False,False,13,11,,,,0.032,
+assay,AsPPM,100341,2010,80,33.0,1,False,False,False,17,39,,,,0.032,
+assay,AsPPM,100626,2010,98,17.0,1,False,False,False,11,41,,,,0.04,
+assay,AsPPM,100750,2010,100,18.0,2,False,False,False,8,43,,,,0.041,
+assay,AsPPM,100869,2010,111,36.0,3,True,False,False,22,28,,,,0.045,
+assay,AsPPM,101189,2010,187,3.0,1,False,False,False,4,5,,,,0.076,
+assay,AsPPM,104580,2010,164,24.0,1,False,False,False,34,74,,,,0.067,
+assay,AsPPM,104844,2010,241,25.0,1,False,True,False,17,85,,,,0.098,
+assay,AsPPM,104942,2010,113,41.0,1,False,False,False,25,52,,,,0.046,
+assay,AsPPM,40720,2004,89,19.0,1,False,False,False,9,36,,,,0.036,
+assay,AsPPM,41099,2004,73,12.0,1,False,False,False,2,10,,,,0.03,
+assay,AsPPM,AR1902039,2015,106,10.0,1,False,True,False,0,5,,,,0.043,
+assay,AsPPM,EXP17-00196,2017,71,1.0,1,False,True,False,0,1,,,,0.029,
+assay,AsPPM,EXP17-00197,2017,43,10.0,1,False,True,False,1,7,,,,0.017,
+assay,AsPPM,MDN160067,2016,124,8.0,2,False,False,False,2,12,,,,0.05,
+assay,AsPPM,PD150107,2015,12,32.0,1,False,False,False,5,3,,,,0.005,
+assay,AsPPM,PD160175,2016,86,2.5,1,False,True,False,0,1,,,,0.035,
+assay,AsPPM,PD160193,2016,109,19.0,1,False,False,False,29,27,,,,0.044,
+assay,AsPPM,PD160216,2016,154,11.0,1,False,False,False,5,42,,,,0.062,
+assay,AsPPM,PD160228,2016,99,11.0,1,False,False,False,1,11,,,,0.04,
+assay,AsPPM,PD160248,2016,127,2.5,7,True,True,True,0,21,DL/2,gap,5.0,0.052,
+assay,AsPPM,SUM98APDC14.1,1998,97,35.0,1,False,False,False,42,40,,,,0.039,
+assay,AsPPM,SUM98APDC14.2,1998,104,30.0,1,False,False,False,18,42,,,,0.042,
+assay,AsPPM,SUM98APDC14.3,1998,78,15.0,1,False,False,False,0,19,,,,0.032,
+assay,HgPPM,104844,2010,230,0.005,4,False,True,False,0,15,,,,0.455,0.01
+assay,HgPPM,104942,2010,113,0.02,2,False,True,False,5,21,,,,0.224,0.01
+assay,HgPPM,40720,2004,89,0.01,12,True,True,True,0,43,DL,pattern,0.01,0.176,0.01
+assay,HgPPM,41099,2004,73,0.01,9,True,True,True,0,18,DL,pattern,0.01,0.145,0.01
+assay,PbPPM,AR1902039,2015,106,9.0,1,False,False,False,6,8,,,,0.267,
+assay,PbPPM,PD150107,2015,12,21.0,1,False,False,False,2,4,,,,0.03,
+assay,PbPPM,SUM98APDC14.1,1998,97,33.0,1,False,False,False,13,15,,,,0.244,
+assay,PbPPM,SUM98APDC14.2,1998,104,11.0,1,False,False,False,3,3,,,,0.262,
+assay,PbPPM,SUM98APDC14.3,1998,78,4.0,1,False,False,False,4,4,,,,0.196,
+assay,SCIS_PCT,100626,2010,98,0.005,16,True,True,True,0,16,DL,pattern,0.005,0.052,0.005
+assay,SCIS_PCT,100750,2010,92,0.005,4,True,True,True,0,3,DL,pattern,0.005,0.048,0.005
+assay,SCIS_PCT,100869,2010,86,0.06,1,False,False,False,0,5,,,,0.045,0.005
+assay,SCIS_PCT,101189,2010,187,0.005,20,True,True,True,0,5,DL,pattern,0.005,0.099,0.005
+assay,SCIS_PCT,104580,2010,102,0.005,3,True,True,True,0,1,DL,pattern,0.005,0.054,0.005
+assay,SCIS_PCT,104844,2010,241,0.005,2,False,True,False,0,1,,,,0.127,0.005
+assay,SCIS_PCT,104942,2010,113,0.005,7,True,True,True,0,7,DL,pattern,0.005,0.06,0.005
+assay,SCIS_PCT,40720,2004,89,0.04,2,False,False,False,2,5,,,,0.047,0.005
+assay,SCIS_PCT,41099,2004,73,0.005,2,False,True,False,0,1,,,,0.038,0.005
+assay,SCIS_PCT,AR1902039,2015,106,0.005,4,True,True,True,0,11,DL,pattern,0.005,0.056,0.005
+assay,SCIS_PCT,MDN160067,2016,124,0.06,1,False,False,False,1,7,,,,0.065,0.005
+assay,SCIS_PCT,PD150107,2015,12,0.02,1,False,True,False,0,1,,,,0.006,0.005
+assay,SCIS_PCT,PD160175,2016,86,0.005,1,False,True,False,0,5,,,,0.045,0.005
+assay,SCIS_PCT,PD160193,2016,109,0.005,8,True,True,True,0,3,DL,pattern,0.005,0.057,0.005
+assay,SCIS_PCT,PD160216,2016,154,0.005,3,False,True,False,0,3,,,,0.081,0.005
+assay,SCIS_PCT,PD160228,2016,99,0.005,1,False,True,False,0,0,,,,0.052,0.005
+assay,SCIS_PCT,PD160248,2016,127,0.005,8,True,True,True,0,1,DL,pattern,0.005,0.067,0.005
+assay,S2_SPCT,100341,2010,24,2.36,1,False,False,False,20,3,,,,0.119,
+assay,S2_SPCT,100750,2010,6,0.68,1,False,False,False,3,2,,,,0.03,
+assay,S2_SPCT,100869,2010,23,0.14,1,False,False,False,1,0,,,,0.114,
+assay,S2_SPCT,104580,2010,34,0.39,1,False,False,False,2,5,,,,0.169,
+assay,S2_SPCT,EXP17-00196,2017,71,0.02,2,False,True,False,1,3,,,,0.353,
+assay,S2_SPCT,EXP17-00197,2017,43,0.1,1,False,True,False,3,6,,,,0.214,
+assay,S_PCT,AR1902039,2015,106,0.044,1,False,False,False,11,5,,,,0.898,
+assay,S_PCT,PD150107,2015,12,0.022,1,False,False,False,0,0,,,,0.102,
+assay,ZnPPM,AR1902039,2015,106,1.0,15,True,True,True,0,19,DL,pattern,1.0,0.267,1.0
+assay,ZnPPM,PD150107,2015,12,2.0,1,False,True,False,1,2,,,,0.03,1.0
+assay,ZnPPM,SUM98APDC14.1,1998,97,1.0,66,True,True,True,0,29,DL,pattern,1.0,0.244,1.0
+assay,ZnPPM,SUM98APDC14.2,1998,104,1.0,1,False,True,False,0,37,,,,0.262,1.0
+assay,ZnPPM,SUM98APDC14.3,1998,78,9.0,1,False,False,False,31,9,,,,0.196,1.0
+rock,AuPPM,31331,2003,7,0.3,1,False,False,False,0,1,,,,0.015,
+rock,AuPPM,31440,2003,14,0.02,1,False,True,False,1,2,,,,0.03,
+rock,AuPPM,31554,2003,6,0.02,1,False,True,False,0,1,,,,0.013,
+rock,AuPPM,31643,2003,3,0.03,1,False,False,False,1,0,,,,0.006,
+rock,AuPPM,31695,2003,13,0.08,1,False,False,False,2,2,,,,0.028,
+rock,AuPPM,973271BQ,2008,7,0.01,1,False,True,False,0,1,,,,0.015,
+rock,AuPPM,979772BQ,1998,13,0.005,3,True,True,True,0,1,DL,pattern,0.005,0.028,
+rock,AuPPM,979786BQ,1998,3,0.02,1,False,True,False,0,1,,,,0.006,
+rock,AuPPM,980215BQ,1998,19,0.005,1,False,True,False,0,1,,,,0.041,
+rock,AuPPM,JK1800804,2018,10,0.005,3,True,True,True,0,2,DL,pattern,0.005,0.021,
+rock,AuPPM,JK1801142,2018,5,0.005,1,False,True,False,0,2,,,,0.011,
+rock,AuPPM,PD130187,2013,6,0.03,1,False,False,False,0,1,,,,0.013,
+rock,AuPPM,PD140270,2014,3,0.05,1,False,True,False,0,1,,,,0.006,
+rock,AuPPM,PD140339,2014,2,0.1,1,False,True,False,1,0,,,,0.004,
+rock,AuPPM,SUM 98 APRC-11,1998,19,0.02,2,False,True,False,1,3,,,,0.041,
+rock,AuPPM,SUM 98 APRC-12,1998,6,0.04,1,False,False,False,0,0,,,,0.013,
+rock,AuPPM,SUM 98 APRC-15,1998,3,0.02,1,False,True,False,1,0,,,,0.006,
+rock,AuPPM,SUM 98 APRC-16,1998,52,0.005,1,False,True,False,0,3,,,,0.111,
+rock,AuPPM,SUM 98 APRC-17,1998,45,0.04,3,True,False,False,7,5,,,,0.096,
+rock,AuPPM,SUM 98 APRC-19,1999,4,0.32,1,False,False,False,0,0,,,,0.009,
+rock,AuPPM,SUM 98 APRC-2,1998,1,1.13,1,False,False,False,0,0,,,,0.002,
+rock,AuPPM,SUM 98 APRC-5,1998,29,0.02,1,False,True,False,0,4,,,,0.062,
+rock,AuPPM,SUM 98 APRC-6,1998,5,0.03,1,False,False,False,0,0,,,,0.011,
+rock,AuPPM,SUM 98 APRC-9,1998,50,0.01,1,False,True,False,0,10,,,,0.107,
+rock,AuPPM,SUM 98-3,1998,1,0.35,1,False,False,False,0,0,,,,0.002,
+rock,AuPPM,SUM 98-6,1998,3,0.16,1,False,False,False,0,1,,,,0.006,
+rock,AuPPM,SUM 99 APRC-10,1999,10,0.1,1,False,True,False,1,3,,,,0.021,
+rock,AuPPM,SUM 99 APRC-12,1999,42,0.01,2,False,True,False,0,2,,,,0.09,
+rock,AuPPM,SUM 99 APRC-2,1999,5,0.38,1,False,False,False,2,0,,,,0.011,
+rock,AuPPM,SUM 99 APRC-29,1999,32,0.005,1,False,True,False,0,3,,,,0.068,
+rock,AuPPM,SUM 99 APRC-30,1999,51,0.005,1,False,True,False,0,3,,,,0.109,
+rock,AgPPM,31331,2003,7,0.5,1,False,True,False,0,3,,,,0.015,0.5
+rock,AgPPM,31440,2003,14,0.5,9,True,True,True,0,3,DL,pattern,0.5,0.03,0.5
+rock,AgPPM,31554,2003,6,0.5,6,True,True,True,0,0,DL,pattern,0.5,0.013,0.5
+rock,AgPPM,31643,2003,3,0.5,2,False,True,False,0,0,,,,0.006,0.5
+rock,AgPPM,31695,2003,13,0.5,8,True,True,True,0,2,DL,pattern,0.5,0.028,0.5
+rock,AgPPM,973271BQ,2008,7,1.0,4,True,True,True,0,1,DL,pattern,1.0,0.015,0.5
+rock,AgPPM,979772BQ,1998,13,0.5,6,True,True,True,0,5,DL,pattern,0.5,0.028,0.5
+rock,AgPPM,979786BQ,1998,3,0.5,3,True,True,True,0,0,DL,pattern,0.5,0.006,0.5
+rock,AgPPM,980215BQ,1998,19,0.5,12,True,True,True,0,4,DL,pattern,0.5,0.041,0.5
+rock,AgPPM,JK1800804,2018,10,0.25,2,False,True,False,0,0,,,,0.021,0.5
+rock,AgPPM,JK1801142,2018,5,0.25,3,True,True,True,0,1,DL/2,pattern,0.5,0.011,0.5
+rock,AgPPM,PD130187,2013,6,0.25,1,False,True,False,0,0,,,,0.013,0.5
+rock,AgPPM,PD140270,2014,3,0.8,1,False,False,False,0,1,,,,0.006,0.5
+rock,AgPPM,PD140339,2014,2,0.6,1,False,False,False,1,0,,,,0.004,0.5
+rock,AgPPM,SUM 98 APRC-11,1998,19,0.5,9,True,True,True,0,5,DL,pattern,0.5,0.041,0.5
+rock,AgPPM,SUM 98 APRC-12,1998,6,0.5,1,False,True,False,0,5,,,,0.013,0.5
+rock,AgPPM,SUM 98 APRC-15,1998,3,0.5,2,False,True,False,0,1,,,,0.006,0.5
+rock,AgPPM,SUM 98 APRC-16,1998,52,0.5,39,True,True,True,0,7,DL,pattern,0.5,0.111,0.5
+rock,AgPPM,SUM 98 APRC-17,1998,45,0.5,42,True,True,True,0,1,DL,pattern,0.5,0.096,0.5
+rock,AgPPM,SUM 98 APRC-19,1999,4,1.0,2,False,True,False,0,0,,,,0.009,0.5
+rock,AgPPM,SUM 98 APRC-2,1998,1,6.0,1,False,False,False,0,0,,,,0.002,0.5
+rock,AgPPM,SUM 98 APRC-5,1998,29,0.5,22,True,True,True,0,3,DL,pattern,0.5,0.062,0.5
+rock,AgPPM,SUM 98 APRC-6,1998,5,0.5,3,True,True,True,0,2,DL,pattern,0.5,0.011,0.5
+rock,AgPPM,SUM 98 APRC-9,1998,50,0.5,22,True,True,True,0,18,DL,pattern,0.5,0.107,0.5
+rock,AgPPM,SUM 98-3,1998,1,2.0,1,False,True,False,0,0,,,,0.002,0.5
+rock,AgPPM,SUM 98-6,1998,3,1.0,1,False,True,False,0,2,,,,0.006,0.5
+rock,AgPPM,SUM 99 APRC-10,1999,10,0.5,6,True,True,True,0,2,DL,pattern,0.5,0.021,0.5
+rock,AgPPM,SUM 99 APRC-12,1999,42,0.5,35,True,True,True,0,3,DL,pattern,0.5,0.09,0.5
+rock,AgPPM,SUM 99 APRC-2,1999,5,0.5,3,True,True,True,0,0,DL,pattern,0.5,0.011,0.5
+rock,AgPPM,SUM 99 APRC-29,1999,32,0.5,26,True,True,True,0,5,DL,pattern,0.5,0.068,0.5
+rock,AgPPM,SUM 99 APRC-30,1999,51,0.5,41,True,True,True,0,7,DL,pattern,0.5,0.109,0.5
+rock,CuPPM,31331,2003,7,14.0,1,False,False,False,2,1,,,,0.015,5.0
+rock,CuPPM,31440,2003,14,6.0,2,False,False,False,1,2,,,,0.03,5.0
+rock,CuPPM,31554,2003,6,3.0,1,False,False,False,1,0,,,,0.013,5.0
+rock,CuPPM,31643,2003,3,42.0,1,False,False,False,1,1,,,,0.006,5.0
+rock,CuPPM,31695,2003,13,37.0,1,False,False,False,1,5,,,,0.028,5.0
+rock,CuPPM,973271BQ,2008,7,5.0,1,False,True,False,0,0,,,,0.015,5.0
+rock,CuPPM,979772BQ,1998,13,1.0,1,False,True,False,0,1,,,,0.028,5.0
+rock,CuPPM,979786BQ,1998,3,12.0,1,False,False,False,1,1,,,,0.006,5.0
+rock,CuPPM,980215BQ,1998,19,8.0,1,False,False,False,0,2,,,,0.041,5.0
+rock,CuPPM,JK1800804,2018,10,8.5,1,False,False,False,0,2,,,,0.021,5.0
+rock,CuPPM,JK1801142,2018,5,7.4,1,False,False,False,0,2,,,,0.011,5.0
+rock,CuPPM,PD130187,2013,6,19.0,1,False,False,False,1,0,,,,0.013,5.0
+rock,CuPPM,PD140270,2014,3,12.0,1,False,False,False,0,1,,,,0.006,5.0
+rock,CuPPM,PD140339,2014,2,167.0,1,False,False,False,1,0,,,,0.004,5.0
+rock,CuPPM,SUM 98 APRC-11,1998,19,13.0,1,False,False,False,5,4,,,,0.041,5.0
+rock,CuPPM,SUM 98 APRC-12,1998,6,12.0,1,False,False,False,0,0,,,,0.013,5.0
+rock,CuPPM,SUM 98 APRC-15,1998,3,2.0,1,False,True,False,0,1,,,,0.006,5.0
+rock,CuPPM,SUM 98 APRC-16,1998,52,7.0,1,False,False,False,8,15,,,,0.111,5.0
+rock,CuPPM,SUM 98 APRC-17,1998,45,6.0,1,False,False,False,7,1,,,,0.096,5.0
+rock,CuPPM,SUM 98 APRC-19,1999,4,27.0,1,False,False,False,0,0,,,,0.009,5.0
+rock,CuPPM,SUM 98 APRC-2,1998,1,7.0,1,False,False,False,0,0,,,,0.002,5.0
+rock,CuPPM,SUM 98 APRC-5,1998,29,6.0,1,False,False,False,5,1,,,,0.062,5.0
+rock,CuPPM,SUM 98 APRC-6,1998,5,1.0,1,False,True,False,0,1,,,,0.011,5.0
+rock,CuPPM,SUM 98 APRC-9,1998,50,16.0,1,False,False,False,5,8,,,,0.107,5.0
+rock,CuPPM,SUM 98-3,1998,1,129.0,1,False,False,False,0,0,,,,0.002,5.0
+rock,CuPPM,SUM 98-6,1998,3,57.0,1,False,False,False,2,0,,,,0.006,5.0
+rock,CuPPM,SUM 99 APRC-10,1999,10,29.0,1,False,False,False,3,1,,,,0.021,5.0
+rock,CuPPM,SUM 99 APRC-12,1999,42,13.0,1,False,False,False,2,10,,,,0.09,5.0
+rock,CuPPM,SUM 99 APRC-2,1999,5,218.0,1,False,False,False,3,1,,,,0.011,5.0
+rock,CuPPM,SUM 99 APRC-29,1999,32,4.0,1,False,False,False,2,12,,,,0.068,5.0
+rock,CuPPM,SUM 99 APRC-30,1999,51,5.0,3,True,True,True,2,14,DL,gap,5.0,0.109,5.0
+rock,AsPPM,31331,2003,7,21.0,1,False,False,False,0,1,,,,0.016,
+rock,AsPPM,979772BQ,1998,13,4.0,1,False,False,False,0,0,,,,0.031,
+rock,AsPPM,979786BQ,1998,3,49.0,1,False,False,False,2,0,,,,0.007,
+rock,AsPPM,980215BQ,1998,19,3.0,1,False,False,False,0,0,,,,0.045,
+rock,AsPPM,JK1800804,2018,10,6.0,1,False,False,False,0,0,,,,0.023,
+rock,AsPPM,JK1801142,2018,5,7.0,1,False,False,False,0,1,,,,0.012,
+rock,AsPPM,PD130187,2013,6,20.0,1,False,True,False,1,2,,,,0.014,
+rock,AsPPM,PD140270,2014,3,52.0,1,False,False,False,1,1,,,,0.007,
+rock,AsPPM,PD140339,2014,2,117.0,1,False,False,False,1,0,,,,0.005,
+rock,AsPPM,SUM 98 APRC-11,1998,19,24.0,1,False,False,False,2,3,,,,0.045,
+rock,AsPPM,SUM 98 APRC-12,1998,6,47.0,1,False,False,False,0,0,,,,0.014,
+rock,AsPPM,SUM 98 APRC-15,1998,3,21.0,1,False,False,False,0,1,,,,0.007,
+rock,AsPPM,SUM 98 APRC-16,1998,52,8.0,1,False,False,False,0,4,,,,0.122,
+rock,AsPPM,SUM 98 APRC-17,1998,45,25.0,1,False,True,False,1,7,,,,0.106,
+rock,AsPPM,SUM 98 APRC-19,1999,4,116.0,1,False,False,False,0,0,,,,0.009,
+rock,AsPPM,SUM 98 APRC-2,1998,1,664.0,1,False,False,False,0,0,,,,0.002,
+rock,AsPPM,SUM 98 APRC-5,1998,29,21.0,1,False,False,False,4,3,,,,0.068,
+rock,AsPPM,SUM 98 APRC-6,1998,5,12.0,1,False,False,False,0,2,,,,0.012,
+rock,AsPPM,SUM 98 APRC-9,1998,50,5.0,1,False,True,False,0,0,,,,0.117,
+rock,AsPPM,SUM 98-3,1998,1,210.0,1,False,False,False,0,0,,,,0.002,
+rock,AsPPM,SUM 98-6,1998,3,142.0,1,False,False,False,2,0,,,,0.007,
+rock,AsPPM,SUM 99 APRC-10,1999,10,42.0,1,False,False,False,1,1,,,,0.023,
+rock,AsPPM,SUM 99 APRC-12,1999,42,19.0,1,False,False,False,1,6,,,,0.099,
+rock,AsPPM,SUM 99 APRC-2,1999,5,879.0,1,False,False,False,1,1,,,,0.012,
+rock,AsPPM,SUM 99 APRC-29,1999,32,5.0,1,False,True,False,0,2,,,,0.075,
+rock,AsPPM,SUM 99 APRC-30,1999,51,10.0,1,False,True,False,1,5,,,,0.12,
+rock,HgPPM,31331,2003,7,0.02,1,False,True,False,1,0,,,,0.021,0.02
+rock,HgPPM,973271BQ,2008,7,0.025,5,True,True,True,0,2,DL/2,pattern,0.05,0.021,0.02
+rock,HgPPM,979772BQ,1998,13,0.02,5,True,True,True,2,5,DL,gap,0.02,0.039,0.02
+rock,HgPPM,979786BQ,1998,3,0.06,1,False,False,False,2,0,,,,0.009,0.02
+rock,HgPPM,980215BQ,1998,19,0.02,4,True,True,True,1,12,DL,gap,0.02,0.057,0.02
+rock,HgPPM,PD130187,2013,6,0.04,1,False,False,False,1,1,,,,0.018,0.02
+rock,HgPPM,PD140339,2014,2,0.12,1,False,False,False,0,1,,,,0.006,0.02
+rock,HgPPM,SUM 98 APRC-11,1998,19,0.02,1,False,True,False,1,8,,,,0.057,0.02
+rock,HgPPM,SUM 98 APRC-12,1998,6,0.04,1,False,False,False,1,3,,,,0.018,0.02
+rock,HgPPM,SUM 98 APRC-15,1998,3,0.01,1,False,True,False,0,0,,,,0.009,0.02
+rock,HgPPM,SUM 98 APRC-16,1998,52,0.02,2,False,True,False,5,27,,,,0.157,0.02
+rock,HgPPM,SUM 98 APRC-17,1998,45,0.01,1,False,True,False,0,22,,,,0.136,0.02
+rock,HgPPM,SUM 98 APRC-19,1999,4,0.01,1,False,True,False,0,3,,,,0.012,0.02
+rock,HgPPM,SUM 98 APRC-2,1998,1,0.38,1,False,False,False,0,0,,,,0.003,0.02
+rock,HgPPM,SUM 98 APRC-5,1998,29,0.02,3,True,True,True,3,11,DL,gap,0.02,0.087,0.02
+rock,HgPPM,SUM 98 APRC-6,1998,5,0.05,1,False,True,False,3,0,,,,0.015,0.02
+rock,HgPPM,SUM 98 APRC-9,1998,50,0.01,2,False,True,False,0,7,,,,0.151,0.02
+rock,HgPPM,SUM 98-3,1998,1,0.07,1,False,False,False,0,0,,,,0.003,0.02
+rock,HgPPM,SUM 98-6,1998,3,0.03,1,False,False,False,0,1,,,,0.009,0.02
+rock,HgPPM,SUM 99 APRC-10,1999,10,0.02,2,False,True,False,0,2,,,,0.03,0.02
+rock,HgPPM,SUM 99 APRC-12,1999,42,0.01,3,True,True,True,0,15,DL,pattern,0.01,0.127,0.02
+rock,HgPPM,SUM 99 APRC-2,1999,5,0.04,2,False,False,False,1,0,,,,0.015,0.02
+rock,PbPPM,31331,2003,7,19.0,1,False,False,False,0,0,,,,0.02,
+rock,PbPPM,973271BQ,2008,7,15.0,1,False,False,False,1,0,,,,0.02,
+rock,PbPPM,979772BQ,1998,13,7.0,1,False,False,False,2,3,,,,0.037,
+rock,PbPPM,979786BQ,1998,3,11.0,1,False,False,False,0,0,,,,0.009,
+rock,PbPPM,980215BQ,1998,19,15.0,1,False,False,False,5,3,,,,0.054,
+rock,PbPPM,JK1800804,2018,10,13.0,1,False,False,False,1,2,,,,0.029,
+rock,PbPPM,JK1801142,2018,5,9.0,1,False,False,False,1,1,,,,0.014,
+rock,PbPPM,PD130187,2013,6,59.0,1,False,False,False,1,1,,,,0.017,
+rock,PbPPM,PD140270,2014,3,298.0,1,False,False,False,2,0,,,,0.009,
+rock,PbPPM,PD140339,2014,2,38.0,1,False,False,False,0,1,,,,0.006,
+rock,PbPPM,SUM 98 APRC-11,1998,19,22.0,1,False,False,False,4,3,,,,0.054,
+rock,PbPPM,SUM 98 APRC-12,1998,6,66.0,1,False,False,False,1,4,,,,0.017,
+rock,PbPPM,SUM 98 APRC-15,1998,3,53.0,1,False,False,False,0,1,,,,0.009,
+rock,PbPPM,SUM 98 APRC-16,1998,52,2.0,1,False,True,False,0,0,,,,0.149,
+rock,PbPPM,SUM 98 APRC-17,1998,45,2.0,2,False,True,False,0,0,,,,0.129,
+rock,PbPPM,SUM 98 APRC-19,1999,4,103.0,1,False,False,False,1,2,,,,0.011,
+rock,PbPPM,SUM 98 APRC-2,1998,1,292.0,1,False,False,False,0,0,,,,0.003,
+rock,PbPPM,SUM 98 APRC-5,1998,29,2.0,1,False,True,False,0,0,,,,0.083,
+rock,PbPPM,SUM 98 APRC-6,1998,5,2.0,1,False,True,False,0,0,,,,0.014,
+rock,PbPPM,SUM 98 APRC-9,1998,50,9.0,1,False,False,False,3,4,,,,0.143,
+rock,PbPPM,SUM 98-3,1998,1,16.0,1,False,False,False,0,0,,,,0.003,
+rock,PbPPM,SUM 98-6,1998,3,150.0,1,False,False,False,1,1,,,,0.009,
+rock,PbPPM,SUM 99 APRC-10,1999,10,71.0,1,False,False,False,4,2,,,,0.029,
+rock,PbPPM,SUM 99 APRC-12,1999,42,2.0,1,False,True,False,0,0,,,,0.12,
+rock,PbPPM,SUM 99 APRC-2,1999,5,142.0,1,False,False,False,1,3,,,,0.014,
+rock,SCIS_PCT,PD130187,2013,6,0.06,1,False,False,False,0,0,,,,0.545,
+rock,SCIS_PCT,PD140270,2014,3,3.36,1,False,False,False,2,0,,,,0.273,
+rock,SCIS_PCT,PD140339,2014,2,0.02,1,False,True,False,0,0,,,,0.182,
+rock,S_PCT,JK1801142,2018,5,0.03,1,False,False,False,1,0,,,,0.312,
+rock,S_PCT,PD130187,2013,6,0.06,1,False,False,False,0,0,,,,0.375,
+rock,S_PCT,PD140270,2014,3,4.31,1,False,False,False,2,0,,,,0.188,
+rock,S_PCT,PD140339,2014,2,0.069,1,False,False,False,0,1,,,,0.125,
+rock,ZnPPM,31331,2003,7,4.0,2,False,False,False,3,2,,,,0.02,1.0
+rock,ZnPPM,973271BQ,2008,7,10.0,1,False,True,False,4,0,,,,0.02,1.0
+rock,ZnPPM,979772BQ,1998,13,4.0,2,False,False,False,3,4,,,,0.037,1.0
+rock,ZnPPM,979786BQ,1998,3,10.0,1,False,True,False,2,0,,,,0.009,1.0
+rock,ZnPPM,980215BQ,1998,19,4.0,1,False,False,False,2,3,,,,0.054,1.0
+rock,ZnPPM,JK1800804,2018,10,2.0,1,False,True,False,0,2,,,,0.029,1.0
+rock,ZnPPM,JK1801142,2018,5,2.0,1,False,True,False,0,1,,,,0.014,1.0
+rock,ZnPPM,PD130187,2013,6,17.0,1,False,False,False,0,2,,,,0.017,1.0
+rock,ZnPPM,PD140270,2014,3,2660.0,1,False,False,False,1,1,,,,0.009,1.0
+rock,ZnPPM,PD140339,2014,2,27.0,1,False,False,False,1,0,,,,0.006,1.0
+rock,ZnPPM,SUM 98 APRC-11,1998,19,6.0,2,False,False,False,11,3,,,,0.054,1.0
+rock,ZnPPM,SUM 98 APRC-12,1998,6,3.0,3,True,False,False,2,1,,,,0.017,1.0
+rock,ZnPPM,SUM 98 APRC-15,1998,3,5.0,2,False,True,False,1,0,,,,0.009,1.0
+rock,ZnPPM,SUM 98 APRC-16,1998,52,1.0,6,True,True,True,0,36,DL,pattern,1.0,0.149,1.0
+rock,ZnPPM,SUM 98 APRC-17,1998,45,1.0,8,True,True,True,0,34,DL,pattern,1.0,0.129,1.0
+rock,ZnPPM,SUM 98 APRC-19,1999,4,10.0,1,False,True,False,3,0,,,,0.011,1.0
+rock,ZnPPM,SUM 98 APRC-2,1998,1,23.0,1,False,False,False,0,0,,,,0.003,1.0
+rock,ZnPPM,SUM 98 APRC-5,1998,29,4.0,1,False,False,False,15,13,,,,0.083,1.0
+rock,ZnPPM,SUM 98 APRC-6,1998,5,2.0,2,False,True,False,3,0,,,,0.014,1.0
+rock,ZnPPM,SUM 98 APRC-9,1998,50,3.0,2,False,False,False,15,22,,,,0.143,1.0
+rock,ZnPPM,SUM 98-3,1998,1,1.0,1,False,True,False,0,0,,,,0.003,1.0
+rock,ZnPPM,SUM 98-6,1998,3,6.0,2,False,False,False,1,0,,,,0.009,1.0
+rock,ZnPPM,SUM 99 APRC-10,1999,10,1.0,7,True,True,True,0,2,DL,pattern,1.0,0.029,1.0
+rock,ZnPPM,SUM 99 APRC-12,1999,42,3.0,1,False,False,False,9,22,,,,0.12,1.0
+rock,ZnPPM,SUM 99 APRC-2,1999,5,8.0,1,False,False,False,4,0,,,,0.014,1.0
+soil,AuPPM,092477,2009,8,0.017,1,False,False,False,0,2,,,,0.031,0.005
+soil,AuPPM,979787BQ,1998,22,0.0025,5,True,True,True,0,3,DL/2,gap,0.005,0.085,0.005
+soil,AuPPM,979913BQ,1997,13,0.0025,4,True,True,True,0,3,DL/2,gap,0.005,0.05,0.005
+soil,AuPPM,979979BQ,1998,3,0.0025,2,False,True,False,0,1,,,,0.012,0.005
+soil,AuPPM,980178BQ,1998,25,0.0025,1,False,True,False,0,0,,,,0.097,0.005
+soil,AuPPM,980183BQ,1998,29,0.013,1,False,False,False,5,6,,,,0.112,0.005
+soil,AuPPM,983451BQ,1998,1,0.31,1,False,False,False,0,0,,,,0.004,0.005
+soil,AuPPM,983817BQ,1998,64,0.005,1,False,True,False,2,1,,,,0.247,0.005
+soil,AuPPM,983861BQ,1998,17,0.029,1,False,False,False,2,3,,,,0.066,0.005
+soil,AuPPM,985838BQ,1998,58,0.0025,11,True,True,True,0,6,DL/2,gap,0.005,0.224,0.005
+soil,AuPPM,985890BQ,1998,1,0.014,1,False,False,False,0,0,,,,0.004,0.005
+soil,AuPPM,985943BQ,1998,11,0.007,1,False,False,False,1,3,,,,0.042,0.005
+soil,AuPPM,992149BQ,1999,3,0.01,1,False,True,False,1,1,,,,0.012,0.005
+soil,AuPPM,992171BQ,1999,1,0.005,1,False,True,False,0,0,,,,0.004,0.005
+soil,AuPPM,992641BQ,1999,2,0.03,1,False,False,False,1,0,,,,0.008,0.005
+soil,AuPPM,PD120244,2012,1,0.342,1,False,False,False,0,0,,,,0.004,0.005
+soil,AgPPM,092477,2009,8,0.5,8,True,True,True,0,0,DL,pattern,0.5,0.031,0.1
+soil,AgPPM,979787BQ,1998,22,0.1,2,False,True,False,0,1,,,,0.085,0.1
+soil,AgPPM,979913BQ,1997,13,0.1,3,True,True,True,0,2,DL,pattern,0.1,0.05,0.1
+soil,AgPPM,979979BQ,1998,3,0.5,3,True,True,True,0,0,DL,pattern,0.5,0.012,0.1
+soil,AgPPM,980178BQ,1998,25,0.1,1,False,True,False,0,14,,,,0.097,0.1
+soil,AgPPM,980183BQ,1998,29,0.1,4,True,True,True,0,4,DL,pattern,0.1,0.112,0.1
+soil,AgPPM,983451BQ,1998,1,0.4,1,False,False,False,0,0,,,,0.004,0.1
+soil,AgPPM,983817BQ,1998,64,0.1,17,True,True,True,0,17,DL,pattern,0.1,0.247,0.1
+soil,AgPPM,983861BQ,1998,17,0.1,1,False,True,False,0,3,,,,0.066,0.1
+soil,AgPPM,985838BQ,1998,58,0.1,16,True,True,True,0,21,DL,pattern,0.1,0.224,0.1
+soil,AgPPM,985890BQ,1998,1,0.1,1,False,True,False,0,0,,,,0.004,0.1
+soil,AgPPM,985943BQ,1998,11,0.3,1,False,False,False,5,4,,,,0.042,0.1
+soil,AgPPM,992149BQ,1999,3,0.5,3,True,True,True,0,0,DL,pattern,0.5,0.012,0.1
+soil,AgPPM,992171BQ,1999,1,0.2,1,False,True,False,0,0,,,,0.004,0.1
+soil,AgPPM,992641BQ,1999,2,0.5,2,False,True,False,0,0,,,,0.008,0.1
+soil,AgPPM,PD120244,2012,1,0.7,1,False,False,False,0,0,,,,0.004,0.1
+soil,CuPPM,092477,2009,8,25.0,1,False,True,False,1,6,,,,0.031,
+soil,CuPPM,979787BQ,1998,22,11.0,1,False,False,False,11,9,,,,0.085,
+soil,CuPPM,979913BQ,1997,13,10.0,1,False,True,False,8,3,,,,0.05,
+soil,CuPPM,979979BQ,1998,3,10.0,1,False,True,False,1,1,,,,0.012,
+soil,CuPPM,980178BQ,1998,25,1.0,3,True,True,True,0,1,DL,pattern,1.0,0.097,
+soil,CuPPM,980183BQ,1998,29,10.0,1,False,True,False,1,7,,,,0.112,
+soil,CuPPM,983451BQ,1998,1,32.0,1,False,False,False,0,0,,,,0.004,
+soil,CuPPM,983817BQ,1998,64,3.0,1,False,False,False,0,4,,,,0.247,
+soil,CuPPM,983861BQ,1998,17,6.0,1,False,False,False,2,5,,,,0.066,
+soil,CuPPM,985838BQ,1998,58,8.0,1,False,False,False,8,18,,,,0.224,
+soil,CuPPM,985890BQ,1998,1,42.0,1,False,False,False,0,0,,,,0.004,
+soil,CuPPM,985943BQ,1998,11,14.0,2,False,False,False,6,3,,,,0.042,
+soil,CuPPM,992149BQ,1999,3,20.0,1,False,True,False,2,0,,,,0.012,
+soil,CuPPM,992171BQ,1999,1,25.0,1,False,True,False,0,0,,,,0.004,
+soil,CuPPM,992641BQ,1999,2,49.0,1,False,False,False,1,0,,,,0.008,
+soil,CuPPM,PD120244,2012,1,48.0,1,False,False,False,0,0,,,,0.004,
+soil,AsPPM,092477,2009,8,17.0,1,False,False,False,1,4,,,,0.031,
+soil,AsPPM,979787BQ,1998,22,3.0,1,False,False,False,1,6,,,,0.085,
+soil,AsPPM,979913BQ,1997,13,6.0,1,False,False,False,4,1,,,,0.05,
+soil,AsPPM,979979BQ,1998,3,9.0,1,False,False,False,1,1,,,,0.012,
+soil,AsPPM,980178BQ,1998,25,3.0,1,False,False,False,0,2,,,,0.097,
+soil,AsPPM,980183BQ,1998,29,5.0,1,False,True,False,0,0,,,,0.112,
+soil,AsPPM,983451BQ,1998,1,350.0,1,False,False,False,0,0,,,,0.004,
+soil,AsPPM,983817BQ,1998,64,12.0,1,False,False,False,3,14,,,,0.247,
+soil,AsPPM,983861BQ,1998,17,15.0,1,False,False,False,0,3,,,,0.066,
+soil,AsPPM,985838BQ,1998,58,4.0,1,False,False,False,6,8,,,,0.224,
+soil,AsPPM,985890BQ,1998,1,19.0,1,False,False,False,0,0,,,,0.004,
+soil,AsPPM,985943BQ,1998,11,26.0,1,False,False,False,1,7,,,,0.042,
+soil,AsPPM,992149BQ,1999,3,32.0,1,False,False,False,2,0,,,,0.012,
+soil,AsPPM,992171BQ,1999,1,24.0,1,False,False,False,0,0,,,,0.004,
+soil,AsPPM,992641BQ,1999,2,34.0,1,False,False,False,1,0,,,,0.008,
+soil,AsPPM,PD120244,2012,1,87.0,1,False,False,False,0,0,,,,0.004,
+soil,HgPPM,092477,2009,8,0.06,1,False,False,False,1,5,,,,0.031,
+soil,HgPPM,979787BQ,1998,22,0.06,3,True,False,False,6,10,,,,0.085,
+soil,HgPPM,979913BQ,1997,13,0.08,2,False,False,False,5,5,,,,0.05,
+soil,HgPPM,979979BQ,1998,3,0.07,2,False,False,False,0,1,,,,0.012,
+soil,HgPPM,980178BQ,1998,25,0.005,2,False,True,False,0,0,,,,0.097,
+soil,HgPPM,980183BQ,1998,29,0.05,1,False,True,False,6,17,,,,0.112,
+soil,HgPPM,983451BQ,1998,1,0.41,1,False,False,False,0,0,,,,0.004,
+soil,HgPPM,983817BQ,1998,64,0.02,1,False,True,False,2,7,,,,0.247,
+soil,HgPPM,983861BQ,1998,17,0.05,1,False,True,False,0,3,,,,0.066,
+soil,HgPPM,985838BQ,1998,58,0.04,1,False,False,False,6,23,,,,0.224,
+soil,HgPPM,985890BQ,1998,1,0.12,1,False,False,False,0,0,,,,0.004,
+soil,HgPPM,985943BQ,1998,11,0.07,1,False,False,False,4,6,,,,0.042,
+soil,HgPPM,992149BQ,1999,3,0.06,1,False,False,False,2,0,,,,0.012,
+soil,HgPPM,992171BQ,1999,1,0.14,1,False,False,False,0,0,,,,0.004,
+soil,HgPPM,992641BQ,1999,2,0.16,1,False,False,False,1,0,,,,0.008,
+soil,HgPPM,PD120244,2012,1,0.18,1,False,False,False,0,0,,,,0.004,
+soil,PbPPM,092477,2009,8,10.0,1,False,True,False,0,2,,,,0.031,
+soil,PbPPM,979787BQ,1998,22,9.0,1,False,False,False,4,9,,,,0.085,
+soil,PbPPM,979913BQ,1997,13,5.0,1,False,True,False,1,4,,,,0.05,
+soil,PbPPM,979979BQ,1998,3,16.0,1,False,False,False,1,1,,,,0.012,
+soil,PbPPM,980178BQ,1998,25,2.0,1,False,True,False,0,1,,,,0.097,
+soil,PbPPM,980183BQ,1998,29,18.0,1,False,False,False,3,13,,,,0.112,
+soil,PbPPM,983451BQ,1998,1,61.0,1,False,False,False,0,0,,,,0.004,
+soil,PbPPM,983817BQ,1998,64,17.0,4,True,False,False,8,17,,,,0.247,
+soil,PbPPM,983861BQ,1998,17,37.0,1,False,False,False,6,10,,,,0.066,
+soil,PbPPM,985838BQ,1998,58,2.0,1,False,True,False,0,5,,,,0.224,
+soil,PbPPM,985890BQ,1998,1,16.0,1,False,False,False,0,0,,,,0.004,
+soil,PbPPM,985943BQ,1998,11,22.0,1,False,False,False,3,2,,,,0.042,
+soil,PbPPM,992149BQ,1999,3,6.0,1,False,False,False,0,2,,,,0.012,
+soil,PbPPM,992171BQ,1999,1,34.0,1,False,False,False,0,0,,,,0.004,
+soil,PbPPM,992641BQ,1999,2,52.0,1,False,False,False,1,0,,,,0.008,
+soil,PbPPM,PD120244,2012,1,53.0,1,False,False,False,0,0,,,,0.004,
+soil,ZnPPM,092477,2009,8,22.0,1,False,False,False,4,3,,,,0.031,
+soil,ZnPPM,979787BQ,1998,22,7.0,1,False,False,False,3,8,,,,0.085,
+soil,ZnPPM,979913BQ,1997,13,3.0,1,False,False,False,0,3,,,,0.05,
+soil,ZnPPM,979979BQ,1998,3,15.0,1,False,False,False,1,1,,,,0.012,
+soil,ZnPPM,980178BQ,1998,25,5.0,2,False,True,False,6,0,,,,0.097,
+soil,ZnPPM,980183BQ,1998,29,1.0,1,False,True,False,0,2,,,,0.112,
+soil,ZnPPM,983451BQ,1998,1,50.0,1,False,True,False,0,0,,,,0.004,
+soil,ZnPPM,983817BQ,1998,64,3.0,2,False,False,False,3,9,,,,0.247,
+soil,ZnPPM,983861BQ,1998,17,2.0,1,False,True,False,1,6,,,,0.066,
+soil,ZnPPM,985838BQ,1998,58,5.0,1,False,True,False,2,20,,,,0.224,
+soil,ZnPPM,985890BQ,1998,1,29.0,1,False,False,False,0,0,,,,0.004,
+soil,ZnPPM,985943BQ,1998,11,5.0,1,False,True,False,0,2,,,,0.042,
+soil,ZnPPM,992149BQ,1999,3,18.0,1,False,False,False,2,0,,,,0.012,
+soil,ZnPPM,992171BQ,1999,1,21.0,1,False,False,False,0,0,,,,0.004,
+soil,ZnPPM,992641BQ,1999,2,35.0,1,False,False,False,1,0,,,,0.008,
+soil,ZnPPM,PD120244,2012,1,28.0,1,False,False,False,0,0,,,,0.004,

@@ -1,0 +1,13 @@
+theta,lml,kernel,lml_isotropik
+0,-960.4961556738967,"0.914**2 * Matern(length_scale=[37, 16.8, 7.38], nu=1.5) + WhiteKernel(noise_level=0.0597)",-963.316425240432
+15,-959.3858792486174,"0.92**2 * Matern(length_scale=[45.7, 10.8, 8.01], nu=1.5) + WhiteKernel(noise_level=0.0604)",-963.316425240432
+30,-960.8166615588062,"0.921**2 * Matern(length_scale=[31.3, 11.5, 8.17], nu=1.5) + WhiteKernel(noise_level=0.0608)",-963.316425240432
+45,-961.9203273548171,"0.921**2 * Matern(length_scale=[22.5, 12.2, 8.17], nu=1.5) + WhiteKernel(noise_level=0.061)",-963.316425240432
+60,-960.524405181681,"0.914**2 * Matern(length_scale=[5.71, 58.9, 7.36], nu=1.5) + WhiteKernel(noise_level=0.0596)",-963.316425240432
+75,-961.1901478823621,"0.915**2 * Matern(length_scale=[15.3, 35.6, 7.34], nu=1.5) + WhiteKernel(noise_level=0.0599)",-963.316425240432
+90,-960.4961556869714,"0.914**2 * Matern(length_scale=[16.8, 37, 7.38], nu=1.5) + WhiteKernel(noise_level=0.0597)",-963.316425240432
+105,-959.3858792420203,"0.92**2 * Matern(length_scale=[10.8, 45.7, 8.01], nu=1.5) + WhiteKernel(noise_level=0.0604)",-963.316425240432
+120,-960.816661535973,"0.921**2 * Matern(length_scale=[11.5, 31.3, 8.17], nu=1.5) + WhiteKernel(noise_level=0.0608)",-963.316425240432
+135,-961.9203273572248,"0.921**2 * Matern(length_scale=[12.2, 22.5, 8.17], nu=1.5) + WhiteKernel(noise_level=0.061)",-963.316425240432
+150,-962.0889388343544,"0.916**2 * Matern(length_scale=[25.9, 20.7, 7.35], nu=1.5) + WhiteKernel(noise_level=0.0601)",-963.316425240432
+165,-961.190147882354,"0.915**2 * Matern(length_scale=[35.6, 15.3, 7.34], nu=1.5) + WhiteKernel(noise_level=0.0599)",-963.316425240432

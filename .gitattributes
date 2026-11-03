@@ -1,0 +1,17 @@
+# Keep data byte-exact on every OS: the raw CSVs are CRLF and RAW_MANIFEST.sha256 /
+# tests/test_raw.py check their hashes. Never let git convert line endings under data/.
+data/** -text
+RAW_MANIFEST.sha256 -text
+
+# Binary formats
+gis/** binary
+*.tif binary
+*.gpkg binary
+*.qgz binary
+*.png binary
+*.pdf binary
+*.TAB binary
+*.DAT binary
+*.MAP binary
+*.ID binary
+*.IND binary

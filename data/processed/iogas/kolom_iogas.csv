@@ -1,0 +1,542 @@
+file,column,source_column,meaning_en,meaning_id,unit
+RJ_DH_assay.csv,HoleID,,drillhole ID,ID lubang bor,
+RJ_DH_assay.csv,From,,interval top depth,kedalaman atas interval,m
+RJ_DH_assay.csv,To,,interval bottom depth,kedalaman bawah interval,m
+RJ_DH_assay.csv,SampleID,,sample ID,ID sampel,
+RJ_DH_assay.csv,X,,Easting UTM 47N (downhole: interval midpoint),Easting UTM 47N (bor: titik tengah interval),m
+RJ_DH_assay.csv,Y,,Northing UTM 47N,Northing UTM 47N,m
+RJ_DH_assay.csv,Z,,elevation (surface: lidar re-drape),elevasi (permukaan: diproyeksikan ke lidar),m
+RJ_DH_assay.csv,SampleType,,sample type,jenis sampel,
+RJ_DH_assay.csv,LabJobNo,,lab job,nomor job lab,
+RJ_DH_assay.csv,Tahun_lab,,lab year,tahun analisis lab,
+RJ_DH_assay.csv,NS_SEL,,not sampled,tidak disampel,Y/N
+RJ_DH_assay.csv,survey_extrap,,below last measured survey station,di bawah stasiun survei terakhir,Y/N
+RJ_DH_assay.csv,S_metode,,sulfide-S method (SCIS / S2 / mixed / none),metode S sulfida,
+RJ_DH_assay.csv,flag_AuCN_gt_total,,AuCN > 1.1 x Au,"AuCN > 1,1 x Au",Y/N
+RJ_DH_assay.csv,flag_AgCN_gt_total,,AgCN > 1.1 x Ag,"AgCN > 1,1 x Ag",Y/N
+RJ_DH_assay.csv,Au_ppm,AuPPM_ml,"Au, harmonised DL (censored = DL/2); source AuPPM_ml","Au, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Au_ppm_cens,AuPPM_cens_h,Au_ppm below detection (value = DL/2),Au_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Ag_ppm,AgPPM_ml,"Ag, harmonised DL (censored = DL/2); source AgPPM_ml","Ag, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Ag_ppm_cens,AgPPM_cens_h,Ag_ppm below detection (value = DL/2),Ag_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Cu_ppm,CuPPM_ml,"Cu, harmonised DL (censored = DL/2); source CuPPM_ml","Cu, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Cu_ppm_cens,CuPPM_cens_h,Cu_ppm below detection (value = DL/2),Cu_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Al_pct,AlPCT_ml,"Al, harmonised DL (censored = DL/2); source AlPCT_ml","Al, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_assay.csv,As_ppm,AsPPM_ml,"As, harmonised DL (censored = DL/2); source AsPPM_ml","As, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,As_ppm_cens,AsPPM_cens_h,As_ppm below detection (value = DL/2),As_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Ba_ppm,BaPPM_ml,"Ba, harmonised DL (censored = DL/2); source BaPPM_ml","Ba, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Ba_ppm_cens,BaPPM_cens_h,Ba_ppm below detection (value = DL/2),Ba_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Bi_ppm,BiPPM_ml,"Bi, harmonised DL (censored = DL/2); source BiPPM_ml","Bi, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Bi_ppm_cens,BiPPM_cens_h,Bi_ppm below detection (value = DL/2),Bi_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Ca_pct,CaPCT_ml,"Ca, harmonised DL (censored = DL/2); source CaPCT_ml","Ca, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_assay.csv,Ca_pct_cens,CaPCT_cens_h,Ca_pct below detection (value = DL/2),Ca_pct di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Cd_ppm,CdPPM_ml,"Cd, harmonised DL (censored = DL/2); source CdPPM_ml","Cd, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Cd_ppm_cens,CdPPM_cens_h,Cd_ppm below detection (value = DL/2),Cd_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Co_ppm,CoPPM_ml,"Co, harmonised DL (censored = DL/2); source CoPPM_ml","Co, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Co_ppm_cens,CoPPM_cens_h,Co_ppm below detection (value = DL/2),Co_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Cr_ppm,CrPPM_ml,"Cr, harmonised DL (censored = DL/2); source CrPPM_ml","Cr, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Fe_pct,FePCT_ml,"Fe, harmonised DL (censored = DL/2); source FePCT_ml","Fe, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_assay.csv,Ga_ppm,GaPPM_ml,"Ga, harmonised DL (censored = DL/2); source GaPPM_ml","Ga, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Ga_ppm_cens,GaPPM_cens_h,Ga_ppm below detection (value = DL/2),Ga_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Hg_ppm,HgPPM_ml,"Hg, harmonised DL (censored = DL/2); source HgPPM_ml","Hg, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Hg_ppm_cens,HgPPM_cens_h,Hg_ppm below detection (value = DL/2),Hg_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,K_pct,KPCT_ml,"K, harmonised DL (censored = DL/2); source KPCT_ml","K, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_assay.csv,K_pct_cens,KPCT_cens_h,K_pct below detection (value = DL/2),K_pct di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,La_ppm,LaPPM_ml,"La, harmonised DL (censored = DL/2); source LaPPM_ml","La, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,La_ppm_cens,LaPPM_cens_h,La_ppm below detection (value = DL/2),La_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Li_ppm,LiPPM_ml,"Li, harmonised DL (censored = DL/2); source LiPPM_ml","Li, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Li_ppm_cens,LiPPM_cens_h,Li_ppm below detection (value = DL/2),Li_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Mg_pct,MgPCT_ml,"Mg, harmonised DL (censored = DL/2); source MgPCT_ml","Mg, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_assay.csv,Mg_pct_cens,MgPCT_cens_h,Mg_pct below detection (value = DL/2),Mg_pct di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Mn_ppm,MnPPM_ml,"Mn, harmonised DL (censored = DL/2); source MnPPM_ml","Mn, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Mo_ppm,MoPPM_ml,"Mo, harmonised DL (censored = DL/2); source MoPPM_ml","Mo, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Mo_ppm_cens,MoPPM_cens_h,Mo_ppm below detection (value = DL/2),Mo_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Na_pct,NaPCT_ml,"Na, harmonised DL (censored = DL/2); source NaPCT_ml","Na, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_assay.csv,NAG_pH,NAGpH_ml,"NAG, harmonised DL (censored = DL/2); source NAGpH_ml","NAG, DL diseragamkan (tersensor = DL/2)",pH
+RJ_DH_assay.csv,NAG_pH45_kgH2SO4_t,NAGpH4.5_kgH2SO4/ton_ml,"NAG_pH45_kgH2SO4, harmonised DL (censored = DL/2); source NAGpH4.5_kgH2SO4/ton_ml","NAG_pH45_kgH2SO4, DL diseragamkan (tersensor = DL/2)",
+RJ_DH_assay.csv,NAG_pH45_kgH2SO4_t_cens,NAGpH4.5_kgH2SO4/ton_cens_h,NAG_pH45_kgH2SO4_t below detection (value = DL/2),NAG_pH45_kgH2SO4_t di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,NAG_pH70_kgH2SO4_t,NAGpH7.0_kgH2SO4/ton_ml,"NAG_pH70_kgH2SO4, harmonised DL (censored = DL/2); source NAGpH7.0_kgH2SO4/ton_ml","NAG_pH70_kgH2SO4, DL diseragamkan (tersensor = DL/2)",
+RJ_DH_assay.csv,Nb_ppm,NbPPM_ml,"Nb, harmonised DL (censored = DL/2); source NbPPM_ml","Nb, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Nb_ppm_cens,NbPPM_cens_h,Nb_ppm below detection (value = DL/2),Nb_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Ni_ppm,NiPPM_ml,"Ni, harmonised DL (censored = DL/2); source NiPPM_ml","Ni, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Ni_ppm_cens,NiPPM_cens_h,Ni_ppm below detection (value = DL/2),Ni_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Pb_ppm,PbPPM_ml,"Pb, harmonised DL (censored = DL/2); source PbPPM_ml","Pb, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,S_sulfida_SCIS_pct,SCIS_PCT_ml,"S_sulfida_SCIS, harmonised DL (censored = DL/2); source SCIS_PCT_ml","S_sulfida_SCIS, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_assay.csv,S_sulfida_SCIS_pct_cens,SCIS_PCT_cens_h,S_sulfida_SCIS_pct below detection (value = DL/2),S_sulfida_SCIS_pct di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,S_sulfida_S2_pct,S2_SPCT_ml,"S_sulfida_S2, harmonised DL (censored = DL/2); source S2_SPCT_ml","S_sulfida_S2, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_assay.csv,S_total_pct,S_PCT_ml,"S_total, harmonised DL (censored = DL/2); source S_PCT_ml","S_total, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_assay.csv,Sb_ppm,SbPPM_ml,"Sb, harmonised DL (censored = DL/2); source SbPPM_ml","Sb, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Sb_ppm_cens,SbPPM_cens_h,Sb_ppm below detection (value = DL/2),Sb_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Sc_ppm,ScPPM_ml,"Sc, harmonised DL (censored = DL/2); source ScPPM_ml","Sc, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Sc_ppm_cens,ScPPM_cens_h,Sc_ppm below detection (value = DL/2),Sc_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Sn_ppm,SnPPM_ml,"Sn, harmonised DL (censored = DL/2); source SnPPM_ml","Sn, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Sn_ppm_cens,SnPPM_cens_h,Sn_ppm below detection (value = DL/2),Sn_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Sr_ppm,SrPPM_ml,"Sr, harmonised DL (censored = DL/2); source SrPPM_ml","Sr, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Sr_ppm_cens,SrPPM_cens_h,Sr_ppm below detection (value = DL/2),Sr_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Ta_ppm,TaPPM_ml,"Ta, harmonised DL (censored = DL/2); source TaPPM_ml","Ta, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Ta_ppm_cens,TaPPM_cens_h,Ta_ppm below detection (value = DL/2),Ta_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Te_ppm,TePPM_ml,"Te, harmonised DL (censored = DL/2); source TePPM_ml","Te, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Te_ppm_cens,TePPM_cens_h,Te_ppm below detection (value = DL/2),Te_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Ti_pct,TiPCT_ml,"Ti, harmonised DL (censored = DL/2); source TiPCT_ml","Ti, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_assay.csv,Ti_pct_cens,TiPCT_cens_h,Ti_pct below detection (value = DL/2),Ti_pct di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,V_ppm,VPPM_ml,"V, harmonised DL (censored = DL/2); source VPPM_ml","V, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,V_ppm_cens,VPPM_cens_h,V_ppm below detection (value = DL/2),V_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,W_ppm,WPPM_ml,"W, harmonised DL (censored = DL/2); source WPPM_ml","W, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,W_ppm_cens,WPPM_cens_h,W_ppm below detection (value = DL/2),W_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Y_ppm,YPPM_ml,"Y, harmonised DL (censored = DL/2); source YPPM_ml","Y, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Y_ppm_cens,YPPM_cens_h,Y_ppm below detection (value = DL/2),Y_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Zn_ppm,ZnPPM_ml,"Zn, harmonised DL (censored = DL/2); source ZnPPM_ml","Zn, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Zn_ppm_cens,ZnPPM_cens_h,Zn_ppm below detection (value = DL/2),Zn_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,Zr_ppm,ZrPPM_ml,"Zr, harmonised DL (censored = DL/2); source ZrPPM_ml","Zr, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,Zr_ppm_cens,ZrPPM_cens_h,Zr_ppm below detection (value = DL/2),Zr_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,AuCN_ppm,AuCNPPM_ml,"AuCN, harmonised DL (censored = DL/2); source AuCNPPM_ml","AuCN, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,AuCN_ppm_cens,AuCNPPM_cens_h,AuCN_ppm below detection (value = DL/2),AuCN_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,AgCN_ppm,AgCNPPM_ml,"AgCN, harmonised DL (censored = DL/2); source AgCNPPM_ml","AgCN, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,AgCN_ppm_cens,AgCNPPM_cens_h,AgCN_ppm below detection (value = DL/2),AgCN_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,CuCN_ppm,CuCNPPM_ml,"CuCN, harmonised DL (censored = DL/2); source CuCNPPM_ml","CuCN, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,CuCN_ppm_cens,CuCNPPM_cens_h,CuCN_ppm below detection (value = DL/2),CuCN_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,HgCN_ppm,HgCNPPM_ml,"HgCN, harmonised DL (censored = DL/2); source HgCNPPM_ml","HgCN, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,HgCN_ppm_cens,HgCNPPM_cens_h,HgCN_ppm below detection (value = DL/2),HgCN_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_DH_assay.csv,AsCN_ppm,AsCNPPM_ml,"AsCN, harmonised DL (censored = DL/2); source AsCNPPM_ml","AsCN, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_assay.csv,AuCN_Au_rasio,,CN-soluble / total Au,rasio Au larut sianida / total,
+RJ_DH_assay.csv,AgCN_Ag_rasio,,CN-soluble / total Ag,rasio Ag larut sianida / total,
+RJ_DH_assay.csv,CuCN_Cu_rasio,,CN-soluble / total Cu (oxide/supergene indicator),rasio Cu larut sianida / total (indikator oksida/supergen),
+RJ_DH_assay.csv,Lith1Interp,,logged lithology code,kode litologi log,
+RJ_DH_assay.csv,Kelompok_Litologi,,lithology group,kelompok litologi,
+RJ_DH_assay.csv,AltFacies,,logged alteration facies code,kode fasies alterasi,
+RJ_DH_assay.csv,Fasies_Alterasi,,alteration facies,fasies alterasi,
+RJ_DH_assay.csv,alt_ml_label,,alteration label for ML (UA removed),label alterasi untuk ML,
+RJ_DH_assay.csv,Status_Oksidasi,,logged oxidation state,status oksidasi (log),
+RJ_DH_assay.csv,Status_Oksidasi_turunan,,oxidation state derived from % oxidised,status oksidasi turunan dari % oksidasi,
+RJ_DH_assay.csv,Oksidasi_pct,,"logged % oxidised, length-weighted",% oksidasi (rerata tertimbang panjang),%
+RJ_DH_assay.csv,Mineral_dominan,,dominant mineral code,kode mineral dominan,
+RJ_DH_assay.csv,min_logged,,mineralisation logged,mineralisasi dilog,Y/N
+RJ_DH_assay.csv,min_py,,pyrite logged,pirit dilog,Y/N
+RJ_DH_assay.csv,min_cu,,Cu sulfide/sulfosalt logged,mineral Cu dilog,Y/N
+RJ_DH_assay.csv,min_fe_ox,,Fe oxide logged,oksida besi dilog,Y/N
+RJ_DH_assay.csv,min_ja,,jarosite logged,jarosit dilog,Y/N
+RJ_DH_assay.csv,min_su,,native sulfur logged,belerang native dilog,Y/N
+RJ_DH_assay.csv,min_al,,alunite logged,alunit dilog,Y/N
+RJ_DH_assay.csv,lith_mixed,,interval spans > 1 lithology group,interval melewati > 1 litologi,Y/N
+RJ_DH_assay.csv,alt_mixed,,interval spans > 1 alteration facies,interval melewati > 1 alterasi,Y/N
+RJ_DH_assay.csv,ox_mixed,,interval spans > 1 oxidation state,interval melewati > 1 status oksidasi,Y/N
+RJ_DH_assay.csv,min_mixed,,interval spans > 1 dominant mineral,interval melewati > 1 mineral dominan,Y/N
+RJ_DH_assay.csv,flag_ox_conflict,,oxidation label conflicts with %,label oksidasi bertentangan dengan %,Y/N
+RJ_DH_assay.csv,ML_thr_Au_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_thr_Au_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_thr_Ag_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_thr_Ag_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_thr_Cu_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_thr_Cu_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_thr_As_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_thr_As_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_thr_S_sulfida_SCIS_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_thr_S_sulfida_SCIS_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_alt_prediksi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_alt_p_maks,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_alt_ambigu,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_alt_p_AA,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_alt_p_SI,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_alt_p_AR,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_alt_p_PP,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_alt_entropi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_alt_tier,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_oks_prediksi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_oks_p_maks,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_oks_ambigu,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_oks_p_Oxide,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_oks_p_Transition,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_oks_p_Sulphide,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_oks_entropi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_oks_tier,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_lit_prediksi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_lit_p_maks,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_lit_ambigu,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_lit_p_Coherent_dacite-andesite_porphyry,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_lit_p_Phreatomagmatic_breccia,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_lit_p_Hydrothermal_breccia,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_lit_p_Fault_zone,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_lit_p_Other,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_lit_entropi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_lit_tier,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_py_p,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_py_tier,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_cu_p,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_cu_tier,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_label,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_set,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_n_set,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_kelas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_kelola,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_kelola_sumber,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_p_NAF,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_p_LC,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_p_HC,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_pval_NAF,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_pval_LC,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_pval_HC,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_tier,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_model,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_luar_domain,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_alasan,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_uji_NAG,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_prioritas_uji,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_napp_min,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_gmm,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_gmm_nama,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_gmm_p_maks,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_assay.csv,ML_paf_gmm_stabil,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,HoleID,,drillhole ID,ID lubang bor,
+RJ_DH_komposit_1m.csv,From,,interval top depth,kedalaman atas interval,m
+RJ_DH_komposit_1m.csv,To,,interval bottom depth,kedalaman bawah interval,m
+RJ_DH_komposit_1m.csv,X,,Easting UTM 47N (downhole: interval midpoint),Easting UTM 47N (bor: titik tengah interval),m
+RJ_DH_komposit_1m.csv,Y,,Northing UTM 47N,Northing UTM 47N,m
+RJ_DH_komposit_1m.csv,Z,,elevation (surface: lidar re-drape),elevasi (permukaan: diproyeksikan ke lidar),m
+RJ_DH_komposit_1m.csv,Tahun_lab,,lab year,tahun analisis lab,
+RJ_DH_komposit_1m.csv,Panjang_komposit,,composite length,panjang komposit,m
+RJ_DH_komposit_1m.csv,comp_cov_m,,sampled length in composite,panjang tersampel dalam komposit,m
+RJ_DH_komposit_1m.csv,comp_ok,,composite usable (>= 0.5 m sampled),"komposit layak (>= 0,5 m tersampel)",Y/N
+RJ_DH_komposit_1m.csv,comp_shared_src,,value repeated from one sample > 1 m,nilai berulang dari satu sampel > 1 m,Y/N
+RJ_DH_komposit_1m.csv,survey_extrap,,below last measured survey station,di bawah stasiun survei terakhir,Y/N
+RJ_DH_komposit_1m.csv,S_metode,,sulfide-S method (SCIS / S2 / mixed / none),metode S sulfida,
+RJ_DH_komposit_1m.csv,Au_ppm,AuPPM_ml,"Au, harmonised DL (censored = DL/2); source AuPPM_ml","Au, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Ag_ppm,AgPPM_ml,"Ag, harmonised DL (censored = DL/2); source AgPPM_ml","Ag, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Cu_ppm,CuPPM_ml,"Cu, harmonised DL (censored = DL/2); source CuPPM_ml","Cu, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Al_pct,AlPCT_ml,"Al, harmonised DL (censored = DL/2); source AlPCT_ml","Al, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_komposit_1m.csv,As_ppm,AsPPM_ml,"As, harmonised DL (censored = DL/2); source AsPPM_ml","As, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Ba_ppm,BaPPM_ml,"Ba, harmonised DL (censored = DL/2); source BaPPM_ml","Ba, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Bi_ppm,BiPPM_ml,"Bi, harmonised DL (censored = DL/2); source BiPPM_ml","Bi, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Ca_pct,CaPCT_ml,"Ca, harmonised DL (censored = DL/2); source CaPCT_ml","Ca, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_komposit_1m.csv,Cd_ppm,CdPPM_ml,"Cd, harmonised DL (censored = DL/2); source CdPPM_ml","Cd, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Co_ppm,CoPPM_ml,"Co, harmonised DL (censored = DL/2); source CoPPM_ml","Co, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Cr_ppm,CrPPM_ml,"Cr, harmonised DL (censored = DL/2); source CrPPM_ml","Cr, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Fe_pct,FePCT_ml,"Fe, harmonised DL (censored = DL/2); source FePCT_ml","Fe, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_komposit_1m.csv,Ga_ppm,GaPPM_ml,"Ga, harmonised DL (censored = DL/2); source GaPPM_ml","Ga, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Hg_ppm,HgPPM_ml,"Hg, harmonised DL (censored = DL/2); source HgPPM_ml","Hg, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,K_pct,KPCT_ml,"K, harmonised DL (censored = DL/2); source KPCT_ml","K, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_komposit_1m.csv,La_ppm,LaPPM_ml,"La, harmonised DL (censored = DL/2); source LaPPM_ml","La, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Li_ppm,LiPPM_ml,"Li, harmonised DL (censored = DL/2); source LiPPM_ml","Li, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Mg_pct,MgPCT_ml,"Mg, harmonised DL (censored = DL/2); source MgPCT_ml","Mg, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_komposit_1m.csv,Mn_ppm,MnPPM_ml,"Mn, harmonised DL (censored = DL/2); source MnPPM_ml","Mn, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Mo_ppm,MoPPM_ml,"Mo, harmonised DL (censored = DL/2); source MoPPM_ml","Mo, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Na_pct,NaPCT_ml,"Na, harmonised DL (censored = DL/2); source NaPCT_ml","Na, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_komposit_1m.csv,Nb_ppm,NbPPM_ml,"Nb, harmonised DL (censored = DL/2); source NbPPM_ml","Nb, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Ni_ppm,NiPPM_ml,"Ni, harmonised DL (censored = DL/2); source NiPPM_ml","Ni, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Pb_ppm,PbPPM_ml,"Pb, harmonised DL (censored = DL/2); source PbPPM_ml","Pb, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,S_sulfida_SCIS_pct,SCIS_PCT_ml,"S_sulfida_SCIS, harmonised DL (censored = DL/2); source SCIS_PCT_ml","S_sulfida_SCIS, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_komposit_1m.csv,S_sulfida_S2_pct,S2_SPCT_ml,"S_sulfida_S2, harmonised DL (censored = DL/2); source S2_SPCT_ml","S_sulfida_S2, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_komposit_1m.csv,S_total_pct,S_PCT_ml,"S_total, harmonised DL (censored = DL/2); source S_PCT_ml","S_total, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_komposit_1m.csv,Sb_ppm,SbPPM_ml,"Sb, harmonised DL (censored = DL/2); source SbPPM_ml","Sb, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Sc_ppm,ScPPM_ml,"Sc, harmonised DL (censored = DL/2); source ScPPM_ml","Sc, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Sn_ppm,SnPPM_ml,"Sn, harmonised DL (censored = DL/2); source SnPPM_ml","Sn, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Sr_ppm,SrPPM_ml,"Sr, harmonised DL (censored = DL/2); source SrPPM_ml","Sr, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Ta_ppm,TaPPM_ml,"Ta, harmonised DL (censored = DL/2); source TaPPM_ml","Ta, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Te_ppm,TePPM_ml,"Te, harmonised DL (censored = DL/2); source TePPM_ml","Te, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Ti_pct,TiPCT_ml,"Ti, harmonised DL (censored = DL/2); source TiPCT_ml","Ti, DL diseragamkan (tersensor = DL/2)",pct
+RJ_DH_komposit_1m.csv,V_ppm,VPPM_ml,"V, harmonised DL (censored = DL/2); source VPPM_ml","V, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,W_ppm,WPPM_ml,"W, harmonised DL (censored = DL/2); source WPPM_ml","W, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Y_ppm,YPPM_ml,"Y, harmonised DL (censored = DL/2); source YPPM_ml","Y, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Zn_ppm,ZnPPM_ml,"Zn, harmonised DL (censored = DL/2); source ZnPPM_ml","Zn, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Zr_ppm,ZrPPM_ml,"Zr, harmonised DL (censored = DL/2); source ZrPPM_ml","Zr, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,AuCN_ppm,AuCNPPM_ml,"AuCN, harmonised DL (censored = DL/2); source AuCNPPM_ml","AuCN, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,AgCN_ppm,AgCNPPM_ml,"AgCN, harmonised DL (censored = DL/2); source AgCNPPM_ml","AgCN, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,CuCN_ppm,CuCNPPM_ml,"CuCN, harmonised DL (censored = DL/2); source CuCNPPM_ml","CuCN, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,HgCN_ppm,HgCNPPM_ml,"HgCN, harmonised DL (censored = DL/2); source HgCNPPM_ml","HgCN, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,AsCN_ppm,AsCNPPM_ml,"AsCN, harmonised DL (censored = DL/2); source AsCNPPM_ml","AsCN, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_DH_komposit_1m.csv,Au_ppm_cens_frac,,Au_ppm: censored share of composite length,Au_ppm: proporsi tersensor,
+RJ_DH_komposit_1m.csv,Ag_ppm_cens_frac,,Ag_ppm: censored share of composite length,Ag_ppm: proporsi tersensor,
+RJ_DH_komposit_1m.csv,Cu_ppm_cens_frac,,Cu_ppm: censored share of composite length,Cu_ppm: proporsi tersensor,
+RJ_DH_komposit_1m.csv,As_ppm_cens_frac,,As_ppm: censored share of composite length,As_ppm: proporsi tersensor,
+RJ_DH_komposit_1m.csv,S_sulfida_SCIS_pct_cens_frac,,S_sulfida_SCIS_pct: censored share of composite length,S_sulfida_SCIS_pct: proporsi tersensor,
+RJ_DH_komposit_1m.csv,AgCN_ppm_cens_frac,,AgCN_ppm: censored share of composite length,AgCN_ppm: proporsi tersensor,
+RJ_DH_komposit_1m.csv,CuCN_ppm_cens_frac,,CuCN_ppm: censored share of composite length,CuCN_ppm: proporsi tersensor,
+RJ_DH_komposit_1m.csv,AuCN_Au_rasio,,CN-soluble / total Au,rasio Au larut sianida / total,
+RJ_DH_komposit_1m.csv,AgCN_Ag_rasio,,CN-soluble / total Ag,rasio Ag larut sianida / total,
+RJ_DH_komposit_1m.csv,CuCN_Cu_rasio,,CN-soluble / total Cu (oxide/supergene indicator),rasio Cu larut sianida / total (indikator oksida/supergen),
+RJ_DH_komposit_1m.csv,Lith1Interp,,logged lithology code,kode litologi log,
+RJ_DH_komposit_1m.csv,Kelompok_Litologi,,lithology group,kelompok litologi,
+RJ_DH_komposit_1m.csv,AltFacies,,logged alteration facies code,kode fasies alterasi,
+RJ_DH_komposit_1m.csv,Fasies_Alterasi,,alteration facies,fasies alterasi,
+RJ_DH_komposit_1m.csv,alt_ml_label,,alteration label for ML (UA removed),label alterasi untuk ML,
+RJ_DH_komposit_1m.csv,Status_Oksidasi,,logged oxidation state,status oksidasi (log),
+RJ_DH_komposit_1m.csv,Status_Oksidasi_turunan,,oxidation state derived from % oxidised,status oksidasi turunan dari % oksidasi,
+RJ_DH_komposit_1m.csv,Oksidasi_pct,,"logged % oxidised, length-weighted",% oksidasi (rerata tertimbang panjang),%
+RJ_DH_komposit_1m.csv,Mineral_dominan,,dominant mineral code,kode mineral dominan,
+RJ_DH_komposit_1m.csv,min_logged,,mineralisation logged,mineralisasi dilog,Y/N
+RJ_DH_komposit_1m.csv,min_py,,pyrite logged,pirit dilog,Y/N
+RJ_DH_komposit_1m.csv,min_cu,,Cu sulfide/sulfosalt logged,mineral Cu dilog,Y/N
+RJ_DH_komposit_1m.csv,min_fe_ox,,Fe oxide logged,oksida besi dilog,Y/N
+RJ_DH_komposit_1m.csv,min_ja,,jarosite logged,jarosit dilog,Y/N
+RJ_DH_komposit_1m.csv,min_su,,native sulfur logged,belerang native dilog,Y/N
+RJ_DH_komposit_1m.csv,min_al,,alunite logged,alunit dilog,Y/N
+RJ_DH_komposit_1m.csv,lith_mixed,,interval spans > 1 lithology group,interval melewati > 1 litologi,Y/N
+RJ_DH_komposit_1m.csv,alt_mixed,,interval spans > 1 alteration facies,interval melewati > 1 alterasi,Y/N
+RJ_DH_komposit_1m.csv,ox_mixed,,interval spans > 1 oxidation state,interval melewati > 1 status oksidasi,Y/N
+RJ_DH_komposit_1m.csv,min_mixed,,interval spans > 1 dominant mineral,interval melewati > 1 mineral dominan,Y/N
+RJ_DH_komposit_1m.csv,flag_ox_conflict,,oxidation label conflicts with %,label oksidasi bertentangan dengan %,Y/N
+RJ_DH_komposit_1m.csv,ML_hmm_status,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_hmm_nama,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_hmm_p_maks,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_hmm_ambigu,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_hmm_entropi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_hmm_p_S1,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_hmm_p_S2,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_hmm_p_S3,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_hmm_p_S4,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_hmm_p_S5,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_hmm_viterbi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_hmm_stabil,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_hmm_gmm,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_hmm_S_status,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_gp_mu,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_gp_sd,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_gp_cv_mu,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_gp_cv_sd,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_gp_cv_resid,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_gp_cv_p05,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_gp_blok2m,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_s9_rf_alt,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_s9_rf_alt_p_maks,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_s9_rf_oks,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_komposit_1m.csv,ML_s9_rf_oks_p_maks,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,SampleID,,sample ID,ID sampel,
+RJ_batuan.csv,X,,Easting UTM 47N (downhole: interval midpoint),Easting UTM 47N (bor: titik tengah interval),m
+RJ_batuan.csv,Y,,Northing UTM 47N,Northing UTM 47N,m
+RJ_batuan.csv,Z,,elevation (surface: lidar re-drape),elevasi (permukaan: diproyeksikan ke lidar),m
+RJ_batuan.csv,Elev_orig,,original surface elevation,elevasi asli permukaan,m
+RJ_batuan.csv,Prospek,,prospect,prospek,
+RJ_batuan.csv,prospek_RJ,,Ramba Joring prospect,prospek Ramba Joring,Y/N
+RJ_batuan.csv,SampleType,,sample type,jenis sampel,
+RJ_batuan.csv,LabJobNo,,lab job,nomor job lab,
+RJ_batuan.csv,Tahun,,lab year,tahun analisis lab,
+RJ_batuan.csv,flag_elev,,elevation vs lidar (ok/dem_uncertain/elev_error/no_dem),elevasi vs lidar,
+RJ_batuan.csv,dupxy_group,,duplicate-XY group,grup XY ganda,
+RJ_batuan.csv,dupxy_type,,duplicate-XY type,jenis XY ganda,
+RJ_batuan.csv,Lithology,,logged lithology code,kode litologi,
+RJ_batuan.csv,Kelompok_Litologi,,lithology group,kelompok litologi,
+RJ_batuan.csv,IntrpAltFa,,alteration facies code,kode fasies alterasi,
+RJ_batuan.csv,Fasies_Alterasi,,alteration facies,fasies alterasi,
+RJ_batuan.csv,flag_AuCN_gt_total,,AuCN > 1.1 x Au,"AuCN > 1,1 x Au",Y/N
+RJ_batuan.csv,flag_AgCN_gt_total,,AgCN > 1.1 x Ag,"AgCN > 1,1 x Ag",Y/N
+RJ_batuan.csv,Au_ppm,AuPPM_ml,"Au, harmonised DL (censored = DL/2); source AuPPM_ml","Au, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Au_ppm_cens,AuPPM_cens_h,Au_ppm below detection (value = DL/2),Au_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Ag_ppm,AgPPM_ml,"Ag, harmonised DL (censored = DL/2); source AgPPM_ml","Ag, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Ag_ppm_cens,AgPPM_cens_h,Ag_ppm below detection (value = DL/2),Ag_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Cu_ppm,CuPPM_ml,"Cu, harmonised DL (censored = DL/2); source CuPPM_ml","Cu, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Cu_ppm_cens,CuPPM_cens_h,Cu_ppm below detection (value = DL/2),Cu_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Al_pct,AlPCT_ml,"Al, harmonised DL (censored = DL/2); source AlPCT_ml","Al, DL diseragamkan (tersensor = DL/2)",pct
+RJ_batuan.csv,As_ppm,AsPPM_ml,"As, harmonised DL (censored = DL/2); source AsPPM_ml","As, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Ba_ppm,BaPPM_ml,"Ba, harmonised DL (censored = DL/2); source BaPPM_ml","Ba, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Ba_ppm_cens,BaPPM_cens_h,Ba_ppm below detection (value = DL/2),Ba_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Be_ppm,BePPM_ml,"Be, harmonised DL (censored = DL/2); source BePPM_ml","Be, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Be_ppm_cens,BePPM_cens_h,Be_ppm below detection (value = DL/2),Be_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Bi_ppm,BiPPM_ml,"Bi, harmonised DL (censored = DL/2); source BiPPM_ml","Bi, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Bi_ppm_cens,BiPPM_cens_h,Bi_ppm below detection (value = DL/2),Bi_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Ca_pct,CaPCT_ml,"Ca, harmonised DL (censored = DL/2); source CaPCT_ml","Ca, DL diseragamkan (tersensor = DL/2)",pct
+RJ_batuan.csv,Ca_pct_cens,CaPCT_cens_h,Ca_pct below detection (value = DL/2),Ca_pct di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Cd_ppm,CdPPM_ml,"Cd, harmonised DL (censored = DL/2); source CdPPM_ml","Cd, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Cd_ppm_cens,CdPPM_cens_h,Cd_ppm below detection (value = DL/2),Cd_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Co_ppm,CoPPM_ml,"Co, harmonised DL (censored = DL/2); source CoPPM_ml","Co, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Co_ppm_cens,CoPPM_cens_h,Co_ppm below detection (value = DL/2),Co_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Cr_ppm,CrPPM_ml,"Cr, harmonised DL (censored = DL/2); source CrPPM_ml","Cr, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Fe_pct,FePCT_ml,"Fe, harmonised DL (censored = DL/2); source FePCT_ml","Fe, DL diseragamkan (tersensor = DL/2)",pct
+RJ_batuan.csv,Ga_ppm,GaPPM_ml,"Ga, harmonised DL (censored = DL/2); source GaPPM_ml","Ga, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Hg_ppm,HgPPM_ml,"Hg, harmonised DL (censored = DL/2); source HgPPM_ml","Hg, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Hg_ppm_cens,HgPPM_cens_h,Hg_ppm below detection (value = DL/2),Hg_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,K_pct,KPCT_ml,"K, harmonised DL (censored = DL/2); source KPCT_ml","K, DL diseragamkan (tersensor = DL/2)",pct
+RJ_batuan.csv,La_ppm,LaPPM_ml,"La, harmonised DL (censored = DL/2); source LaPPM_ml","La, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Li_ppm,LiPPM_ml,"Li, harmonised DL (censored = DL/2); source LiPPM_ml","Li, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Li_ppm_cens,LiPPM_cens_h,Li_ppm below detection (value = DL/2),Li_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Mg_pct,MgPCT_ml,"Mg, harmonised DL (censored = DL/2); source MgPCT_ml","Mg, DL diseragamkan (tersensor = DL/2)",pct
+RJ_batuan.csv,Mg_pct_cens,MgPCT_cens_h,Mg_pct below detection (value = DL/2),Mg_pct di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Mn_ppm,MnPPM_ml,"Mn, harmonised DL (censored = DL/2); source MnPPM_ml","Mn, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Mo_ppm,MoPPM_ml,"Mo, harmonised DL (censored = DL/2); source MoPPM_ml","Mo, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Mo_ppm_cens,MoPPM_cens_h,Mo_ppm below detection (value = DL/2),Mo_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Na_pct,NaPCT_ml,"Na, harmonised DL (censored = DL/2); source NaPCT_ml","Na, DL diseragamkan (tersensor = DL/2)",pct
+RJ_batuan.csv,Na_pct_cens,NaPCT_cens_h,Na_pct below detection (value = DL/2),Na_pct di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Nb_ppm,NbPPM_ml,"Nb, harmonised DL (censored = DL/2); source NbPPM_ml","Nb, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Nb_ppm_cens,NbPPM_cens_h,Nb_ppm below detection (value = DL/2),Nb_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Ni_ppm,NiPPM_ml,"Ni, harmonised DL (censored = DL/2); source NiPPM_ml","Ni, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Ni_ppm_cens,NiPPM_cens_h,Ni_ppm below detection (value = DL/2),Ni_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,P_pct,PPCT_ml,"P, harmonised DL (censored = DL/2); source PPCT_ml","P, DL diseragamkan (tersensor = DL/2)",pct
+RJ_batuan.csv,P_pct_cens,PPCT_cens_h,P_pct below detection (value = DL/2),P_pct di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Pb_ppm,PbPPM_ml,"Pb, harmonised DL (censored = DL/2); source PbPPM_ml","Pb, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,S_sulfida_SCIS_pct,SCIS_PCT_ml,"S_sulfida_SCIS, harmonised DL (censored = DL/2); source SCIS_PCT_ml","S_sulfida_SCIS, DL diseragamkan (tersensor = DL/2)",pct
+RJ_batuan.csv,S_total_pct,S_PCT_ml,"S_total, harmonised DL (censored = DL/2); source S_PCT_ml","S_total, DL diseragamkan (tersensor = DL/2)",pct
+RJ_batuan.csv,Sb_ppm,SbPPM_ml,"Sb, harmonised DL (censored = DL/2); source SbPPM_ml","Sb, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Sb_ppm_cens,SbPPM_cens_h,Sb_ppm below detection (value = DL/2),Sb_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Sc_ppm,ScPPM_ml,"Sc, harmonised DL (censored = DL/2); source ScPPM_ml","Sc, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Sc_ppm_cens,ScPPM_cens_h,Sc_ppm below detection (value = DL/2),Sc_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Sn_ppm,SnPPM_ml,"Sn, harmonised DL (censored = DL/2); source SnPPM_ml","Sn, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Sn_ppm_cens,SnPPM_cens_h,Sn_ppm below detection (value = DL/2),Sn_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Sr_ppm,SrPPM_ml,"Sr, harmonised DL (censored = DL/2); source SrPPM_ml","Sr, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Ta_ppm,TaPPM_ml,"Ta, harmonised DL (censored = DL/2); source TaPPM_ml","Ta, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Ta_ppm_cens,TaPPM_cens_h,Ta_ppm below detection (value = DL/2),Ta_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Te_ppm,TePPM_ml,"Te, harmonised DL (censored = DL/2); source TePPM_ml","Te, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Te_ppm_cens,TePPM_cens_h,Te_ppm below detection (value = DL/2),Te_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Ti_pct,TiPCT_ml,"Ti, harmonised DL (censored = DL/2); source TiPCT_ml","Ti, DL diseragamkan (tersensor = DL/2)",pct
+RJ_batuan.csv,Tl_ppm,TlPPM_ml,"Tl, harmonised DL (censored = DL/2); source TlPPM_ml","Tl, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Tl_ppm_cens,TlPPM_cens_h,Tl_ppm below detection (value = DL/2),Tl_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,V_ppm,VPPM_ml,"V, harmonised DL (censored = DL/2); source VPPM_ml","V, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,W_ppm,WPPM_ml,"W, harmonised DL (censored = DL/2); source WPPM_ml","W, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,W_ppm_cens,WPPM_cens_h,W_ppm below detection (value = DL/2),W_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Y_ppm,YPPM_ml,"Y, harmonised DL (censored = DL/2); source YPPM_ml","Y, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Y_ppm_cens,YPPM_cens_h,Y_ppm below detection (value = DL/2),Y_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Zn_ppm,ZnPPM_ml,"Zn, harmonised DL (censored = DL/2); source ZnPPM_ml","Zn, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Zn_ppm_cens,ZnPPM_cens_h,Zn_ppm below detection (value = DL/2),Zn_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,Zr_ppm,ZrPPM_ml,"Zr, harmonised DL (censored = DL/2); source ZrPPM_ml","Zr, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,Zr_ppm_cens,ZrPPM_cens_h,Zr_ppm below detection (value = DL/2),Zr_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_batuan.csv,AuCN_ppm,AuCNPPM_ml,"AuCN, harmonised DL (censored = DL/2); source AuCNPPM_ml","AuCN, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,AgCN_ppm,AgCNPPM_ml,"AgCN, harmonised DL (censored = DL/2); source AgCNPPM_ml","AgCN, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,CuCN_ppm,CuCNPPM_ml,"CuCN, harmonised DL (censored = DL/2); source CuCNPPM_ml","CuCN, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_batuan.csv,AuCN_Au_rasio,,CN-soluble / total Au,rasio Au larut sianida / total,
+RJ_batuan.csv,AgCN_Ag_rasio,,CN-soluble / total Ag,rasio Ag larut sianida / total,
+RJ_batuan.csv,CuCN_Cu_rasio,,CN-soluble / total Cu (oxide/supergene indicator),rasio Cu larut sianida / total (indikator oksida/supergen),
+RJ_batuan.csv,ML_thr_Au_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_thr_Au_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_thr_Cu_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_thr_Cu_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_thr_As_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_thr_As_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_thr_Hg_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_thr_Hg_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_thr_Pb_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_thr_Pb_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_thr_Sb_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_thr_Sb_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_thr_Zn_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_thr_Zn_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_alt_prediksi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_alt_p_maks,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_alt_ambigu,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_alt_p_SI,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_alt_p_AR,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_alt_p_PP,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_alt_tier,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_zona,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_zona_id,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_zona_p_T,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_zona_p_S,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_zona_p_R,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_zona_p_maks,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_zona_ambigu,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_zona_stabil,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_zona_indeks,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_zona_K2,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_zona_float,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_s9_kmeans,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_s9_kmeans_k,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_batuan.csv,ML_s9_kmeans_k3,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,SampleID,,sample ID,ID sampel,
+RJ_tanah.csv,X,,Easting UTM 47N (downhole: interval midpoint),Easting UTM 47N (bor: titik tengah interval),m
+RJ_tanah.csv,Y,,Northing UTM 47N,Northing UTM 47N,m
+RJ_tanah.csv,Z,,elevation (surface: lidar re-drape),elevasi (permukaan: diproyeksikan ke lidar),m
+RJ_tanah.csv,Elev_orig,,original surface elevation,elevasi asli permukaan,m
+RJ_tanah.csv,Prospek,,prospect,prospek,
+RJ_tanah.csv,prospek_RJ,,Ramba Joring prospect,prospek Ramba Joring,Y/N
+RJ_tanah.csv,SampleType,,sample type,jenis sampel,
+RJ_tanah.csv,LabJobNo,,lab job,nomor job lab,
+RJ_tanah.csv,Tahun,,lab year,tahun analisis lab,
+RJ_tanah.csv,flag_elev,,elevation vs lidar (ok/dem_uncertain/elev_error/no_dem),elevasi vs lidar,
+RJ_tanah.csv,dupxy_group,,duplicate-XY group,grup XY ganda,
+RJ_tanah.csv,dupxy_type,,duplicate-XY type,jenis XY ganda,
+RJ_tanah.csv,Au_ppm,AuPPM_ml,"Au, harmonised DL (censored = DL/2); source AuPPM_ml","Au, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Au_ppm_cens,AuPPM_cens_h,Au_ppm below detection (value = DL/2),Au_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_tanah.csv,Ag_ppm,AgPPM_ml,"Ag, harmonised DL (censored = DL/2); source AgPPM_ml","Ag, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Ag_ppm_cens,AgPPM_cens_h,Ag_ppm below detection (value = DL/2),Ag_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_tanah.csv,Cu_ppm,CuPPM_ml,"Cu, harmonised DL (censored = DL/2); source CuPPM_ml","Cu, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Cu_ppm_cens,CuPPM_cens_h,Cu_ppm below detection (value = DL/2),Cu_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_tanah.csv,Al_pct,AlPCT_ml,"Al, harmonised DL (censored = DL/2); source AlPCT_ml","Al, DL diseragamkan (tersensor = DL/2)",pct
+RJ_tanah.csv,As_ppm,AsPPM_ml,"As, harmonised DL (censored = DL/2); source AsPPM_ml","As, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Ba_ppm,BaPPM_ml,"Ba, harmonised DL (censored = DL/2); source BaPPM_ml","Ba, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Bi_ppm,BiPPM_ml,"Bi, harmonised DL (censored = DL/2); source BiPPM_ml","Bi, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Bi_ppm_cens,BiPPM_cens_h,Bi_ppm below detection (value = DL/2),Bi_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_tanah.csv,Ca_pct,CaPCT_ml,"Ca, harmonised DL (censored = DL/2); source CaPCT_ml","Ca, DL diseragamkan (tersensor = DL/2)",pct
+RJ_tanah.csv,Cd_ppm,CdPPM_ml,"Cd, harmonised DL (censored = DL/2); source CdPPM_ml","Cd, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Co_ppm,CoPPM_ml,"Co, harmonised DL (censored = DL/2); source CoPPM_ml","Co, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Cr_ppm,CrPPM_ml,"Cr, harmonised DL (censored = DL/2); source CrPPM_ml","Cr, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Fe_pct,FePCT_ml,"Fe, harmonised DL (censored = DL/2); source FePCT_ml","Fe, DL diseragamkan (tersensor = DL/2)",pct
+RJ_tanah.csv,Ga_ppm,GaPPM_ml,"Ga, harmonised DL (censored = DL/2); source GaPPM_ml","Ga, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Hg_ppm,HgPPM_ml,"Hg, harmonised DL (censored = DL/2); source HgPPM_ml","Hg, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,K_pct,KPCT_ml,"K, harmonised DL (censored = DL/2); source KPCT_ml","K, DL diseragamkan (tersensor = DL/2)",pct
+RJ_tanah.csv,La_ppm,LaPPM_ml,"La, harmonised DL (censored = DL/2); source LaPPM_ml","La, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Li_ppm,LiPPM_ml,"Li, harmonised DL (censored = DL/2); source LiPPM_ml","Li, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Mg_pct,MgPCT_ml,"Mg, harmonised DL (censored = DL/2); source MgPCT_ml","Mg, DL diseragamkan (tersensor = DL/2)",pct
+RJ_tanah.csv,Mn_ppm,MnPPM_ml,"Mn, harmonised DL (censored = DL/2); source MnPPM_ml","Mn, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Mo_ppm,MoPPM_ml,"Mo, harmonised DL (censored = DL/2); source MoPPM_ml","Mo, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Mo_ppm_cens,MoPPM_cens_h,Mo_ppm below detection (value = DL/2),Mo_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_tanah.csv,Na_pct,NaPCT_ml,"Na, harmonised DL (censored = DL/2); source NaPCT_ml","Na, DL diseragamkan (tersensor = DL/2)",pct
+RJ_tanah.csv,Nb_ppm,NbPPM_ml,"Nb, harmonised DL (censored = DL/2); source NbPPM_ml","Nb, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Ni_ppm,NiPPM_ml,"Ni, harmonised DL (censored = DL/2); source NiPPM_ml","Ni, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Pb_ppm,PbPPM_ml,"Pb, harmonised DL (censored = DL/2); source PbPPM_ml","Pb, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Sb_ppm,SbPPM_ml,"Sb, harmonised DL (censored = DL/2); source SbPPM_ml","Sb, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Sb_ppm_cens,SbPPM_cens_h,Sb_ppm below detection (value = DL/2),Sb_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_tanah.csv,Sc_ppm,ScPPM_ml,"Sc, harmonised DL (censored = DL/2); source ScPPM_ml","Sc, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Se_ppm,SePPM_ml,"Se, harmonised DL (censored = DL/2); source SePPM_ml","Se, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Sn_ppm,SnPPM_ml,"Sn, harmonised DL (censored = DL/2); source SnPPM_ml","Sn, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Sr_ppm,SrPPM_ml,"Sr, harmonised DL (censored = DL/2); source SrPPM_ml","Sr, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Ta_ppm,TaPPM_ml,"Ta, harmonised DL (censored = DL/2); source TaPPM_ml","Ta, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Te_ppm,TePPM_ml,"Te, harmonised DL (censored = DL/2); source TePPM_ml","Te, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Te_ppm_cens,TePPM_cens_h,Te_ppm below detection (value = DL/2),Te_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_tanah.csv,Ti_pct,TiPCT_ml,"Ti, harmonised DL (censored = DL/2); source TiPCT_ml","Ti, DL diseragamkan (tersensor = DL/2)",pct
+RJ_tanah.csv,Tl_ppm,TlPPM_ml,"Tl, harmonised DL (censored = DL/2); source TlPPM_ml","Tl, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,V_ppm,VPPM_ml,"V, harmonised DL (censored = DL/2); source VPPM_ml","V, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,W_ppm,WPPM_ml,"W, harmonised DL (censored = DL/2); source WPPM_ml","W, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,W_ppm_cens,WPPM_cens_h,W_ppm below detection (value = DL/2),W_ppm di bawah batas deteksi (nilai = DL/2),Y/N
+RJ_tanah.csv,Y_ppm,YPPM_ml,"Y, harmonised DL (censored = DL/2); source YPPM_ml","Y, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Zn_ppm,ZnPPM_ml,"Zn, harmonised DL (censored = DL/2); source ZnPPM_ml","Zn, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,Zr_ppm,ZrPPM_ml,"Zr, harmonised DL (censored = DL/2); source ZrPPM_ml","Zr, DL diseragamkan (tersensor = DL/2)",ppm
+RJ_tanah.csv,ML_thr_Au_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_Au_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_Ag_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_Ag_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_Cu_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_Cu_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_As_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_As_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_Ba_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_Ba_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_Hg_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_Hg_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_Pb_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_Pb_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_Sb_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_Sb_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_W_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_W_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_Zn_populasi,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_thr_Zn_p_atas,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_zona,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_zona_id,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_zona_p_T,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_zona_p_S,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_zona_p_R,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_zona_p_maks,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_zona_ambigu,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_zona_stabil,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_zona_indeks,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_zona_K2,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_s9_kmeans,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_s9_kmeans_k,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_tanah.csv,ML_s9_kmeans_k3,,ML output (see LOG.md),keluaran ML (lihat LOG.md),
+RJ_DH_collar.csv,HoleID,,drillhole ID,ID lubang bor,
+RJ_DH_collar.csv,X,,Easting UTM 47N (downhole: interval midpoint),Easting UTM 47N (bor: titik tengah interval),m
+RJ_DH_collar.csv,Y,,Northing UTM 47N,Northing UTM 47N,m
+RJ_DH_collar.csv,Z,,elevation (surface: lidar re-drape),elevasi (permukaan: diproyeksikan ke lidar),m
+RJ_DH_collar.csv,EndDepth,,end of hole depth,kedalaman akhir lubang,m
+RJ_DH_collar.csv,Dip,,dip,kemiringan,deg
+RJ_DH_collar.csv,AzimUTM,,azimuth (UTM grid),azimut (grid UTM),deg
+RJ_DH_collar.csv,Tahun_lab,,lab year,tahun analisis lab,
+RJ_DH_collar.csv,Z_dem,,lidar elevation at collar,elevasi lidar di collar,m
+RJ_DH_collar.csv,RL_dz,,collar RL minus lidar,RL collar dikurangi lidar,m
+RJ_DH_collar.csv,flag_collar_pad,,collar below lidar (pad cut),collar di bawah lidar (pad),Y/N
+RJ_DH_collar.csv,survey_gap_m,,survey gap above EOH,celah survei di atas EOH,m
+RJ_DH_collar.csv,eoh_extrap_uncert_m,,EOH position uncertainty,ketidakpastian posisi EOH,m
+RJ_DH_survey.csv,HoleID,,drillhole ID,ID lubang bor,
+RJ_DH_survey.csv,Depth,,survey depth,kedalaman survei,m
+RJ_DH_survey.csv,Dip,,dip,kemiringan,deg
+RJ_DH_survey.csv,AzimUTM,,azimuth (UTM grid),azimut (grid UTM),deg
+RJ_DH_survey.csv,Method,,survey method,metode survei,
+RJ_DH_survey.csv,survey_extrap,,below last measured survey station,di bawah stasiun survei terakhir,Y/N
+RJ_DH_survey.csv,X,,Easting UTM 47N (downhole: interval midpoint),Easting UTM 47N (bor: titik tengah interval),m
+RJ_DH_survey.csv,Y,,Northing UTM 47N,Northing UTM 47N,m
+RJ_DH_survey.csv,Z,,elevation (surface: lidar re-drape),elevasi (permukaan: diproyeksikan ke lidar),m

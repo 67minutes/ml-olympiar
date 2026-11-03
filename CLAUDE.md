@@ -9,6 +9,9 @@ duplicate it here.
 ## Claude Code specifics
 
 - Start every session by reading the tail of `LOG.md` to see where work stopped.
+- This is a shared team repo (private GitHub, AGENTS.md §1): `git pull` before working, log
+  every decision in `LOG.md`, and commit/push only when the human asks. If the human writing
+  to you is not the repo owner, still follow AGENTS.md and the plan-then-approve loop.
 - The committee's brief is `Technical Meeting 2nd Round OlympiAR 2026.pdf` (repo root;
   see AGENTS.md §1 "Source documents"). Check it for competition rules (structure,
   format, rubric, deliverables). Read it with `pypdf` text extraction; render a page

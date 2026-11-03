@@ -1,0 +1,130 @@
+dataset,kolom,pct_di_atas_DL,median_per_DL,aturan_jansson,ml_usable,DL_sumber
+assay,AuPPM,94.7,43.5,True,True,harmonised
+assay,AgPPM,68.0,4.0,False,True,harmonised
+assay,CuPPM,98.7,52.5,True,True,2 × lantai (DL job)
+assay,AlPCT,4.8,22.3,False,False,2 × lantai (DL job)
+assay,AsPPM,99.3,44.75,True,True,2 × lantai (DL job)
+assay,BaPPM,15.6,29.0,False,False,harmonised
+assay,BiPPM,3.5,1.8,False,False,harmonised
+assay,CaPCT,1.0,0.5,False,False,harmonised
+assay,CdPPM,0.4,0.5,False,False,harmonised
+assay,CoPPM,4.6,4.0,False,False,harmonised
+assay,CrPPM,4.8,1.33,False,False,2 × lantai (DL job)
+assay,FePCT,16.0,2.93,False,False,2 × lantai (DL job)
+assay,GaPPM,0.2,0.5,False,False,harmonised
+assay,HgPPM,19.4,9.0,False,False,harmonised
+assay,KPCT,4.7,49.0,False,False,harmonised
+assay,LaPPM,4.4,4.0,False,False,harmonised
+assay,LiPPM,1.5,0.5,False,False,harmonised
+assay,MgPCT,2.1,0.5,False,False,harmonised
+assay,MnPPM,16.0,1.5,False,False,2 × lantai (DL job)
+assay,MoPPM,11.1,3.0,False,False,harmonised
+assay,NaPCT,4.8,4.0,False,False,2 × lantai (DL job)
+assay,NAGpH,4.3,1.1,False,False,2 × lantai (DL job)
+assay,NAGpH4.5_kgH2SO4/ton,2.5,294.0,False,False,harmonised
+assay,NAGpH7.0_kgH2SO4/ton,4.3,2450.0,False,False,2 × lantai (DL job)
+assay,NbPPM,0.0,0.5,False,False,harmonised
+assay,NiPPM,4.4,4.0,False,False,harmonised
+assay,PbPPM,16.0,24.62,False,False,2 × lantai (DL job)
+assay,SCIS_PCT,73.5,234.0,True,True,harmonised
+assay,S2_SPCT,8.1,30.75,False,False,2 × lantai (DL job)
+assay,S_PCT,4.8,26.93,False,False,2 × lantai (DL job)
+assay,SbPPM,6.8,0.5,False,False,harmonised
+assay,ScPPM,2.6,2.0,False,False,harmonised
+assay,SnPPM,0.2,0.5,False,False,harmonised
+assay,SrPPM,4.2,58.0,False,False,harmonised
+assay,TaPPM,0.0,0.5,False,False,harmonised
+assay,TePPM,0.2,0.5,False,False,harmonised
+assay,TiPCT,1.4,0.5,False,False,harmonised
+assay,VPPM,4.5,27.5,False,False,harmonised
+assay,WPPM,0.1,0.5,False,False,harmonised
+assay,YPPM,2.9,2.0,False,False,harmonised
+assay,ZnPPM,12.7,6.0,False,False,harmonised
+assay,ZrPPM,0.2,0.5,False,False,harmonised
+assay,AuCNPPM,22.8,1.4,False,False,harmonised
+assay,AgCNPPM,26.0,2.0,False,True,harmonised
+assay,CuCNPPM,30.2,4.0,False,True,harmonised
+assay,HgCNPPM,41.7,11.5,False,False,2 × lantai (DL job)
+assay,AsCNPPM,42.1,9.14,False,False,2 × lantai (DL job)
+rock,AuPPM,98.7,50.0,True,True,2 × lantai (DL job)
+rock,AgPPM,34.3,0.5,False,False,harmonised
+rock,CuPPM,97.4,10.0,False,True,harmonised
+rock,AlPCT,5.5,9.86,False,False,2 × lantai (DL job)
+rock,AsPPM,90.8,23.17,True,True,2 × lantai (DL job)
+rock,BaPPM,44.8,52.0,False,False,harmonised
+rock,BePPM,1.7,1.2,False,False,harmonised
+rock,BiPPM,14.3,0.5,False,False,harmonised
+rock,CaPCT,4.2,1.5,False,False,harmonised
+rock,CdPPM,1.7,0.5,False,False,harmonised
+rock,CoPPM,4.2,17.0,False,False,harmonised
+rock,CrPPM,5.5,1.75,False,False,2 × lantai (DL job)
+rock,FePCT,5.5,0.94,False,False,2 × lantai (DL job)
+rock,GaPPM,2.3,1.0,False,False,2 × lantai (DL job)
+rock,HgPPM,60.5,3.0,False,True,harmonised
+rock,KPCT,5.5,83.5,False,False,2 × lantai (DL job)
+rock,LaPPM,5.5,5.0,False,False,2 × lantai (DL job)
+rock,LiPPM,4.2,11.0,False,False,harmonised
+rock,MgPCT,2.1,0.5,False,False,harmonised
+rock,MnPPM,5.5,2.01,False,False,2 × lantai (DL job)
+rock,MoPPM,1.9,0.5,False,False,harmonised
+rock,NaPCT,4.2,8.0,False,False,harmonised
+rock,NbPPM,0.0,0.5,False,False,harmonised
+rock,NiPPM,4.4,8.0,False,False,harmonised
+rock,PPCT,2.3,4.0,False,False,harmonised
+rock,PbPPM,74.6,34.88,True,True,2 × lantai (DL job)
+rock,SCIS_PCT,2.3,98.75,False,False,2 × lantai (DL job)
+rock,S_PCT,3.4,52.92,False,False,2 × lantai (DL job)
+rock,SbPPM,58.2,3.5,False,True,harmonised
+rock,ScPPM,4.0,4.75,False,False,harmonised
+rock,SnPPM,0.2,0.5,False,False,harmonised
+rock,SrPPM,5.5,6.77,False,False,2 × lantai (DL job)
+rock,TaPPM,0.0,0.5,False,False,harmonised
+rock,TePPM,0.4,0.5,False,False,harmonised
+rock,TiPCT,5.5,9.0,False,False,2 × lantai (DL job)
+rock,TlPPM,4.0,0.5,False,False,harmonised
+rock,VPPM,5.5,6.5,False,False,2 × lantai (DL job)
+rock,WPPM,14.7,0.5,False,False,harmonised
+rock,YPPM,3.2,1.35,False,False,harmonised
+rock,ZnPPM,69.9,6.0,False,True,harmonised
+rock,ZrPPM,3.2,2.03,False,False,harmonised
+rock,AuCNPPM,1.1,4.0,False,False,2 × lantai (DL job)
+rock,AgCNPPM,0.2,0.5,False,False,2 × lantai (DL job)
+rock,CuCNPPM,0.2,0.5,False,False,2 × lantai (DL job)
+soil,AuPPM,89.6,14.2,True,True,harmonised
+soil,AgPPM,77.2,5.0,False,True,harmonised
+soil,CuPPM,98.8,37.0,True,True,2 × lantai (DL job)
+soil,AlPCT,0.4,0.5,False,False,2 × lantai (DL job)
+soil,AsPPM,100.0,9.5,False,True,2 × lantai (DL job)
+soil,BaPPM,61.0,5.66,False,True,2 × lantai (DL job)
+soil,BiPPM,27.8,3.2,False,False,harmonised
+soil,CaPCT,0.4,0.5,False,False,2 × lantai (DL job)
+soil,CdPPM,0.4,0.5,False,False,2 × lantai (DL job)
+soil,CoPPM,0.4,0.5,False,False,2 × lantai (DL job)
+soil,CrPPM,0.4,0.5,False,False,2 × lantai (DL job)
+soil,FePCT,3.5,0.6,False,False,2 × lantai (DL job)
+soil,GaPPM,0.4,0.5,False,False,2 × lantai (DL job)
+soil,HgPPM,100.0,17.0,True,True,2 × lantai (DL job)
+soil,KPCT,0.4,0.5,False,False,2 × lantai (DL job)
+soil,LaPPM,0.4,0.5,False,False,2 × lantai (DL job)
+soil,LiPPM,0.4,0.5,False,False,2 × lantai (DL job)
+soil,MgPCT,0.4,0.5,False,False,2 × lantai (DL job)
+soil,MnPPM,3.5,0.98,False,False,2 × lantai (DL job)
+soil,MoPPM,1.9,2.0,False,False,harmonised
+soil,NaPCT,0.4,0.5,False,False,2 × lantai (DL job)
+soil,NbPPM,0.4,0.5,False,False,2 × lantai (DL job)
+soil,NiPPM,0.4,0.5,False,False,2 × lantai (DL job)
+soil,PbPPM,100.0,15.25,True,True,2 × lantai (DL job)
+soil,SbPPM,98.8,44.0,True,True,2 × lantai (DL job)
+soil,ScPPM,0.4,0.5,False,False,2 × lantai (DL job)
+soil,SePPM,0.4,0.5,False,False,2 × lantai (DL job)
+soil,SnPPM,0.4,0.5,False,False,2 × lantai (DL job)
+soil,SrPPM,0.4,0.5,False,False,2 × lantai (DL job)
+soil,TaPPM,0.4,0.5,False,False,2 × lantai (DL job)
+soil,TePPM,0.4,0.5,False,False,harmonised
+soil,TiPCT,0.4,0.5,False,False,2 × lantai (DL job)
+soil,TlPPM,24.7,8.33,False,False,2 × lantai (DL job)
+soil,VPPM,0.4,0.5,False,False,2 × lantai (DL job)
+soil,WPPM,63.3,3.0,False,True,harmonised
+soil,YPPM,0.4,0.5,False,False,2 × lantai (DL job)
+soil,ZnPPM,100.0,11.5,True,True,2 × lantai (DL job)
+soil,ZrPPM,0.4,0.5,False,False,2 × lantai (DL job)

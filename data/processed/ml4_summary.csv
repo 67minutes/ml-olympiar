@@ -1,0 +1,29 @@
+K,ll_hmm,se_hmm,ll_gmm,se_gmm,hmm_minus_gmm,bic,min_state_n,min_state_holes,admissible,selected,kind,name,value
+2.0,-4.342214084351919,0.18190923861688285,-4.722917511823787,0.16662896282614612,0.3807034274718675,26503.29612786885,1102.3357427482865,19.0,True,False,K_selection,,
+3.0,-4.126073303726509,0.19471387090392128,-4.679731541101114,0.17197643935887458,0.5536582373746042,24745.245423786488,714.8784975315326,18.0,True,False,K_selection,,
+4.0,-3.9589801672374896,0.18515494682745934,-4.684819349245155,0.17600568157094715,0.7258391820076655,23367.943589113336,521.9716066364914,16.0,True,False,K_selection,,
+5.0,-3.795365156437395,0.1775679068278456,-4.650408427006179,0.18002475851612573,0.8550432705687848,22449.879064244284,368.00233698434977,13.0,True,True,K_selection,,
+6.0,-3.7168848488642925,0.1814040033912777,-4.629586944251975,0.1798831308856123,0.9127020953876831,21902.87079738654,342.0313151701766,13.0,True,False,K_selection,,
+7.0,-3.6802830496367425,0.1826246535070957,-4.628025100351585,0.17911342002418454,0.9477420507148425,21450.947813839328,308.1477714732359,13.0,True,False,K_selection,,
+8.0,-3.635769266585633,0.17415161873825014,-4.625393370226527,0.17802081528647407,0.9896241036408938,21263.211318103407,240.2436454895029,10.0,True,False,K_selection,,
+,,,,,,,,,,,hyperparameter,seed,0
+,,,,,,,,,,,hyperparameter,features,"log10 Au, Ag, Cu, As (komposit 1 m)"
+,,,,,,,,,,,hyperparameter,K_grid,2-8
+,,,,,,,,,,,hyperparameter,K_selected,5
+,,,,,,,,,,,hyperparameter,covariance,full
+,,,,,,,,,,,hyperparameter,min_covar_scaled,0.005165531502306621
+,,,,,,,,,,,hyperparameter,n_iter,500
+,,,,,,,,,,,hyperparameter,tol,0.0001
+,,,,,,,,,,,hyperparameter,restarts,10
+,,,,,,,,,,,hyperparameter,restarts_cv,5
+,,,,,,,,,,,hyperparameter,draws,20
+,,,,,,,,,,,hyperparameter,draws_cv,5
+,,,,,,,,,,,hyperparameter,boot_B,100
+,,,,,,,,,,,hyperparameter,restarts_boot,3
+,,,,,,,,,,,hyperparameter,cens_share,0.5
+,,,,,,,,,,,hyperparameter,cens_spread,"uniform log10 [DL/3, DL]"
+,,,,,,,,,,,hyperparameter,n_composites,3057
+,,,,,,,,,,,hyperparameter,n_segments,22
+,,,,,,,,,,,hyperparameter,boot_ari_median,0.5354765540214179
+,,,,,,,,,,,hyperparameter,boot_ari_05,0.3951668452235638
+,,,,,,,,,,,hyperparameter,boot_ari_95,0.774106717006438

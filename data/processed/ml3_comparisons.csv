@@ -1,0 +1,205 @@
+dataset,comparison,zone,category,n
+tanah,K2_partition,Rendah,1,30
+tanah,K2_partition,Rendah,2,0
+tanah,K2_partition,Sedang,1,6
+tanah,K2_partition,Sedang,2,86
+tanah,K2_partition,Tinggi,1,0
+tanah,K2_partition,Tinggi,2,66
+tanah,ML1_Au_thr_gmm_main,Rendah,Au<=1.41,30
+tanah,ML1_Au_thr_gmm_main,Rendah,Au>1.41,0
+tanah,ML1_Au_thr_gmm_main,Sedang,Au<=1.41,92
+tanah,ML1_Au_thr_gmm_main,Sedang,Au>1.41,0
+tanah,ML1_Au_thr_gmm_main,Tinggi,Au<=1.41,65
+tanah,ML1_Au_thr_gmm_main,Tinggi,Au>1.41,1
+tanah,ML1_As_populasi,Rendah,1,19
+tanah,ML1_As_populasi,Rendah,2,11
+tanah,ML1_As_populasi,Sedang,1,5
+tanah,ML1_As_populasi,Sedang,2,87
+tanah,ML1_As_populasi,Tinggi,1,0
+tanah,ML1_As_populasi,Tinggi,2,66
+tanah,ML1_Pb_populasi,Rendah,1,29
+tanah,ML1_Pb_populasi,Rendah,2,1
+tanah,ML1_Pb_populasi,Sedang,1,15
+tanah,ML1_Pb_populasi,Sedang,2,77
+tanah,ML1_Pb_populasi,Tinggi,1,0
+tanah,ML1_Pb_populasi,Tinggi,2,66
+tanah,ML1_Zn_populasi,Rendah,1,5
+tanah,ML1_Zn_populasi,Rendah,2,25
+tanah,ML1_Zn_populasi,Sedang,1,18
+tanah,ML1_Zn_populasi,Sedang,2,74
+tanah,ML1_Zn_populasi,Tinggi,1,21
+tanah,ML1_Zn_populasi,Tinggi,2,45
+tanah,LabJobNo,Rendah,092477,1
+tanah,LabJobNo,Rendah,979787BQ,8
+tanah,LabJobNo,Rendah,979913BQ,1
+tanah,LabJobNo,Rendah,979979BQ,2
+tanah,LabJobNo,Rendah,980178BQ,2
+tanah,LabJobNo,Rendah,980183BQ,2
+tanah,LabJobNo,Rendah,983817BQ,4
+tanah,LabJobNo,Rendah,983861BQ,0
+tanah,LabJobNo,Rendah,985838BQ,6
+tanah,LabJobNo,Rendah,985890BQ,0
+tanah,LabJobNo,Rendah,985943BQ,0
+tanah,LabJobNo,Rendah,992149BQ,3
+tanah,LabJobNo,Rendah,992171BQ,1
+tanah,LabJobNo,Sedang,092477,2
+tanah,LabJobNo,Sedang,979787BQ,6
+tanah,LabJobNo,Sedang,979913BQ,5
+tanah,LabJobNo,Sedang,979979BQ,1
+tanah,LabJobNo,Sedang,980178BQ,11
+tanah,LabJobNo,Sedang,980183BQ,14
+tanah,LabJobNo,Sedang,983817BQ,28
+tanah,LabJobNo,Sedang,983861BQ,6
+tanah,LabJobNo,Sedang,985838BQ,8
+tanah,LabJobNo,Sedang,985890BQ,1
+tanah,LabJobNo,Sedang,985943BQ,10
+tanah,LabJobNo,Sedang,992149BQ,0
+tanah,LabJobNo,Sedang,992171BQ,0
+tanah,LabJobNo,Tinggi,092477,2
+tanah,LabJobNo,Tinggi,979787BQ,3
+tanah,LabJobNo,Tinggi,979913BQ,1
+tanah,LabJobNo,Tinggi,979979BQ,0
+tanah,LabJobNo,Tinggi,980178BQ,6
+tanah,LabJobNo,Tinggi,980183BQ,7
+tanah,LabJobNo,Tinggi,983817BQ,23
+tanah,LabJobNo,Tinggi,983861BQ,11
+tanah,LabJobNo,Tinggi,985838BQ,12
+tanah,LabJobNo,Tinggi,985890BQ,0
+tanah,LabJobNo,Tinggi,985943BQ,1
+tanah,LabJobNo,Tinggi,992149BQ,0
+tanah,LabJobNo,Tinggi,992171BQ,0
+batuan,K2_partition,Rendah,1,204
+batuan,K2_partition,Rendah,2,0
+batuan,K2_partition,Sedang,1,47
+batuan,K2_partition,Sedang,2,84
+batuan,K2_partition,Tinggi,1,0
+batuan,K2_partition,Tinggi,2,17
+batuan,ML1_Au_thr_gmm_main,Rendah,Au<=7.09,203
+batuan,ML1_Au_thr_gmm_main,Rendah,Au>7.09,1
+batuan,ML1_Au_thr_gmm_main,Sedang,Au<=7.09,131
+batuan,ML1_Au_thr_gmm_main,Sedang,Au>7.09,0
+batuan,ML1_Au_thr_gmm_main,Tinggi,Au<=7.09,10
+batuan,ML1_Au_thr_gmm_main,Tinggi,Au>7.09,7
+batuan,ML1_Hg_populasi,Rendah,1,101
+batuan,ML1_Hg_populasi,Rendah,2,34
+batuan,ML1_Hg_populasi,Sedang,1,68
+batuan,ML1_Hg_populasi,Sedang,2,41
+batuan,ML1_Hg_populasi,Tinggi,1,12
+batuan,ML1_Hg_populasi,Tinggi,2,5
+batuan,ML1_Pb_populasi,Rendah,1,39
+batuan,ML1_Pb_populasi,Rendah,2,104
+batuan,ML1_Pb_populasi,Sedang,1,13
+batuan,ML1_Pb_populasi,Sedang,2,96
+batuan,ML1_Pb_populasi,Tinggi,1,2
+batuan,ML1_Pb_populasi,Tinggi,2,15
+batuan,ML1_Sb_populasi,Rendah,1,134
+batuan,ML1_Sb_populasi,Rendah,2,9
+batuan,ML1_Sb_populasi,Rendah,3,0
+batuan,ML1_Sb_populasi,Sedang,1,48
+batuan,ML1_Sb_populasi,Sedang,2,60
+batuan,ML1_Sb_populasi,Sedang,3,1
+batuan,ML1_Sb_populasi,Tinggi,1,0
+batuan,ML1_Sb_populasi,Tinggi,2,9
+batuan,ML1_Sb_populasi,Tinggi,3,8
+batuan,LabJobNo,Rendah,31331,4
+batuan,LabJobNo,Rendah,979772BQ,9
+batuan,LabJobNo,Rendah,979786BQ,3
+batuan,LabJobNo,Rendah,980215BQ,9
+batuan,LabJobNo,Rendah,JK1800804,5
+batuan,LabJobNo,Rendah,JK1801142,3
+batuan,LabJobNo,Rendah,PD140339,0
+batuan,LabJobNo,Rendah,SUM 98 APRC-11,12
+batuan,LabJobNo,Rendah,SUM 98 APRC-12,1
+batuan,LabJobNo,Rendah,SUM 98 APRC-15,2
+batuan,LabJobNo,Rendah,SUM 98 APRC-16,39
+batuan,LabJobNo,Rendah,SUM 98 APRC-17,9
+batuan,LabJobNo,Rendah,SUM 98 APRC-19,1
+batuan,LabJobNo,Rendah,SUM 98 APRC-2,0
+batuan,LabJobNo,Rendah,SUM 98 APRC-5,15
+batuan,LabJobNo,Rendah,SUM 98 APRC-6,5
+batuan,LabJobNo,Rendah,SUM 98 APRC-9,17
+batuan,LabJobNo,Rendah,SUM 98-3,0
+batuan,LabJobNo,Rendah,SUM 98-6,0
+batuan,LabJobNo,Rendah,SUM 99 APRC-10,2
+batuan,LabJobNo,Rendah,SUM 99 APRC-12,7
+batuan,LabJobNo,Rendah,SUM 99 APRC-2,0
+batuan,LabJobNo,Rendah,SUM 99 APRC-29,23
+batuan,LabJobNo,Rendah,SUM 99 APRC-30,38
+batuan,LabJobNo,Sedang,31331,3
+batuan,LabJobNo,Sedang,979772BQ,1
+batuan,LabJobNo,Sedang,979786BQ,0
+batuan,LabJobNo,Sedang,980215BQ,5
+batuan,LabJobNo,Sedang,JK1800804,0
+batuan,LabJobNo,Sedang,JK1801142,0
+batuan,LabJobNo,Sedang,PD140339,2
+batuan,LabJobNo,Sedang,SUM 98 APRC-11,6
+batuan,LabJobNo,Sedang,SUM 98 APRC-12,5
+batuan,LabJobNo,Sedang,SUM 98 APRC-15,1
+batuan,LabJobNo,Sedang,SUM 98 APRC-16,12
+batuan,LabJobNo,Sedang,SUM 98 APRC-17,13
+batuan,LabJobNo,Sedang,SUM 98 APRC-19,0
+batuan,LabJobNo,Sedang,SUM 98 APRC-2,1
+batuan,LabJobNo,Sedang,SUM 98 APRC-5,11
+batuan,LabJobNo,Sedang,SUM 98 APRC-6,0
+batuan,LabJobNo,Sedang,SUM 98 APRC-9,27
+batuan,LabJobNo,Sedang,SUM 98-3,1
+batuan,LabJobNo,Sedang,SUM 98-6,3
+batuan,LabJobNo,Sedang,SUM 99 APRC-10,5
+batuan,LabJobNo,Sedang,SUM 99 APRC-12,10
+batuan,LabJobNo,Sedang,SUM 99 APRC-2,3
+batuan,LabJobNo,Sedang,SUM 99 APRC-29,9
+batuan,LabJobNo,Sedang,SUM 99 APRC-30,13
+batuan,LabJobNo,Tinggi,31331,0
+batuan,LabJobNo,Tinggi,979772BQ,0
+batuan,LabJobNo,Tinggi,979786BQ,0
+batuan,LabJobNo,Tinggi,980215BQ,1
+batuan,LabJobNo,Tinggi,JK1800804,0
+batuan,LabJobNo,Tinggi,JK1801142,0
+batuan,LabJobNo,Tinggi,PD140339,0
+batuan,LabJobNo,Tinggi,SUM 98 APRC-11,1
+batuan,LabJobNo,Tinggi,SUM 98 APRC-12,0
+batuan,LabJobNo,Tinggi,SUM 98 APRC-15,0
+batuan,LabJobNo,Tinggi,SUM 98 APRC-16,1
+batuan,LabJobNo,Tinggi,SUM 98 APRC-17,4
+batuan,LabJobNo,Tinggi,SUM 98 APRC-19,3
+batuan,LabJobNo,Tinggi,SUM 98 APRC-2,0
+batuan,LabJobNo,Tinggi,SUM 98 APRC-5,0
+batuan,LabJobNo,Tinggi,SUM 98 APRC-6,0
+batuan,LabJobNo,Tinggi,SUM 98 APRC-9,2
+batuan,LabJobNo,Tinggi,SUM 98-3,0
+batuan,LabJobNo,Tinggi,SUM 98-6,0
+batuan,LabJobNo,Tinggi,SUM 99 APRC-10,1
+batuan,LabJobNo,Tinggi,SUM 99 APRC-12,2
+batuan,LabJobNo,Tinggi,SUM 99 APRC-2,2
+batuan,LabJobNo,Tinggi,SUM 99 APRC-29,0
+batuan,LabJobNo,Tinggi,SUM 99 APRC-30,0
+batuan,alteration_logged,Rendah,Advanced argillic,2
+batuan,alteration_logged,Rendah,Argillic,64
+batuan,alteration_logged,Rendah,Propylitic,32
+batuan,alteration_logged,Rendah,Silica,106
+batuan,alteration_logged,Sedang,Advanced argillic,0
+batuan,alteration_logged,Sedang,Argillic,49
+batuan,alteration_logged,Sedang,Propylitic,6
+batuan,alteration_logged,Sedang,Silica,76
+batuan,alteration_logged,Tinggi,Advanced argillic,0
+batuan,alteration_logged,Tinggi,Argillic,11
+batuan,alteration_logged,Tinggi,Propylitic,0
+batuan,alteration_logged,Tinggi,Silica,6
+batuan,outcrop_type,Rendah,Channel,2
+batuan,outcrop_type,Rendah,Float,27
+batuan,outcrop_type,Rendah,Outcrop,175
+batuan,outcrop_type,Sedang,Channel,3
+batuan,outcrop_type,Sedang,Float,12
+batuan,outcrop_type,Sedang,Outcrop,116
+batuan,outcrop_type,Tinggi,Channel,0
+batuan,outcrop_type,Tinggi,Float,3
+batuan,outcrop_type,Tinggi,Outcrop,14
+batuan,soil_gp_zone_at_rock,Rendah,Rendah,3
+batuan,soil_gp_zone_at_rock,Rendah,Sedang,134
+batuan,soil_gp_zone_at_rock,Rendah,Tinggi,63
+batuan,soil_gp_zone_at_rock,Sedang,Rendah,1
+batuan,soil_gp_zone_at_rock,Sedang,Sedang,49
+batuan,soil_gp_zone_at_rock,Sedang,Tinggi,79
+batuan,soil_gp_zone_at_rock,Tinggi,Rendah,0
+batuan,soil_gp_zone_at_rock,Tinggi,Sedang,4
+batuan,soil_gp_zone_at_rock,Tinggi,Tinggi,12

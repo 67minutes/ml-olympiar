@@ -35,7 +35,12 @@ Novelty matters only if it stays accurate and reliable.
   - ioGAS v8.3.1; **one licence per team, on one laptop/PC**. Only the ioGAS teammate's
     machine runs it (see "Roles" below).
 - The brief contains the ioGAS licence key and committee contacts. Never copy them into
-  logs, code or replies, and never push this repo to any remote.
+  logs, code or replies.
+- **Shared repo (human instruction, 2026-11-04):** the whole repo, data and brief included,
+  lives in the team's **PRIVATE** GitHub repo `67minutes/ml-olympiar`, shared only with
+  teammates. This supersedes the earlier "never push" rule. Push only to that private repo,
+  never to a public remote or a fork; check it is still private before any push
+  (`gh repo view 67minutes/ml-olympiar --json visibility`).
 
 ### Roles
 - **This repo's owner (the human agents work with) is responsible for the ML and data
@@ -95,7 +100,8 @@ Novelty matters only if it stays accurate and reliable.
 
 1. **Data is CONFIDENTIAL.** Never upload, paste, or send any data to an external
    service: no cloud ML APIs, no `tabpfn-client` (cloud), no hosted notebooks with data, no
-   public git remotes, no pastebins. Local compute only. Keep `data/` in `.gitignore`.
+   public git remotes, no pastebins. Local compute only. The only allowed remote is the
+   team's private GitHub repo (§1 "Shared repo"); `data/` is committed there and nowhere else.
 2. **Allowed software:** Microsoft Office, IMDEX ioGAS, QGIS, and other software only if it
    is **free and not pirated**. Python and its open-source libraries are fine. Every
    output must be reproducible locally.
@@ -118,7 +124,10 @@ Novelty matters only if it stays accurate and reliable.
 
 Original location (Windows):
 `C:\Users\mauli\Downloads\Data Peserta Round 2_Olympiar 2026\Data Peserta Round 2_Olympiar 2026\`
-(note the doubled folder name). Copy it into `data/raw/` once, untouched.
+(note the doubled folder name). It was copied into `data/raw/` once, untouched, and is committed
+in the private team repo, so a clone already has it. `RAW_MANIFEST.sha256` and
+`tests/test_raw.py` check it byte for byte; `.gitattributes` keeps git from changing its CRLF
+line endings.
 
 CRS everywhere: **UTM WGS84 Zone 47N (EPSG:32647)**. All CSVs have CRLF line endings.
 
@@ -299,8 +308,8 @@ General ML rules:
 ## 7. Repo layout
 
 ```
-data/raw/          # frozen copy of the committee package (read-only, gitignored)
-data/interim/      # stage outputs from §5
+data/raw/          # frozen copy of the committee package (read-only; committed to the private repo)
+data/interim/      # stage outputs from §5 (ml6_gp.joblib is gitignored: rebuild with 16_… --stage gp)
 data/processed/    # final tables: validation_flags.csv, geochem_analysis.csv, ioGAS inputs
 src/               # importable modules (io, cleaning, desurvey, ml_*)
 scripts/           # numbered runnable steps: 01_semantics.py, 02_coords.py, …
@@ -309,6 +318,8 @@ outputs/figures/   # 300 dpi PNG; Bahasa Indonesia labels; versioned names (_v1,
 outputs/maps/      # QGIS projects and exports
 gis/               # derived layers: lidar_dem.tif, hillshade.tif, drainage.gpkg (all EPSG:32647)
 LOG.md             # append-only decision and results log
+README.md          # English overview: status, deliverables, how to reproduce
+PANDUAN_TIM.md     # Bahasa team guide: files, key numbers and spoken explanations per report chapter
 ```
 
 ### GIS tooling

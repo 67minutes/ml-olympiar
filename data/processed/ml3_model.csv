@@ -1,0 +1,157 @@
+dataset,section,item,value
+tanah,data,n_samples,188
+tanah,data,features,Au;Cu;As;Hg;Pb;Sb;Zn
+tanah,pca_loading_PC1,Au,0.381
+tanah,pca_loading_PC2,Au,-0.1615
+tanah,pca_loading_PC1,Cu,0.3084
+tanah,pca_loading_PC2,Cu,0.2225
+tanah,pca_loading_PC1,As,0.4934
+tanah,pca_loading_PC2,As,-0.1451
+tanah,pca_loading_PC1,Hg,0.406
+tanah,pca_loading_PC2,Hg,0.5642
+tanah,pca_loading_PC1,Pb,0.4282
+tanah,pca_loading_PC2,Pb,-0.0133
+tanah,pca_loading_PC1,Sb,0.4034
+tanah,pca_loading_PC2,Sb,-0.2621
+tanah,pca_loading_PC1,Zn,-0.074
+tanah,pca_loading_PC2,Zn,0.7185
+tanah,pca_var_ratio,PC1,0.5748
+tanah,pca_var_ratio,PC2,0.173
+tanah,pca_var_ratio,PC3,0.1225
+tanah,pca_var_ratio,PC4,0.0554
+tanah,pca_var_ratio,PC5,0.0339
+tanah,pca_var_ratio,PC6,0.023
+tanah,pca_var_ratio,PC7,0.0174
+tanah,horn,n_pc_kept,1
+tanah,horn,PC1_eig_vs_null95,4.998 / 1.994
+tanah,horn,PC2_eig_vs_null95,1.504 / 1.650
+tanah,horn,PC3_eig_vs_null95,1.065 / 1.396
+tanah,horn,PC4_eig_vs_null95,0.482 / 1.226
+tanah,horn,PC5_eig_vs_null95,0.295 / 1.107
+tanah,horn,PC6_eig_vs_null95,0.200 / 1.024
+tanah,horn,PC7_eig_vs_null95,0.152 / 0.902
+tanah,pca,corr_PC1_logAu,0.865
+tanah,dBIC,K1,4.5
+tanah,dBIC,K2,0.0
+tanah,dBIC,K3,15.3
+tanah,dBIC,K4,inadmissible
+tanah,dBIC,K5,inadmissible
+tanah,dBIC,K_bic,2
+tanah,bootstrap,K_bic_freq,1:0.28;2:0.72
+tanah,bootstrap,ARI_median,0.652
+tanah,bootstrap,ARI_05_95,0.265 / 0.920
+tanah,gmm,reg_covar,0.11018
+tanah,gmm,zone1_mean_sd_weight,-3.345 / 1.839 / 0.184
+tanah,gmm,zone2_mean_sd_weight,-0.121 / 1.205 / 0.462
+tanah,gmm,zone3_mean_sd_weight,1.879 / 1.162 / 0.354
+tanah,threshold,T12,-2.2272
+tanah,threshold,T12_ci05_95,-4.211 / -1.413
+tanah,threshold,T12_boot_nan_share,0.0
+tanah,threshold,D_12,2.073
+tanah,threshold,T23,1.0597
+tanah,threshold,T23_ci05_95,-0.246 / 1.981
+tanah,threshold,T23_boot_nan_share,0.0
+tanah,threshold,D_23,1.69
+tanah,K2_vs_K3,ARI,0.333
+tanah,sensitivity_ARI,clr,0.273 (n 188)
+tanah,sensitivity_ARI,no_censored,0.428 (n 170)
+tanah,cramers_v,ML1_Au_thr_gmm_main,0.099
+tanah,cramers_v,ML1_As_populasi,0.664
+tanah,cramers_v,ML1_Pb_populasi,0.774
+tanah,cramers_v,ML1_Zn_populasi,0.148
+tanah,cramers_v,LabJobNo,0.422
+tanah,labjob_neighbour,median_dIndex_same_vs_diff_lt60m,0.928 (n 146) / 1.236 (n 157)
+tanah,labjob_neighbour,mannwhitney_p_diff_gt_same,0.0165
+batuan,data,n_samples,352
+batuan,data,features,Au;Cu;As
+batuan,pca_loading_PC1,Au,0.4779
+batuan,pca_loading_PC2,Au,0.8227
+batuan,pca_loading_PC1,Cu,0.5398
+batuan,pca_loading_PC2,Cu,-0.5515
+batuan,pca_loading_PC1,As,0.693
+batuan,pca_loading_PC2,As,-0.1378
+batuan,pca_var_ratio,PC1,0.683
+batuan,pca_var_ratio,PC2,0.2091
+batuan,pca_var_ratio,PC3,0.1079
+batuan,horn,n_pc_kept,1
+batuan,horn,PC1_eig_vs_null95,2.315 / 1.380
+batuan,horn,PC2_eig_vs_null95,0.709 / 1.132
+batuan,horn,PC3_eig_vs_null95,0.366 / 1.028
+batuan,pca,corr_PC1_logAu,0.712
+batuan,dBIC,K1,0.0
+batuan,dBIC,K2,2.42
+batuan,dBIC,K3,17.94
+batuan,dBIC,K4,26.8
+batuan,dBIC,K5,41.31
+batuan,dBIC,K_bic,1
+batuan,bootstrap,K_bic_freq,1:0.49;2:0.45;3:0.05;4:0.01
+batuan,bootstrap,ARI_median,0.761
+batuan,bootstrap,ARI_05_95,0.227 / 0.933
+batuan,gmm,reg_covar,0.02367
+batuan,gmm,zone1_mean_sd_weight,-0.906 / 1.000 / 0.541
+batuan,gmm,zone2_mean_sd_weight,0.717 / 1.032 / 0.361
+batuan,gmm,zone3_mean_sd_weight,2.349 / 1.548 / 0.099
+batuan,threshold,T12,0.1696
+batuan,threshold,T12_ci05_95,-1.877 / 0.371
+batuan,threshold,T12_boot_nan_share,0.035
+batuan,threshold,D_12,1.597
+batuan,threshold,T23,2.6323
+batuan,threshold,T23_ci05_95,0.733 / 4.161
+batuan,threshold,T23_boot_nan_share,0.035
+batuan,threshold,D_23,1.241
+batuan,K2_vs_K3,ARI,0.52
+batuan,sensitivity_ARI,clr,-0.018 (n 352)
+batuan,sensitivity_ARI,no_censored,0.937 (n 339)
+batuan,sensitivity_ARI,plus_Hg_Pb_Sb_Zn,0.135 (n 261)
+batuan,cramers_v,ML1_Au_thr_gmm_main,0.588
+batuan,cramers_v,ML1_Hg_populasi,0.13
+batuan,cramers_v,ML1_Pb_populasi,0.191
+batuan,cramers_v,ML1_Sb_populasi,0.599
+batuan,cramers_v,LabJobNo,0.443
+batuan,labjob_neighbour,median_dIndex_same_vs_diff_lt60m,0.765 (n 1240) / 1.202 (n 1719)
+batuan,labjob_neighbour,mannwhitney_p_diff_gt_same,0.0
+batuan,cramers_v,alteration_logged,0.166
+batuan,cramers_v,outcrop_type,0.064
+tanah,gp,kernel,"0.796**2 * RBF(length_scale=[171, 69.3]) + WhiteKernel(noise_level=0.336)"
+tanah,gp,kernel_isotropic,0.767**2 * RBF(length_scale=96.6) + WhiteKernel(noise_level=0.349)
+tanah,gp,lml_isotropic,-210.64
+tanah,gp_lml_profile,az0,-205.88
+tanah,gp_lml_profile,az15,-210.3
+tanah,gp_lml_profile,az30,-210.55
+tanah,gp_lml_profile,az45,-209.37
+tanah,gp_lml_profile,az60,-205.85
+tanah,gp_lml_profile,az75,-204.65
+tanah,gp_lml_profile,az90,-205.88
+tanah,gp_lml_profile,az105,-210.3
+tanah,gp_lml_profile,az120,-210.55
+tanah,gp_lml_profile,az135,-209.37
+tanah,gp_lml_profile,az150,-205.85
+tanah,gp_lml_profile,az165,-204.65
+tanah,gp,rotation_az_best,75.0
+tanah,gp,major_axis_az,75.0
+tanah,gp,length_scale_major_minor_m,171.3 / 69.3
+tanah,gp,anisotropy_ratio,0.405
+tanah,gp_cv,rmse_aniso,1.5577
+tanah,gp_cv,cover90_aniso,0.9362
+tanah,gp_cv,rmse_iso,1.6565
+tanah,gp_cv,cover90_iso,0.9255
+tanah,gp_cv,rmse_mean,2.305
+tanah,gp_cv,n_blocks,38
+tanah,ne_test,az,90.0
+tanah,ne_test,ratio,0.5101
+tanah,ne_test,p_ratio,0.0
+tanah,ne_test,p_az_same,0.07
+tanah,ne_test,p_ne_geometry,0.295
+tanah,ne_test,az_jobcentred,90.0
+tanah,ne_test,ratio_jobcentred,0.5119
+tanah,ne_test,p_ratio_jobcentred,0.0
+tanah,ne_test,obs_in_NE_window,False
+tanah,ne_test,sim_ratio_05_50_95,0.637/0.758/0.858
+tanah,ne_test,pairs_per_direction_first3lags_min,35
+tanah,gp_surface_area_ha,Rendah,6.3
+tanah,gp_surface_area_ha,Sedang,41.33
+tanah,gp_surface_area_ha,Tinggi,27.43
+batuan,vs_soil_gp,n_inside_mask,345
+batuan,vs_soil_gp,kappa,-0.058
+batuan,vs_soil_gp,kappa_linear,0.031
+batuan,vs_soil_gp,agreement,0.186

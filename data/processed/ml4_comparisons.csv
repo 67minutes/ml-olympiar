@@ -1,0 +1,151 @@
+kind,label,against,n,cramers_v,ari,value,sensitivity,K,ari_vs_main,v_ox_main,v_ox_sens,v_alt_main,v_alt_sens,switch_main,switch_sens,run_m_main,run_m_sens,d_from,d_to,n_pairs,agree,chance,scope
+vs_log,HMM,alterasi,3057.0,0.3856478053911989,0.10261968850977742,,,,,,,,,,,,,,,,,,
+vs_log,HMM,oksidasi,2930.0,0.4620373085892248,0.11278016026686481,,,,,,,,,,,,,,,,,,
+vs_log,HMM,litologi,3057.0,0.29808529973356307,0.04444848803522205,,,,,,,,,,,,,,,,,,
+vs_log,HMM,ML-2 alterasi,2377.0,0.5246297209336066,0.16163963241789728,,,,,,,,,,,,,,,,,,
+vs_log,HMM,ML-2 oksidasi,2410.0,0.4740561759645507,0.11977586365007217,,,,,,,,,,,,,,,,,,
+vs_log,GMM,alterasi,3057.0,0.350259339854031,0.08650602130123797,,,,,,,,,,,,,,,,,,
+vs_log,GMM,oksidasi,2930.0,0.36740496651205334,0.050285489617115764,,,,,,,,,,,,,,,,,,
+vs_log,GMM,litologi,3057.0,0.2467517052142395,0.026094592295125566,,,,,,,,,,,,,,,,,,
+vs_log,GMM,ML-2 alterasi,2377.0,0.447420584168241,0.12090769583960856,,,,,,,,,,,,,,,,,,
+vs_log,GMM,ML-2 oksidasi,2410.0,0.3671198703516208,0.03116271661038076,,,,,,,,,,,,,,,,,,
+vs_log,HMM Viterbi,alterasi,3057.0,0.383442920217504,0.10076922716822226,,,,,,,,,,,,,,,,,,
+vs_log,HMM Viterbi,oksidasi,2930.0,0.463604279512616,0.11438559989239025,,,,,,,,,,,,,,,,,,
+vs_log,HMM Viterbi,litologi,3057.0,0.297290115630881,0.04366972809633906,,,,,,,,,,,,,,,,,,
+vs_log,HMM Viterbi,ML-2 alterasi,2377.0,0.5245238131127068,0.16101541789074106,,,,,,,,,,,,,,,,,,
+vs_log,HMM Viterbi,ML-2 oksidasi,2410.0,0.47627286618516884,0.12183103875158856,,,,,,,,,,,,,,,,,,
+vs_log,HMM,GMM,3057.0,,0.3211562786436017,,,,,,,,,,,,,,,,,,
+switch_per_100m,HMM,,,,,6.260296540362439,,,,,,,,,,,,,,,,,
+switch_per_100m,HMM Viterbi,,,,,5.963756177924218,,,,,,,,,,,,,,,,,
+switch_per_100m,GMM,,,,,28.13838550247117,,,,,,,,,,,,,,,,,
+switch_per_100m,log alterasi,,,,,10.609555189456342,,,,,,,,,,,,,,,,,
+switch_per_100m,log oksidasi,,,,,2.8875902371949125,,,,,,,,,,,,,,,,,
+switch_per_100m,log litologi,,,,,5.1729818780889625,,,,,,,,,,,,,,,,,
+crosstab,S1,alterasi:AA,112.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S1,alterasi:AR,299.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S1,alterasi:PP,89.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S1,alterasi:SI,0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S1,alterasi:UA,33.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S2,alterasi:AA,510.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S2,alterasi:AR,221.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S2,alterasi:PP,0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S2,alterasi:SI,24.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S2,alterasi:UA,21.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S3,alterasi:AA,235.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S3,alterasi:AR,5.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S3,alterasi:PP,0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S3,alterasi:SI,127.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S3,alterasi:UA,1.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S4,alterasi:AA,488.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S4,alterasi:AR,18.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S4,alterasi:PP,0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S4,alterasi:SI,135.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S4,alterasi:UA,2.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S5,alterasi:AA,436.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S5,alterasi:AR,4.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S5,alterasi:PP,0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S5,alterasi:SI,290.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S5,alterasi:UA,7.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S1,oksidasi:Oxide,137.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S1,oksidasi:Sulphide,386.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S1,oksidasi:Transition,7.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S2,oksidasi:Oxide,496.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S2,oksidasi:Sulphide,211.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S2,oksidasi:Transition,56.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S3,oksidasi:Oxide,317.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S3,oksidasi:Sulphide,0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S3,oksidasi:Transition,0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S4,oksidasi:Oxide,212.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S4,oksidasi:Sulphide,265.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S4,oksidasi:Transition,152.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S5,oksidasi:Oxide,640.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S5,oksidasi:Sulphide,22.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S5,oksidasi:Transition,29.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S1,litologi:Andesite (Angkola Volcanics),18.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S1,litologi:Coherent dacite-andesite porphyry,317.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S1,litologi:Fault zone,97.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S1,litologi:Hydrothermal breccia,0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S1,litologi:Phreatomagmatic breccia,58.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S1,litologi:Sedimentary / volcaniclastic,0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S1,litologi:Surface cover,33.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S1,litologi:Unclassified breccia,10.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S2,litologi:Andesite (Angkola Volcanics),0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S2,litologi:Coherent dacite-andesite porphyry,328.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S2,litologi:Fault zone,97.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S2,litologi:Hydrothermal breccia,0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S2,litologi:Phreatomagmatic breccia,284.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S2,litologi:Sedimentary / volcaniclastic,0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S2,litologi:Surface cover,21.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S2,litologi:Unclassified breccia,46.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S3,litologi:Andesite (Angkola Volcanics),0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S3,litologi:Coherent dacite-andesite porphyry,134.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S3,litologi:Fault zone,5.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S3,litologi:Hydrothermal breccia,0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S3,litologi:Phreatomagmatic breccia,216.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S3,litologi:Sedimentary / volcaniclastic,5.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S3,litologi:Surface cover,1.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S3,litologi:Unclassified breccia,7.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S4,litologi:Andesite (Angkola Volcanics),0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S4,litologi:Coherent dacite-andesite porphyry,428.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S4,litologi:Fault zone,11.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S4,litologi:Hydrothermal breccia,114.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S4,litologi:Phreatomagmatic breccia,80.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S4,litologi:Sedimentary / volcaniclastic,0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S4,litologi:Surface cover,2.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S4,litologi:Unclassified breccia,8.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S5,litologi:Andesite (Angkola Volcanics),0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S5,litologi:Coherent dacite-andesite porphyry,319.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S5,litologi:Fault zone,10.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S5,litologi:Hydrothermal breccia,30.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S5,litologi:Phreatomagmatic breccia,340.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S5,litologi:Sedimentary / volcaniclastic,0.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S5,litologi:Surface cover,7.0,,,,,,,,,,,,,,,,,,,,
+crosstab,S5,litologi:Unclassified breccia,31.0,,,,,,,,,,,,,,,,,,,,
+sensitivity,,,3057.0,,,,tanpa Ag,5.0,0.7658316560005667,0.4620373085892248,0.481068710164005,0.3856478053911989,0.3883326217134073,6.260296540362439,6.457990115321252,,,,,,,,
+sensitivity,,,2345.0,,,,"+ S (SCIS), 16 lubang",5.0,0.2971110886657845,0.48097520992040677,0.5826290760648913,0.3834212761118306,0.4512438811120655,6.102277610657499,9.325311559948432,,,,,,,,
+sensitivity,,,938.0,,,,+ CuCN/Cu,5.0,0.2617385751560739,0.41859936513286344,0.6110937647927254,0.4748626196538054,0.5419132566406792,6.519065190651906,10.947109471094711,,,,,,,,
+sensitivity,,,3057.0,,,,K = 4,4.0,0.7418959759091642,0.4620373085892248,0.4342940289383096,0.3856478053911989,0.45094753499246876,6.260296540362439,5.56836902800659,,,,,,,,
+sensitivity,,,3057.0,,,,K = 6,6.0,0.689460780578166,0.4620373085892248,0.4661935765325383,0.3856478053911989,0.42095026247608336,6.260296540362439,8.105436573311367,,,,,,,,
+sensitivity,,,2721.0,,,,ulangan sampel panjang digabung,5.0,0.528087904299245,,,,,6.260296540362439,7.940691927512356,14.6 10.5 18.7 30.6 15.6,9.5 7.5 20.2 27.5 10.3,,,,,,
+continuity,HMM,,,,,,,,,,,,,,,,,0.0,10.0,853.0,0.7069167643610785,0.21169120266351382,semua
+continuity,HMM,,,,,,,,,,,,,,,,,10.0,20.0,3387.0,0.7215825214053735,0.21169120266351382,semua
+continuity,HMM,,,,,,,,,,,,,,,,,20.0,30.0,7257.0,0.4796747967479675,0.21169120266351382,semua
+continuity,HMM,,,,,,,,,,,,,,,,,30.0,40.0,9812.0,0.367916836526702,0.21169120266351382,semua
+continuity,HMM,,,,,,,,,,,,,,,,,40.0,50.0,32083.0,0.3082629429916155,0.21169120266351382,semua
+continuity,HMM,,,,,,,,,,,,,,,,,50.0,60.0,71580.0,0.29200894104498465,0.21169120266351382,semua
+continuity,HMM,,,,,,,,,,,,,,,,,60.0,70.0,80756.0,0.24924463816930012,0.21169120266351382,semua
+continuity,HMM,,,,,,,,,,,,,,,,,70.0,80.0,75238.0,0.26231425609399506,0.21169120266351382,semua
+continuity,HMM,,,,,,,,,,,,,,,,,80.0,90.0,80733.0,0.2730977419394795,0.21169120266351382,semua
+continuity,HMM,,,,,,,,,,,,,,,,,90.0,100.0,100852.0,0.2561476222583588,0.21169120266351382,semua
+continuity,HMM,,,,,,,,,,,,,,,,,0.0,10.0,853.0,0.7069167643610785,0.21169120266351382,pad kembar
+continuity,HMM,,,,,,,,,,,,,,,,,10.0,20.0,3387.0,0.7215825214053735,0.21169120266351382,pad kembar
+continuity,HMM,,,,,,,,,,,,,,,,,20.0,50.0,29582.0,0.3398350348184707,0.21169120266351382,pad kembar
+continuity,HMM,,,,,,,,,,,,,,,,,50.0,100.0,71064.0,0.19372678149273895,0.21169120266351382,pad kembar
+continuity,GMM,,,,,,,,,,,,,,,,,0.0,10.0,853.0,0.6166471277842908,0.2231924478416787,semua
+continuity,GMM,,,,,,,,,,,,,,,,,10.0,20.0,3387.0,0.43135518157661645,0.2231924478416787,semua
+continuity,GMM,,,,,,,,,,,,,,,,,20.0,30.0,7257.0,0.26085159156676313,0.2231924478416787,semua
+continuity,GMM,,,,,,,,,,,,,,,,,30.0,40.0,9812.0,0.2103546677537709,0.2231924478416787,semua
+continuity,GMM,,,,,,,,,,,,,,,,,40.0,50.0,32083.0,0.2600130910451018,0.2231924478416787,semua
+continuity,GMM,,,,,,,,,,,,,,,,,50.0,60.0,71580.0,0.2740709695445655,0.2231924478416787,semua
+continuity,GMM,,,,,,,,,,,,,,,,,60.0,70.0,80756.0,0.2460374461340334,0.2231924478416787,semua
+continuity,GMM,,,,,,,,,,,,,,,,,70.0,80.0,75238.0,0.25173449586645047,0.2231924478416787,semua
+continuity,GMM,,,,,,,,,,,,,,,,,80.0,90.0,80733.0,0.23338659532037703,0.2231924478416787,semua
+continuity,GMM,,,,,,,,,,,,,,,,,90.0,100.0,100852.0,0.25324237496529567,0.2231924478416787,semua
+continuity,GMM,,,,,,,,,,,,,,,,,0.0,10.0,853.0,0.6166471277842908,0.2231924478416787,pad kembar
+continuity,GMM,,,,,,,,,,,,,,,,,10.0,20.0,3387.0,0.43135518157661645,0.2231924478416787,pad kembar
+continuity,GMM,,,,,,,,,,,,,,,,,20.0,50.0,29582.0,0.2240889730241363,0.2231924478416787,pad kembar
+continuity,GMM,,,,,,,,,,,,,,,,,50.0,100.0,71064.0,0.21997073060902847,0.2231924478416787,pad kembar
+continuity,Alterasi (log),,,,,,,,,,,,,,,,,0.0,10.0,853.0,0.42790152403282533,0.40822486377837547,semua
+continuity,Alterasi (log),,,,,,,,,,,,,,,,,10.0,20.0,3387.0,0.6427516976675524,0.40822486377837547,semua
+continuity,Alterasi (log),,,,,,,,,,,,,,,,,20.0,30.0,7257.0,0.5713104588673006,0.40822486377837547,semua
+continuity,Alterasi (log),,,,,,,,,,,,,,,,,30.0,40.0,9812.0,0.5089686098654709,0.40822486377837547,semua
+continuity,Alterasi (log),,,,,,,,,,,,,,,,,40.0,50.0,32083.0,0.44135523485958295,0.40822486377837547,semua
+continuity,Alterasi (log),,,,,,,,,,,,,,,,,50.0,60.0,71580.0,0.39995808885163453,0.40822486377837547,semua
+continuity,Alterasi (log),,,,,,,,,,,,,,,,,60.0,70.0,80756.0,0.41986973104165637,0.40822486377837547,semua
+continuity,Alterasi (log),,,,,,,,,,,,,,,,,70.0,80.0,75238.0,0.43438156250830695,0.40822486377837547,semua
+continuity,Alterasi (log),,,,,,,,,,,,,,,,,80.0,90.0,80733.0,0.4231107477735251,0.40822486377837547,semua
+continuity,Alterasi (log),,,,,,,,,,,,,,,,,90.0,100.0,100852.0,0.4378891841510332,0.40822486377837547,semua
+continuity,Alterasi (log),,,,,,,,,,,,,,,,,0.0,10.0,853.0,0.42790152403282533,0.40822486377837547,pad kembar
+continuity,Alterasi (log),,,,,,,,,,,,,,,,,10.0,20.0,3387.0,0.6427516976675524,0.40822486377837547,pad kembar
+continuity,Alterasi (log),,,,,,,,,,,,,,,,,20.0,50.0,29582.0,0.497870326549929,0.40822486377837547,pad kembar
+continuity,Alterasi (log),,,,,,,,,,,,,,,,,50.0,100.0,71064.0,0.4577001013171226,0.40822486377837547,pad kembar

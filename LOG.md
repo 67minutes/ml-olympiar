@@ -2169,3 +2169,51 @@ alteration 4.4 m (median 2.5 m), assays ~1 m (median 1.0 m).
 > correlation sections.
 
 ---
+
+## 2026-11-04 · Team repo: docs, git hygiene, private GitHub (human instruction)
+
+**Instruction (human, 2026-11-04).** Share the *whole* repo with the team on GitHub so teammates
+have the full context: data, brief, history, outputs and docs. The human accepts the confidential
+data and the brief (which contains the ioGAS licence key) in a **private** repo shared only with
+teammates. Decisions: convert the existing `67minutes/ml-olympiar` (was PUBLIC, a one-commit code
+snapshot from the 2026-11-02 publication entry) to PRIVATE first, then force-push this checkout over
+it; the human invites teammates; docs in English (README) and Bahasa Indonesia (team guide).
+
+**Supersedes:**
+- AGENTS §1/§2.1 "never push this repo to any remote" and "keep `data/` in `.gitignore`". The only
+  allowed remote is now the private team repo.
+- The 2026-11-02 "Public GitHub code publication" entries. The public snapshot (commit `dcb8975`) is
+  replaced by this history. The local folder `../ml-olympiar-public` is superseded; the repo owner
+  may delete it.
+
+**Docs.**
+- `README.md` rewritten (English): purpose, privacy note, file map, status table with the real
+  script names (the old table had stale names, e.g. ML-1 is `08_ml1_thresholds.py`), deliverables,
+  how to reproduce, working rules, roles.
+- New `PANDUAN_TIM.md` (Bahasa Indonesia): per report chapter 1–9, the CSVs, figures and maps to
+  use, the key numbers, and the spoken explanations translated from this log; open items for humans;
+  the list of references still `[VERIFY]`; how to use the repo and read this log.
+- `AGENTS.md`: §1 "Shared repo" rule; §2.1 remote rule; §3 data now in the repo; §7 layout adds
+  README/PANDUAN_TIM and the joblib note. `CLAUDE.md`: pull before work, log, commit only when asked.
+
+**Git hygiene.**
+- `.gitignore` now commits `data/` (raw, interim, processed), `gis/` and `outputs/figures/qc/`.
+  Still ignored: `.venv`, caches, `.claude/settings.local.json`, GIS sidecars (`*.gpkg-shm`,
+  `*.gpkg-wal` (the ML-5 WAL was empty), `*.aux.xml`) and `data/interim/*.joblib` (`ml6_gp.joblib`,
+  19 MB, a version-specific scikit-learn pickle; rebuild with `16_ml6_targeting.py --stage gp`).
+- New `.gitattributes`: `data/** -text` and `RAW_MANIFEST.sha256 -text` so a teammate's
+  `core.autocrlf=true` cannot rewrite the CRLF raw CSVs and break the manifest; binary for GIS,
+  images, PDFs and MapInfo files.
+- Size: 156 new files, 55.8 MB; largest `data/interim/ml6_blok.csv` 7.8 MB. No file > 50 MB, no LFS.
+- Branch `master` renamed to `main` (the remote default).
+
+**Pre-push checks (all pass).** `pytest` 127 passed; `00_inventory.py` OK; `sha256sum -c
+RAW_MANIFEST.sha256` (from `data/raw/`) 15/15 OK; credential-pattern scan of all text files to be
+pushed: no hits; tokens that look like the brief's licence key or phone numbers: 0 occurrences in any
+text file. The brief PDF itself is in the repo, as the human accepted.
+
+**QGIS projects.** `outputs/maps/*.qgz` load layers by relative path (`../../gis/…`), so they open
+from a clone. Some layer-tree attributes still carry the owner's absolute path; QGIS uses the
+relative datasource.
+
+---

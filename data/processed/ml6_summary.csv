@@ -1,0 +1,29 @@
+item,nilai
+n_composites,3057
+n_blocks_2m,1532
+censored_share,0.09093882891723912
+best_theta_lml,105
+lml_isotropic,-963.316425240432
+winner,NE 45°
+kernel_kind,matern
+model_name,NE 45°
+skill_vs_mean,"{""delta_mlpd_vs_mean"": -0.004823755091264814, ""se"": 0.013489843634807586, ""pads_better"": 8, ""n_pads"": 12}"
+theta,45
+kernel,"0.921**2 * Matern(length_scale=[22.5, 12.2, 8.17], nu=1.5) + WhiteKernel(noise_level=0.061)"
+lml,-961.9203273548171
+nugget_log10sq,0.04112237051925872
+sill_log10sq,0.5724718444666355
+length_scales_m,"[[22.52, 12.21, 8.17]]"
+sk_max_abs_diff,2.0761148356029935e-10
+origin,"[507303.0, 168517.0, 524.0]"
+block_nodes,128124
+n_collar_A,946
+n_collar_A_pass,127
+n_designs_A,635
+n_collar_B,1134
+n_collar_B_pass,333
+top_by_kappa,"{""0"": ""A00571"", ""1"": ""A00075"", ""2"": ""A00075"", ""3"": ""A00075""}"
+picks_A,"[""A00535"", ""A00470"", ""A00275""]"
+n_seri_putaran,"[1, 1, 138]"
+drainage_reaches,26
+drainage_ragu,5

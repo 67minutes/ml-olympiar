@@ -1,0 +1,72 @@
+target,SiteID,from,to,length_m,n,logged,predicted,p_mean
+alt,RJDH001,6.0,11.0,5.0,5,Argilik/Silika,Argilik lanjut,0.866
+alt,RJDH001,21.0,24.0,3.0,3,Silika,Argilik lanjut,0.794
+alt,RJDH002,48.0,51.2,3.2,1,Propilitik,Argilik,0.799
+alt,RJDH002,79.7,83.4,3.7,2,Argilik lanjut,Argilik,0.819
+alt,RJDH002,154.0,161.2,7.2,3,Argilik,Propilitik,0.82
+alt,RJDH002,192.1,196.0,3.9,1,Argilik lanjut,Argilik,0.893
+alt,RJDH003,10.0,16.0,6.0,3,Argilik lanjut,Argilik,0.836
+alt,RJDH003,22.0,28.0,6.0,3,Argilik lanjut,Argilik,0.779
+alt,RJDH003,28.0,35.0,7.0,3,Argilik/Argilik lanjut,Propilitik,0.745
+alt,RJDH003,52.0,55.0,3.0,3,Silika,Argilik lanjut,0.843
+alt,RJDH003,81.8,86.0,4.2,1,Argilik,Propilitik,0.726
+alt,RJDH003,111.0,115.0,4.0,1,Argilik,Propilitik,0.711
+alt,RJDH003,125.0,129.0,4.0,1,Argilik,Propilitik,0.789
+alt,RJDH004,4.2,9.3,5.1,3,Argilik,Argilik lanjut,0.781
+alt,RJDH004,16.0,20.0,4.0,3,Argilik,Argilik lanjut,0.894
+alt,RJDH004,28.7,32.0,3.3,1,Propilitik,Argilik,0.89
+alt,RJDH004,39.0,42.0,3.0,1,Argilik,Propilitik,0.871
+alt,RJDH004,63.0,67.7,4.7,2,Argilik,Argilik lanjut,0.772
+alt,RJDH004,121.2,124.2,3.0,1,Argilik,Argilik lanjut,0.894
+alt,RJDH005,110.0,120.0,10.0,5,Argilik lanjut,Argilik,0.839
+alt,RJDH005,133.0,136.9,3.9,1,Argilik,Argilik lanjut,0.719
+alt,RJDH006,2.7,5.8,3.1,1,Argilik,Propilitik,0.733
+alt,RJDH006,81.4,85.0,3.6,2,Argilik lanjut,Argilik,0.768
+alt,RJDH008,144.6,150.0,5.4,3,Argilik lanjut,Silika,0.799
+alt,RJDH009,10.0,25.0,15.0,10,Argilik lanjut,Argilik,0.864
+alt,RJDH009,28.0,34.0,6.0,4,Argilik lanjut,Argilik,0.845
+alt,RJDH009,48.5,57.2,8.7,9,Argilik lanjut,Argilik,0.858
+alt,RJDH009,134.0,137.0,3.0,3,Argilik lanjut,Argilik,0.782
+alt,RJDH009,158.4,170.4,12.0,6,Argilik,Propilitik,0.79
+alt,RJDH011,47.5,51.0,3.5,3,Argilik lanjut,Silika,0.845
+alt,RJDH012,148.2,151.2,3.0,3,Argilik lanjut,Silika,0.922
+alt,RJDH013,21.5,24.5,3.0,3,Argilik lanjut,Argilik,0.824
+alt,RJDH013,83.5,86.5,3.0,3,Silika,Argilik lanjut,0.802
+alt,RJDH013,96.5,99.5,3.0,3,Silika,Argilik lanjut,0.777
+alt,RJDH014,74.0,77.0,3.0,3,Argilik,Propilitik,0.732
+alt,RJDH015,37.5,40.5,3.0,3,Argilik lanjut,Argilik,0.793
+alt,RJDH015,51.0,56.2,5.2,5,Argilik lanjut,Argilik,0.761
+alt,RJDH017,63.4,67.0,3.6,3,Argilik lanjut,Silika,0.839
+alt,RJDH017,99.0,102.0,3.0,3,Argilik lanjut,Silika,0.76
+alt,RJDH019,73.0,76.0,3.0,3,Argilik lanjut,Silika,0.803
+oks,RJDH003,86.0,89.0,3.0,1,Transisi,Sulfida,0.707
+oks,RJDH003,89.0,95.0,6.0,3,Transisi,Oksida,0.807
+oks,RJDH003,101.0,106.9,5.9,3,Transisi,Oksida,0.802
+oks,RJDH004,17.0,20.0,3.0,2,Transisi,Oksida,0.838
+oks,RJDH004,22.5,25.5,3.0,1,Transisi,Sulfida,0.871
+oks,RJDH007,86.2,89.2,3.0,2,Transisi,Oksida,0.815
+oks,RJDH009,10.0,13.0,3.0,2,Oksida,Sulfida,0.731
+oks,RJDH009,16.0,26.5,10.5,7,Oksida,Sulfida,0.813
+oks,RJDH009,28.0,34.0,6.0,4,Oksida,Sulfida,0.756
+oks,RJDH009,52.2,57.2,5.0,5,Oksida,Sulfida,0.841
+oks,RJDH013,39.4,42.8,3.4,3,Transisi,Oksida,0.816
+oks,RJDH014,10.5,15.5,5.0,5,Sulfida/Transisi,Oksida,0.875
+lit,RJDH001,222.0,227.0,5.0,5,Porfiri dasit-andesit koheren/Zona sesar,Breksi hidrotermal,0.767
+lit,RJDH001,233.0,236.0,3.0,3,Porfiri dasit-andesit koheren,Breksi hidrotermal,0.797
+lit,RJDH002,12.6,16.0,3.4,1,Porfiri dasit-andesit koheren,Zona sesar,0.724
+lit,RJDH002,79.7,83.4,3.7,2,Porfiri dasit-andesit koheren,Zona sesar,0.736
+lit,RJDH002,154.0,158.8,4.8,2,Lainnya,Porfiri dasit-andesit koheren,0.794
+lit,RJDH002,164.0,167.0,3.0,1,Lainnya,Zona sesar,0.754
+lit,RJDH002,170.0,188.0,18.0,5,Breksi freatomagmatik/Lainnya,Zona sesar,0.88
+lit,RJDH003,111.0,119.3,8.3,2,Porfiri dasit-andesit koheren,Zona sesar,0.728
+lit,RJDH003,121.0,125.0,4.0,1,Porfiri dasit-andesit koheren,Zona sesar,0.84
+lit,RJDH005,106.1,110.0,3.9,1,Breksi freatomagmatik,Zona sesar,0.731
+lit,RJDH005,112.0,120.0,8.0,4,Breksi freatomagmatik,Zona sesar,0.749
+lit,RJDH009,31.0,34.0,3.0,2,Porfiri dasit-andesit koheren,Zona sesar,0.823
+lit,RJDH013,21.5,26.0,4.5,4,Breksi freatomagmatik,Zona sesar,0.776
+lit,RJDH014,34.5,40.5,6.0,6,Breksi hidrotermal,Porfiri dasit-andesit koheren,0.822
+lit,RJDH014,43.5,46.5,3.0,3,Breksi hidrotermal,Porfiri dasit-andesit koheren,0.897
+lit,RJDH016,22.0,26.0,4.0,2,Breksi freatomagmatik,Zona sesar,0.771
+lit,RJDH018,115.0,118.0,3.0,3,Porfiri dasit-andesit koheren,Breksi hidrotermal,0.853
+lit,RJDH018,132.0,135.0,3.0,3,Porfiri dasit-andesit koheren,Breksi hidrotermal,0.865
+lit,RJDH019,83.0,88.0,5.0,5,Porfiri dasit-andesit koheren,Breksi hidrotermal,0.772

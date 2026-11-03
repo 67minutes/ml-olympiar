@@ -1,0 +1,192 @@
+table,field,vocabulary,code,raw_variants,n,group,meaning_en,meaning_id,source,evidence
+lithology,Lith1Interp,lith,VANh,VANh,82,Coherent dacite-andesite porphyry,hornblende andesite,andesit hornblenda,resume,
+lithology,Lith1Interp,lith,VDA,VDA,49,Coherent dacite-andesite porphyry,dacite porphyry,porfiri dasit,resume,
+lithology,Lith1Interp,lith,XUS,XUS,42,Phreatomagmatic breccia,unstratified sandy-matrix lithic breccia,breksi litik matriks pasir tak berlapis,resume,interpreted as phreatomagmatic
+lithology,Lith1Interp,lith,BFZ,BFZ,25,Fault zone,fault zone,zona sesar,conventional,
+lithology,Lith1Interp,lith,BPM,BPM,24,Phreatomagmatic breccia,phreatomagmatic breccia,breksi freatomagmatik,resume,
+lithology,Lith1Interp,lith,XUS-l,XUS-l,23,Phreatomagmatic breccia,unstratified sandy-matrix lithic breccia (l variant),breksi litik matriks pasir tak berlapis (varian l),inferred,XUS subtype; suffix meaning unknown
+lithology,Lith1Interp,lith,SCR,SCR,16,Surface cover,surface cover,penutup permukaan,inferred,always the first interval from 0 m; matches UA
+lithology,Lith1Interp,lith,XUV-mn,XUV-mn,10,Unclassified breccia,"unstratified breccia, subtype unknown","breksi tak berlapis, subtipe tidak diketahui",VERIFY,"RJDH008-010, AA-altered, hematite-dominant; 'mn' likely monomict (7/10 'mon')"
+lithology,Lith1Interp,lith,sBPM,sBPM,3,Phreatomagmatic breccia,silicified phreatomagmatic breccia,breksi freatomagmatik tersilisifikasi,resume,resume spells it sBMP
+lithology,Lith1Interp,lith,VSS,VSS,3,Sedimentary / volcaniclastic,volcaniclastic sediment,sedimen vulkaniklastik,VERIFY,3 thin fine-grained intervals in RJDH017
+lithology,Lith1Interp,lith,XUQ-b,XUQ-b,2,Hydrothermal breccia,unstratified black-quartz matrix breccia,breksi matriks kuarsa hitam tak berlapis,resume,
+lithology,Lith1Interp,lith,SCL,SCL,1,Surface cover,surface cover,penutup permukaan,inferred,first interval from 0 m; matches UA
+lithology,Lith1Interp,lith,CAV,CAV,1,Void (cavity),cavity / void,rongga,inferred,only assay row is NS-SEL
+lithology,Lith1Interp,lith,XUQ-ms,XUQ-ms,1,Hydrothermal breccia,unstratified massive-sulphide matrix breccia,breksi matriks sulfida masif tak berlapis,resume,
+lithology,Lith1Interp,lith,VAN,VAN,1,Andesite (Angkola Volcanics),porphyritic andesite (Angkola Volcanics),andesit porfiritik (Vulkanik Angkola),resume,
+lithology,Lith1Interp,lith,XUlo,XUlo,1,Hydrothermal breccia,unstratified iron-oxide matrix breccia,breksi matriks oksida besi tak berlapis,inferred,taken as the resume's XUIO
+lithology,Lith1Interp,lith,XUQ-w,XUQ-w,1,Hydrothermal breccia,unstratified white-quartz matrix breccia,breksi matriks kuarsa putih tak berlapis,resume,
+lithology,Lith1Interp,lith,SST,SST,1,Sedimentary / volcaniclastic,sandstone,batupasir,conventional,
+lithology,Lith1Qual1,lith_qual,por,POR/por,83,,porphyritic,porfiritik,conventional,
+lithology,Lith1Qual1,lith_qual,pol,POL/pol,66,,polymict,polimik,conventional,
+lithology,Lith1Qual1,lith_qual,vug,vug,28,,vuggy,berongga,conventional,
+lithology,Lith1Qual1,lith_qual,mon,MON/mon,25,,monomict,monomik,conventional,
+lithology,Lith1Qual1,lith_qual,bxd,bxd,13,,brecciated,terbreksiasi,conventional,
+lithology,Lith1Qual1,lith_qual,tob,TOB/tob,12,,unknown,tidak diketahui,VERIFY,
+lithology,Lith1Qual1,lith_qual,pso,pso,8,,unknown,tidak diketahui,VERIFY,
+lithology,Lith1Qual1,lith_qual,msp,msp,3,,unknown,tidak diketahui,VERIFY,
+lithology,Lith1Qual1,lith_qual,fgr,fgr,3,,fine-grained,berbutir halus,conventional,
+lithology,Lith1Qual1,lith_qual,crk,crk,2,,crackle,retak,conventional,
+lithology,Lith1Qual1,lith_qual,gou,gou,2,,gouge,gouge,conventional,
+lithology,Lith1Qual1,lith_qual,flu,flu,1,,unknown,tidak diketahui,VERIFY,
+lithology,Lith1Qual1,lith_qual,wso,wso,1,,unknown,tidak diketahui,VERIFY,
+lithology,Lith1Qual1,lith_qual,snm,snm,1,,unknown,tidak diketahui,VERIFY,
+lithology,Lith1Qual1,lith_qual,ves,ves,1,,vesicular,vesikuler,conventional,
+lithology,Lith1Qual1,lith_qual,mas,mas,1,,massive,masif,conventional,
+lithology,Lith1Qual1,lith_qual,tuf,tuf,1,,tuffaceous,tufaan,conventional,
+lithology,Lith1Qual2,lith_qual,msp,MSP/msp,23,,unknown,tidak diketahui,VERIFY,
+lithology,Lith1Qual2,lith_qual,vug,VUG/vug,18,,vuggy,berongga,conventional,
+lithology,Lith1Qual2,lith_qual,csp,csp,16,,unknown,tidak diketahui,VERIFY,
+lithology,Lith1Qual2,lith_qual,bxd,bxd,8,,brecciated,terbreksiasi,conventional,
+lithology,Lith1Qual2,lith_qual,mon,mon,5,,monomict,monomik,conventional,
+lithology,Lith1Qual2,lith_qual,pol,pol,4,,polymict,polimik,conventional,
+lithology,Lith1Qual2,lith_qual,pso,pso,3,,unknown,tidak diketahui,VERIFY,
+lithology,Lith1Qual2,lith_qual,crk,crk,2,,crackle,retak,conventional,
+lithology,Lith1Qual2,lith_qual,gou,gou,2,,gouge,gouge,conventional,
+lithology,Lith1Qual2,lith_qual,snm,snm,2,,unknown,tidak diketahui,VERIFY,
+lithology,Lith1Qual2,lith_qual,por,por,1,,porphyritic,porfiritik,conventional,
+lithology,Lith1Qual2,lith_qual,tob,tob,1,,unknown,tidak diketahui,VERIFY,
+lithology,Clast1,lith,VANh,VANh,50,Coherent dacite-andesite porphyry,hornblende andesite,andesit hornblenda,resume,
+lithology,Clast1,lith,VDA,VDA,38,Coherent dacite-andesite porphyry,dacite porphyry,porfiri dasit,resume,
+lithology,Clast1,lith,VAN,VAN,9,Andesite (Angkola Volcanics),porphyritic andesite (Angkola Volcanics),andesit porfiritik (Vulkanik Angkola),resume,
+lithology,Clast1,lith,QTZ,QTZ,1,Quartz / silica,quartz / silica,kuarsa / silika,VERIFY,"rock only, 1 SI-altered channel sample"
+lithology,Clast1,lith,SCT,SCT,1,,unknown clast code,kode klas tidak diketahui,VERIFY,clast field only
+lithology,Clast1,lith,SST,SST,1,Sedimentary / volcaniclastic,sandstone,batupasir,conventional,
+lithology,Clast2,lith,QTZ,QTZ,43,Quartz / silica,quartz / silica,kuarsa / silika,VERIFY,"rock only, 1 SI-altered channel sample"
+lithology,Clast2,lith,SST,SST,7,Sedimentary / volcaniclastic,sandstone,batupasir,conventional,
+lithology,Clast2,lith,SSL,SSL,7,,unknown clast code (sandstone-siltstone?),kode klas tidak diketahui,VERIFY,clast field only
+lithology,Clast2,lith,VDA,VDA,5,Coherent dacite-andesite porphyry,dacite porphyry,porfiri dasit,resume,
+lithology,Clast2,lith,VTL,VTL,2,,unknown clast code,kode klas tidak diketahui,VERIFY,clast field only
+lithology,Clast2,lith,SCT,SCT,2,,unknown clast code,kode klas tidak diketahui,VERIFY,clast field only
+lithology,Clast2,lith,VANh,VANh,2,Coherent dacite-andesite porphyry,hornblende andesite,andesit hornblenda,resume,
+lithology,Clast2,lith,XUS,XUS,2,Phreatomagmatic breccia,unstratified sandy-matrix lithic breccia,breksi litik matriks pasir tak berlapis,resume,interpreted as phreatomagmatic
+lithology,Clast2,lith,XUS-l,XUS-l,2,Phreatomagmatic breccia,unstratified sandy-matrix lithic breccia (l variant),breksi litik matriks pasir tak berlapis (varian l),inferred,XUS subtype; suffix meaning unknown
+alteration,AltFacies,alt_facies,AA,AA,442,,advanced argillic (quartz-alunite / dickite-kaolinite),argilik lanjut,resume,database does not split strong/weak AA
+alteration,AltFacies,alt_facies,SI,SI,158,,silica (massive to vuggy quartz),silika,resume,
+alteration,AltFacies,alt_facies,AR,AR,77,,argillic (kaolinite-illite),argilik,resume,
+alteration,AltFacies,alt_facies,UA,UA,18,,no alteration logged (cover or void),alterasi tidak dicatat (penutup/rongga),inferred,coincides with SCR/SCL and CAV intervals
+alteration,AltFacies,alt_facies,PP,PP,12,,propylitic (chlorite-calcite),propilitik,resume,
+alteration,AltQual1,texture,PRV,PRV/prv,342,,pervasive,pervasif,conventional,
+alteration,AltQual1,texture,VSI,VSI,119,,vuggy silica,silika berongga,conventional,
+alteration,AltQual1,texture,MSP,MSP,75,,unknown,tidak diketahui,VERIFY,
+alteration,AltQual1,texture,CSP,CSP,11,,unknown,tidak diketahui,VERIFY,
+alteration,AltQual1,texture,PTC,PTC,9,,patchy,bercak,conventional,
+alteration,AltQual1,texture,PSP,PSP,8,,unknown,tidak diketahui,VERIFY,
+alteration,AltQual1,texture,VRL,VRL,4,,unknown,tidak diketahui,VERIFY,
+alteration,AltQual1,texture,SPT,SPT,3,,spotty,bintik,conventional,
+alteration,AltQual1,texture,MSI,MSI,2,,massive silica,silika masif,conventional,
+alteration,AltQual1,texture,RSI,RSI,1,,unknown silica texture,tidak diketahui,VERIFY,
+alteration,AltQual2,texture,VSI,VSI,32,,vuggy silica,silika berongga,conventional,
+alteration,AltQual2,texture,PSP,PSP,21,,unknown,tidak diketahui,VERIFY,
+alteration,AltQual2,texture,CSP,CSP/csp,19,,unknown,tidak diketahui,VERIFY,
+alteration,AltQual2,texture,MSP,MSP,16,,unknown,tidak diketahui,VERIFY,
+alteration,AltQual2,texture,PRV,PRV,15,,pervasive,pervasif,conventional,
+alteration,AltQual2,texture,MSI,MSI,2,,massive silica,silika masif,conventional,
+alteration,AltQual3,texture,CSP,CSP,1,,unknown,tidak diketahui,VERIFY,
+alteration,AltMin1,alt_min,si,SI/si,521,,silica,silika,conventional,
+alteration,AltMin1,alt_min,ka,KA/ka,69,,kaolinite,kaolinit,conventional,
+alteration,AltMin1,alt_min,cy,cy,45,,clay,lempung,conventional,
+alteration,AltMin1,alt_min,al,al,22,,alunite,alunit,conventional,
+alteration,AltMin1,alt_min,ch,ch,15,,chlorite,klorit,conventional,11/12 in PP facies
+alteration,AltMin1,alt_min,il,il,4,,illite,ilit,conventional,
+alteration,AltMin2,alt_min,al,AL/al,371,,alunite,alunit,conventional,
+alteration,AltMin2,alt_min,ka,ka,41,,kaolinite,kaolinit,conventional,
+alteration,AltMin2,alt_min,cy,CY/cy,36,,clay,lempung,conventional,
+alteration,AltMin2,alt_min,hm,hm,24,,hematite,hematit,conventional,
+alteration,AltMin2,alt_min,py,py,18,,pyrite,pirit,conventional,
+alteration,AltMin2,alt_min,il,IL/il,11,,illite,ilit,conventional,
+alteration,AltMin2,alt_min,si,si,9,,silica,silika,conventional,
+alteration,AltMin2,alt_min,is,is,4,,illite-smectite,ilit-smektit,conventional,
+alteration,AltMin2,alt_min,ca,ca,4,,calcite,kalsit,conventional,
+alteration,AltMin2,alt_min,di,di,3,,dickite,dikit,conventional,
+alteration,AltMin2,alt_min,su,su,2,,native sulphur,belerang native,conventional,
+alteration,AltMin2,alt_min,sm,sm,1,,smectite,smektit,conventional,
+alteration,AltMin2,alt_min,ba,ba,1,,barite,barit,VERIFY,1 row
+mineralisation,DomMin1,mineral,hm,Hm/hm,1697,,hematite,hematit,conventional,
+mineralisation,DomMin1,mineral,py,Py/py,932,,pyrite,pirit,conventional,
+mineralisation,DomMin1,mineral,lm,Lm/lm,18,,limonite,limonit,conventional,
+mineralisation,DomMin1,mineral,um,UM,15,,no mineral logged,mineral tidak dicatat,inferred,no other mineral on these rows
+mineralisation,DomMin1,mineral,qt,qt,8,,quartz,kuarsa,conventional,
+mineralisation,DomMin1,mineral,unk,UNK,5,,unknown,tidak diketahui,conventional,
+mineralisation,DomMin1,mineral,cy,Cy/cy,2,,clay,lempung,inferred,"with hm/lm, fully oxidised; = AltMin cy"
+mineralisation,DomMin1,mineral,cv,cv,2,,covellite,kovelit,resume,"Cu 573 ppm, CN/Cu 0.43"
+mineralisation,DomMin1,mineral,en,en,2,,enargite,enargit,resume,"Cu 298 ppm, CN/Cu 0.76 in overlapping assays"
+mineralisation,DomMin1,mineral,go,go,1,,goethite,goetit,conventional,
+mineralisation,DomMin1,mineral,ma,ma,1,,unknown (1 row),tidak diketahui,VERIFY,Cu 33 ppm: not malachite
+mineralisation,DomMin1,mineral,cp,cp,1,,chalcopyrite,kalkopirit,VERIFY,"1 row, Cu only 5 ppm"
+mineralisation,DomMin2,mineral,lm,Lm/lm,197,,limonite,limonit,conventional,
+mineralisation,DomMin2,mineral,go,go,51,,goethite,goetit,conventional,
+mineralisation,DomMin2,mineral,ja,ja,48,,jarosite,jarosit,conventional,
+mineralisation,DomMin2,mineral,cv,cv,40,,covellite,kovelit,resume,"Cu 573 ppm, CN/Cu 0.43"
+mineralisation,DomMin2,mineral,hm,hm,36,,hematite,hematit,conventional,
+mineralisation,DomMin2,mineral,su,su,8,,native sulphur,belerang native,conventional,
+mineralisation,DomMin2,mineral,py,py,2,,pyrite,pirit,conventional,
+mineralisation,DomMin2,mineral,en,en,1,,enargite,enargit,resume,"Cu 298 ppm, CN/Cu 0.76 in overlapping assays"
+mineralisation,DomMin2,mineral,cy,Cy,1,,clay,lempung,inferred,"with hm/lm, fully oxidised; = AltMin cy"
+mineralisation,DomMin3,mineral,ja,Ja,1,,jarosite,jarosit,conventional,
+mineralisation,DomMin3,mineral,su,Su,1,,native sulphur,belerang native,conventional,
+mineralisation,SecMin1,mineral,hm,Hm/hm,331,,hematite,hematit,conventional,
+mineralisation,SecMin1,mineral,py,Py/py,175,,pyrite,pirit,conventional,
+mineralisation,SecMin1,mineral,ja,ja,44,,jarosite,jarosit,conventional,
+mineralisation,SecMin1,mineral,su,Su/su,42,,native sulphur,belerang native,conventional,
+mineralisation,SecMin1,mineral,en,en,16,,enargite,enargit,resume,"Cu 298 ppm, CN/Cu 0.76 in overlapping assays"
+mineralisation,SecMin1,mineral,lm,Lm/lm,11,,limonite,limonit,conventional,
+mineralisation,SecMin1,mineral,go,go,11,,goethite,goetit,conventional,
+mineralisation,SecMin1,mineral,qt,qt,10,,quartz,kuarsa,conventional,
+mineralisation,SecMin1,mineral,ca,Ca,10,,calcite,kalsit,inferred,Cu 16 ppm: not a Cu mineral
+mineralisation,SecMin1,mineral,al,Al/al,7,,alunite,alunit,conventional,
+mineralisation,SecMin1,mineral,cv,cv,5,,covellite,kovelit,resume,"Cu 573 ppm, CN/Cu 0.43"
+mineralisation,SecMin1,mineral,co,co,2,,Cu sulphide (chalcocite or covellite),sulfida Cu (kalkosit atau kovelit),VERIFY,"Cu 3,135 ppm, CN/Cu 0.79, unoxidised"
+mineralisation,SecMin1,mineral,cl,Cl,1,,unknown (1 row),tidak diketahui,VERIFY,
+mineralisation,SecMin2,mineral,lm,Lm/lm,74,,limonite,limonit,conventional,
+mineralisation,SecMin2,mineral,ja,ja,31,,jarosite,jarosit,conventional,
+mineralisation,SecMin2,mineral,py,Py/py,14,,pyrite,pirit,conventional,
+mineralisation,SecMin2,mineral,go,go,4,,goethite,goetit,conventional,
+mineralisation,SecMin2,mineral,en,En,3,,enargite,enargit,resume,"Cu 298 ppm, CN/Cu 0.76 in overlapping assays"
+mineralisation,SecMin2,mineral,al,Al,3,,alunite,alunit,conventional,
+mineralisation,SecMin2,mineral,cy,Cy,1,,clay,lempung,inferred,"with hm/lm, fully oxidised; = AltMin cy"
+mineralisation,SecMin2,mineral,hm,Hm,1,,hematite,hematit,conventional,
+mineralisation,SecMin3,mineral,qt,Qt,12,,quartz,kuarsa,conventional,
+mineralisation,SecMin3,mineral,al,Al,5,,alunite,alunit,conventional,
+mineralisation,SecMin3,mineral,cy,Cy,5,,clay,lempung,inferred,"with hm/lm, fully oxidised; = AltMin cy"
+mineralisation,SecMin3,mineral,su,Su,3,,native sulphur,belerang native,conventional,
+mineralisation,SecMin3,mineral,en,En,1,,enargite,enargit,resume,"Cu 298 ppm, CN/Cu 0.76 in overlapping assays"
+mineralisation,SecMin3,mineral,lm,Lm,1,,limonite,limonit,conventional,
+mineralisation,DomMinMode,min_mode,ds,Ds/ds,2260,,disseminated,tersebar,conventional,
+mineralisation,DomMinMode,min_mode,fr,FR/Fr/fr,293,,fracture,rekahan,conventional,
+mineralisation,DomMinMode,min_mode,unk,unk,62,,unknown,tidak diketahui,conventional,
+mineralisation,DomMinMode,min_mode,vn,VN/vn,5,,vein,urat,conventional,
+mineralisation,DomMinMode,min_mode,vl,VL/Vl/vl,4,,veinlet,urat halus,conventional,
+mineralisation,DomMinMode,min_mode,vs,Vs,2,,unknown (vugs?),tidak diketahui,VERIFY,
+mineralisation,SecMinMode,min_mode,ds,Ds/ds,282,,disseminated,tersebar,conventional,
+mineralisation,SecMinMode,min_mode,fr,Fr/fr,178,,fracture,rekahan,conventional,
+mineralisation,SecMinMode,min_mode,vs,VS/Vs,54,,unknown (vugs?),tidak diketahui,VERIFY,
+mineralisation,SecMinMode,min_mode,sng,sng,22,,unknown (single grain?),tidak diketahui,VERIFY,
+mineralisation,SecMinMode,min_mode,vl,VL/Vl,15,,veinlet,urat halus,conventional,
+mineralisation,SecMinMode,min_mode,vn,VN,5,,vein,urat,conventional,
+mineralisation,DomMinDescr,texture,VFL,VFL,214,,vug fill,pengisi rongga,conventional,
+mineralisation,DomMinDescr,texture,PRV,PRV,103,,pervasive,pervasif,conventional,
+mineralisation,DomMinDescr,texture,CTD,CTD,56,,coating,selaput,conventional,
+mineralisation,DomMinDescr,texture,FRL,FRL,48,,fracture lining,pelapis rekahan,conventional,
+mineralisation,DomMinDescr,texture,STK,STK,6,,stockwork,stockwork,conventional,
+mineralisation,DomMinDescr,texture,SPT,SPT,2,,spotty,bintik,conventional,
+mineralisation,SecMinDescr,texture,VFL,VFL,161,,vug fill,pengisi rongga,conventional,
+mineralisation,SecMinDescr,texture,SPT,SPT,43,,spotty,bintik,conventional,
+mineralisation,SecMinDescr,texture,FRL,FRL,36,,fracture lining,pelapis rekahan,conventional,
+mineralisation,SecMinDescr,texture,CTD,CTD,10,,coating,selaput,conventional,
+mineralisation,SecMinDescr,texture,PRV,PRV,8,,pervasive,pervasif,conventional,
+mineralisation,SecMinDescr,texture,STK,STK,3,,stockwork,stockwork,conventional,
+mineralisation,SecMinDescr,texture,DRU,DRU,2,,drusy,drusi,conventional,
+mineralisation,SecMinDescr,texture,RPL,RPL,1,,replacement,penggantian,conventional,
+rock,Lithology,lith,VANh,VANh,376,Coherent dacite-andesite porphyry,hornblende andesite,andesit hornblenda,resume,
+rock,Lithology,lith,BPM,BPM,66,Phreatomagmatic breccia,phreatomagmatic breccia,breksi freatomagmatik,resume,
+rock,Lithology,lith,VDA,VDA,12,Coherent dacite-andesite porphyry,dacite porphyry,porfiri dasit,resume,
+rock,Lithology,lith,BFZ,BFZ,10,Fault zone,fault zone,zona sesar,conventional,
+rock,Lithology,lith,XUlo,XUlo,2,Hydrothermal breccia,unstratified iron-oxide matrix breccia,breksi matriks oksida besi tak berlapis,inferred,taken as the resume's XUIO
+rock,Lithology,lith,QTZ,QTZ,1,Quartz / silica,quartz / silica,kuarsa / silika,VERIFY,"rock only, 1 SI-altered channel sample"
+rock,Lithology,lith,XUS,XUS,1,Phreatomagmatic breccia,unstratified sandy-matrix lithic breccia,breksi litik matriks pasir tak berlapis,resume,interpreted as phreatomagmatic
+rock,Lithology,lith,XUS-l,XUS-l,1,Phreatomagmatic breccia,unstratified sandy-matrix lithic breccia (l variant),breksi litik matriks pasir tak berlapis (varian l),inferred,XUS subtype; suffix meaning unknown
+rock,IntrpAltFa,alt_facies,SI,SI,230,,silica (massive to vuggy quartz),silika,resume,
+rock,IntrpAltFa,alt_facies,AR,AR,179,,argillic (kaolinite-illite),argilik,resume,
+rock,IntrpAltFa,alt_facies,PP,PP,51,,propylitic (chlorite-calcite),propilitik,resume,
+rock,IntrpAltFa,alt_facies,AA,AA,9,,advanced argillic (quartz-alunite / dickite-kaolinite),argilik lanjut,resume,database does not split strong/weak AA

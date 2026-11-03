@@ -1,0 +1,76 @@
+kolom,arti,satuan,sumber,terisi_tanah,terisi_batuan,terisi_lubang_bor
+dataset,"dataset asal: tanah, batuan atau lubang_bor",,deliverable 3,259,469,2476
+SampleID,ID sampel,,Stage 1-7,259,469,2476
+HoleID,ID lubang bor,,Stage 1-7,0,0,2476
+From,kedalaman atas interval,m,Stage 1-7,0,0,2476
+To,kedalaman bawah interval,m,Stage 1-7,0,0,2476
+X,Easting UTM 47N (bor: titik tengah interval),m,Stage 1-7,259,469,2476
+Y,Northing UTM 47N,m,Stage 1-7,259,469,2476
+Z,elevasi (permukaan: diproyeksikan ke lidar),m,Stage 1-7,259,469,2476
+Prospek,prospek,,Stage 1-7,259,469,0
+prospek_RJ,prospek Ramba Joring,Y/N,Stage 1-7,259,469,0
+Tahun,tahun analisis lab,,Stage 1-7,259,469,0
+Tahun_lab,tahun analisis lab,,Stage 1-7,0,0,2466
+SampleType,jenis sampel,,Stage 1-7,259,469,2476
+NS_SEL,tidak disampel,Y/N,Stage 1-7,0,0,2476
+S_metode,metode S sulfida,,Stage 1-7,0,0,2476
+flag_elev,elevasi vs lidar,,Stage 1-7,259,469,0
+Au_ppm,"Au, DL diseragamkan (tersensor = DL/2)",ppm,Stage 1-7,259,469,2466
+Au_ppm_cens,Au_ppm di bawah batas deteksi (nilai = DL/2),Y/N,Stage 1-7,259,469,2466
+Ag_ppm,"Ag, DL diseragamkan (tersensor = DL/2)",ppm,Stage 1-7,259,469,2466
+Ag_ppm_cens,Ag_ppm di bawah batas deteksi (nilai = DL/2),Y/N,Stage 1-7,259,469,2466
+Cu_ppm,"Cu, DL diseragamkan (tersensor = DL/2)",ppm,Stage 1-7,259,469,2466
+Cu_ppm_cens,Cu_ppm di bawah batas deteksi (nilai = DL/2),Y/N,Stage 1-7,259,469,2466
+As_ppm,"As, DL diseragamkan (tersensor = DL/2)",ppm,Stage 1-7,259,426,2466
+Pb_ppm,"Pb, DL diseragamkan (tersensor = DL/2)",ppm,Stage 1-7,259,350,397
+Zn_ppm,"Zn, DL diseragamkan (tersensor = DL/2)",ppm,Stage 1-7,259,350,397
+Sb_ppm,"Sb, DL diseragamkan (tersensor = DL/2)",ppm,Stage 1-7,259,343,397
+Sb_ppm_cens,Sb_ppm di bawah batas deteksi (nilai = DL/2),Y/N,Stage 1-7,259,343,397
+Hg_ppm,"Hg, DL diseragamkan (tersensor = DL/2)",ppm,Stage 1-7,259,332,505
+Mo_ppm,"Mo, DL diseragamkan (tersensor = DL/2)",ppm,Stage 1-7,9,26,397
+Mo_ppm_cens,Mo_ppm di bawah batas deteksi (nilai = DL/2),Y/N,Stage 1-7,9,26,397
+Ba_ppm,"Ba, DL diseragamkan (tersensor = DL/2)",ppm,Stage 1-7,158,219,397
+Fe_pct,"Fe, DL diseragamkan (tersensor = DL/2)",pct,Stage 1-7,9,26,397
+ML_thr_Au_populasi,keluaran ML (lihat LOG.md),,ML-1,188,382,2466
+ML_thr_Ag_populasi,keluaran ML (lihat LOG.md),,ML-1,188,0,2466
+ML_thr_Cu_populasi,keluaran ML (lihat LOG.md),,ML-1,188,382,2466
+ML_thr_As_populasi,keluaran ML (lihat LOG.md),,ML-1,188,352,2466
+ML_thr_Ba_populasi,keluaran ML (lihat LOG.md),,ML-1,114,0,0
+ML_thr_Hg_populasi,keluaran ML (lihat LOG.md),,ML-1,188,265,0
+ML_thr_Pb_populasi,keluaran ML (lihat LOG.md),,ML-1,188,273,0
+ML_thr_Sb_populasi,keluaran ML (lihat LOG.md),,ML-1,188,269,0
+ML_thr_W_populasi,keluaran ML (lihat LOG.md),,ML-1,183,0,0
+ML_thr_Zn_populasi,keluaran ML (lihat LOG.md),,ML-1,188,273,0
+ML_zona,keluaran ML (lihat LOG.md),,ML-3,188,352,0
+ML_zona_p_maks,keluaran ML (lihat LOG.md),,ML-3,188,352,0
+ML_zona_indeks,keluaran ML (lihat LOG.md),,ML-3,188,352,0
+Zn_ppm_cens,Zn_ppm di bawah batas deteksi (nilai = DL/2),Y/N,Stage 1-7,0,350,397
+Hg_ppm_cens,Hg_ppm di bawah batas deteksi (nilai = DL/2),Y/N,Stage 1-7,0,332,505
+Ba_ppm_cens,Ba_ppm di bawah batas deteksi (nilai = DL/2),Y/N,Stage 1-7,0,219,397
+S_sulfida_SCIS_pct,"S_sulfida_SCIS, DL diseragamkan (tersensor = DL/2)",pct,Stage 1-7,0,11,1898
+S_total_pct,"S_total, DL diseragamkan (tersensor = DL/2)",pct,Stage 1-7,0,16,118
+AuCN_Au_rasio,rasio Au larut sianida / total,,Stage 1-7,0,5,786
+AgCN_Ag_rasio,rasio Ag larut sianida / total,,Stage 1-7,0,1,626
+CuCN_Cu_rasio,rasio Cu larut sianida / total (indikator oksida/supergen),,Stage 1-7,0,1,748
+Kelompok_Litologi,kelompok litologi,,Stage 1-7,0,469,2476
+Fasies_Alterasi,fasies alterasi,,Stage 1-7,0,469,2476
+ML_alt_prediksi,keluaran ML (lihat LOG.md),,ML-2,0,352,2433
+ML_alt_p_maks,keluaran ML (lihat LOG.md),,ML-2,0,352,2433
+As_ppm_cens,As_ppm di bawah batas deteksi (nilai = DL/2),Y/N,Stage 1-7,0,0,2466
+S_sulfida_SCIS_pct_cens,S_sulfida_SCIS_pct di bawah batas deteksi (nilai = DL/2),Y/N,Stage 1-7,0,0,1898
+S_sulfida_S2_pct,"S_sulfida_S2, DL diseragamkan (tersensor = DL/2)",pct,Stage 1-7,0,0,201
+NAG_pH,"NAG, DL diseragamkan (tersensor = DL/2)",pH,Stage 1-7,0,0,106
+NAG_pH45_kgH2SO4_t,"NAG_pH45_kgH2SO4, DL diseragamkan (tersensor = DL/2)",,Stage 1-7,0,0,106
+Status_Oksidasi,status oksidasi (log),,Stage 1-7,0,0,2362
+ML_thr_S_sulfida_SCIS_populasi,keluaran ML (lihat LOG.md),,ML-1,0,0,1898
+ML_oks_prediksi,keluaran ML (lihat LOG.md),,ML-2,0,0,2466
+ML_oks_p_maks,keluaran ML (lihat LOG.md),,ML-2,0,0,2466
+ML_paf_set,keluaran ML (lihat LOG.md),,ML-5,0,0,2466
+ML_paf_kelola,keluaran ML (lihat LOG.md),,ML-5,0,0,2466
+ML_paf_uji_NAG,keluaran ML (lihat LOG.md),,ML-5,0,0,2466
+ML_paf_prioritas_uji,keluaran ML (lihat LOG.md),,ML-5,0,0,2056
+komposit_From,kedalaman atas komposit 1 m yang memuat titik tengah interval assay,m,Stage 6,0,0,2476
+ML_hmm_nama,keluaran ML (lihat LOG.md),,ML-4,0,0,2472
+ML_hmm_p_maks,keluaran ML (lihat LOG.md),,ML-4,0,0,2472
+ML_gp_mu_log10Au,rerata GP (kriging) log10 Au pada komposit,log10 g/t,ML-6,0,0,2472
+ML_gp_sd_log10,SD GP (kriging) log10 Au pada komposit,log10 g/t,ML-6,0,0,2472

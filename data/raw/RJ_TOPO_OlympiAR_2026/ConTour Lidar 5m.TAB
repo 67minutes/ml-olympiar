@@ -1,0 +1,19 @@
+!table
+!version 450
+!charset WindowsLatin1
+
+Definition Table
+  Type NATIVE Charset "WindowsLatin1"
+  Fields 7
+    String_Num Integer Index 1 ;
+    Group_Num Integer ;
+    Z_Avg Float ;
+    Attrib1 Char (200) ;
+    Attrib2 Char (200) ;
+    x Float ;
+    y Float ;
+begin_metadata
+"\IsReadOnly" = "FALSE"
+"\MapInfo" = ""
+"\MapInfo\TableID" = "358a655d-23a6-4b12-bc72-ebba2abd84f1"
+end_metadata

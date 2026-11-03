@@ -1,0 +1,38 @@
+bagian,item,nilai
+label,kelas pada batas 5 kg/t,"{'NAF': 37, 'PAF-LC': 47, 'PAF-HC': 22}"
+label,baris berubah kelas (batas 5 vs 10),1
+label,kelas pada batas 20 kg/t,"{'NAF': 37, 'PAF-LC': 48, 'PAF-HC': 21}"
+label,baris berubah kelas (batas 20 vs 10),0
+label,n NAF,37
+label,n PAF-LC,48
+label,n PAF-HC,21
+validasi,blok 10 m,16
+validasi,blok 20 m,8
+prediksi,tier 1 baris,1417
+prediksi,tier 1 singleton,0.2300635144671842
+prediksi,tier 1 kelola NAF (m),42.800000000000004
+prediksi,tier 1 kelola PAF-LC (m),604.3
+prediksi,tier 1 kelola PAF-HC (m),1151.95
+prediksi,tier 2 baris,481
+prediksi,tier 2 singleton,0.14345114345114346
+prediksi,tier 2 kelola NAF (m),0.0
+prediksi,tier 2 kelola PAF-LC (m),127.44999999999996
+prediksi,tier 2 kelola PAF-HC (m),416.1
+prediksi,tier 3 baris,201
+prediksi,tier 3 singleton,0.2736318407960199
+prediksi,tier 3 kelola NAF (m),0.0
+prediksi,tier 3 kelola PAF-LC (m),48.00000000000001
+prediksi,tier 3 kelola PAF-HC (m),224.99999999999997
+prediksi,tier 4 baris,367
+prediksi,tier 4 singleton,0.16621253405994552
+prediksi,tier 4 kelola NAF (m),0.0
+prediksi,tier 4 kelola PAF-LC (m),16.9
+prediksi,tier 4 kelola PAF-HC (m),422.5999999999999
+prediksi,set terbanyak,"{'NAF|PAF-LC|PAF-HC': 827, 'NAF|PAF-LC': 757, 'PAF-HC': 502, 'PAF-LC|PAF-HC': 313, 'NAF|PAF-HC': 58, 'PAF-LC': 9}"
+prediksi,alasan luar domain,"{'Transisi': 228, 'Cu>maks': 210, 'S>maks': 139, 'oksidasi_ML2': 114, 'Ag>maks': 74, 'Cu<min': 63, 'As<min': 43, 'alterasi_PP': 26, 'Au>maks': 23, 'As>maks': 7}"
+model,transfer dipilih,rf leaf 20
+model,lengkap dipilih,rf leaf 20
+model,tanpa_S dipilih,rf leaf 20
+u1,baris,118
+u2,baris,1898
+u2,nama klaster,"{1: 'K1: PAF-LC (9/16)', 2: 'K2: PAF-LC (28/47)', 3: 'K3: PAF-LC (8/17)', 4: 'K4: NAF (6/11)', 5: 'K5: PAF-HC (14/15)'}"

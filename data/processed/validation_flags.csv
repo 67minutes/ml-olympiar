@@ -1,0 +1,1398 @@
+﻿dataset,record_id,site_id,depth_from,depth_to,check_id,issue,value,severity,action,agents_ref,note
+rock,5080934,,,,S1,elevation vs lidar: elev_error,30.9,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,5080935,,,,S1,elevation vs lidar: elev_error,31.0,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,5080936,,,,S1,elevation vs lidar: elev_error,44.4,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,5080937,,,,S1,elevation vs lidar: elev_error,57.0,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,5080938,,,,S1,elevation vs lidar: elev_error,55.8,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,RO-5007643-MP1,,,,S1,elevation vs lidar: elev_error,-40.1,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,RO-5007645-MP1,,,,S1,elevation vs lidar: elev_error,-40.9,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,RO-5007646-MP1,,,,S1,elevation vs lidar: elev_error,-52.3,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,RO-5007647-MP1,,,,S1,elevation vs lidar: elev_error,-56.0,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,RO-5007648-MP1,,,,S1,elevation vs lidar: elev_error,-46.1,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,RO-5010419-MP1,,,,S1,elevation vs lidar: elev_error,-55.7,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,RO-5010420-MP1,,,,S1,elevation vs lidar: elev_error,-54.7,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,RO-5010421-MP1,,,,S1,elevation vs lidar: elev_error,-54.4,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1007035,,,,S1,elevation vs lidar: dem_uncertain,11.1,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1007036,,,,S1,elevation vs lidar: dem_uncertain,10.9,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1007090,,,,S1,elevation vs lidar: dem_uncertain,12.0,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1007092,,,,S1,elevation vs lidar: dem_uncertain,10.1,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1007094,,,,S1,elevation vs lidar: dem_uncertain,12.8,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1007173,,,,S1,elevation vs lidar: dem_uncertain,-12.8,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1071410,,,,S1,elevation vs lidar: dem_uncertain,10.4,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1071419,,,,S1,elevation vs lidar: dem_uncertain,11.1,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1071420,,,,S1,elevation vs lidar: dem_uncertain,10.5,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1071425,,,,S1,elevation vs lidar: dem_uncertain,11.1,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1071426,,,,S1,elevation vs lidar: dem_uncertain,11.5,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1071427,,,,S1,elevation vs lidar: dem_uncertain,10.5,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1071443,,,,S1,elevation vs lidar: dem_uncertain,-13.0,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1071444,,,,S1,elevation vs lidar: dem_uncertain,-16.6,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1071500,,,,S1,elevation vs lidar: dem_uncertain,10.3,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1334803,,,,S1,elevation vs lidar: dem_uncertain,19.9,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1334816,,,,S1,elevation vs lidar: dem_uncertain,19.1,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,1334817,,,,S1,elevation vs lidar: dem_uncertain,10.1,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,482964,,,,S1,elevation vs lidar: dem_uncertain,10.5,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,482965,,,,S1,elevation vs lidar: dem_uncertain,12.9,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,482970,,,,S1,elevation vs lidar: dem_uncertain,10.1,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,482973,,,,S1,elevation vs lidar: dem_uncertain,14.6,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,482974,,,,S1,elevation vs lidar: dem_uncertain,14.3,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,5080931,,,,S1,elevation vs lidar: dem_uncertain,18.3,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,5080933,,,,S1,elevation vs lidar: dem_uncertain,21.5,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,5080940,,,,S1,elevation vs lidar: dem_uncertain,10.9,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,5080948,,,,S1,elevation vs lidar: dem_uncertain,17.5,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,5081188,,,,S1,elevation vs lidar: dem_uncertain,18.4,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,5081189,,,,S1,elevation vs lidar: dem_uncertain,19.0,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,5081190,,,,S1,elevation vs lidar: dem_uncertain,18.8,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,5081193,,,,S1,elevation vs lidar: dem_uncertain,20.2,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,5081194,,,,S1,elevation vs lidar: dem_uncertain,15.5,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,RO-5007644-MP1,,,,S1,elevation vs lidar: dem_uncertain,-16.7,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,RO-5010438-MRJ,,,,S1,elevation vs lidar: dem_uncertain,19.2,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,RO-5010440-MRJ,,,,S1,elevation vs lidar: dem_uncertain,11.6,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+rock,482946,,,,S1,elevation vs lidar: no_dem,,info,flagged,4.2.8,outside DEM; Z = Elev_orig
+rock,1071329,,,,S2,duplicate XY: resample,2.0,info,flagged,4.2.6,genuine re-sample (3 dates/jobs): field-duplicate precision
+rock,1071514,,,,S2,duplicate XY: resample,2.0,info,flagged,4.2.6,genuine re-sample (3 dates/jobs): field-duplicate precision
+rock,488817,,,,S2,duplicate XY: resample,2.0,info,flagged,4.2.6,genuine re-sample (3 dates/jobs): field-duplicate precision
+rock,488818,,,,S2,duplicate XY: resample,2.0,info,flagged,4.2.6,genuine re-sample (3 dates/jobs): field-duplicate precision
+rock,1007156,,,,S2,duplicate XY: same_day_same_point,3.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,1007157,,,,S2,duplicate XY: same_day_same_point,3.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,1007192,,,,S2,duplicate XY: same_day_same_point,6.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,1007194,,,,S2,duplicate XY: same_day_same_point,5.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,1007684,,,,S2,duplicate XY: same_day_same_point,6.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,1007694,,,,S2,duplicate XY: same_day_same_point,5.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,1335053,,,,S2,duplicate XY: same_day_same_point,8.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,1335054,,,,S2,duplicate XY: same_day_same_point,8.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,482351,,,,S2,duplicate XY: same_day_same_point,1.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,482352,,,,S2,duplicate XY: same_day_same_point,1.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,482354,,,,S2,duplicate XY: same_day_same_point,4.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,482355,,,,S2,duplicate XY: same_day_same_point,4.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,482356,,,,S2,duplicate XY: same_day_same_point,4.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,482357,,,,S2,duplicate XY: same_day_same_point,4.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,487875,,,,S2,duplicate XY: same_day_same_point,7.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,487876,,,,S2,duplicate XY: same_day_same_point,7.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,487877,,,,S2,duplicate XY: same_day_same_point,7.0,warning,flagged,4.2.6,same date and job: several samples at one GPS fix or copied coordinate
+rock,1007035,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1007036,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1007088,,,,S3,sample outside Ramba Joring prospect,Parbotikan,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1007089,,,,S3,sample outside Ramba Joring prospect,Parbotikan,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1007160,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1007161,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1007186,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1070128,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071439,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071440,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071441,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071442,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071443,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071444,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071494,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071495,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071496,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071497,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071498,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071499,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071500,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071521,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071522,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071523,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071524,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1071525,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1072954,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1072955,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073081,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073082,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073083,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073084,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073462,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073463,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073464,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073465,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073466,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073467,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073468,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073469,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073470,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073471,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073472,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073473,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073474,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073475,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073476,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073486,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073487,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073488,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1073489,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1526275,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1526276,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1526277,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1526282,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1526283,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1526284,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1526285,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1526286,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1526287,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,1526288,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,481880,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,482351,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,482352,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,482353,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,482946,,,,S3,sample outside Ramba Joring prospect,Parbotikan,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,482964,,,,S3,sample outside Ramba Joring prospect,Parbotikan,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,482965,,,,S3,sample outside Ramba Joring prospect,Parbotikan,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,487762,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,487763,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,487764,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,5080937,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,5080938,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,5080939,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,5080940,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,5080948,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,5081193,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,5081194,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,RO-5007643-MP1,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,RO-5007644-MP1,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,RO-5007645-MP1,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,RO-5007646-MP1,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,RO-5007647-MP1,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,RO-5007648-MP1,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,RO-5010419-MP1,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,RO-5010420-MP1,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,RO-5010421-MP1,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+rock,482946,,,,S4,value at a detection limit coarser than the harmonised DL,AuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,482947,,,,S4,value at a detection limit coarser than the harmonised DL,AuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,482971,,,,S4,value at a detection limit coarser than the harmonised DL,AuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080933,,,,S4,value at a detection limit coarser than the harmonised DL,AuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080935,,,,S4,value at a detection limit coarser than the harmonised DL,AuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080948,,,,S4,value at a detection limit coarser than the harmonised DL,AuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,482351,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,482352,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,482355,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,482356,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,482351,,,,S4,value at a detection limit coarser than the harmonised DL,HgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,482353,,,,S4,value at a detection limit coarser than the harmonised DL,HgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,482355,,,,S4,value at a detection limit coarser than the harmonised DL,HgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,482356,,,,S4,value at a detection limit coarser than the harmonised DL,HgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,482357,,,,S4,value at a detection limit coarser than the harmonised DL,HgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080933,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080936,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080938,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080939,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080940,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080948,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5081189,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5081193,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5081194,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,RO-5007645-MP1,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,RO-5007646-MP1,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,RO-5007647-MP1,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,RO-5007648-MP1,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,RO-5010419-MP1,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,RO-5010420-MP1,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,RO-5010421-MP1,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,1072849,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,1072862,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,1072863,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,1072951,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,1072952,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080933,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080934,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080935,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080936,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080938,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080939,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080940,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5080948,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5081188,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5081189,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5081190,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5081193,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,5081194,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,RO-5007643-MP1,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,RO-5007644-MP1,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,RO-5007645-MP1,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,RO-5007646-MP1,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,RO-5007647-MP1,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+rock,RO-5007648-MP1,,,,S4,value at a detection limit coarser than the harmonised DL,WPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,1009765,,,,S1,elevation vs lidar: elev_error,35710.1,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,489051,,,,S1,elevation vs lidar: elev_error,-199.1,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,489053,,,,S1,elevation vs lidar: elev_error,-202.5,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,489063,,,,S1,elevation vs lidar: elev_error,104.7,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,489528,,,,S1,elevation vs lidar: elev_error,-35.4,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,SA-2009751-MPB,,,,S1,elevation vs lidar: elev_error,-290.0,error,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,1007915,,,,S1,elevation vs lidar: dem_uncertain,-12.8,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,1007919,,,,S1,elevation vs lidar: dem_uncertain,-10.4,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,1009745,,,,S1,elevation vs lidar: dem_uncertain,11.8,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,1009774,,,,S1,elevation vs lidar: dem_uncertain,15.1,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,1072332,,,,S1,elevation vs lidar: dem_uncertain,16.3,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,2004952,,,,S1,elevation vs lidar: dem_uncertain,10.6,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,489056,,,,S1,elevation vs lidar: dem_uncertain,-14.9,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,489072,,,,S1,elevation vs lidar: dem_uncertain,-10.5,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,489172,,,,S1,elevation vs lidar: dem_uncertain,-11.0,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,489483,,,,S1,elevation vs lidar: dem_uncertain,-21.6,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,489484,,,,S1,elevation vs lidar: dem_uncertain,-11.2,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,489487,,,,S1,elevation vs lidar: dem_uncertain,-18.1,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,489538,,,,S1,elevation vs lidar: dem_uncertain,-11.0,warning,fixed,4.2.8,Z re-draped on lidar DEM; Elev_orig kept
+soil,1009729,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1009730,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1009731,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1009732,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1009733,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1009779,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1009780,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1009781,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1009782,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1070315,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072313,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072314,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072315,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072317,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072318,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072319,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072320,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072321,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072322,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072333,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072334,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072335,,,,S3,sample outside Ramba Joring prospect,Tor Uluala,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072338,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072351,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072352,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072353,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072354,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072355,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072356,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072357,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072358,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072359,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072366,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072367,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072368,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072369,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072370,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072371,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072372,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072383,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072384,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1072385,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1336511,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1336512,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,2004904,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,2004905,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,2004906,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489051,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489052,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489053,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489054,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489055,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489328,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489329,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489330,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489331,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489332,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489333,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489516,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489517,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489534,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489535,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489536,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489537,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489637,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489638,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489639,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489640,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489641,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,489642,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,SA-2009751-MPB,,,,S3,sample outside Ramba Joring prospect,Purnama,info,flagged,3,kept; RJ analyses filter on prospek_RJ
+soil,1339004,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,1339005,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,1339006,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,2004901,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,2004902,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,2004903,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,2004904,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,2004905,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,2004906,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,2004952,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,2004953,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,489405,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,489406,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,489407,,,,S4,value at a detection limit coarser than the harmonised DL,AgPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,489484,,,,S4,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,489485,,,,S4,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,489487,,,,S4,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,1339004,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,1339005,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+soil,1339006,,,,S4,value at a detection limit coarser than the harmonised DL,SbPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+collar,RJDH002,RJDH002,,,D1,collar RL below lidar (pad cut),-3.2,warning,flagged,4.1,RL not changed
+collar,RJDH006,RJDH006,,,D1,collar RL below lidar (pad cut),0.0,warning,flagged,4.1,RL not changed
+collar,RJDH001,RJDH001,,,D2,downhole survey stops before EOH,82.4 m gap; EOH uncertainty 0.18 m,warning,fixed,4.2.11,last station extrapolated to EOH; intervals below flagged survey_extrap
+collar,RJDH003,RJDH003,,,D2,downhole survey stops before EOH,2.0 m gap; EOH uncertainty 0.0 m,warning,fixed,4.2.11,last station extrapolated to EOH; intervals below flagged survey_extrap
+collar,RJDH011,RJDH011,,,D2,downhole survey stops before EOH,34.5 m gap; EOH uncertainty 0.53 m,warning,fixed,4.2.11,last station extrapolated to EOH; intervals below flagged survey_extrap
+collar,RJDH012,RJDH012,,,D2,downhole survey stops before EOH,51.2 m gap; EOH uncertainty 0.52 m,warning,fixed,4.2.11,last station extrapolated to EOH; intervals below flagged survey_extrap
+collar,RJDH014,RJDH014,,,D2,downhole survey stops before EOH,15.7 m gap; EOH uncertainty 0.02 m,warning,fixed,4.2.11,last station extrapolated to EOH; intervals below flagged survey_extrap
+collar,RJDH005,RJDH005,,,D2,downhole survey stops before EOH (< 1 m),0.2 m gap; EOH uncertainty 0.0 m,info,fixed,4.2.11,last station extrapolated to EOH; intervals below flagged survey_extrap
+collar,RJDH013,RJDH013,,,D2,downhole survey stops before EOH (< 1 m),0.3 m gap; EOH uncertainty 0.0 m,info,fixed,4.2.11,last station extrapolated to EOH; intervals below flagged survey_extrap
+collar,RJDH016,RJDH016,,,D2,downhole survey stops before EOH (< 1 m),0.9 m gap; EOH uncertainty 0.0 m,info,fixed,4.2.11,last station extrapolated to EOH; intervals below flagged survey_extrap
+survey,RJDH001,RJDH001,50.0,50.0,D3,azimuth swing at near-vertical dip,45.0,info,none,4.2.12,"azimuth is ill-defined near vertical: instrument behaviour, not corrected"
+survey,RJDH001,RJDH001,150.0,150.0,D3,azimuth swing at near-vertical dip,50.0,info,none,4.2.12,"azimuth is ill-defined near vertical: instrument behaviour, not corrected"
+survey,RJDH001,RJDH001,200.0,200.0,D3,azimuth swing at near-vertical dip,100.0,info,none,4.2.12,"azimuth is ill-defined near vertical: instrument behaviour, not corrected"
+survey,RJDH019,RJDH019,20.0,20.0,D3,azimuth swing at near-vertical dip,118.1,info,none,4.2.12,"azimuth is ill-defined near vertical: instrument behaviour, not corrected"
+survey,RJDH019,RJDH019,50.0,50.0,D3,azimuth swing at near-vertical dip,129.7,info,none,4.2.12,"azimuth is ill-defined near vertical: instrument behaviour, not corrected"
+survey,RJDH019,RJDH019,126.6,126.6,D3,azimuth swing at near-vertical dip,51.5,info,none,4.2.12,"azimuth is ill-defined near vertical: instrument behaviour, not corrected"
+assay,APSD014_103.90-104.40_NS,RJDH001,103.9,104.4,D4,interval not sampled (NS-SEL),,info,excluded_in_analysis,4.2.2,no assay values
+assay,APSD1692_59.00 - 60.10_NS,RJDH013,59.0,60.1,D4,interval not sampled (NS-SEL),,info,excluded_in_analysis,4.2.2,no assay values
+assay,APSD870_20.00-20.10_NS,RJDH004,20.0,20.1,D4,interval not sampled (NS-SEL),,info,excluded_in_analysis,4.2.2,no assay values
+assay,APSD870_56.15-56.25_NS,RJDH004,56.15,56.25,D4,interval not sampled (NS-SEL),,info,excluded_in_analysis,4.2.2,no assay values
+assay,APSD878_89.80-90.90_NS,RJDH005,89.8,90.9,D4,interval not sampled (NS-SEL),,info,excluded_in_analysis,4.2.2,no assay values
+assay,APSD881_22.10-38.90_NS,RJDH006,22.1,38.9,D4,interval not sampled (NS-SEL),,info,excluded_in_analysis,4.2.2,no assay values
+assay,APSD881_171.90-197.00_NS,RJDH006,171.9,197.0,D4,interval not sampled (NS-SEL),,info,excluded_in_analysis,4.2.2,no assay values
+assay,APSD897_119.00-119.30_NS,RJDH008,119.0,119.3,D4,interval not sampled (NS-SEL),,info,excluded_in_analysis,4.2.2,no assay values
+assay,APSD897_141.70-142.10_NS,RJDH008,141.7,142.1,D4,interval not sampled (NS-SEL),,info,excluded_in_analysis,4.2.2,no assay values
+assay,APSD897_154.90-155.20_NS,RJDH008,154.9,155.2,D4,interval not sampled (NS-SEL),,info,excluded_in_analysis,4.2.2,no assay values
+assay,1076296,RJDH001,200.0,201.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076297,RJDH001,201.0,202.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076298,RJDH001,202.0,203.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076299,RJDH001,203.0,204.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076801,RJDH001,204.0,205.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076802,RJDH001,205.0,206.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076803,RJDH001,206.0,207.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076804,RJDH001,207.0,208.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076805,RJDH001,208.0,209.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076806,RJDH001,209.0,210.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076807,RJDH001,210.0,211.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076808,RJDH001,211.0,212.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076809,RJDH001,212.0,213.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076810,RJDH001,213.0,214.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076811,RJDH001,214.0,215.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076812,RJDH001,215.0,216.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076813,RJDH001,216.0,217.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076814,RJDH001,217.0,218.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076815,RJDH001,218.0,219.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076816,RJDH001,219.0,220.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076817,RJDH001,220.0,221.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076818,RJDH001,221.0,222.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076819,RJDH001,222.0,223.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076820,RJDH001,223.0,224.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076821,RJDH001,224.0,225.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076822,RJDH001,225.0,226.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076823,RJDH001,226.0,227.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076824,RJDH001,227.0,228.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076826,RJDH001,228.0,229.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076827,RJDH001,229.0,230.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076828,RJDH001,230.0,231.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076829,RJDH001,231.0,232.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076830,RJDH001,232.0,233.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076831,RJDH001,233.0,234.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076832,RJDH001,234.0,235.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076833,RJDH001,235.0,236.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076834,RJDH001,236.0,237.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076835,RJDH001,237.0,238.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076836,RJDH001,238.0,239.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076837,RJDH001,239.0,240.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076838,RJDH001,240.0,241.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076839,RJDH001,241.0,242.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076840,RJDH001,242.0,243.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076841,RJDH001,243.0,244.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076842,RJDH001,244.0,245.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076843,RJDH001,245.0,246.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076844,RJDH001,246.0,247.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076845,RJDH001,247.0,248.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076846,RJDH001,248.0,249.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076847,RJDH001,249.0,250.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076848,RJDH001,250.0,251.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076849,RJDH001,251.0,252.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076851,RJDH001,252.0,253.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076852,RJDH001,253.0,254.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076853,RJDH001,254.0,255.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076854,RJDH001,255.0,256.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076855,RJDH001,256.0,257.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076856,RJDH001,257.0,258.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076857,RJDH001,258.0,259.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076858,RJDH001,259.0,260.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076859,RJDH001,260.0,261.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076860,RJDH001,261.0,262.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076861,RJDH001,262.0,263.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076862,RJDH001,263.0,264.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076863,RJDH001,264.0,265.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076864,RJDH001,265.0,266.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076865,RJDH001,266.0,267.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076866,RJDH001,267.0,268.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076867,RJDH001,268.0,269.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076868,RJDH001,269.0,270.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076869,RJDH001,270.0,271.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076870,RJDH001,271.0,272.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076871,RJDH001,272.0,273.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076872,RJDH001,273.0,274.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076873,RJDH001,274.0,275.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076874,RJDH001,275.0,276.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076876,RJDH001,276.0,277.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076877,RJDH001,277.0,278.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076878,RJDH001,278.0,279.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076879,RJDH001,279.0,280.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076880,RJDH001,280.0,281.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,1076881,RJDH001,281.0,282.4,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124710,RJDH012,99.7,100.7,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124711,RJDH012,100.7,101.7,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124712,RJDH012,101.7,103.1,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124713,RJDH012,103.1,104.1,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124714,RJDH012,104.1,105.1,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124715,RJDH012,105.1,106.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124716,RJDH012,106.5,107.7,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124717,RJDH012,107.7,109.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124718,RJDH012,109.2,111.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124719,RJDH012,111.2,112.7,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124720,RJDH012,112.7,115.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124721,RJDH012,115.2,117.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124722,RJDH012,117.2,119.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124723,RJDH012,119.2,121.7,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124724,RJDH012,121.7,123.7,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124726,RJDH012,123.7,125.7,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124727,RJDH012,125.7,127.7,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124728,RJDH012,127.7,129.8,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124729,RJDH012,129.8,132.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124730,RJDH012,132.2,134.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124731,RJDH012,134.2,136.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124732,RJDH012,136.2,138.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124733,RJDH012,138.2,141.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124734,RJDH012,141.2,142.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124735,RJDH012,142.2,143.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124736,RJDH012,143.2,144.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124737,RJDH012,144.2,145.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124738,RJDH012,145.2,146.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124739,RJDH012,146.2,147.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124740,RJDH012,147.2,148.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124741,RJDH012,148.2,149.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124742,RJDH012,149.2,150.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3124743,RJDH012,150.2,151.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3145102,RJDH013,99.5,100.3,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3146728,RJDH014,100.0,101.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3146729,RJDH014,101.0,102.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3146730,RJDH014,102.0,103.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3146731,RJDH014,103.0,104.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3146733,RJDH014,104.5,105.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3146734,RJDH014,105.5,106.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3146735,RJDH014,106.5,108.2,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3146736,RJDH014,108.2,109.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3146737,RJDH014,109.5,111.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3146738,RJDH014,111.0,112.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3146739,RJDH014,112.0,113.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3146740,RJDH014,113.0,114.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3146741,RJDH014,114.0,115.7,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3151208,RJDH016,120.0,120.9,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,DC-1673793-BAS,RJDH003,149.0,152.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3013256,RJDH005,150.5,152.4,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025538,RJDH011,99.5,101.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025539,RJDH011,101.0,102.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025540,RJDH011,102.5,104.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025541,RJDH011,104.0,105.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025542,RJDH011,105.5,107.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025544,RJDH011,107.0,108.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025545,RJDH011,108.5,110.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025546,RJDH011,110.0,111.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025547,RJDH011,111.5,113.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025548,RJDH011,113.0,114.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025549,RJDH011,114.5,116.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025550,RJDH011,116.0,117.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025551,RJDH011,117.5,119.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025552,RJDH011,119.0,120.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025553,RJDH011,120.5,122.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025554,RJDH011,122.0,123.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025555,RJDH011,123.5,125.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025556,RJDH011,125.0,126.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025557,RJDH011,126.5,128.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025558,RJDH011,128.0,129.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025559,RJDH011,129.5,131.0,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025560,RJDH011,131.0,132.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,D3025561,RJDH011,132.5,134.5,D5,interval below last measured survey station,,info,flagged,4.2.11,XYZ from extrapolated survey
+assay,DC-1673086-BAS,RJDH002,0.0,4.1,D6,AuCN > 1.1 x total Au,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673087-BAS,RJDH002,4.1,7.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673088-BAS,RJDH002,7.0,10.0,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673089-BAS,RJDH002,10.0,12.6,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673090-BAS,RJDH002,12.6,16.0,D6,AuCN > 1.1 x total Au,1.67,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673091-BAS,RJDH002,16.0,21.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673092-BAS,RJDH002,21.0,25.5,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673093-BAS,RJDH002,25.5,30.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673094-BAS,RJDH002,30.0,32.8,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673095-BAS,RJDH002,32.8,34.2,D6,AuCN > 1.1 x total Au,1.67,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673096-BAS,RJDH002,34.2,36.5,D6,AuCN > 1.1 x total Au,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673097-BAS,RJDH002,36.5,38.2,D6,AuCN > 1.1 x total Au,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673098-BAS,RJDH002,38.2,40.5,D6,AuCN > 1.1 x total Au,1.43,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673100-BAS,RJDH002,42.4,45.4,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673101-BAS,RJDH002,45.4,48.0,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673102-BAS,RJDH002,48.0,51.2,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673103-BAS,RJDH002,51.2,53.5,D6,AuCN > 1.1 x total Au,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673112-BAS,RJDH002,65.8,68.0,D6,AuCN > 1.1 x total Au,1.67,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673113-BAS,RJDH002,68.0,70.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673114-BAS,RJDH002,70.0,72.3,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673115-BAS,RJDH002,72.3,73.7,D6,AuCN > 1.1 x total Au,1.11,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673118-BAS,RJDH002,76.2,78.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673119-BAS,RJDH002,78.0,79.7,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673120-BAS,RJDH002,79.7,81.5,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673121-BAS,RJDH002,81.5,83.4,D6,AuCN > 1.1 x total Au,1.67,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673122-BAS,RJDH002,83.4,86.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673123-BAS,RJDH002,86.0,88.5,D6,AuCN > 1.1 x total Au,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673128-BAS,RJDH002,95.0,96.1,D6,AuCN > 1.1 x total Au,1.11,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673133-BAS,RJDH002,101.6,103.2,D6,AuCN > 1.1 x total Au,1.11,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673134-BAS,RJDH002,103.2,104.9,D6,AuCN > 1.1 x total Au,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673137-BAS,RJDH002,107.2,108.4,D6,AuCN > 1.1 x total Au,1.43,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673138-BAS,RJDH002,108.4,110.1,D6,AuCN > 1.1 x total Au,1.43,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673141-BAS,RJDH002,114.4,115.6,D6,AuCN > 1.1 x total Au,1.11,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673144-BAS,RJDH002,118.2,122.0,D6,AuCN > 1.1 x total Au,1.67,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673145-BAS,RJDH002,122.0,123.5,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673146-BAS,RJDH002,123.5,124.7,D6,AuCN > 1.1 x total Au,1.67,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673147-BAS,RJDH002,124.7,126.5,D6,AuCN > 1.1 x total Au,1.67,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673149-BAS,RJDH002,126.5,128.5,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673150-BAS,RJDH002,128.5,130.3,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673151-BAS,RJDH002,130.3,133.0,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673152-BAS,RJDH002,133.0,136.0,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673153-BAS,RJDH002,136.0,138.5,D6,AuCN > 1.1 x total Au,1.67,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673154-BAS,RJDH002,138.5,140.9,D6,AuCN > 1.1 x total Au,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673155-BAS,RJDH002,140.9,142.4,D6,AuCN > 1.1 x total Au,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673157-BAS,RJDH002,143.0,144.0,D6,AuCN > 1.1 x total Au,1.43,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673160-BAS,RJDH002,147.0,149.0,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673161-BAS,RJDH002,149.0,151.0,D6,AuCN > 1.1 x total Au,1.67,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673162-BAS,RJDH002,151.0,152.6,D6,AuCN > 1.1 x total Au,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673163-BAS,RJDH002,152.6,154.0,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673164-BAS,RJDH002,154.0,156.4,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673165-BAS,RJDH002,156.4,158.8,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673166-BAS,RJDH002,158.8,161.2,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673167-BAS,RJDH002,161.2,164.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673168-BAS,RJDH002,164.0,167.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673170-BAS,RJDH002,167.0,170.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673171-BAS,RJDH002,170.0,172.3,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673172-BAS,RJDH002,172.3,176.0,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673173-BAS,RJDH002,176.0,180.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673174-BAS,RJDH002,180.0,184.0,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673175-BAS,RJDH002,184.0,188.0,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673176-BAS,RJDH002,188.0,192.1,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673177-BAS,RJDH002,192.1,196.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673178-BAS,RJDH002,196.0,200.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673718-BAS,RJDH003,0.0,4.0,D6,AuCN > 1.1 x total Au,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673719-BAS,RJDH003,4.0,7.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673720-BAS,RJDH003,7.0,10.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673721-BAS,RJDH003,10.0,12.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673722-BAS,RJDH003,12.0,14.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673723-BAS,RJDH003,14.0,16.0,D6,AuCN > 1.1 x total Au,1.67,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673724-BAS,RJDH003,16.0,18.1,D6,AuCN > 1.1 x total Au,1.67,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673725-BAS,RJDH003,18.1,20.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673726-BAS,RJDH003,20.0,22.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673727-BAS,RJDH003,22.0,24.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673728-BAS,RJDH003,24.0,26.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673729-BAS,RJDH003,26.0,28.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673730-BAS,RJDH003,28.0,30.5,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673731-BAS,RJDH003,30.5,33.1,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673732-BAS,RJDH003,33.1,35.0,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673733-BAS,RJDH003,35.0,36.5,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673734-BAS,RJDH003,36.5,40.8,D6,AuCN > 1.1 x total Au,10.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673735-BAS,RJDH003,40.8,43.0,D6,AuCN > 1.1 x total Au,1.11,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673748-BAS,RJDH003,54.0,55.0,D6,AuCN > 1.1 x total Au,1.11,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673752-BAS,RJDH003,58.0,60.0,D6,AuCN > 1.1 x total Au,1.11,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673767-BAS,RJDH003,81.8,86.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673768-BAS,RJDH003,86.0,89.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673769-BAS,RJDH003,89.0,92.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673779-BAS,RJDH003,103.0,105.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673782-BAS,RJDH003,106.9,111.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673783-BAS,RJDH003,111.0,115.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673784-BAS,RJDH003,115.0,119.3,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673785-BAS,RJDH003,119.3,121.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673786-BAS,RJDH003,121.0,125.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673787-BAS,RJDH003,125.0,129.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673788-BAS,RJDH003,129.0,133.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673789-BAS,RJDH003,133.0,137.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673790-BAS,RJDH003,137.0,141.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673791-BAS,RJDH003,141.0,145.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673792-BAS,RJDH003,145.0,149.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673793-BAS,RJDH003,149.0,152.0,D6,AuCN > 1.1 x total Au,5.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024805,RJDH010,11.2,12.2,D6,AuCN > 1.1 x total Au,1.33,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024813,RJDH010,18.3,19.8,D6,AuCN > 1.1 x total Au,1.67,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024814,RJDH010,19.8,21.3,D6,AuCN > 1.1 x total Au,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024830,RJDH010,41.0,42.5,D6,AuCN > 1.1 x total Au,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024835,RJDH010,48.3,49.3,D6,AuCN > 1.1 x total Au,2.11,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024842,RJDH010,54.0,55.0,D6,AuCN > 1.1 x total Au,1.71,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024847,RJDH010,59.0,60.0,D6,AuCN > 1.1 x total Au,1.15,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024865,RJDH010,74.4,74.9,D6,AuCN > 1.1 x total Au,1.12,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024906,RJDH010,108.2,108.9,D6,AuCN > 1.1 x total Au,1.11,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024918,RJDH010,117.7,118.6,D6,AuCN > 1.1 x total Au,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024930,RJDH010,128.0,129.0,D6,AuCN > 1.1 x total Au,1.14,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024933,RJDH010,130.6,131.6,D6,AuCN > 1.1 x total Au,1.14,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024968,RJDH010,160.3,161.3,D6,AuCN > 1.1 x total Au,1.14,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024992,RJDH010,182.1,183.1,D6,AuCN > 1.1 x total Au,1.13,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025039,RJDH010,226.3,228.3,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025040,RJDH010,228.3,230.3,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025041,RJDH010,230.3,232.3,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025042,RJDH010,232.3,234.3,D6,AuCN > 1.1 x total Au,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025043,RJDH010,234.3,236.0,D6,AuCN > 1.1 x total Au,2.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025456,RJDH011,17.5,18.5,D6,AuCN > 1.1 x total Au,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025461,RJDH011,22.5,23.5,D6,AuCN > 1.1 x total Au,1.67,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025465,RJDH011,25.5,26.5,D6,AuCN > 1.1 x total Au,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025474,RJDH011,34.5,35.5,D6,AuCN > 1.1 x total Au,1.11,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025507,RJDH011,66.0,67.0,D6,AuCN > 1.1 x total Au,1.16,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025534,RJDH011,93.5,95.0,D6,AuCN > 1.1 x total Au,1.18,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025561,RJDH011,132.5,134.5,D6,AuCN > 1.1 x total Au,1.18,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3145014,RJDH013,5.0,7.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3145025,RJDH013,23.5,24.5,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3145026,RJDH013,24.5,26.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3145027,RJDH013,26.0,27.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3145033,RJDH013,32.0,33.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3145036,RJDH013,35.0,36.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146624,RJDH014,0.0,1.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146625,RJDH014,1.0,2.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146626,RJDH014,2.0,3.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146627,RJDH014,3.0,4.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146628,RJDH014,4.0,5.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146629,RJDH014,5.0,6.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146630,RJDH014,6.0,7.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146631,RJDH014,7.0,8.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146633,RJDH014,8.0,8.6,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146690,RJDH014,60.2,61.7,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146691,RJDH014,61.7,63.2,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146692,RJDH014,63.2,64.7,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146695,RJDH014,66.3,67.8,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146696,RJDH014,67.8,69.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146697,RJDH014,69.0,70.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146698,RJDH014,70.0,71.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146699,RJDH014,71.0,72.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146700,RJDH014,72.0,73.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146701,RJDH014,73.0,74.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146702,RJDH014,74.0,75.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146703,RJDH014,75.0,76.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146704,RJDH014,76.0,77.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146705,RJDH014,77.0,78.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146706,RJDH014,78.0,79.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146707,RJDH014,79.0,80.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146708,RJDH014,80.0,81.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146709,RJDH014,81.0,82.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146711,RJDH014,82.0,83.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146712,RJDH014,83.0,84.1,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146713,RJDH014,84.1,85.5,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146727,RJDH014,99.0,100.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146728,RJDH014,100.0,101.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3146741,RJDH014,114.0,115.7,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149162,RJDH015,0.0,1.8,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149163,RJDH015,1.8,3.3,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149164,RJDH015,3.3,4.8,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149165,RJDH015,4.8,5.8,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149166,RJDH015,5.8,6.8,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149167,RJDH015,6.8,7.8,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149168,RJDH015,7.8,8.8,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149169,RJDH015,8.8,9.5,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149170,RJDH015,9.5,10.2,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149171,RJDH015,10.2,10.8,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149172,RJDH015,10.8,11.8,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149173,RJDH015,11.8,12.8,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149174,RJDH015,12.8,13.8,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149175,RJDH015,13.8,14.5,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149176,RJDH015,14.5,15.3,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149177,RJDH015,15.3,16.3,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149178,RJDH015,16.3,17.1,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149180,RJDH015,18.1,19.1,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149183,RJDH015,20.0,21.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149184,RJDH015,21.0,22.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149185,RJDH015,22.0,23.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149187,RJDH015,24.0,25.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149191,RJDH015,27.3,28.1,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149195,RJDH015,31.8,32.8,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149196,RJDH015,32.8,33.5,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149197,RJDH015,33.5,34.5,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149198,RJDH015,34.5,35.5,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149203,RJDH015,38.5,39.5,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149206,RJDH015,41.5,42.5,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149207,RJDH015,42.5,43.5,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149214,RJDH015,49.0,50.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149215,RJDH015,50.0,51.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149216,RJDH015,51.0,52.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149217,RJDH015,52.0,53.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149218,RJDH015,53.0,54.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149219,RJDH015,54.0,55.1,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149221,RJDH015,56.2,57.3,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149222,RJDH015,57.3,58.4,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149224,RJDH015,58.4,59.4,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149226,RJDH015,59.9,60.9,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149227,RJDH015,60.9,62.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149228,RJDH015,62.0,63.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149229,RJDH015,63.0,64.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149230,RJDH015,64.0,65.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149231,RJDH015,65.0,66.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149232,RJDH015,66.0,67.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149233,RJDH015,67.0,67.8,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149236,RJDH015,70.8,71.6,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149237,RJDH015,71.6,72.9,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149238,RJDH015,72.9,73.8,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149239,RJDH015,73.8,74.4,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149240,RJDH015,74.4,75.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149241,RJDH015,75.0,76.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149242,RJDH015,76.0,77.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149243,RJDH015,77.0,78.3,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149245,RJDH015,78.3,79.6,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149247,RJDH015,81.6,83.6,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149248,RJDH015,83.6,85.5,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149249,RJDH015,85.5,86.9,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149250,RJDH015,86.9,88.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149251,RJDH015,88.0,89.1,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149252,RJDH015,89.1,90.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149258,RJDH015,93.7,94.6,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149260,RJDH015,95.5,96.1,D6,AgCN > 1.1 x total Ag,1.11,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3149299,RJDH015,128.9,129.9,D6,AgCN > 1.1 x total Ag,1.18,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3151105,RJDH016,0.0,2.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3151106,RJDH016,2.0,4.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3151107,RJDH016,4.0,6.1,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3151108,RJDH016,6.1,7.7,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3151128,RJDH016,43.0,45.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3151130,RJDH016,46.7,47.7,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3151131,RJDH016,47.7,48.5,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3151143,RJDH016,59.0,60.4,D6,AgCN > 1.1 x total Ag,1.43,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3151191,RJDH016,103.0,104.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3152839,RJDH017,1.9,3.4,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3152840,RJDH017,3.4,6.4,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3152841,RJDH017,6.4,7.9,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3152851,RJDH017,24.0,25.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3155222,RJDH018,0.0,2.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3155224,RJDH018,4.2,5.5,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673122-BAS,RJDH002,83.4,86.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,DC-1673130-BAS,RJDH002,97.2,98.5,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024804,RJDH010,9.9,11.2,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024816,RJDH010,22.8,24.0,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024817,RJDH010,24.0,25.1,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024820,RJDH010,26.0,27.5,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024835,RJDH010,48.3,49.3,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024848,RJDH010,60.0,61.0,D6,AgCN > 1.1 x total Ag,1.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024851,RJDH010,63.0,64.0,D6,AgCN > 1.1 x total Ag,4.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024853,RJDH010,64.5,65.5,D6,AgCN > 1.1 x total Ag,4.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024870,RJDH010,79.3,80.4,D6,AgCN > 1.1 x total Ag,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024873,RJDH010,81.6,82.2,D6,AgCN > 1.1 x total Ag,1.22,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024886,RJDH010,91.2,92.2,D6,AgCN > 1.1 x total Ag,3.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024900,RJDH010,103.2,104.2,D6,AgCN > 1.1 x total Ag,4.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024905,RJDH010,107.2,108.2,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024906,RJDH010,108.2,108.9,D6,AgCN > 1.1 x total Ag,1.2,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024912,RJDH010,113.0,113.7,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024913,RJDH010,113.7,114.4,D6,AgCN > 1.1 x total Ag,4.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024927,RJDH010,125.0,126.0,D6,AgCN > 1.1 x total Ag,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024928,RJDH010,126.0,127.0,D6,AgCN > 1.1 x total Ag,1.14,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024932,RJDH010,130.0,130.6,D6,AgCN > 1.1 x total Ag,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024934,RJDH010,131.6,132.6,D6,AgCN > 1.1 x total Ag,1.15,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024935,RJDH010,132.6,133.1,D6,AgCN > 1.1 x total Ag,1.12,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024940,RJDH010,137.0,138.0,D6,AgCN > 1.1 x total Ag,1.88,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024945,RJDH010,140.9,141.35,D6,AgCN > 1.1 x total Ag,1.17,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024948,RJDH010,143.0,143.8,D6,AgCN > 1.1 x total Ag,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024949,RJDH010,143.8,145.0,D6,AgCN > 1.1 x total Ag,1.2,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024952,RJDH010,147.0,148.0,D6,AgCN > 1.1 x total Ag,4.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024962,RJDH010,156.0,157.0,D6,AgCN > 1.1 x total Ag,2.33,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024964,RJDH010,157.7,158.35,D6,AgCN > 1.1 x total Ag,1.5,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024968,RJDH010,160.3,161.3,D6,AgCN > 1.1 x total Ag,3.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024972,RJDH010,163.7,164.7,D6,AgCN > 1.1 x total Ag,1.75,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024995,RJDH010,184.5,185.5,D6,AgCN > 1.1 x total Ag,1.2,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024996,RJDH010,185.5,186.5,D6,AgCN > 1.1 x total Ag,1.28,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3024998,RJDH010,187.2,188.1,D6,AgCN > 1.1 x total Ag,1.2,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025010,RJDH010,197.6,198.6,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025018,RJDH010,205.5,206.5,D6,AgCN > 1.1 x total Ag,2.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025034,RJDH010,220.0,220.9,D6,AgCN > 1.1 x total Ag,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025459,RJDH011,20.5,21.5,D6,AgCN > 1.1 x total Ag,1.17,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025460,RJDH011,21.5,22.5,D6,AgCN > 1.1 x total Ag,4.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025486,RJDH011,45.5,46.5,D6,AgCN > 1.1 x total Ag,1.29,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025488,RJDH011,47.5,48.5,D6,AgCN > 1.1 x total Ag,1.23,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025497,RJDH011,57.0,58.0,D6,AgCN > 1.1 x total Ag,1.2,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025502,RJDH011,62.0,63.0,D6,AgCN > 1.1 x total Ag,1.16,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025503,RJDH011,63.0,64.0,D6,AgCN > 1.1 x total Ag,1.14,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025508,RJDH011,67.0,68.0,D6,AgCN > 1.1 x total Ag,1.31,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025509,RJDH011,68.0,69.0,D6,AgCN > 1.1 x total Ag,1.31,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025513,RJDH011,72.0,73.0,D6,AgCN > 1.1 x total Ag,1.38,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025516,RJDH011,75.0,76.0,D6,AgCN > 1.1 x total Ag,2.27,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025518,RJDH011,77.0,78.0,D6,AgCN > 1.1 x total Ag,1.21,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025526,RJDH011,85.0,86.0,D6,AgCN > 1.1 x total Ag,1.12,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025530,RJDH011,88.0,89.0,D6,AgCN > 1.1 x total Ag,1.25,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025531,RJDH011,89.0,90.5,D6,AgCN > 1.1 x total Ag,1.12,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3025554,RJDH011,122.0,123.5,D6,AgCN > 1.1 x total Ag,4.0,info,flagged,4.2.4,"aliquot heterogeneity (nugget): precision indicator, not deleted"
+assay,D3124721,RJDH012,115.2,117.2,D7,value at a detection limit coarser than the harmonised DL,AuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3124722,RJDH012,117.2,119.2,D7,value at a detection limit coarser than the harmonised DL,AuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3124727,RJDH012,125.7,127.7,D7,value at a detection limit coarser than the harmonised DL,AuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,1075884,RJDH001,9.0,10.0,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,1075885,RJDH001,10.0,11.0,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,1075890,RJDH001,15.0,16.0,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3152864,RJDH017,36.4,37.1,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3152875,RJDH017,46.8,47.8,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3152917,RJDH017,89.1,90.0,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3188878,RJDH019,4.7,6.5,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3188889,RJDH019,18.7,19.9,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3188890,RJDH019,19.9,21.0,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3188892,RJDH019,22.0,23.0,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3188893,RJDH019,23.0,24.0,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3188898,RJDH019,27.0,28.0,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3188899,RJDH019,28.0,29.0,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3188900,RJDH019,29.0,30.0,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3188902,RJDH019,31.0,32.0,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3188903,RJDH019,32.0,33.0,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3188906,RJDH019,35.1,36.6,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3188907,RJDH019,36.6,38.0,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3188910,RJDH019,40.0,41.5,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3188917,RJDH019,48.5,50.0,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3188924,RJDH019,56.0,57.0,D7,value at a detection limit coarser than the harmonised DL,CuPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3152871,RJDH017,42.9,44.0,D7,value at a detection limit coarser than the harmonised DL,AsPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3152872,RJDH017,44.0,45.0,D7,value at a detection limit coarser than the harmonised DL,AsPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3152894,RJDH017,67.0,68.0,D7,value at a detection limit coarser than the harmonised DL,AsPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3152897,RJDH017,70.0,71.0,D7,value at a detection limit coarser than the harmonised DL,AsPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3152898,RJDH017,71.0,72.0,D7,value at a detection limit coarser than the harmonised DL,AsPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3152899,RJDH017,72.0,73.0,D7,value at a detection limit coarser than the harmonised DL,AsPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3152917,RJDH017,89.1,90.0,D7,value at a detection limit coarser than the harmonised DL,AsPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3151113,RJDH016,16.0,18.0,D7,value at a detection limit coarser than the harmonised DL,HgCNPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3151114,RJDH016,18.0,20.0,D7,value at a detection limit coarser than the harmonised DL,HgCNPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3151115,RJDH016,20.0,22.0,D7,value at a detection limit coarser than the harmonised DL,HgCNPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3151116,RJDH016,22.0,24.0,D7,value at a detection limit coarser than the harmonised DL,HgCNPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3151118,RJDH016,26.0,28.0,D7,value at a detection limit coarser than the harmonised DL,HgCNPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3151119,RJDH016,28.0,30.0,D7,value at a detection limit coarser than the harmonised DL,HgCNPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3151127,RJDH016,41.5,43.0,D7,value at a detection limit coarser than the harmonised DL,HgCNPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3151128,RJDH016,43.0,45.0,D7,value at a detection limit coarser than the harmonised DL,HgCNPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,D3151150,RJDH016,66.0,67.0,D7,value at a detection limit coarser than the harmonised DL,HgCNPPM,info,flagged,4.2.7,_ml set to harmonised DL/2; censored
+assay,RJDH001,RJDH001,,,D8,sulfur method,no sulfur analysed,warning,flagged,4.2.10,SCIS and S2 never in the same row; never mixed silently
+assay,RJDH004,RJDH004,,,D8,sulfur method,S2 24,warning,flagged,4.2.10,SCIS and S2 never in the same row; never mixed silently
+assay,RJDH006,RJDH006,,,D8,sulfur method,S2 6,warning,flagged,4.2.10,SCIS and S2 never in the same row; never mixed silently
+assay,RJDH007,RJDH007,,,D8,sulfur method,S2 23,warning,flagged,4.2.10,SCIS and S2 never in the same row; never mixed silently
+assay,RJDH009,RJDH009,,,D8,sulfur method,S2 34,warning,flagged,4.2.10,SCIS and S2 never in the same row; never mixed silently
+assay,RJDH019,RJDH019,,,D8,sulfur method,S2 114,warning,flagged,4.2.10,SCIS and S2 never in the same row; never mixed silently
+oxide,RJDH001,RJDH001,165.0,166.0,D9,oxidation label conflicts with logged % oxidised,Oxide at 0% oxidised,warning,flagged,Stage 4,label kept as logged
+oxide,RJDH013,RJDH013,19.0,20.0,D9,oxidation label conflicts with logged % oxidised,Sulphide at 100% oxidised,warning,flagged,Stage 4,label kept as logged
+oxide,RJDH013,RJDH013,20.0,21.0,D9,oxidation label conflicts with logged % oxidised,Sulphide at 90% oxidised,warning,flagged,Stage 4,label kept as logged
+oxide,RJDH014,RJDH014,65.0,66.0,D9,oxidation label conflicts with logged % oxidised,Sulphide at 100% oxidised,warning,flagged,Stage 4,label kept as logged
+oxide,RJDH018,RJDH018,130.0,131.0,D9,oxidation label conflicts with logged % oxidised,Sulphide at 90% oxidised,warning,flagged,Stage 4,label kept as logged
+oxide,RJDH002,RJDH002,151.0,152.0,D9,oxidation label conflicts with logged % oxidised,Sulphide at 100% oxidised,warning,flagged,Stage 4,label kept as logged
+oxide,RJDH002,RJDH002,152.0,153.0,D9,oxidation label conflicts with logged % oxidised,Sulphide at 100% oxidised,warning,flagged,Stage 4,label kept as logged
+oxide,RJDH003,RJDH003,120.0,121.0,D9,oxidation label conflicts with logged % oxidised,Sulphide at 100% oxidised,warning,flagged,Stage 4,label kept as logged
+oxide,RJDH008,RJDH008,210.0,211.0,D9,oxidation label conflicts with logged % oxidised,Sulphide at 100% oxidised,warning,flagged,Stage 4,label kept as logged
+oxide,RJDH010,RJDH010,182.0,183.0,D9,oxidation label conflicts with logged % oxidised,Sulphide at 90% oxidised,warning,flagged,Stage 4,label kept as logged
+oxide,RJDH010,RJDH010,183.0,184.0,D9,oxidation label conflicts with logged % oxidised,Sulphide at 100% oxidised,warning,flagged,Stage 4,label kept as logged
+oxide,RJDH019,RJDH019,,,D10,no oxidation label logged in this hole,"Oxide 81, Sulphide 29, Transition 17",warning,fixed,Stage 4,ox_state_derived from % oxidised (LOHO-tested); not used as ML labels
+mineralisation,RJDH001,RJDH001,0.0,282.4,D11,no mineral logged (um),,info,flagged,Stage 5,"mineral flags NA, not False"
+mineralisation,RJDH012,RJDH012,0.0,5.0,D11,no mineral logged (um),,info,flagged,Stage 5,"mineral flags NA, not False"
+mineralisation,RJDH013,RJDH013,0.0,2.0,D11,no mineral logged (um),,info,flagged,Stage 5,"mineral flags NA, not False"
+mineralisation,RJDH013,RJDH013,59.0,60.0,D11,no mineral logged (um),,info,flagged,Stage 5,"mineral flags NA, not False"
+mineralisation,RJDH014,RJDH014,0.0,5.0,D11,no mineral logged (um),,info,flagged,Stage 5,"mineral flags NA, not False"
+mineralisation,RJDH015,RJDH015,0.0,3.0,D11,no mineral logged (um),,info,flagged,Stage 5,"mineral flags NA, not False"
+mineralisation,RJDH018,RJDH018,0.0,4.0,D11,no mineral logged (um),,info,flagged,Stage 5,"mineral flags NA, not False"
+mineralisation,RJDH006,RJDH006,0.0,1.0,D11,no mineral logged (um),,info,flagged,Stage 5,"mineral flags NA, not False"
+mineralisation,RJDH006,RJDH006,1.0,2.0,D11,no mineral logged (um),,info,flagged,Stage 5,"mineral flags NA, not False"
+mineralisation,RJDH008,RJDH008,0.0,1.0,D11,no mineral logged (um),,info,flagged,Stage 5,"mineral flags NA, not False"
+mineralisation,RJDH008,RJDH008,1.0,2.0,D11,no mineral logged (um),,info,flagged,Stage 5,"mineral flags NA, not False"
+mineralisation,RJDH008,RJDH008,2.0,3.0,D11,no mineral logged (um),,info,flagged,Stage 5,"mineral flags NA, not False"
+mineralisation,RJDH008,RJDH008,3.0,4.0,D11,no mineral logged (um),,info,flagged,Stage 5,"mineral flags NA, not False"
+mineralisation,RJDH009,RJDH009,0.0,1.0,D11,no mineral logged (um),,info,flagged,Stage 5,"mineral flags NA, not False"
+mineralisation,RJDH010,RJDH010,0.0,2.0,D11,no mineral logged (um),,info,flagged,Stage 5,"mineral flags NA, not False"
+assay,DC-1673171-BAS,RJDH002,170.0,172.3,D11,mineralisation log does not cover this interval,,info,flagged,Stage 5,mineral flags NA
+assay,DC-1673172-BAS,RJDH002,172.3,176.0,D11,mineralisation log does not cover this interval,,info,flagged,Stage 5,mineral flags NA
+assay,DC-1673173-BAS,RJDH002,176.0,180.0,D11,mineralisation log does not cover this interval,,info,flagged,Stage 5,mineral flags NA
+assay,DC-1673174-BAS,RJDH002,180.0,184.0,D11,mineralisation log does not cover this interval,,info,flagged,Stage 5,mineral flags NA
+assay,DC-1673175-BAS,RJDH002,184.0,188.0,D11,mineralisation log does not cover this interval,,info,flagged,Stage 5,mineral flags NA
+assay,DC-1673176-BAS,RJDH002,188.0,192.1,D11,mineralisation log does not cover this interval,,info,flagged,Stage 5,mineral flags NA
+assay,DC-1673177-BAS,RJDH002,192.1,196.0,D11,mineralisation log does not cover this interval,,info,flagged,Stage 5,mineral flags NA
+assay,DC-1673178-BAS,RJDH002,196.0,200.0,D11,mineralisation log does not cover this interval,,info,flagged,Stage 5,mineral flags NA
+assay,DC-1673718-BAS,RJDH003,0.0,4.0,D11,mineralisation log does not cover this interval,,info,flagged,Stage 5,mineral flags NA
+assay,DC-1673719-BAS,RJDH003,4.0,7.0,D11,mineralisation log does not cover this interval,,info,flagged,Stage 5,mineral flags NA
+assay,DC-1673720-BAS,RJDH003,7.0,10.0,D11,mineralisation log does not cover this interval,,info,flagged,Stage 5,mineral flags NA
+assay,D3012525,RJDH004,0.0,1.6,D11,mineralisation log does not cover this interval,,info,flagged,Stage 5,mineral flags NA
+assay,D3013155,RJDH005,0.0,2.9,D11,mineralisation log does not cover this interval,,info,flagged,Stage 5,mineral flags NA
+assay,D3014179,RJDH007,0.0,3.0,D11,mineralisation log does not cover this interval,,info,flagged,Stage 5,mineral flags NA
+assay,1075879,RJDH001,4.0,5.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,1075880,RJDH001,5.0,6.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,1075883,RJDH001,8.0,9.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,1075889,RJDH001,14.0,15.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,1076127,RJDH001,35.0,36.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,1076211,RJDH001,117.0,118.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,1076254,RJDH001,158.0,159.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,1076255,RJDH001,159.0,160.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,1076292,RJDH001,195.0,197.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,1076821,RJDH001,224.0,225.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,1076853,RJDH001,254.0,255.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124624,RJDH012,4.7,6.2,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124726,RJDH012,123.7,125.7,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145012,RJDH013,0.0,2.5,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145051,RJDH013,49.4,50.4,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146628,RJDH014,4.0,5.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146693,RJDH014,64.7,66.3,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146709,RJDH014,81.0,82.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146711,RJDH014,82.0,83.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149163,RJDH015,1.8,3.3,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149176,RJDH015,14.5,15.3,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149193,RJDH015,29.1,30.3,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149234,RJDH015,67.8,69.3,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3151113,RJDH016,16.0,18.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3152870,RJDH017,42.0,42.9,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3152884,RJDH017,55.0,56.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3152892,RJDH017,64.9,66.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3152909,RJDH017,81.0,82.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3152956,RJDH017,125.0,126.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3152965,RJDH017,133.0,134.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3188881,RJDH019,9.5,11.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673096-BAS,RJDH002,34.2,36.5,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673162-BAS,RJDH002,151.0,152.6,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673178-BAS,RJDH002,196.0,200.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673769-BAS,RJDH003,89.0,92.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673771-BAS,RJDH003,93.5,95.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3012555,RJDH004,55.0,56.15,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013219,RJDH005,65.3,67.2,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013220,RJDH005,67.2,69.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023407,RJDH009,48.5,49.4,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023516,RJDH009,150.8,152.4,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3025553,RJDH011,120.5,122.0,D12,assay spans more than one logged Lith_group,,info,flagged,Stage 5,label taken at the midpoint
+assay,1075878,RJDH001,3.0,4.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,1075883,RJDH001,8.0,9.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,1075886,RJDH001,11.0,12.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,1075889,RJDH001,14.0,15.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,1075894,RJDH001,19.0,20.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,1075896,RJDH001,21.0,22.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,1076118,RJDH001,27.0,28.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,1076127,RJDH001,35.0,36.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,1076129,RJDH001,37.0,38.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,1076134,RJDH001,42.0,43.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,1076169,RJDH001,76.0,77.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,1076194,RJDH001,101.0,102.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,1076292,RJDH001,195.0,197.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,1076801,RJDH001,204.0,205.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,1076853,RJDH001,254.0,255.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124624,RJDH012,4.7,6.2,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124649,RJDH012,41.0,42.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124650,RJDH012,42.0,43.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124652,RJDH012,44.0,45.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124654,RJDH012,45.9,47.7,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124673,RJDH012,65.0,66.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124697,RJDH012,87.7,88.7,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124699,RJDH012,89.7,90.7,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124701,RJDH012,91.7,92.7,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124702,RJDH012,92.7,93.7,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124703,RJDH012,93.7,94.7,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124733,RJDH012,138.2,141.2,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145012,RJDH013,0.0,2.5,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145043,RJDH013,41.4,42.8,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146628,RJDH014,4.0,5.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146631,RJDH014,7.0,8.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146681,RJDH014,52.5,53.3,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146693,RJDH014,64.7,66.3,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146716,RJDH014,87.2,89.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146720,RJDH014,92.0,93.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149163,RJDH015,1.8,3.3,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149185,RJDH015,22.0,23.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149234,RJDH015,67.8,69.3,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149246,RJDH015,79.6,81.6,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3151188,RJDH016,100.8,101.5,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3151191,RJDH016,103.0,104.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3152844,RJDH017,10.9,13.9,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3152904,RJDH017,76.0,77.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3152905,RJDH017,77.0,78.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3152928,RJDH017,99.0,100.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3152934,RJDH017,105.0,106.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3152954,RJDH017,124.0,125.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3152958,RJDH017,127.0,128.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3155279,RJDH018,68.7,70.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673087-BAS,RJDH002,4.1,7.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673100-BAS,RJDH002,42.4,45.4,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673115-BAS,RJDH002,72.3,73.7,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673121-BAS,RJDH002,81.5,83.4,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673144-BAS,RJDH002,118.2,122.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673147-BAS,RJDH002,124.7,126.5,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673153-BAS,RJDH002,136.0,138.5,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673154-BAS,RJDH002,138.5,140.9,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673178-BAS,RJDH002,196.0,200.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673765-BAS,RJDH003,78.8,80.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673790-BAS,RJDH003,137.0,141.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3012554,RJDH004,53.7,55.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3012555,RJDH004,55.0,56.15,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3012556,RJDH004,56.25,57.5,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013713,RJDH006,157.5,158.9,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014185,RJDH007,17.9,19.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014194,RJDH007,27.0,28.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014207,RJDH007,39.0,40.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014217,RJDH007,47.9,48.7,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014218,RJDH007,48.7,49.4,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014233,RJDH007,62.0,63.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014243,RJDH007,70.5,71.5,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014245,RJDH007,72.5,73.5,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014246,RJDH007,73.5,74.7,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014249,RJDH007,76.5,77.5,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014254,RJDH007,81.3,82.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014255,RJDH007,82.0,83.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014266,RJDH007,93.0,94.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014271,RJDH007,97.5,98.5,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014275,RJDH007,101.3,102.4,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014276,RJDH007,102.4,103.5,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014277,RJDH007,103.5,104.4,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3016740,RJDH008,87.4,88.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3016788,RJDH008,138.6,139.6,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023472,RJDH009,109.0,110.0,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023506,RJDH009,140.9,141.7,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023512,RJDH009,147.0,147.8,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023518,RJDH009,154.4,156.4,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023521,RJDH009,158.4,160.4,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023538,RJDH009,189.2,191.2,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3025449,RJDH011,10.5,11.5,D12,assay spans more than one logged AltFacies,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124625,RJDH012,6.2,8.2,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124726,RJDH012,123.7,125.7,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124733,RJDH012,138.2,141.2,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145012,RJDH013,0.0,2.5,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145031,RJDH013,29.8,31.0,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145038,RJDH013,37.5,38.4,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145051,RJDH013,49.4,50.4,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145086,RJDH013,84.5,85.4,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146636,RJDH014,10.5,11.5,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146639,RJDH014,13.5,14.5,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146660,RJDH014,32.5,33.5,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146674,RJDH014,45.5,46.5,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146693,RJDH014,64.7,66.3,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146714,RJDH014,85.5,87.2,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146737,RJDH014,109.5,111.0,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149234,RJDH015,67.8,69.3,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149236,RJDH015,70.8,71.6,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149245,RJDH015,78.3,79.6,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149251,RJDH015,88.0,89.1,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149278,RJDH015,111.5,112.4,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149285,RJDH015,118.3,119.4,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3151108,RJDH016,6.1,7.7,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3151130,RJDH016,46.7,47.7,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3152844,RJDH017,10.9,13.9,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3155223,RJDH018,2.0,4.2,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3155225,RJDH018,5.5,7.2,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3155234,RJDH018,23.0,25.2,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3155263,RJDH018,51.8,53.0,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3155271,RJDH018,59.4,61.0,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3155282,RJDH018,72.4,73.5,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673086-BAS,RJDH002,0.0,4.1,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673095-BAS,RJDH002,32.8,34.2,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673099-BAS,RJDH002,40.5,42.4,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673103-BAS,RJDH002,51.2,53.5,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673112-BAS,RJDH002,65.8,68.0,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673115-BAS,RJDH002,72.3,73.7,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673118-BAS,RJDH002,76.2,78.0,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673124-BAS,RJDH002,88.5,91.5,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673143-BAS,RJDH002,117.5,118.2,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673154-BAS,RJDH002,138.5,140.9,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673158-BAS,RJDH002,144.0,146.0,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673758-BAS,RJDH003,69.2,70.5,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673781-BAS,RJDH003,105.0,106.9,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3012541,RJDH004,22.5,25.5,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013230,RJDH005,86.7,89.8,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,APSD878_89.80-90.90_NS,RJDH005,89.8,90.9,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013236,RJDH005,106.1,110.0,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013245,RJDH005,126.0,129.6,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013618,RJDH006,2.7,5.8,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013619,RJDH006,5.8,9.2,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013694,RJDH006,139.3,140.6,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013708,RJDH006,152.5,153.5,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014180,RJDH007,3.0,7.0,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014185,RJDH007,17.9,19.0,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014219,RJDH007,49.4,50.2,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014242,RJDH007,69.5,70.5,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014282,RJDH007,108.5,109.7,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3016815,RJDH008,169.0,170.6,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3016821,RJDH008,175.9,177.0,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023443,RJDH009,81.75,82.9,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023448,RJDH009,86.9,88.6,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023516,RJDH009,150.8,152.4,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023532,RJDH009,180.4,181.4,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023538,RJDH009,189.2,191.2,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024873,RJDH010,81.6,82.2,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024877,RJDH010,84.9,85.6,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024934,RJDH010,131.6,132.6,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024971,RJDH010,162.75,163.7,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024976,RJDH010,167.7,168.7,D12,assay spans more than one logged ox_state,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124624,RJDH012,4.7,6.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124625,RJDH012,6.2,8.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124656,RJDH012,48.6,50.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124726,RJDH012,123.7,125.7,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124733,RJDH012,138.2,141.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145012,RJDH013,0.0,2.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145020,RJDH013,17.3,19.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145022,RJDH013,20.5,21.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145029,RJDH013,28.2,29.8,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145038,RJDH013,37.5,38.4,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145039,RJDH013,38.4,39.4,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145058,RJDH013,55.4,56.4,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,APSD1692_59.00 - 60.10_NS,RJDH013,59.0,60.1,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3145079,RJDH013,77.5,78.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146636,RJDH014,10.5,11.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146677,RJDH014,48.5,49.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146678,RJDH014,49.5,50.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146680,RJDH014,51.5,52.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146689,RJDH014,59.2,60.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146693,RJDH014,64.7,66.3,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146714,RJDH014,85.5,87.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3146737,RJDH014,109.5,111.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149163,RJDH015,1.8,3.3,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149234,RJDH015,67.8,69.3,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149236,RJDH015,70.8,71.6,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149246,RJDH015,79.6,81.6,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149251,RJDH015,88.0,89.1,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149278,RJDH015,111.5,112.4,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149281,RJDH015,114.4,115.3,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149284,RJDH015,117.3,118.3,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149286,RJDH015,119.4,120.4,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3149304,RJDH015,133.4,134.4,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3151108,RJDH016,6.1,7.7,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3151109,RJDH016,7.7,10.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3151130,RJDH016,46.7,47.7,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3151174,RJDH016,85.9,87.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3151183,RJDH016,95.0,96.3,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3152844,RJDH017,10.9,13.9,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3155223,RJDH018,2.0,4.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3155225,RJDH018,5.5,7.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3155234,RJDH018,23.0,25.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3155271,RJDH018,59.4,61.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3155275,RJDH018,64.5,66.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3155279,RJDH018,68.7,70.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3155282,RJDH018,72.4,73.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3188877,RJDH019,2.5,4.7,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3188921,RJDH019,54.0,55.1,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3188966,RJDH019,96.5,98.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673086-BAS,RJDH002,0.0,4.1,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673095-BAS,RJDH002,32.8,34.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673099-BAS,RJDH002,40.5,42.4,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673103-BAS,RJDH002,51.2,53.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673112-BAS,RJDH002,65.8,68.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673114-BAS,RJDH002,70.0,72.3,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673118-BAS,RJDH002,76.2,78.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673124-BAS,RJDH002,88.5,91.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673144-BAS,RJDH002,118.2,122.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673154-BAS,RJDH002,138.5,140.9,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673158-BAS,RJDH002,144.0,146.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673163-BAS,RJDH002,152.6,154.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673731-BAS,RJDH003,30.5,33.1,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673734-BAS,RJDH003,36.5,40.8,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673768-BAS,RJDH003,86.0,89.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673782-BAS,RJDH003,106.9,111.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,DC-1673784-BAS,RJDH003,115.0,119.3,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3012542,RJDH004,25.5,28.7,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3012543,RJDH004,28.7,32.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3012554,RJDH004,53.7,55.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3012556,RJDH004,56.25,57.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3012557,RJDH004,57.5,59.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3012563,RJDH004,69.0,70.8,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3012580,RJDH004,86.2,87.3,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3012581,RJDH004,87.3,88.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3012603,RJDH004,113.0,114.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013229,RJDH005,83.4,86.7,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013230,RJDH005,86.7,89.8,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013236,RJDH005,106.1,110.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013245,RJDH005,126.0,129.6,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013617,RJDH006,0.0,2.7,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013618,RJDH006,2.7,5.8,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013625,RJDH006,38.9,41.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013641,RJDH006,58.0,60.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013660,RJDH006,89.0,91.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013678,RJDH006,115.0,117.8,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013682,RJDH006,120.0,121.6,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013685,RJDH006,123.6,125.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013694,RJDH006,139.3,140.6,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013695,RJDH006,140.6,141.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013714,RJDH006,158.9,161.6,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013715,RJDH006,161.6,162.8,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013716,RJDH006,162.8,163.7,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3013717,RJDH006,163.7,166.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014180,RJDH007,3.0,7.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014185,RJDH007,17.9,19.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014219,RJDH007,49.4,50.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014239,RJDH007,67.5,68.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014240,RJDH007,68.5,69.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014243,RJDH007,70.5,71.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014244,RJDH007,71.5,72.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014258,RJDH007,85.0,86.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014259,RJDH007,86.2,87.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014260,RJDH007,87.5,89.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014272,RJDH007,98.5,99.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014273,RJDH007,99.5,100.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014277,RJDH007,103.5,104.4,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014278,RJDH007,104.4,105.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014279,RJDH007,105.5,106.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3014282,RJDH007,108.5,109.7,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3016668,RJDH008,2.5,4.4,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3016815,RJDH008,169.0,170.6,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3016821,RJDH008,175.9,177.0,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3016830,RJDH008,187.8,188.3,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3016831,RJDH008,188.3,189.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3016833,RJDH008,190.8,191.45,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3016840,RJDH008,197.5,198.4,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3016842,RJDH008,199.5,200.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3016843,RJDH008,200.5,201.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3016851,RJDH008,209.8,211.3,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023443,RJDH009,81.75,82.9,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023448,RJDH009,86.9,88.6,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023450,RJDH009,89.3,90.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023463,RJDH009,100.6,101.6,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023464,RJDH009,101.6,102.6,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023505,RJDH009,139.9,140.9,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023506,RJDH009,140.9,141.7,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023516,RJDH009,150.8,152.4,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023532,RJDH009,180.4,181.4,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3023538,RJDH009,189.2,191.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024799,RJDH010,1.9,3.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024873,RJDH010,81.6,82.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024877,RJDH010,84.9,85.6,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024935,RJDH010,132.6,133.1,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024946,RJDH010,141.35,142.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024966,RJDH010,158.35,159.3,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024968,RJDH010,160.3,161.3,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024971,RJDH010,162.75,163.7,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024976,RJDH010,167.7,168.7,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024991,RJDH010,181.7,182.1,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024995,RJDH010,184.5,185.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024996,RJDH010,185.5,186.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024997,RJDH010,186.5,187.2,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3024998,RJDH010,187.2,188.1,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3025000,RJDH010,188.9,189.9,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3025444,RJDH011,0.0,2.5,D12,assay spans more than one logged DomMin1_h,,info,flagged,Stage 5,label taken at the midpoint
+assay,D3124630,RJDH012,15.7,17.9,D13,sampled interval longer than 2 m,2.2,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3124631,RJDH012,17.9,20.0,D13,sampled interval longer than 2 m,2.1,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3124720,RJDH012,112.7,115.2,D13,sampled interval longer than 2 m,2.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3124723,RJDH012,119.2,121.7,D13,sampled interval longer than 2 m,2.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3124728,RJDH012,127.7,129.8,D13,sampled interval longer than 2 m,2.1,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3124729,RJDH012,129.8,132.2,D13,sampled interval longer than 2 m,2.4,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3124733,RJDH012,138.2,141.2,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3145012,RJDH013,0.0,2.5,D13,sampled interval longer than 2 m,2.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3145013,RJDH013,2.5,5.0,D13,sampled interval longer than 2 m,2.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3145018,RJDH013,13.0,16.1,D13,sampled interval longer than 2 m,3.1,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3151107,RJDH016,4.0,6.1,D13,sampled interval longer than 2 m,2.1,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3151109,RJDH016,7.7,10.0,D13,sampled interval longer than 2 m,2.3,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3152840,RJDH017,3.4,6.4,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3152844,RJDH017,10.9,13.9,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3152845,RJDH017,13.9,16.0,D13,sampled interval longer than 2 m,2.1,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3152890,RJDH017,61.0,63.4,D13,sampled interval longer than 2 m,2.4,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3155223,RJDH018,2.0,4.2,D13,sampled interval longer than 2 m,2.2,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3155230,RJDH018,15.0,17.3,D13,sampled interval longer than 2 m,2.3,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3155234,RJDH018,23.0,25.2,D13,sampled interval longer than 2 m,2.2,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3188877,RJDH019,2.5,4.7,D13,sampled interval longer than 2 m,2.2,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673086-BAS,RJDH002,0.0,4.1,D13,sampled interval longer than 2 m,4.1,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673087-BAS,RJDH002,4.1,7.0,D13,sampled interval longer than 2 m,2.9,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673088-BAS,RJDH002,7.0,10.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673089-BAS,RJDH002,10.0,12.6,D13,sampled interval longer than 2 m,2.6,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673090-BAS,RJDH002,12.6,16.0,D13,sampled interval longer than 2 m,3.4,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673091-BAS,RJDH002,16.0,21.0,D13,sampled interval longer than 2 m,5.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673092-BAS,RJDH002,21.0,25.5,D13,sampled interval longer than 2 m,4.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673093-BAS,RJDH002,25.5,30.0,D13,sampled interval longer than 2 m,4.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673094-BAS,RJDH002,30.0,32.8,D13,sampled interval longer than 2 m,2.8,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673096-BAS,RJDH002,34.2,36.5,D13,sampled interval longer than 2 m,2.3,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673098-BAS,RJDH002,38.2,40.5,D13,sampled interval longer than 2 m,2.3,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673100-BAS,RJDH002,42.4,45.4,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673101-BAS,RJDH002,45.4,48.0,D13,sampled interval longer than 2 m,2.6,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673102-BAS,RJDH002,48.0,51.2,D13,sampled interval longer than 2 m,3.2,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673103-BAS,RJDH002,51.2,53.5,D13,sampled interval longer than 2 m,2.3,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673108-BAS,RJDH002,58.0,61.5,D13,sampled interval longer than 2 m,3.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673112-BAS,RJDH002,65.8,68.0,D13,sampled interval longer than 2 m,2.2,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673114-BAS,RJDH002,70.0,72.3,D13,sampled interval longer than 2 m,2.3,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673122-BAS,RJDH002,83.4,86.0,D13,sampled interval longer than 2 m,2.6,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673123-BAS,RJDH002,86.0,88.5,D13,sampled interval longer than 2 m,2.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673124-BAS,RJDH002,88.5,91.5,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673139-BAS,RJDH002,110.1,113.4,D13,sampled interval longer than 2 m,3.3,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673144-BAS,RJDH002,118.2,122.0,D13,sampled interval longer than 2 m,3.8,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673151-BAS,RJDH002,130.3,133.0,D13,sampled interval longer than 2 m,2.7,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673152-BAS,RJDH002,133.0,136.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673153-BAS,RJDH002,136.0,138.5,D13,sampled interval longer than 2 m,2.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673154-BAS,RJDH002,138.5,140.9,D13,sampled interval longer than 2 m,2.4,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673164-BAS,RJDH002,154.0,156.4,D13,sampled interval longer than 2 m,2.4,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673165-BAS,RJDH002,156.4,158.8,D13,sampled interval longer than 2 m,2.4,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673166-BAS,RJDH002,158.8,161.2,D13,sampled interval longer than 2 m,2.4,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673167-BAS,RJDH002,161.2,164.0,D13,sampled interval longer than 2 m,2.8,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673168-BAS,RJDH002,164.0,167.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673170-BAS,RJDH002,167.0,170.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673171-BAS,RJDH002,170.0,172.3,D13,sampled interval longer than 2 m,2.3,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673172-BAS,RJDH002,172.3,176.0,D13,sampled interval longer than 2 m,3.7,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673173-BAS,RJDH002,176.0,180.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673174-BAS,RJDH002,180.0,184.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673175-BAS,RJDH002,184.0,188.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673176-BAS,RJDH002,188.0,192.1,D13,sampled interval longer than 2 m,4.1,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673177-BAS,RJDH002,192.1,196.0,D13,sampled interval longer than 2 m,3.9,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673178-BAS,RJDH002,196.0,200.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673718-BAS,RJDH003,0.0,4.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673719-BAS,RJDH003,4.0,7.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673720-BAS,RJDH003,7.0,10.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673724-BAS,RJDH003,16.0,18.1,D13,sampled interval longer than 2 m,2.1,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673730-BAS,RJDH003,28.0,30.5,D13,sampled interval longer than 2 m,2.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673731-BAS,RJDH003,30.5,33.1,D13,sampled interval longer than 2 m,2.6,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673734-BAS,RJDH003,36.5,40.8,D13,sampled interval longer than 2 m,4.3,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673735-BAS,RJDH003,40.8,43.0,D13,sampled interval longer than 2 m,2.2,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673755-BAS,RJDH003,64.0,66.5,D13,sampled interval longer than 2 m,2.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673763-BAS,RJDH003,74.7,77.0,D13,sampled interval longer than 2 m,2.3,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673767-BAS,RJDH003,81.8,86.0,D13,sampled interval longer than 2 m,4.2,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673768-BAS,RJDH003,86.0,89.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673769-BAS,RJDH003,89.0,92.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673782-BAS,RJDH003,106.9,111.0,D13,sampled interval longer than 2 m,4.1,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673783-BAS,RJDH003,111.0,115.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673784-BAS,RJDH003,115.0,119.3,D13,sampled interval longer than 2 m,4.3,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673786-BAS,RJDH003,121.0,125.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673787-BAS,RJDH003,125.0,129.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673788-BAS,RJDH003,129.0,133.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673789-BAS,RJDH003,133.0,137.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673790-BAS,RJDH003,137.0,141.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673791-BAS,RJDH003,141.0,145.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673792-BAS,RJDH003,145.0,149.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,DC-1673793-BAS,RJDH003,149.0,152.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3012541,RJDH004,22.5,25.5,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3012542,RJDH004,25.5,28.7,D13,sampled interval longer than 2 m,3.2,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3012543,RJDH004,28.7,32.0,D13,sampled interval longer than 2 m,3.3,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3012544,RJDH004,32.0,35.5,D13,sampled interval longer than 2 m,3.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3012546,RJDH004,35.5,39.0,D13,sampled interval longer than 2 m,3.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3012547,RJDH004,39.0,42.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3012548,RJDH004,42.0,45.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3012549,RJDH004,45.0,48.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3012561,RJDH004,65.0,67.7,D13,sampled interval longer than 2 m,2.7,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3012602,RJDH004,110.7,113.0,D13,sampled interval longer than 2 m,2.3,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3012604,RJDH004,114.5,117.0,D13,sampled interval longer than 2 m,2.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3012606,RJDH004,119.0,121.2,D13,sampled interval longer than 2 m,2.2,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3012607,RJDH004,121.2,124.2,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013155,RJDH005,0.0,2.9,D13,sampled interval longer than 2 m,2.9,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013228,RJDH005,80.0,83.4,D13,sampled interval longer than 2 m,3.4,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013229,RJDH005,83.4,86.7,D13,sampled interval longer than 2 m,3.3,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013230,RJDH005,86.7,89.8,D13,sampled interval longer than 2 m,3.1,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013231,RJDH005,90.9,94.5,D13,sampled interval longer than 2 m,3.6,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013232,RJDH005,94.5,98.0,D13,sampled interval longer than 2 m,3.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013234,RJDH005,100.0,103.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013235,RJDH005,103.0,106.1,D13,sampled interval longer than 2 m,3.1,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013236,RJDH005,106.1,110.0,D13,sampled interval longer than 2 m,3.9,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013243,RJDH005,120.0,123.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013244,RJDH005,123.0,126.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013245,RJDH005,126.0,129.6,D13,sampled interval longer than 2 m,3.6,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013246,RJDH005,129.6,133.0,D13,sampled interval longer than 2 m,3.4,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013247,RJDH005,133.0,136.9,D13,sampled interval longer than 2 m,3.9,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013254,RJDH005,146.85,149.0,D13,sampled interval longer than 2 m,2.15,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013617,RJDH006,0.0,2.7,D13,sampled interval longer than 2 m,2.7,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013618,RJDH006,2.7,5.8,D13,sampled interval longer than 2 m,3.1,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013619,RJDH006,5.8,9.2,D13,sampled interval longer than 2 m,3.4,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013620,RJDH006,9.2,12.0,D13,sampled interval longer than 2 m,2.8,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013623,RJDH006,16.0,19.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013624,RJDH006,19.0,22.1,D13,sampled interval longer than 2 m,3.1,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013625,RJDH006,38.9,41.0,D13,sampled interval longer than 2 m,2.1,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013660,RJDH006,89.0,91.2,D13,sampled interval longer than 2 m,2.2,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013678,RJDH006,115.0,117.8,D13,sampled interval longer than 2 m,2.8,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013714,RJDH006,158.9,161.6,D13,sampled interval longer than 2 m,2.7,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3013717,RJDH006,163.7,166.0,D13,sampled interval longer than 2 m,2.3,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3014179,RJDH007,0.0,3.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3014180,RJDH007,3.0,7.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3014181,RJDH007,7.0,11.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3014182,RJDH007,11.0,15.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3014287,RJDH007,114.0,118.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3014288,RJDH007,118.0,122.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3014289,RJDH007,122.0,126.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3014290,RJDH007,126.0,130.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3014291,RJDH007,130.0,134.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3014292,RJDH007,134.0,138.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3014293,RJDH007,138.0,142.0,D13,sampled interval longer than 2 m,4.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3014294,RJDH007,142.0,146.2,D13,sampled interval longer than 2 m,4.2,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3016667,RJDH008,0.0,2.5,D13,sampled interval longer than 2 m,2.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3016685,RJDH008,28.7,31.2,D13,sampled interval longer than 2 m,2.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3016753,RJDH008,102.9,105.2,D13,sampled interval longer than 2 m,2.3,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3016754,RJDH008,105.2,107.4,D13,sampled interval longer than 2 m,2.2,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3016797,RJDH008,147.0,150.0,D13,sampled interval longer than 2 m,3.0,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3016798,RJDH008,150.0,152.5,D13,sampled interval longer than 2 m,2.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3016799,RJDH008,152.5,154.9,D13,sampled interval longer than 2 m,2.4,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3016850,RJDH008,207.0,209.8,D13,sampled interval longer than 2 m,2.8,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,D3025444,RJDH011,0.0,2.5,D13,sampled interval longer than 2 m,2.5,info,flagged,4.2.13,split across 1 m composites (comp_shared_src)
+assay,RJDH001,RJDH001,,,D14,lab year of the hole (era and location confounded),year 1998; median Au 0.43 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH002,RJDH002,,,D14,lab year of the hole (era and location confounded),year 2004; median Au 0.03 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH003,RJDH003,,,D14,lab year of the hole (era and location confounded),year 2004; median Au 0.09 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH004,RJDH004,,,D14,lab year of the hole (era and location confounded),year 2010; median Au 0.36 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH005,RJDH005,,,D14,lab year of the hole (era and location confounded),year 2010; median Au 1.77 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH006,RJDH006,,,D14,lab year of the hole (era and location confounded),year 2010; median Au 0.75 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH007,RJDH007,,,D14,lab year of the hole (era and location confounded),year 2010; median Au 0.71 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH008,RJDH008,,,D14,lab year of the hole (era and location confounded),year 2010; median Au 0.34 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH009,RJDH009,,,D14,lab year of the hole (era and location confounded),year 2010; median Au 0.135 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH010,RJDH010,,,D14,lab year of the hole (era and location confounded),year 2010; median Au 0.78 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH011,RJDH011,,,D14,lab year of the hole (era and location confounded),year 2010; median Au 0.49 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH012,RJDH012,,,D14,lab year of the hole (era and location confounded),year 2015; median Au 0.76 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH013,RJDH013,,,D14,lab year of the hole (era and location confounded),year 2016; median Au 0.525 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH014,RJDH014,,,D14,lab year of the hole (era and location confounded),year 2016; median Au 1.42 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH015,RJDH015,,,D14,lab year of the hole (era and location confounded),year 2016; median Au 0.085 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH016,RJDH016,,,D14,lab year of the hole (era and location confounded),year 2016; median Au 0.45 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH017,RJDH017,,,D14,lab year of the hole (era and location confounded),year 2016; median Au 0.45 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH018,RJDH018,,,D14,lab year of the hole (era and location confounded),year 2016; median Au 1.045 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location
+assay,RJDH019,RJDH019,,,D14,lab year of the hole (era and location confounded),year 2017; median Au 0.57 ppm,info,none,4.2.14,each hole assayed in one year: lab bias cannot be separated from location

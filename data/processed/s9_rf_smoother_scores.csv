@@ -1,0 +1,9 @@
+target,metode,bal_acc,kappa,logloss,ARI,V,n,switch_per_100m,target_sw
+alterasi,RF mentah,0.6917,0.4818,2.5704,0.2849,0.5283,2993.0,23.3608,alterasi
+alterasi,RF dihaluskan,0.6646,0.4731,2.3623,0.2755,0.5394,2993.0,6.8863,alterasi
+alterasi,HMM (ML-4),,,,0.104,0.4465,2993.0,6.2603,
+alterasi,Log alterasi,,,,,,,10.2659,
+oksidasi,RF mentah,0.608,0.4627,1.207,0.3252,0.4294,2930.0,22.2735,oksidasi
+oksidasi,RF dihaluskan,0.6301,0.5378,1.0597,0.4324,0.4919,2930.0,7.2158,oksidasi
+oksidasi,HMM (ML-4),,,,0.1128,0.462,2930.0,6.2603,
+oksidasi,Log oksidasi,,,,,,,2.8876,

@@ -1,0 +1,166 @@
+﻿check_id,dataset,description,rule,n_records,n_flagged,result,action,output_columns,detail,agents_ref
+S1,rock/soil,Surface elevation vs lidar DEM,"|Elev - DEM| > 10 m warning, > 30 m error",728,68,flagged,"fixed (re-drape), original kept","Z, Elev_orig, Elev_dz, flag_elev",elevation vs lidar: dem_uncertain 48; elevation vs lidar: elev_error 19; elevation vs lidar: no_dem 1,4.2.8
+S2,rock/soil,Samples sharing XY,same Easting/Northing (mm),728,21,flagged,flagged,"dupxy_group, dupxy_type",duplicate XY: same_day_same_point 17; duplicate XY: resample 4,4.2.6
+S3,rock/soil,Samples outside Ramba Joring,Prospect != Ramba Joring,728,158,info,flagged,prospek_RJ,sample outside Ramba Joring prospect 158,3
+S4,rock/soil,Values at a coarse detection limit,floor > harmonised DL,728,75,info,"flagged, censored",<el>_cens,value at a detection limit coarser than the harmonised DL 75,4.2.7
+S5,rock/soil,CN-soluble > 1.1 x total,AuCN or AgCN > 1.1 x total,728,0,pass,flagged,flag_AuCN_gt_total,,
+D1,collar,Collar RL vs lidar,RL below DEM by > 5 m (pad cut),19,2,flagged,flagged,flag_collar_pad,collar RL below lidar (pad cut) 2,4.1
+D2,collar,Survey stops before EOH,last station < EndDepth,19,8,flagged,"fixed (extrapolated), flagged","survey_gap_m, survey_extrap",downhole survey stops before EOH 5; downhole survey stops before EOH (< 1 m) 3,4.2.11
+D3,survey,Azimuth swings in near-vertical holes,azimuth change > 20 deg at dip <= -85,99,6,info,"explained, not corrected",,azimuth swing at near-vertical dip 6,4.2.12
+D4,assay,Intervals not sampled,SampleType NS-SEL,2476,10,info,excluded in analysis,NS_SEL,interval not sampled (NS-SEL) 10,4.2.2
+D5,assay,Intervals below last survey station,DepthTo > last measured station,2476,155,info,flagged,survey_extrap,interval below last measured survey station 155,4.2.11
+D6,assay,CN-soluble > 1.1 x total,AuCN or AgCN > 1.1 x total,2476,298,info,flagged (precision),"flag_AuCN_gt_total, flag_AgCN_gt_total",AgCN > 1.1 x total Ag 173; AuCN > 1.1 x total Au 125,4.2.4
+D7,assay,Values at a coarse detection limit,floor > harmonised DL,2476,40,info,"flagged, censored",<el>_cens,value at a detection limit coarser than the harmonised DL 40,4.2.7
+D8,assay,Sulfur method per hole,S2 used or no sulfur,19,6,flagged,flagged; methods kept apart,S_metode,sulfur method 6,4.2.10
+D9,oxide,Oxidation label vs % oxidised,Sulphide >= 90% or Oxide = 0%,3017,11,flagged,flagged,flag_ox_conflict,oxidation label conflicts with logged % oxidised 11,Stage 4
+D10,oxide,Hole without oxidation label,no logged label,19,1,flagged,derived column added,Status_Oksidasi_turunan,no oxidation label logged in this hole 1,Stage 4
+D11,mineralisation,Mineralisation not logged,um interval or no interval,5160,29,info,flagged,min_logged,no mineral logged (um) 15; mineralisation log does not cover this interval 14,Stage 5
+D12,assay,Assay spans several logged units,> 1 distinct label,2476,345,info,flagged,*_mixed,assay spans more than one logged DomMin1_h 144; assay spans more than one logged AltFacies 90; assay spans more than one logged ox_state 69; assay spans more than one logged Lith_group 42,Stage 5
+D13,assay,Long sampled intervals,> 2 m,2476,145,info,flagged,,sampled interval longer than 2 m 145,4.2.13
+D14,assay,Lab year by hole,one lab year per hole,19,19,info,explained,Tahun_lab,lab year of the hole (era and location confounded) 19,4.2.14
+C1,assay,Interval integrity (raw table),"no overlaps, gaps, zero/negative lengths or depths past EndDepth",2476,0,pass,none,,"overlaps 0, gaps 0, nonpositive_length 0, past_eoh 0",4.1
+C1,lithology,Interval integrity (raw table),"no overlaps, gaps, zero/negative lengths or depths past EndDepth",286,0,pass,none,,"overlaps 0, gaps 0, nonpositive_length 0, past_eoh 0",4.1
+C1,alteration,Interval integrity (raw table),"no overlaps, gaps, zero/negative lengths or depths past EndDepth",707,0,pass,none,,"overlaps 0, gaps 0, nonpositive_length 0, past_eoh 0",4.1
+C1,mineralisation,Interval integrity (raw table),"no overlaps, gaps, zero/negative lengths or depths past EndDepth",2684,0,pass,none,,"overlaps 0, gaps 0, nonpositive_length 0, past_eoh 0",4.1
+C1,oxide,Interval integrity (raw table),"no overlaps, gaps, zero/negative lengths or depths past EndDepth",3017,0,pass,none,,"overlaps 0, gaps 0, nonpositive_length 0, past_eoh 0",4.1
+C2,assay,Duplicate SampleID,unique,2476,0,pass,none,,,4.1
+C2,rock,Duplicate SampleID,unique,469,0,pass,none,,,4.1
+C2,soil,Duplicate SampleID,unique,259,0,pass,none,,,4.1
+C3,collar,Collar dip/azimuth = first survey station,equal,19,0,pass,none,,,4.1
+Q1,assay/rock/soil,QAQC samples in the database,"standards, blanks, duplicates, repeats",2476,0,flagged,"internal checks used instead (S2, D6, qaqc_precision.csv)",,"no standard, blank or duplicate samples (SampleType ['CORE-100', 'CORE-50', 'NS-SEL']); repeat/split columns ['Au_Rpt1_PPM', 'Au_Split1_PPM'] all empty: True. Lab accuracy and precision cannot be measured directly",4.2.3
+Q2,rock,Zero = not analysed,assay value exactly 0,31423,20275,flagged,fixed: 0 -> blank (not analysed),,,4.2.1
+Q2,soil,Zero = not analysed,assay value exactly 0,17353,12826,flagged,fixed: 0 -> blank (not analysed),,,4.2.1
+Q3,assay,Censoring: AuPPM,"harmonised DL, values below set to DL/2",2466,121,info,harmonised; <el>_cens flag,,harmonised DL 0.01; 4.9% censored; ML-usable True,4.2.7
+Q3,assay,Censoring: AgPPM,"harmonised DL, values below set to DL/2",2466,782,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 31.7% censored; ML-usable True,4.2.7
+Q3,assay,Censoring: CuPPM,"harmonised DL, values below set to DL/2",2466,22,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.9% censored; ML-usable True,4.2.7
+Q3,assay,Censoring: AlPCT,"harmonised DL, values below set to DL/2",118,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: AsPPM,"harmonised DL, values below set to DL/2",2466,7,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.3% censored; ML-usable True,4.2.7
+Q3,assay,Censoring: BaPPM,"harmonised DL, values below set to DL/2",397,11,info,harmonised; <el>_cens flag,,harmonised DL 10.0; 2.8% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: BiPPM,"harmonised DL, values below set to DL/2",118,32,info,harmonised; <el>_cens flag,,harmonised DL 5.0; 27.1% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: CaPCT,"harmonised DL, values below set to DL/2",575,549,info,harmonised; <el>_cens flag,,harmonised DL 0.05; 95.5% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: CdPPM,"harmonised DL, values below set to DL/2",118,107,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 90.7% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: CoPPM,"harmonised DL, values below set to DL/2",118,4,info,harmonised; <el>_cens flag,,harmonised DL 1.0; 3.4% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: CrPPM,"harmonised DL, values below set to DL/2",118,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: FePCT,"harmonised DL, values below set to DL/2",397,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: GaPPM,"harmonised DL, values below set to DL/2",118,114,info,harmonised; <el>_cens flag,,harmonised DL 10.0; 96.6% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: HgPPM,"harmonised DL, values below set to DL/2",505,26,info,harmonised; <el>_cens flag,,harmonised DL 0.01; 5.1% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: KPCT,"harmonised DL, values below set to DL/2",118,3,info,harmonised; <el>_cens flag,,harmonised DL 0.01; 2.5% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: LaPPM,"harmonised DL, values below set to DL/2",118,10,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 8.5% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: LiPPM,"harmonised DL, values below set to DL/2",118,81,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 68.6% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: MgPCT,"harmonised DL, values below set to DL/2",118,67,info,harmonised; <el>_cens flag,,harmonised DL 0.005; 56.8% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: MnPPM,"harmonised DL, values below set to DL/2",397,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: MoPPM,"harmonised DL, values below set to DL/2",397,122,info,harmonised; <el>_cens flag,,harmonised DL 1.0; 30.7% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: NaPCT,"harmonised DL, values below set to DL/2",118,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: NAGpH,"harmonised DL, values below set to DL/2",106,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: NAGpH4.5_kgH2SO4/ton,"harmonised DL, values below set to DL/2",106,44,info,harmonised; <el>_cens flag,,harmonised DL 0.005; 41.5% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: NAGpH7.0_kgH2SO4/ton,"harmonised DL, values below set to DL/2",106,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: NbPPM,"harmonised DL, values below set to DL/2",118,118,info,harmonised; <el>_cens flag,,harmonised DL 5.0; 100.0% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: NiPPM,"harmonised DL, values below set to DL/2",118,11,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 9.3% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: PbPPM,"harmonised DL, values below set to DL/2",397,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: SCIS_PCT,"harmonised DL, values below set to DL/2",1898,80,info,harmonised; <el>_cens flag,,harmonised DL 0.005; 4.2% censored; ML-usable True,4.2.7
+Q3,assay,Censoring: S2_SPCT,"harmonised DL, values below set to DL/2",201,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: S_PCT,"harmonised DL, values below set to DL/2",118,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: SbPPM,"harmonised DL, values below set to DL/2",397,227,info,harmonised; <el>_cens flag,,harmonised DL 5.0; 57.2% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: ScPPM,"harmonised DL, values below set to DL/2",118,55,info,harmonised; <el>_cens flag,,harmonised DL 1.0; 46.6% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: SnPPM,"harmonised DL, values below set to DL/2",118,112,info,harmonised; <el>_cens flag,,harmonised DL 10.0; 94.9% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: SrPPM,"harmonised DL, values below set to DL/2",118,15,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 12.7% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: TaPPM,"harmonised DL, values below set to DL/2",118,118,info,harmonised; <el>_cens flag,,harmonised DL 5.0; 100.0% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: TePPM,"harmonised DL, values below set to DL/2",118,114,info,harmonised; <el>_cens flag,,harmonised DL 10.0; 96.6% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: TiPCT,"harmonised DL, values below set to DL/2",118,84,info,harmonised; <el>_cens flag,,harmonised DL 0.005; 71.2% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: VPPM,"harmonised DL, values below set to DL/2",118,7,info,harmonised; <el>_cens flag,,harmonised DL 1.0; 5.9% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: WPPM,"harmonised DL, values below set to DL/2",118,116,info,harmonised; <el>_cens flag,,harmonised DL 5.0; 98.3% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: YPPM,"harmonised DL, values below set to DL/2",118,47,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 39.8% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: ZnPPM,"harmonised DL, values below set to DL/2",397,82,info,harmonised; <el>_cens flag,,harmonised DL 1.0; 20.7% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: ZrPPM,"harmonised DL, values below set to DL/2",118,112,info,harmonised; <el>_cens flag,,harmonised DL 5.0; 94.9% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: AuCNPPM,"harmonised DL, values below set to DL/2",979,413,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 42.2% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: AgCNPPM,"harmonised DL, values below set to DL/2",1267,625,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 49.3% censored; ML-usable True,4.2.7
+Q3,assay,Censoring: CuCNPPM,"harmonised DL, values below set to DL/2",1268,520,info,harmonised; <el>_cens flag,,harmonised DL 1.0; 41.0% censored; ML-usable True,4.2.7
+Q3,assay,Censoring: HgCNPPM,"harmonised DL, values below set to DL/2",1042,9,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.9% censored; ML-usable False,4.2.7
+Q3,assay,Censoring: AsCNPPM,"harmonised DL, values below set to DL/2",1042,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: AuPPM,"harmonised DL, values below set to DL/2",469,6,info,harmonised; <el>_cens flag,,harmonised DL nan; 1.3% censored; ML-usable True,4.2.7
+Q3,rock,Censoring: AgPPM,"harmonised DL, values below set to DL/2",469,308,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 65.7% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: CuPPM,"harmonised DL, values below set to DL/2",469,12,info,harmonised; <el>_cens flag,,harmonised DL 5.0; 2.6% censored; ML-usable True,4.2.7
+Q3,rock,Censoring: AlPCT,"harmonised DL, values below set to DL/2",26,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: AsPPM,"harmonised DL, values below set to DL/2",426,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable True,4.2.7
+Q3,rock,Censoring: BaPPM,"harmonised DL, values below set to DL/2",219,9,info,harmonised; <el>_cens flag,,harmonised DL 5.0; 4.1% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: BePPM,"harmonised DL, values below set to DL/2",15,7,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 46.7% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: BiPPM,"harmonised DL, values below set to DL/2",190,123,info,harmonised; <el>_cens flag,,harmonised DL 5.0; 64.7% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: CaPCT,"harmonised DL, values below set to DL/2",26,6,info,harmonised; <el>_cens flag,,harmonised DL 0.02; 23.1% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: CdPPM,"harmonised DL, values below set to DL/2",26,18,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 69.2% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: CoPPM,"harmonised DL, values below set to DL/2",26,6,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 23.1% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: CrPPM,"harmonised DL, values below set to DL/2",26,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: FePCT,"harmonised DL, values below set to DL/2",26,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: GaPPM,"harmonised DL, values below set to DL/2",11,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: HgPPM,"harmonised DL, values below set to DL/2",332,48,info,harmonised; <el>_cens flag,,harmonised DL 0.02; 14.5% censored; ML-usable True,4.2.7
+Q3,rock,Censoring: KPCT,"harmonised DL, values below set to DL/2",26,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: LaPPM,"harmonised DL, values below set to DL/2",26,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: LiPPM,"harmonised DL, values below set to DL/2",26,6,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 23.1% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: MgPCT,"harmonised DL, values below set to DL/2",26,16,info,harmonised; <el>_cens flag,,harmonised DL 0.01; 61.5% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: MnPPM,"harmonised DL, values below set to DL/2",26,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: MoPPM,"harmonised DL, values below set to DL/2",26,17,info,harmonised; <el>_cens flag,,harmonised DL 2.0; 65.4% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: NaPCT,"harmonised DL, values below set to DL/2",26,6,info,harmonised; <el>_cens flag,,harmonised DL 0.01; 23.1% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: NbPPM,"harmonised DL, values below set to DL/2",11,11,info,harmonised; <el>_cens flag,,harmonised DL 5.0; 100.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: NiPPM,"harmonised DL, values below set to DL/2",26,5,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 19.2% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: PPCT,"harmonised DL, values below set to DL/2",15,4,info,harmonised; <el>_cens flag,,harmonised DL 0.005; 26.7% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: PbPPM,"harmonised DL, values below set to DL/2",350,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable True,4.2.7
+Q3,rock,Censoring: SCIS_PCT,"harmonised DL, values below set to DL/2",11,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: S_PCT,"harmonised DL, values below set to DL/2",16,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: SbPPM,"harmonised DL, values below set to DL/2",343,70,info,harmonised; <el>_cens flag,,harmonised DL 4.0; 20.4% censored; ML-usable True,4.2.7
+Q3,rock,Censoring: ScPPM,"harmonised DL, values below set to DL/2",26,7,info,harmonised; <el>_cens flag,,harmonised DL 1.0; 26.9% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: SnPPM,"harmonised DL, values below set to DL/2",26,25,info,harmonised; <el>_cens flag,,harmonised DL 5.0; 96.2% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: SrPPM,"harmonised DL, values below set to DL/2",26,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: TaPPM,"harmonised DL, values below set to DL/2",11,11,info,harmonised; <el>_cens flag,,harmonised DL 5.0; 100.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: TePPM,"harmonised DL, values below set to DL/2",16,14,info,harmonised; <el>_cens flag,,harmonised DL 5.0; 87.5% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: TiPCT,"harmonised DL, values below set to DL/2",26,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: TlPPM,"harmonised DL, values below set to DL/2",79,60,info,harmonised; <el>_cens flag,,harmonised DL 0.1; 75.9% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: VPPM,"harmonised DL, values below set to DL/2",26,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: WPPM,"harmonised DL, values below set to DL/2",227,158,info,harmonised; <el>_cens flag,,harmonised DL 1.0; 69.6% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: YPPM,"harmonised DL, values below set to DL/2",26,11,info,harmonised; <el>_cens flag,,harmonised DL 1.0; 42.3% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: ZnPPM,"harmonised DL, values below set to DL/2",350,22,info,harmonised; <el>_cens flag,,harmonised DL 1.0; 6.3% censored; ML-usable True,4.2.7
+Q3,rock,Censoring: ZrPPM,"harmonised DL, values below set to DL/2",26,11,info,harmonised; <el>_cens flag,,harmonised DL 5.0; 42.3% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: AuCNPPM,"harmonised DL, values below set to DL/2",5,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: AgCNPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,rock,Censoring: CuCNPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: AuPPM,"harmonised DL, values below set to DL/2",259,27,info,harmonised; <el>_cens flag,,harmonised DL 0.005; 10.4% censored; ML-usable True,4.2.7
+Q3,soil,Censoring: AgPPM,"harmonised DL, values below set to DL/2",259,59,info,harmonised; <el>_cens flag,,harmonised DL 0.1; 22.8% censored; ML-usable True,4.2.7
+Q3,soil,Censoring: CuPPM,"harmonised DL, values below set to DL/2",259,3,info,harmonised; <el>_cens flag,,harmonised DL nan; 1.2% censored; ML-usable True,4.2.7
+Q3,soil,Censoring: AlPCT,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: AsPPM,"harmonised DL, values below set to DL/2",259,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable True,4.2.7
+Q3,soil,Censoring: BaPPM,"harmonised DL, values below set to DL/2",158,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable True,4.2.7
+Q3,soil,Censoring: BiPPM,"harmonised DL, values below set to DL/2",94,22,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 23.4% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: CaPCT,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: CdPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: CoPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: CrPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: FePCT,"harmonised DL, values below set to DL/2",9,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: GaPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: HgPPM,"harmonised DL, values below set to DL/2",259,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable True,4.2.7
+Q3,soil,Censoring: KPCT,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: LaPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: LiPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: MgPCT,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: MnPPM,"harmonised DL, values below set to DL/2",9,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: MoPPM,"harmonised DL, values below set to DL/2",9,4,info,harmonised; <el>_cens flag,,harmonised DL 0.5; 44.4% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: NaPCT,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: NbPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: NiPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: PbPPM,"harmonised DL, values below set to DL/2",259,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable True,4.2.7
+Q3,soil,Censoring: SbPPM,"harmonised DL, values below set to DL/2",259,3,info,harmonised; <el>_cens flag,,harmonised DL nan; 1.2% censored; ML-usable True,4.2.7
+Q3,soil,Censoring: ScPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: SePPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: SnPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: SrPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: TaPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: TePPM,"harmonised DL, values below set to DL/2",26,25,info,harmonised; <el>_cens flag,,harmonised DL 5.0; 96.2% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: TiPCT,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: TlPPM,"harmonised DL, values below set to DL/2",64,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: VPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: WPPM,"harmonised DL, values below set to DL/2",251,87,info,harmonised; <el>_cens flag,,harmonised DL 1.0; 34.7% censored; ML-usable True,4.2.7
+Q3,soil,Censoring: YPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q3,soil,Censoring: ZnPPM,"harmonised DL, values below set to DL/2",259,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable True,4.2.7
+Q3,soil,Censoring: ZrPPM,"harmonised DL, values below set to DL/2",1,0,info,harmonised; <el>_cens flag,,harmonised DL nan; 0.0% censored; ML-usable False,4.2.7
+Q4,logs/rock,Inconsistent codes,case variants; codes undefined in the resume,191,25,flagged,harmonised (_h columns); see code_dictionary.csv,,"33 case variants merged; sources {'conventional': 51, 'VERIFY': 25, 'resume': 15, 'inferred': 9}",4.2.9
+Q5,composites,1 m composites usable,sampled length >= 0.5 m,3108,51,info,comp_ok used by ML,,comp_shared_src 1005 (value repeated from a sample > 1 m),4.2.13
+Q6,rock,Field-duplicate precision,CV% within duplicate-XY groups,21,0,info,reported,,see qaqc_precision.csv,4.2.6
+Q7,assay,CN-soluble vs total pairs,CN/total ratio distribution,0,0,info,reported,,see qaqc_precision.csv,4.2.4/4.2.5
+Q8,rock/soil,Sample on weakly supported DEM,> 30 m from a contour,728,0,pass,none,,,Stage 2
