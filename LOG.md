@@ -1591,3 +1591,123 @@ not lithology (V 0.30); S5 is unstable under resampling; sections are projection
 > richest is real but its boundaries shift when we resample holes, so we show its stability. The
 > units match between twin holes and stay correlated about 40–50 m sideways, and the HMM is four
 > times less noisy than clustering without the downhole memory.
+
+---
+
+## 2026-11-03 · ML-5 plan: PAF/NAF classification, conformal prediction, clustering (approved)
+
+Full plan: `C:\Users\mauli\.claude\plans\plan-ml-5-clever-cosmos.md`. Summary:
+
+**Profiling (read-only).** NAG data: 106 RJDH012 samples (0–151 m; Oxide 90, Sulphide 16, no
+Transition). NAG capacity at pH 4.5 censored (0.005) in 44 rows (all 37 with NAG pH ≥ 4.5, plus 7
+with pH < 4.5); bimodal: 80 ≤ 2 kg/t, 5 at 2–10, 21 ≥ 20. Classes NAF 37 / PAF-LC 48 / PAF-HC 21
+(Oxide 37/46/7, Sulphide 0/2/14), the same at cutoffs 10 and 20 and nearly the same at 5. PAF-HC vs rest:
+AUC SCIS 0.97, Zn 0.90, S_PCT 0.89. NAF vs PAF-LC in oxide: no element separates them (AUC 0.39–0.68;
+SCIS 0.51). Median SCIS NAF 0.30%, PAF-LC 0.14, PAF-HC 2.32. Mg censored 64/106 in RJDH012 (excluded
+as a feature). Database SCIS median 1.17% (max 15.6) vs RJDH012 0.33% (max 4.72): most of the database
+lies above the training range.
+
+**Human decisions.** Predict all holes in tiers; unsupervised U1 (RJDH012 full suite) and U2
+(shared features, 16 SCIS holes); add a descriptive NAPP proxy.
+
+**Method** (`src/acid.py`, `scripts/14_ml5_paf.py`). Labels: NAF NAG pH ≥ 4.5; PAF-HC pH < 4.5 and NAG
+capacity (pH 4.5) ≥ 10 kg H₂SO₄/t; PAF-LC the rest (NAG capacity replaces NAPP in the AMIRA 2002
+definition, `[VERIFY exact thresholds]`). NAPP proxy: MPA 30.6 × SCIS (× S_PCT as an upper bound) minus
+ANC_max 24.5 × Ca% + 40.3 × Mg%. Supervised on RJDH012: transfer model (SCIS, Au, Ag, Cu, As,
+oxidation, alteration, logged pyrite), full model (+ S_PCT, non-sulfide S, Fe, Ca, K, Ba, Sr, Zn, Mn,
+Pb; SHAP), no-S model; RF / logistic / dummy, chosen by out-of-fold log loss; leave-one-block-out CV on
+contiguous 10 m depth blocks (20 m as a sensitivity). Mondrian cross-conformal prediction
+(nonconformity 1 − p̂(y), α 0.10 main, 0.20), class coverage checked by nested block CV. Tiers for all
+assay intervals: 1 SCIS in domain, 2 SCIS out of domain (Transition / feature beyond the training range),
+3 S2 in place of SCIS, 4 no S. Conservative management class (any PAF-HC in set → PAF-HC, else any PAF-LC
+→ PAF-LC); NAG-testing list of ambiguous and Tier 2–4 runs. U1/U2: median/MAD → PCA (Horn) → GMM by BIC,
+scored against the NAG classes and the supervised result; U2 bootstrap stability.
+
+**Outputs.** `data/processed/ml/assay__ml5_paf.csv` (`ML_paf_*`), `ml5_*.csv`, `gis/ml5_paf.gpkg`,
+figures `12_*_v1.png` including the required PAF/NAF flowchart; rerun `07_export.py`.
+
+---
+
+## 2026-11-03 · ML-5 results: PAF/NAF classes, conformal prediction, clustering
+
+**Run.** `PYTHONIOENCODING=utf-8 uv run python -W ignore scripts/14_ml5_paf.py` (~3 min), then
+`scripts/07_export.py` (all checks pass; `RJ_DH_assay.csv` 2,476 × 186, 23 new `ML_paf_*` columns).
+Tests: `tests/test_acid.py` (9 new); full suite 107 pass. Determinism: runs 2, 3 and 4 give the same
+sha256 for `assay__ml5_paf.csv` (65696c0c…).
+
+**Hyperparameters.** Seed 0. Labels NAG pH 4.5, capacity cutoff 10 kg H₂SO₄/t (5 and 20 as sensitivity).
+Features plain log10 of Stage 1 `_ml` values (as in ML-2, not dequantised: deviation from the plan,
+RF is rank-based); oxidation 0 / 0.5 / 1 (RJDH019 from ML-2 `ML_oks_prediksi`); alteration AA/SI/AR
+indicators; logged pyrite 1/0 (unknown 0.5). **Ca dropped as a model feature** (106/118 RJDH012 values
+censored after Stage 1 DL harmonisation to 0.05%), as was Mg (plan). Candidates RF (300 trees,
+`balanced_subsample`, leaf 1/5/20), logistic (balanced), prior. Leave-one-block-out on 16 contiguous 10 m
+depth blocks (8 × 20 m as sensitivity). Selection by OOF log loss (probabilities clipped at 1e-3). Mondrian
+cross-conformal, nonconformity 1 − p̂, α 0.10 (0.20 shown); coverage by nested block CV. U1/U2:
+censored values spread on [DL/3, DL] and others dequantised (ML-4 rule), 20 draws, median/MAD, Horn (200
+permutations), full-covariance GMM K 1–6, BIC averaged over 5 draws, ≥ 5 per component, `reg_covar`
+(0.05/median MAD)²; U2 bootstrap B = 200 (fixed transform, Hungarian alignment).
+
+**Labels.** NAF 37 / PAF-LC 48 / PAF-HC 21 (Oxide 37/46/7; Sulphide 0/2/14). Cutoff 5: 1 row moves
+(LC → HC); cutoff 20: none. All NAF have censored capacity.
+
+**NAPP proxy (lab's own Ca/Mg; ANC an upper bound).** Median MPA from SCIS: NAF 9.2, PAF-LC 4.3,
+PAF-HC 71 kg/t; ANC_max ≈ 0.7 (NAF, LC), 11.5 (HC). NAPP_min(SCIS) > 0 in 28/37 NAF, 39/48 PAF-LC,
+18/21 PAF-HC. **The proxy calls most NAF samples PAF:** in the oxide zone SCIS is not (or not only)
+reactive sulfide, so a NAPP built from SCIS is not usable there. Labels now say "S (SCIS)", not
+"S sulfida". This is consistent with AGENTS §4.3 (S AUC ≈ 0.51 in oxide); no contradiction.
+
+**Model selection (10 m blocks).** Every model's log loss is worse than the prior (1.25): transfer RF
+leaf 20 1.42 (selected), leaf 5 1.85, logistic 2.58. Balanced accuracy: transfer RF20 0.61 (logistic 0.70,
+RF5 0.65), full RF20 0.63 (RF1 0.69), no-S RF20 0.56. Recall PAF-HC 0.81–0.95; NAF and PAF-LC 0.40–0.70.
+Probabilities are poorly calibrated across depth blocks (class mix changes with depth), so **the
+decision output is the conformal set, not the probability.** RF leaf 20 selected for all three sets.
+
+**Conformal (nested, α 0.10, transfer).** Coverage NAF 0.95, PAF-LC 0.875, PAF-HC 0.905 (all 0.906);
+mean set size 2.16 / 2.00 / 1.38; singletons 5% / 10% / 71%. Full model: 0.92 / 0.875 / 0.95, set
+size 1.87 / 1.90 / 1.10, HC singletons 90%. No-S: 0.95 / 0.90 / 0.86, HC singletons 52%. Within oxide,
+PAF-HC coverage 0.71 (n 7) and the 2 sulphide PAF-LC are missed: Mondrian guarantees coverage per class,
+not per oxidation subgroup. RJDH012 sets: 62 of 85 NAF/LC rows get `NAF|PAF-LC`; 15/21 PAF-HC are
+singletons. **PAF-HC is recognisable from chemistry; NAF vs PAF-LC is not.**
+
+**Database (2,466 sampled intervals).** Tiers: 1 = 1,417 rows (1,799 m), 2 = 481 (544 m), 3 = 201
+(273 m), 4 = 367 (440 m). Out-of-domain reasons: Transition 228, Cu > max 210, S > max 139, ML-2
+oxidation 114 (RJDH019), Ag > max 74. Sets: `NAF|PAF-LC|PAF-HC` 827, `NAF|PAF-LC` 757, `PAF-HC` 502,
+`PAF-LC|PAF-HC` 313. Singleton share: tier 1 23%, 2 14%, 3 27%, 4 17%. Conservative management class
+(metres): NAF 43 (measured only, RJDH012), PAF-LC 797, PAF-HC 2,216, of which **PAF-HC confident**
+(measured or singleton) **866 m**. No interval gets a NAF-only set, so NAF is only ever assigned by a NAG test. NAG-testing list
+(`ml5_uji_nag.csv`): 736 runs, 2,412 m. Priority 1 (PAF-HC possible, not certain) 375 runs / 1,350 m;
+2 (NAF or PAF-LC) 289 / 735 m; 3 (singleton but out of domain) 72 / 327 m.
+
+**Unsupervised.** U1 (RJDH012, 118; S, SCIS, Fe, K, Ba, Sr, Zn, Mn): 2 PCs (81%; PC1 is Mn, 0.96,
+heavy-tailed under MAD scaling), BIC K = 2: one cluster is 11/13 PAF-HC, the other holds 36 NAF + 47 LC
++ 10 HC. ARI vs 3 classes 0.15 (V 0.61), vs PAF/NAF −0.05, vs oxidation 0.56. K = 3 forced: ARI 0.12.
+Oxide only: BIC K = 1, **no chemical structure in oxide.** U2 (1,898 SCIS rows; SCIS, Au, Ag, Cu, As): 2 PCs
+(73%), BIC K = 5. RJDH012 members: K5 (SCIS median 3.3%) 14/15 PAF-HC, K1/K2 (SCIS ≤ 0.15%) NAF + LC only,
+K4 = Cu-rich (487 ppm Cu, SCIS 2.4%). Vs management class V 0.44, ARI 0.14; bootstrap ARI median 0.66
+(5–95% 0.38–0.87), per-row stability median 0.85. **Deviation:** the planned "+ oxidation indicator"
+U1 sensitivity was replaced by oxide-only and forced-K3 runs (a 0/1 column has no MAD scale and its weight
+would be arbitrary); the oxide-only run answers the question directly.
+
+**Outputs.** `data/processed/ml/assay__ml5_paf.csv` (`ML_paf_label`, `_set`, `_n_set`, `_kelas`,
+`_kelola`, `_kelola_sumber`, `_p_{NAF,LC,HC}`, `_pval_{NAF,LC,HC}`, `_tier`, `_model`, `_luar_domain`,
+`_alasan`, `_uji_NAG`, `_prioritas_uji`, `_napp_min`, `_gmm`, `_gmm_nama`, `_gmm_p_maks`, `_gmm_stabil`);
+`data/processed/ml5_{summary,scores,conformal,uji_nag,per_hole,napp,clusters}.csv` (`clusters` not in
+the plan); `gis/ml5_paf.gpkg` (`interval_paf`, 2,466 PointZ, count read back; QGIS 4.2.3 via MCP: management class, tier and NAG-list counts equal the CSV, QC project `outputs/maps/qc/12_ml5_check.qgz`); figures
+`outputs/figures/12_{diagram_alir_paf_naf,nag_ph_kapasitas,profil_rjdh012,cakupan_konformal,
+matriks_kebingungan,shap_lengkap,gmm_u1_u2,ringkasan_lubang,napp_proksi}_v1.png`.
+
+**Limits to state.** One hole of NAG labels (coverage holds for RJDH012-like material only); 16
+sulphide samples; no Transition in training; most database S above the training range; S2 uncalibrated
+against SCIS; no ANC, so NAG capacity replaces NAPP (AMIRA 2002 `[VERIFY exact thresholds]`, 30.6 factor
+`[VERIFY]`); SCIS is not proven to be reactive sulfide; probabilities uncalibrated (use sets); the
+management class is deliberately conservative, so PAF-HC metres are an upper bound and the confident
+figure (866 m) a lower bound.
+
+**Plain-language explanation (for the presentation)**
+> Only one hole, RJDH012, has acid tests (NAG). We used them to define three classes: non-acid,
+> low-capacity acid and high-capacity acid. A model trained on that hole recognises the high-capacity,
+> sulfide-rich rock reliably, but no element separates non-acid from low-capacity oxide rock: the
+> chemistry simply cannot see that difference. Conformal prediction makes this explicit. Each sample
+> gets a set of classes that contains the true one 90% of the time, and for oxide rock that set is
+> usually "non-acid or low-capacity". So we manage untested rock by the worst class in its set and list
+> the intervals where a new NAG test would change the decision.
