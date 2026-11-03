@@ -1432,3 +1432,162 @@ valid only within 60 m of soil samples, and SD is for the latent field (nugget e
 > 96% of re-runs). Kriging the index gives a map with its uncertainty. The high zone is
 > elongated east–west to ENE, not NE as we expected, and most of it west of the drilling is
 > still untested.
+
+---
+
+## 2026-11-03 · ML-4 plan: downhole geochem-stratigraphy (approved)
+
+Full plan: `C:\Users\mauli\.claude\plans\plan-ml-4-shimmering-gadget.md`. Summary:
+
+**Profiling (read-only).** 3,057 `comp_ok` composites with Au/Ag/Cu/As in all 19 holes; gaps
+(RJDH006 22–38 m, 172–174 m; isolated 1 m in RJDH005/013; final partials) break sequences. At the
+DL/2 floor: Ag 1,084 (35%), Au 243, Cu 22, As 7. `comp_shared_src` 1,005 (32%; RJDH002/003
+72–76%). SCIS in 16 holes (2,345), S2 273, none in RJDH001. Logged switch rates per 100 m:
+alteration 10.5, lithology 5.1, oxidation 2.85. 12 pads.
+
+**Human decisions.** Keep Ag with censored values spread uniformly in log10 on [DL/3, DL] per
+draw (no-Ag sensitivity); main model log Au, Ag, Cu, As in all holes, +SCIS and +CuCN/Cu as
+sensitivities only; draft the three report sections in QGIS within ML-4.
+
+**Method** (`src/geostrat.py`, `scripts/11_ml4_hmm.py`). Dequantise (ML-1) / spread censored →
+median/MAD scale → full-covariance `GaussianHMM` (`min_covar` (0.05/median MAD)², `n_iter` 500,
+10 restarts) on contiguous `comp_ok` runs. K 2–8 by leave-one-pad-out held-out log-likelihood
+(smallest K within 1 SE of best; ≥ 30 composites and ≥ 2 holes per state); BIC shown only.
+Comparator: GMM with the same emissions and K. Posteriors averaged over 20 draws; states ordered
+by mean log Au; pad bootstrap B = 100 (Hungarian alignment) for stability and CIs. Sensitivities:
+no Ag, +SCIS, +CuCN/Cu, K ± 1, shared-source runs collapsed. Comparisons vs logged alteration,
+oxidation, lithology and ML-2; switch rates; cross-hole state agreement by 3D distance and on the
+7 twin pads.
+
+**Sections** (`scripts/12_ml4_sections.py` + QGIS MCP). Three NW–SE sections (az 315/135, ±40 m,
+looking NE, 1:1): A RJDH001/003/008/009/015/019; B RJDH005/012/014/016/017/018; C
+RJDH002/006/007/013 (004, 010, 011 off-section). Local section frame in `gis/ml4_penampang.gpkg`;
+plan layers `gis/ml4_hmm.gpkg`; QGIS project `outputs/maps/11_ml4_penampang.qgz`, 3 layouts + index
+map, 300 dpi PNG.
+
+**Outputs.** `data/processed/ml/komposit__ml4_hmm.csv`, `ml4_{summary,states,comparisons}.csv`,
+figures `11_*_v1.png`, rerun `07_export.py`.
+
+---
+
+## 2026-11-03 · ML-4 results: downhole geochem-stratigraphy (Gaussian HMM) and sections A–C
+
+**Run.** `PYTHONIOENCODING=utf-8 uv run python -W ignore scripts/11_ml4_hmm.py` (~17.5 min),
+then `uv run python scripts/12_ml4_sections.py`, then `scripts/13_ml4_qgis_layouts.py` inside
+QGIS 4.2.3 (MCP `execute_code`), then `uv run python scripts/07_export.py`. Determinism: two full
+runs give the same sha256 for `komposit__ml4_hmm.csv` (9134db95…). Tests: `tests/test_geostrat.py`
+(9 new), full suite passes.
+
+**Hyperparameters.** Features log10 Au, Ag, Cu, As on 3,057 `comp_ok` composites in 22 contiguous
+segments (19 holes). Censored (`cens_frac` ≥ 0.5) spread uniform in log10 on [DL/3, DL] (Au/Ag:
+Stage 1 harmonised DL; Cu/As: 2 × the floor value, job-specific DLs); others dequantised (ML-1);
+median/MAD scaling fitted on draw 0. `GaussianHMM` full covariance, `min_covar` 0.00517 (scaled;
+(0.05 / median MAD)²), `n_iter` 500, `tol` 1e-4, 10 restarts (seeds 0–9), CV 5 restarts × 5 draws,
+decoding 20 draws, bootstrap B = 100 × 3 restarts, seed 0. Ambiguous = averaged posterior max < 0.5.
+
+**K selection (leave-one-pad-out, 12 pads; held-out log-likelihood per composite ± SE).**
+
+| K | HMM | GMM | HMM − GMM | BIC | min state n | min holes |
+|---|---|---|---|---|---|---|
+| 2 | −4.342 ± 0.18 | −4.723 | 0.38 | 26,503 | 1,102 | 19 |
+| 3 | −4.126 ± 0.19 | −4.680 | 0.55 | 24,745 | 715 | 18 |
+| 4 | −3.959 ± 0.19 | −4.685 | 0.73 | 23,368 | 522 | 16 |
+| **5** | **−3.795 ± 0.18** | −4.650 | **0.86** | 22,450 | 368 | 13 |
+| 6 | −3.717 ± 0.18 | −4.630 | 0.91 | 21,903 | 342 | 13 |
+| 7 | −3.680 ± 0.18 | −4.628 | 0.95 | 21,451 | 308 | 13 |
+| 8 | −3.636 ± 0.17 | −4.625 | 0.99 | 21,263 | 240 | 10 |
+
+Held-out LL rises to K = 8, but K = 5 is the smallest K within 1 SE of the best (−3.636 − 0.174 =
+−3.810 < −3.795); all K admissible. **K = 5 selected.** BIC keeps falling (not used: 1 m
+autocorrelation over-counts n). Sequence information adds ~0.86 nats per held-out composite over
+the GMM at K = 5, and is positive at every K.
+
+**States (geometric means in element units, pad-bootstrap 5–95%; run = 1/(1 − a_kk) m).**
+
+| State (`ML_hmm_nama`) | n | holes | Au g/t | Ag | Cu ppm | As | run m | stability | log mode |
+|---|---|---|---|---|---|---|---|---|---|
+| S1 Au rendah, Cu rendah (Sulfida) | 533 | 16 | 0.013 (0.011–0.032) | 0.30 | 26 (23–35) | 50 | 14.6 (9.9–21.3) | 1.00 | AR 56%, Sulphide 73% |
+| S2 Au rendah, Cu rendah (Oksida) | 776 | 19 | 0.067 (0.046–0.25) | 0.72 | 52 (35–71) | 90 | 10.5 (4.8–13.4) | 0.74 | AA 66%, Oxide 65% |
+| S3 Au sedang, Cu rendah (Oksida) | 368 | 13 | 0.50 (0.16–1.36) | 2.17 | 7.0 (4.5–41) | 56 | 18.7 (5.8–29.5) | 0.75 | AA 64%, Oxide 100% |
+| S4 Au sedang, Cu tinggi (Sulfida) | 643 | 17 | 0.78 (0.55–1.41) | 3.83 | 368 (177–619) | 181 | 30.6 (12.7–41.2) | 0.89 | AA 76%, Sulphide 42% / Transition 24% |
+| S5 Au tinggi, Cu rendah (Oksida) | 737 | 17 | 1.01 (0.20–2.62) | 2.22 | 52 (19–146) | 83 | 15.6 (5.8–23.6) | 0.50 | AA 59% / SI 39%, Oxide 93% |
+
+Names are relative (Cu "rendah" means below S4) and built from emissions plus log crosstabs; review
+before the report. Descriptive extras (not in the model): SCIS median S1 2.75%, S2 1.48, S3 0.53,
+S4 2.09, S5 0.81; CuCN/Cu median 0.21, 0.19, 0.43, 0.60, 0.52; RJDH012 NAG pH < 4.5 share S1 69%
+(n 16), S2 82% (17), S3 63% (56), S4 40% (10), S5 71% (7). The S1 NAG set is not the logged
+Sulphide set of AGENTS §4.3, so no contradiction.
+
+**Uncertainty.** Averaged posterior max median ≥ 0.998 in every state; only 3 composites ambiguous
+(the draws barely move the decoding). Viterbi (draw 0) agrees with the posterior argmax on 97%.
+The real uncertainty is model (sampling) uncertainty: bootstrap ARI vs the main partition median
+0.54 (5–95% 0.40–0.77); 510 composites have stability < 0.5, mostly S5/S2 (S5 median 0.50). So
+**S5 vs S2/S3 boundaries are the least reliable; S1 and S4 are robust.** `ML_hmm_stabil` is the
+column to show uncertainty, not `ML_hmm_p_maks`.
+
+**Comparisons with the logs (Cramér's V / ARI).** HMM vs alteration 0.39 / 0.10, oxidation
+0.46 / 0.11, lithology 0.30 / 0.04; vs ML-2 predicted alteration 0.53 / 0.16, oxidation 0.47 / 0.12.
+GMM lower on all (alteration 0.35, oxidation 0.37, lithology 0.25). HMM vs GMM ARI 0.32. Switches
+per 100 m: HMM 6.3 (Viterbi 6.0), GMM 28.1; logs: alteration 10.6, lithology 5.2, oxidation 2.9.
+The HMM fragments about as often as logged lithology; the GMM is four times noisier.
+
+**Sensitivities (ARI vs main on shared rows).** No Ag 0.77 (V oxidation 0.48, switches 6.5): Ag
+censoring does not drive the states. K = 4 0.74, K = 6 0.69. **+SCIS (16 holes, 2,345) 0.30,
++CuCN/Cu (938) 0.26:** adding sulfur or the CN ratio reorganises the states and raises agreement
+with oxidation (V 0.48 → 0.58; 0.42 → 0.61) at the cost of more switching (9.3, 10.9 per 100 m).
+Kept as sensitivities per the human's decision; worth a line in the report (S and CN carry the
+oxidation signal the four-element model only partly captures). **Shared-source runs collapsed**
+(2,721 composites): ARI 0.53; expected runs change from 14.6/10.5/18.7/30.6/15.6 m to
+9.5/7.5/20.2/27.5/10.3 m. Persistence of S1, S2 and S5 is partly sample support (long samples
+repeated over 1 m composites); S3 and S4 runs survive.
+
+**Cross-hole continuity (same state, composites in different holes, by 3D distance; chance 0.21).**
+HMM 0–10 m 0.71, 10–20 m 0.72, 20–30 m 0.48, 30–40 m 0.37, 40–50 m 0.31, then 0.25–0.29 to 100 m.
+GMM 0.62, 0.43, 0.26, 0.21 (chance 0.22). Logged alteration 0.43, 0.64, 0.57, 0.51 (chance 0.41).
+All cross-hole pairs closer than 20 m come from the twin pads (0.71–0.72), so the states correlate
+between twins and stay above chance out to ~40–50 m.
+
+**Sections (`scripts/12_ml4_sections.py`).** Az 135°, ±40 m corridor, looking NE, 1:1. **Deviation
+from the plan:** the line runs through the collar centroid shifted along the NE normal by the
+midrange of all composite offsets (minimax), not the mean NE coordinate, because with the mean
+RJDH009 and RJDH018 traces left the corridor. With minimax every trace stays inside (max offset:
+A 34.1 m, B 32.9 m, C 28.9 m; 0 m outside), so nothing is drawn dashed. In-plane length ≤ true
+length asserted. Collar RL minus the topographic profile on the line reaches ±27 m (RJDH005/014
++24, RJDH015 +27, RJDH007/013 −15): this is the hillslope between collar and line (offsets up to
+34 m), not an RL error; RL − DEM at the collar itself matches Stage 3. Outputs
+`data/processed/ml4_sections.csv` (not in the plan) and `gis/ml4_penampang.gpkg` with per-section
+layers `{status_hmm, alterasi_log, oksidasi_log, jejak, kolar, topografi}_{A,B,C}` in a local
+engineering CRS, plus `garis_penampang` and `koridor` (EPSG:32647). Per-section layers replaced
+subset-filtered copies because QGIS rendered the filtered copies empty.
+
+**QGIS (`scripts/13_ml4_qgis_layouts.py`, MCP).** `outputs/maps/11_ml4_penampang.qgz`: 3 section
+layouts (A4 landscape, 1:2,500, 50 m grid, Bahasa legend, BL/TG end labels, caption; ambiguous
+composites hatched; state numbers on runs ≥ 6 m) and an index map (hillshade 60%, traces, lines,
+corridors). Exported `outputs/maps/11_penampang_{A,B,C}_v1.png` and
+`11_peta_indeks_penampang_v1.png` at 300 dpi. Checks: QGIS state counts 533/776/368/643/737 = CSV;
+native Elevation Profile of section B (composite points + DEM) z 441.47–603.29 m, length 506.25 m,
+equal to Python (`outputs/maps/qc/11_profil_elevasi_B_v1.png`, QC only).
+
+**Outputs.** `data/processed/ml/komposit__ml4_hmm.csv` (`ML_hmm_status`, `_nama`, `_p_maks`,
+`_ambigu`, `_entropi`, `_p_S1..S5`, `_viterbi`, `_stabil`, `_gmm`, `_S_status`; not-ok composites
+blank), merged by `07_export.py` into `data/processed/iogas/RJ_DH_komposit_1m.csv` (3,108 × 102, 14
+`ML_hmm` columns; all export checks pass); `data/processed/ml4_{summary,states,comparisons}.csv` and
+`ml4_cv_folds.csv` (per-fold scores, not in the plan); `gis/ml4_hmm.gpkg` (`komposit_status` PointZ,
+`segmen_status` LineStringZ; counts read back); figures
+`outputs/figures/11_{pemilihan_K,profil_status,matriks_transisi,strip_log,kontinuitas}_v1.png`.
+Palette: 5 colours validated (dataviz `validate_palette.js`); adjacent colour-blind ΔE 6.8 (warning
+band), mitigated by state numbers on the strips and sections.
+
+**Limits to state.** 12 independent pads; a third of composites repeat a long sample (persistence
+partly support, quantified above); Ag 35% censored and spread below DL by assumption (no-Ag ARI
+0.77); no sulfur in the main model, and adding it changes the states; states are chemical units,
+not lithology (V 0.30); S5 is unstable under resampling; sections are projections within ±40 m.
+
+**Plain-language explanation (for the presentation)**
+> We let a hidden Markov model read each drillhole metre by metre using gold, silver, copper and
+> arsenic. It finds five chemical units and also learns that each unit tends to continue downhole,
+> which is how a geologist logs. Two units are clear and robust: a barren argillic sulphide base
+> and a copper-rich sulphide zone about 30 m thick. Three are oxide units with rising gold; the
+> richest is real but its boundaries shift when we resample holes, so we show its stability. The
+> units match between twin holes and stay correlated about 40–50 m sideways, and the HMM is four
+> times less noisy than clustering without the downhole memory.
