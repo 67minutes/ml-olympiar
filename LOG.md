@@ -2907,3 +2907,18 @@ the human's approval; finish the local commit and report the push blocker.
   full staged check also reports trailing whitespace in newly added ioGAS-generated
   logs and artifacts; preserve these existing outputs as requested rather than
   rewriting them for formatting. Local commit completed; no push attempted.
+
+
+---
+
+## 2026-11-06 — Human override: push to the existing public team repository
+
+After being informed that GitHub reports 67minutes/ml-olympiar as PUBLIC and that
+AGENTS.md requires a private destination, the human explicitly instructed:
+"override, just push". This later human instruction overrides the private-only
+push restriction for this push, as permitted by AGENTS.md's precedence rule.
+Repository visibility will remain unchanged. No other destination is authorized.
+Plan: commit this append-only decision record, fetch origin/main, verify that the
+push is a fast-forward, and push main to the existing origin without force.
+The ioGAS/submission commit e1e7673 passed 175 tests (1 skipped); this follow-up
+changes only LOG.md. Verify the remote branch matches local HEAD after the push.
