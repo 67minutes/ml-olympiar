@@ -1,0 +1,15 @@
+DELIVERABLE 1 - VALIDASI DATA (CSV)
+Prospek Ramba Joring (RJ), OlympiAR 2026 Babak 2
+
+validasi_flag.csv       Satu baris per masalah per data (sampel, interval atau lubang): kode pemeriksaan
+                        (check_id), masalah, nilai, tingkat (severity), tindakan, catatan. Tidak ada data yang
+                        dihapus; setiap masalah diberi tanda dan hanya dikeluarkan di dalam analisis tertentu.
+validasi_ringkasan.csv  Satu baris per jenis pemeriksaan: jumlah data yang diperiksa dan yang ditandai.
+qaqc_presisi.csv        Presisi dari pemeriksaan internal (Au/Ag terlarut sianida vs total, sampel ulang
+                        batuan pada koordinat sama), karena data panitia tidak memuat standar, blank atau
+                        duplikat lab.
+
+Istilah: NS-SEL = interval tidak disampel; DL = batas deteksi; nilai di bawah DL diseragamkan ke DL
+tertinggi per unsur dan diisi DL/2 dengan tanda "tersensor" (_cens). Nilai 0 pada data permukaan berarti
+"tidak dianalisis" dan diubah menjadi kosong. Koordinat UTM WGS84 Zona 47N (EPSG:32647).
+Kolom agents_ref merujuk ke dokumen aturan kerja internal tim; boleh diabaikan.

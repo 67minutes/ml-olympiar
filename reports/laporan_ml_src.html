@@ -127,6 +127,7 @@ footer { margin-top: 60px; font-size: 14px; color: var(--muted); border-top: 1px
   <ol>
     <li><a href="#ringkasan">Ringkasan satu halaman</a></li>
     <li><a href="#cara-membaca">Cara membaca laporan ini</a></li>
+    <li><a href="#istilah">Istilah data &amp; nama file</a></li>
     <li><a href="#fondasi">Fondasi data</a></li>
     <li><a href="#ml1">ML-1 Ambang unsur</a></li>
     <li><a href="#ml2">ML-2 Kimia → log geologi</a></li>
@@ -137,6 +138,7 @@ footer { margin-top: 60px; font-size: 14px; color: var(--muted); border-top: 1px
     <li><a href="#pembanding">Pembanding literatur</a></li>
     <li><a href="#sintesis">Sintesis: cerita prospek</a></li>
     <li><a href="#keterbatasan">Keterbatasan &amp; jangan diklaim</a></li>
+    <li><a href="#iogas">Proyek ioGAS &amp; berkas kiriman</a></li>
     <li><a href="#lampiran">Lampiran: gambar &amp; file</a></li>
   </ol>
 </nav>
@@ -148,7 +150,9 @@ footer { margin-top: 60px; font-size: 14px; color: var(--muted); border-top: 1px
   <div class="kicker">OlympiAR 2026 Babak 2 · Prospek Ramba Joring, Martabe · Dokumen internal tim</div>
   <h1>Temuan Machine Learning: apa yang kami tanyakan, apa jawabannya, dan seberapa yakin kami</h1>
   <p class="lead">Penjelasan sederhana untuk anggota tim yang menulis laporan dan presentasi. Teks utama
-  berbahasa Indonesia; istilah teknis bahasa Inggris ada di dalam kurung <span class="en">(seperti ini)</span>.</p>
+  berbahasa Indonesia; istilah teknis bahasa Inggris ada di dalam kurung <span class="en">(seperti ini)</span>.
+  Singkatan seperti ML-1, satuan HMM S1, PAF-HC atau SCIS dijelaskan di <a href="#istilah">Istilah data &amp; nama
+  file</a>.</p>
   <p><b>Rahasia.</b> Dokumen ini memuat hasil dari data panitia. Simpan hanya di repo privat tim; jangan
   diunggah ke layanan daring. Semua angka diambil otomatis dari tabel hasil (<code>data/processed/</code>)
   saat dokumen dibuat, jadi selalu sama dengan hasil model.</p>
@@ -267,6 +271,61 @@ keputusan sendiri.</p>
   1 = berhubungan sempurna.</dd>
 </dl>
 
+<h3 id="istilah">Istilah data dan nama file</h3>
+<p>Singkatan di bawah dipakai di tabel, nama file dan teks laporan ini. Di laporan akhir dan slide, pakai nama
+panjangnya.</p>
+<dl class="gloss">
+  <dt>ML-1 sampai ML-6</dt>
+  <dd>Nomor tugas ML: ML-1 ambang unsur; ML-2 litologi, alterasi dan oksidasi dari kimia; ML-3 zonasi kadar
+  permukaan Tinggi/Sedang/Rendah; ML-4 geokimia-stratigrafi bawah permukaan; ML-5 klasifikasi PAF/NAF; ML-6
+  penargetan bor (bonus). Di laporan akhir tulis namanya, bukan nomornya.</dd>
+  <dt>Satuan HMM S1–S5</dt>
+  <dd>Lima satuan kimia bawah permukaan dari ML-4. Namanya sudah deskriptif, mis. "S4 Au sedang, Cu tinggi
+  (Sulfida)". Jangan tertukar dengan awalan file ioGAS <code>s1_</code>–<code>s4_</code> (tahap kerja ioGAS, lihat
+  bawah); tulis selalu "satuan HMM S1".</dd>
+  <dt>NAF, PAF-LC, PAF-HC</dt>
+  <dd>Batuan tidak membentuk asam <span class="en">(non-acid forming)</span>; berpotensi membentuk asam dengan
+  kapasitas rendah <span class="en">(potentially acid forming, low capacity)</span>; berpotensi asam dengan
+  kapasitas tinggi <span class="en">(high capacity)</span>.</dd>
+  <dt>Kelas NAG, kelas konformal, kelas pengelolaan</dt>
+  <dd><i>Kelas NAG</i> = hasil uji lab, hanya di RJDH012. <i>Kelas konformal</i> = jawaban model: satu kelas bila
+  yakin, "ambigu" bila himpunannya berisi lebih dari satu kelas. <i>Kelas pengelolaan</i> (kolom
+  <code>ML_paf_kelola</code>) = kelas paling berisiko dalam himpunan itu; dipakai untuk penanganan batuan.</dd>
+  <dt>Tingkat data PAF/NAF (tier 1–4)</dt>
+  <dd>Seberapa cocok satu interval dengan data latih RJDH012: 1 = sulfur SCIS dalam rentang latih; 2 = SCIS di luar
+  rentang (zona transisi atau nilai ekstrem); 3 = hanya sulfur metode S2; 4 = tanpa sulfur. Makin tinggi, makin
+  perlu uji NAG.</dd>
+  <dt>Tier A dan tier B (usulan lubang bor)</dt>
+  <dd>Istilah lain dari ML-6: tier A = lubang yang menargetkan kadar dari model kriging (perluasan, penutup celah);
+  tier B = lubang uji anomali tanah, tanpa janji kadar.</dd>
+  <dt>U1, U2</dt>
+  <dd>Dua pengelompokan tanpa label PAF/NAF: U1 pada kimia lengkap RJDH012, U2 pada semua interval yang punya
+  sulfur.</dd>
+  <dt>NAG, NAPP, ANC, AMD</dt>
+  <dd>NAG = uji pembentukan asam bersih <span class="en">(net acid generation)</span>, hasilnya pH NAG dan kapasitas
+  asam (kg H<sub>2</sub>SO<sub>4</sub>/t). NAPP = potensi asam bersih, butuh ANC (kapasitas penetral asam) yang
+  <b>tidak diukur</b> di data ini. AMD = air asam tambang <span class="en">(acid mine drainage)</span>.</dd>
+  <dt>SCIS, S2, S total</dt>
+  <dd>Dua metode lab untuk sulfur sulfida (SCIS di sebagian besar lubang; S2 di RJDH004, RJDH019 dan sebagian
+  RJDH006/007/009), tidak pernah dicampur. S total hanya di RJDH012. RJDH001 tanpa sulfur.</dd>
+  <dt>Pad, lubang kembar</dt>
+  <dd>Pad = satu lokasi pengeboran; beberapa pad punya dua lubang berdekatan ("kembar": 005/014, 007/013,
+  010/011, 016/017, 008/019). Ada 12 pad independen.</dd>
+  <dt>Penampang A, B, C dan D–D'</dt>
+  <dd>A–C = tiga penampang geokimia-stratigrafi (Bab 5), lubang diurut tenggara ke barat laut. D–D' = penampang
+  desain lubang usulan (bonus, Bab 7).</dd>
+  <dt>Nama kolom</dt>
+  <dd><code>Au_ppm</code>, <code>Fe_pct</code> = kadar unsur (tidak diterjemahkan, karena ioGAS membaca unsur dan
+  satuan dari nama itu); <code>_cens</code> = di bawah batas deteksi (nilai = setengah batas deteksi);
+  <code>_log10</code> = log kadar; <code>ML_*</code> = keluaran model.</dd>
+  <dt>Nama file</dt>
+  <dd><code>_v1</code>, <code>_v2</code> = versi; file yang sudah masuk laporan tidak pernah ditimpa. Gambar Python
+  <code>08_</code>–<code>14_</code> dinamai dari nomor skrip pembuatnya (08 = ML-1 … 13 = ML-6, 14 = pembanding
+  literatur). Gambar ioGAS <code>s1_</code>–<code>s4_</code> = tahap kerja ioGAS: 1 QAQC dan ambang, 2 permukaan,
+  3 pemboran, 4 lingkungan.</dd>
+</dl>
+<p>Daftar istilah yang lebih lengkap ada di <code>PANDUAN_TIM.md</code> bagian 1.</p>
+
 <!-- ================================================================== -->
 <h2 id="fondasi">Fondasi data: kenapa pembersihan menentukan ML</h2>
 <p class="lead">ML hanya sebaik datanya. Tiga masalah data akan membuat model mengelompokkan
@@ -342,6 +401,25 @@ median + 2·MAD dan pagar Tukey.</p>
   <span class="file">outputs/figures/08_ambang_tanah_v1.png</span></figcaption>
 </figure>
 
+<h3>Dibandingkan dengan plot probabilitas ioGAS</h3>
+<p>ioGAS menggambar plot probabilitas log untuk {{thr_n}} kombinasi data dan unsur. Dua patahan per unsur dibaca
+dengan mata <b>sebelum</b> nilai GMM dibuka (aturan "buta"), lalu dibandingkan. Hasilnya: pada <b>{{thr_dekat}} dari
+{{thr_n}}</b>, minimal satu patahan visual berada dalam faktor 2 dari patahan GMM terdekat ({{thr_ci}} di antaranya
+bahkan di dalam selang bootstrap GMM). Pada {{thr_beda}} sisanya keduanya berbeda lebih dari 2&times;: tanah As, Pb,
+Zn, batuan As, Pb, bor Ag dan S sulfida. Sebabnya kebanyakan bukan "salah", tetapi pertanyaannya berbeda: GMM kadang
+memisahkan populasi latar yang rendah, sedangkan mata ahli geologi tertuju ke ekor atas. Alat Anomaly Assessment
+ioGAS memberi jumlah pencilan Tukey yang <b>sama persis</b> dengan hitungan Python.</p>
+<figure>
+  <img src="outputs/figures/iogas/s1_pp_kelas_bor_Au_v1.png" alt="Plot probabilitas Au bor di ioGAS diwarnai kelas ambang">
+  <figcaption><b class="t">Plot probabilitas Au bor di ioGAS, diwarnai kelas ambang hasil pembacaan plot.</b>
+  <span class="how">Cara membaca: sumbu tegak = Au (log), sumbu datar = skor normal. Titik biru = latar, jingga =
+  anomali lemah (&ge; 0,3 g/t), merah = anomali kuat (&ge; 5,5 g/t). Patahan kemiringan kurva = batas populasi.
+  Sumbu tertulis <code>Au_ppm</code> karena ioGAS membaca unsur dan satuan dari nama kolom.</span>
+  <span class="file">outputs/figures/iogas/s1_pp_kelas_bor_Au_v1.png</span></figcaption>
+</figure>
+<p>Tabel lengkap: <code>data/processed/s1_ambang_perbandingan_v1.csv</code>; ambang akhir (GMM + plot probabilitas)
+di <code>element_thresholds_v2.csv</code>.</p>
+
 <h3>Seberapa yakin?</h3>
 <p>Setiap ambang punya selang bootstrap dan label keyakinan. Ambang Au bor <b>sedang</b>: model 3 populasi
 menang pada 58% ulangan, 2 populasi pada 39%. Ag bor dan tanah <b>rendah</b> (tingkat pelaporan lab masih
@@ -350,8 +428,9 @@ mengganggu). Ag batuan tidak bisa ditentukan (66% di bawah batas deteksi).</p>
 <ul>
   <li>Assay bor mentah tidak berbobot panjang; sampel pendek berkadar tinggi sedikit terlalu terwakili.</li>
   <li>Nilai di bawah batas deteksi tidak ikut dalam pemasangan model.</li>
-  <li>Ambang dari plot probabilitas ioGAS belum ada: kolom <code>thr_probplot_iogas</code> disiapkan untuk rekan
-  ioGAS. <b>Jangan klaim</b> GMM "lebih baik" dari plot probabilitas sebelum keduanya dibandingkan.</li>
+  <li>Ambang plot probabilitas dibaca dengan mata (oleh agen AI, tanpa melihat nilai GMM, lalu dicek ulang pemilik
+  repo untuk 3 unsur). Pembacaan visual tetap subjektif. <b>Jangan klaim</b> GMM "lebih baik" dari plot probabilitas
+  atau sebaliknya: keduanya hanya dibandingkan.</li>
 </ul></div>
 <div class="box why"><span class="label">Kenapa penting</span>
 Ambang menentukan apa yang disebut "anomali" di peta. Karena Au permukaan satu populasi, zonasi permukaan
@@ -372,7 +451,9 @@ dua simpangan baku, sekitar 7 g/t pada batuan, yang tepat. Di bawah permukaan, e
   populasi. Jika unsur hanya punya satu populasi, keduanya hampir sama (Au batuan 7,1 vs 7,3 g/t).</dd>
 </dl>
 <p><b>Bab laporan &amp; file:</b> Bab 3 (nilai ambang). <code>element_thresholds.csv</code>, gambar
-<code>08_ambang_{bor,batuan,tanah}_v1.png</code>, <code>08_bic_v1.png</code>.</p>
+<code>08_ambang_{bor,batuan,tanah}_v1.png</code>, <code>08_bic_v1.png</code>. Gambar ioGAS:
+<code>outputs/figures/iogas/s1_*</code> (plot probabilitas, pencilan Tukey, presisi), daftar di
+<code>indeks_gambar_iogas.csv</code>.</p>
 
 <!-- ================================================================== -->
 <h2 id="ml2">ML-2 · Kimia → log geologi <span class="badge b-hi">tinggi</span></h2>
@@ -563,7 +644,9 @@ sampai ENE, bukan NE seperti dugaan awal, dan sebagian besar di barat pemboran b
   kimia, bukan kadar, jadi tidak menjawab pertanyaan zonasi kadar.</dd>
 </dl>
 <p><b>Bab laporan &amp; file:</b> Bab 4. <code>ml3_summary.csv</code>, <code>ml3_comparisons.csv</code>,
-<code>gis/ml3_zonasi.gpkg</code>, <code>gis/ml3_tanah_*.tif</code>, gambar <code>10_*_v1.png</code>.</p>
+<code>gis/ml3_zonasi.gpkg</code>, <code>gis/ml3_tanah_*.tif</code>, gambar <code>10_*_v1.png</code>. Gambar ioGAS:
+<code>outputs/figures/iogas/s2_*</code> (peta, scatter dan box plot per zona, kelas ambang, alterasi, ternary Halley);
+proyek ioGAS <code>RJ_tanah_final_v1.gas</code>, <code>RJ_batuan_final_v1.gas</code>.</p>
 
 <!-- ================================================================== -->
 <h2 id="ml4">ML-4 · Geokimia-stratigrafi bawah permukaan <span class="badge b-hi">tinggi</span></h2>
@@ -664,7 +747,9 @@ samping, dan HMM empat kali lebih tidak berisik dibanding pengelompokan tanpa me
 </dl>
 <p><b>Bab laporan &amp; file:</b> Bab 5. <code>ml4_states.csv</code>, <code>ml4_comparisons.csv</code>,
 <code>ml4_sections.csv</code>, <code>gis/ml4_*.gpkg</code>, penampang <code>outputs/maps/11_penampang_{A,B,C}_v1.png</code>,
-proyek QGIS <code>outputs/maps/11_ml4_penampang.qgz</code>.</p>
+proyek QGIS <code>outputs/maps/11_ml4_penampang.qgz</code>. Gambar ioGAS: <code>outputs/figures/iogas/s3_*</code>
+(strip log per penampang dan lubang kembar, diwarnai satuan HMM, alterasi atau oksidasi); proyek ioGAS
+<code>RJ_bor_komposit_final_v1.gas</code>.</p>
 
 <!-- ================================================================== -->
 <h2 id="ml5">ML-5 · Klasifikasi PAF/NAF dan prediksi konformal <span class="badge b-mid">sedang</span></h2>
@@ -787,7 +872,8 @@ keputusan."</div>
 </dl>
 <p><b>Bab laporan &amp; file:</b> Bab 6. <code>ml5_summary.csv</code>, <code>ml5_conformal.csv</code>,
 <code>ml5_per_hole.csv</code>, <code>ml5_uji_nag.csv</code>, <code>ml5_clusters.csv</code>, <code>gis/ml5_paf.gpkg</code>,
-gambar <code>12_*_v1.png</code>.</p>
+gambar <code>12_*_v1.png</code>. Gambar ioGAS: <code>outputs/figures/iogas/s4_*</code> (pH NAG vs S, diagram Halley Fe-S
+dan Ca-Fe-S, unsur AMD per kelas, strip log kelas pengelolaan); proyek ioGAS <code>RJ_lingkungan_final_v1.gas</code>.</p>
 
 <!-- ================================================================== -->
 <h2 id="ml6">ML-6 · Penargetan bor dengan Gaussian process = kriging (bonus) <span class="badge b-lo">rendah antar-pad</span></h2>
@@ -975,7 +1061,27 @@ Karena itu HMM kami pakai untuk penampang korelasi."</div>
 <p>Keterbatasan umum: 12 pad independen; satu lubang dengan uji NAG; satu kampanye tanah 1997–99; unsur
 multi-elemen lengkap hanya di RJDH001 dan RJDH012; metode sulfur berbeda antar-lubang. Semua referensi bertanda
 <code>[VERIFY]</code> harus diperiksa dari sumber aslinya sebelum masuk Daftar Pustaka (daftar di
-<code>PANDUAN_TIM.md</code> §4).</p>
+<code>PANDUAN_TIM.md</code> bagian 7).</p>
+
+<!-- ================================================================== -->
+<h2 id="iogas">Proyek ioGAS dan berkas kiriman</h2>
+<p>Semua plot geokimia "klasik" (plot probabilitas, box plot, scatter, strip log bawah-lubang, peta, diagram Scott
+Halley) digambar oleh ioGAS sendiri dari tabel yang sama dengan model ML. Ada 129 gambar ekspor di
+<code>outputs/figures/iogas/</code>; daftar lengkapnya, dengan bab, isi dan catatan keterangan gambar, ada di
+<code>outputs/figures/iogas/indeks_gambar_iogas.csv</code> (buka dengan Excel).</p>
+<div class="tablewrap"><table>
+  <tr><th>Proyek ioGAS akhir</th><th>Isi</th><th>Warna</th><th>Bab</th></tr>
+  <tr><td><code>RJ_tanah_final_v1.gas</code></td><td>188 sampel tanah prospek RJ</td><td>zona kadar ML</td><td>3, 4</td></tr>
+  <tr><td><code>RJ_batuan_final_v1.gas</code></td><td>382 sampel batuan prospek RJ</td><td>zona kadar ML</td><td>3, 4</td></tr>
+  <tr><td><code>RJ_bor_komposit_final_v1.gas</code></td><td>3.057 komposit bor 1 m; strip log penampang A–C</td><td>satuan HMM S1–S5</td><td>5</td></tr>
+  <tr><td><code>RJ_lingkungan_final_v1.gas</code></td><td>2.466 interval assay; NAG, Halley Fe-S, strip log</td><td>kelas pengelolaan PAF/NAF</td><td>3, 6</td></tr>
+</table></div>
+<p>Keempat proyek ada di <code>outputs/iogas_project/</code> (mulai dari <code>BACA_SAYA.txt</code>), bersama 47
+proyek pendukung (satu per skema warna). Berkas yang dikirim ke panitia (validasi data, proyek ioGAS dalam zip,
+analisis geokimia) sudah disiapkan di <code>outputs/kirim/</code>; tinggal menambah PDF laporan dan presentasi.</p>
+<p><b>Catatan keterangan gambar ioGAS:</b> sumbu unsur tertulis <code>Au_ppm</code> dan seterusnya; legenda warna
+tidak ikut terekspor, jadi tulis arti warna di keterangan; di strip log, skala sumbu-x tiap lubang berdiri sendiri
+(bandingkan pola, bukan panjang batang).</p>
 
 <!-- ================================================================== -->
 <h2 id="lampiran">Lampiran: gambar dan file lain</h2>

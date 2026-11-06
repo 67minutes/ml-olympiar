@@ -1,0 +1,30 @@
+DELIVERABLE 3 - ANALISIS GEOKIMIA (CSV)
+Prospek Ramba Joring (RJ), OlympiAR 2026 Babak 2
+
+analisis_geokimia.csv              Semua sampel (tanah, batuan, interval bor) dalam satu tabel: unsur yang
+                                   sudah dibersihkan, kelas ambang, dan hasil model (kolom berawalan ML_).
+analisis_geokimia_kamus_kolom.csv  Arti dan satuan setiap kolom tabel di atas.
+statistik_unsur.csv                Statistik per unsur per jenis data (n, % tersensor, rerata geometrik,
+                                   persentil P25-P98, ambang).
+statistik_per_kelompok.csv         Median unsur per kelompok (zona kadar ML, alterasi, litologi, oksidasi,
+                                   satuan HMM, kelas pengelolaan PAF/NAF).
+ambang_unsur.csv                   Ambang per unsur per jenis data: model campuran Gauss (GMM, dengan selang
+                                   bootstrap), median + 2 MAD, pagar Tukey, dan dua patahan dari plot
+                                   probabilitas ioGAS (kolom thr_probplot_iogas, thr_probplot_iogas_2).
+ambang_perbandingan_metode.csv     Kesesuaian patahan plot probabilitas dengan patahan GMM terdekat
+                                   (dalam selang bootstrap / dalam faktor 2 / berbeda > 2x).
+pencilan_tukey.csv                 Jumlah pencilan Tukey (log10) dari Anomaly Assessment Tool ioGAS, sama
+                                   dengan hitungan ulang di Python (kolom sama).
+zona_permukaan_median.csv          Median unsur per zona kadar ML (Tinggi/Sedang/Rendah), tanah dan batuan.
+zona_permukaan_vs_kelas_ambang.csv Tabulasi silang zona kadar ML vs kelas ambang Au/As (Cramer's V).
+satuan_hmm_median.csv              Median unsur per satuan geokimia bawah permukaan (HMM S1-S5).
+satuan_hmm_meter_per_lubang.csv    Panjang (m) setiap satuan HMM per lubang bor.
+kelas_nag_median_rjdh012.csv       Median pH NAG, kapasitas NAG, S dan unsur AMD per kelas NAG dan zona
+                                   oksidasi (lubang RJDH012, satu-satunya dengan uji NAG).
+pengelolaan_paf_naf_per_lubang.csv Panjang (m) per kelas pengelolaan NAF / PAF-LC / PAF-HC dan per prioritas
+                                   uji NAG, per lubang bor.
+
+Istilah: NAF = tidak membentuk asam; PAF-LC / PAF-HC = berpotensi membentuk asam dengan kapasitas
+rendah / tinggi. Kelas pengelolaan = kelas terburuk yang masih mungkin menurut prediksi konformal (dipakai
+untuk penanganan). Satuan HMM S1-S5 = satuan geokimia dari hidden Markov model pada komposit 1 m.
+SCIS dan S2 = dua metode lab S sulfida (tidak dicampur). Nama kolom unsur: <unsur>_ppm atau _pct.

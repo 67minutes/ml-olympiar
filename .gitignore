@@ -26,3 +26,10 @@ __pycache__/
 Thumbs.db
 .DS_Store
 .vscode/
+
+# gRPC stubs generated from the local ioGAS install (src/iogas_link.py); rebuilt on demand
+.cache/
+
+# Scratch ioGAS output kept locally only: probe runs (--probe) and Stage 5 check exports (not deliverables)
+data/interim/iogas_s*/probe/
+data/interim/iogas_s5/cek/

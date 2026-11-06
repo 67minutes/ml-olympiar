@@ -1,0 +1,4 @@
+DELIVERABLE 2 - PROYEK ioGAS
+Buka RJ_proyek_ioGAS.zip, lalu baca BACA_SAYA.txt di dalamnya. Empat proyek akhir (*_final_v1.gas)
+ada di folder utama zip; proyek pendukung (satu per skema warna) ada di folder pendukung/.
+Dibuka dengan ioGAS 8.3 (File > Open).

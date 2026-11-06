@@ -8,7 +8,8 @@ existing outputs (no new figures), embedded as base64 and downscaled. Nothing le
 Reads data/processed/{ml2_scores,ml3_summary,ml4_summary,ml4_states,ml5_summary,ml5_conformal,
 ml5_per_hole,ml5_uji_nag,ml6_summary,ml6_cv,drainase_ringkasan,s9_jansson_scores,
 s9_rf_smoother_scores,s9_rf_smoother_kembar,validation_summary}.csv;
-writes outputs/laporan_ml/laporan_ml_v1.html.
+and s1_ambang_perbandingan_v1 (ioGAS Stage 1); writes outputs/laporan_ml/laporan_ml_v2.html
+(v2, 6 Nov: ioGAS threshold comparison and ioGAS figure pointers; v1 is frozen).
 Run: PYTHONIOENCODING=utf-8 uv run python scripts/21_laporan_ml.py
 """
 import ast
@@ -20,7 +21,7 @@ import pandas as pd
 from src import paths, report as rp
 
 SRC = paths.ROOT / "reports" / "laporan_ml_src.html"
-OUT = paths.ROOT / "outputs" / "laporan_ml" / "laporan_ml_v1.html"
+OUT = paths.ROOT / "outputs" / "laporan_ml" / "laporan_ml_v2.html"
 MAX_PX = 1800
 P = paths.PROCESSED
 
@@ -140,9 +141,20 @@ def facts_s9(f: dict) -> None:
     f["s9_twin_rf"] = f2(k["RF dihaluskan (alterasi)"])
 
 
+def facts_iogas(f: dict) -> None:
+    """Probability-plot picks (ioGAS, blind) vs nearest GMM break: agreement counts, no ranking."""
+    d = read("s1_ambang_perbandingan_v1")
+    k1, k2 = d.pp1_kesesuaian_T.astype(str), d.pp2_kesesuaian_T.astype(str)
+    near = ~k1.str.startswith("berbeda") | ~k2.str.startswith("berbeda")
+    f["thr_n"] = len(d)
+    f["thr_dekat"] = int(near.sum())
+    f["thr_beda"] = int((~near).sum())
+    f["thr_ci"] = int((k1.str.startswith("dalam") | k2.str.startswith("dalam")).sum())
+
+
 def build_facts() -> dict:
     f: dict = {}
-    for fn in (facts_validation, facts_ml2, facts_ml3, facts_ml4, facts_ml5, facts_ml6, facts_s9):
+    for fn in (facts_validation, facts_ml2, facts_ml3, facts_ml4, facts_ml5, facts_ml6, facts_s9, facts_iogas):
         fn(f)
     return {k: str(v) for k, v in f.items()}
 

@@ -1,0 +1,69 @@
+﻿tanah zone project: 188 rows
+  s2_xy_As_Au_zona_tanah_v1.png: 2040 x 1272 px
+  s2_xy_Pb_Au_zona_tanah_v1.png: 2040 x 1272 px
+  s2_box_zona_tanah_v1.png: 4764 x 2073 px
+  s2_pp_Au_zona_tanah_v1.png: 2040 x 1272 px
+  s2_peta_zona_tanah_v1.png: 2040 x 1272 px
+  saved outputs\iogas_project\RJ_tanah_s2_v1.gas: 188 rows, EPSG 32647 kept
+tanah kelas_Au: 188 rows
+  s2_box_kelas_Au_tanah_v1.png: 4764 x 2073 px
+  s2_xy_As_Au_kelas_Au_tanah_v1.png: 2040 x 1272 px
+  s2_xy_Pb_Au_kelas_Au_tanah_v1.png: 2040 x 1272 px
+  s2_peta_kelas_Au_tanah_v1.png: 2040 x 1272 px
+  saved outputs\iogas_project\s2\RJ_tanah_s2_kelas_Au_v1.gas: 188 rows, EPSG 32647 kept
+tanah kelas_As: 188 rows
+  s2_box_kelas_As_tanah_v1.png: 4764 x 2073 px
+  s2_xy_As_Au_kelas_As_tanah_v1.png: 2040 x 1272 px
+  s2_xy_Pb_Au_kelas_As_tanah_v1.png: 2040 x 1272 px
+  s2_peta_kelas_As_tanah_v1.png: 2040 x 1272 px
+  saved outputs\iogas_project\s2\RJ_tanah_s2_kelas_As_v1.gas: 188 rows, EPSG 32647 kept
+tanah keyakinan: 188 rows
+  s2_box_keyakinan_tanah_v1.png: 4764 x 2073 px
+  s2_xy_As_Au_keyakinan_tanah_v1.png: 2040 x 1272 px
+  s2_xy_Pb_Au_keyakinan_tanah_v1.png: 2040 x 1272 px
+  s2_peta_keyakinan_tanah_v1.png: 2040 x 1272 px
+  saved outputs\iogas_project\s2\RJ_tanah_s2_keyakinan_v1.gas: 188 rows, EPSG 32647 kept
+batuan zone project: 352 rows
+  s2_xy_As_Au_zona_batuan_v1.png: 2040 x 1272 px
+  s2_xy_Cu_Au_zona_batuan_v1.png: 2040 x 1272 px
+  s2_box_zona_batuan_v1.png: 4764 x 2073 px
+  s2_peta_zona_batuan_v1.png: 2040 x 1272 px
+  saved outputs\iogas_project\RJ_batuan_s2_v1.gas: 352 rows, EPSG 32647 kept
+batuan kelas_Au: 382 rows
+  s2_box_kelas_Au_batuan_v1.png: 4764 x 2073 px
+  s2_xy_As_Au_kelas_Au_batuan_v1.png: 2040 x 1272 px
+  s2_xy_Cu_Au_kelas_Au_batuan_v1.png: 2040 x 1272 px
+  s2_peta_kelas_Au_batuan_v1.png: 2040 x 1272 px
+  saved outputs\iogas_project\s2\RJ_batuan_s2_kelas_Au_v1.gas: 382 rows, EPSG 32647 kept
+batuan alterasi: 382 rows
+  s2_box_alterasi_batuan_v1.png: 4095 x 2073 px
+  s2_xy_As_Au_alterasi_batuan_v1.png: 2040 x 1272 px
+  s2_xy_Cu_Au_alterasi_batuan_v1.png: 2040 x 1272 px
+  s2_peta_alterasi_batuan_v1.png: 2040 x 1272 px
+  saved outputs\iogas_project\s2\RJ_batuan_s2_alterasi_v1.gas: 382 rows, EPSG 32647 kept
+Halley Al-K-Mg: 26 rocks (10 inside RJ)
+  s2_halley_AlKMg_batuan_v1.png: 1536 x 1512 px
+  saved outputs\iogas_project\s2\RJ_batuan_s2_halley_v1.gas: 26 rows, EPSG 32647 kept
+30 figures; Stage 1 figures unchanged
+dataset element  n_total  cramers_v
+  tanah      Au      188      0.393
+  tanah      As      188      0.416
+ batuan      Au      352      0.481
+ batuan      As      352      0.542
+zona            Rendah   Sedang    Tinggi
+dataset kolom                            
+batuan  As_ppm  85.500  351.000  2270.000
+        Au_ppm   0.120    0.530     5.040
+        Cu_ppm  26.500  102.000   252.000
+        Hg_ppm   0.070    0.080     0.060
+        Pb_ppm  96.000  161.000   275.000
+        Sb_ppm   8.000   28.900   256.000
+        Zn_ppm   7.000    6.000     6.000
+tanah   As_ppm  13.000   54.000   129.000
+        Au_ppm   0.007    0.065     0.335
+        Cu_ppm  18.000   28.000    67.500
+        Hg_ppm   0.080    0.170     0.220
+        Pb_ppm  17.000   57.000   129.000
+        Sb_ppm   0.600    3.950    16.500
+        Zn_ppm  22.500   25.000    18.500
+exit 0

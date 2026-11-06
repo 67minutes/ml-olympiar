@@ -1,0 +1,57 @@
+sections: {'A': ['RJDH001', 'RJDH008', 'RJDH019', 'RJDH015', 'RJDH009', 'RJDH003'], 'B': ['RJDH018', 'RJDH012', 'RJDH017', 'RJDH016', 'RJDH005', 'RJDH014'], 'C': ['RJDH007', 'RJDH013', 'RJDH006', 'RJDH002'], 'Lain': ['RJDH004', 'RJDH010', 'RJDH011']}
+HMM project: 3057 composites
+  s3_strip_hmm_penampang_A_v1.png: 4752 x 2067 px
+  s3_strip_hmm_penampang_B_v1.png: 4752 x 2067 px
+  s3_strip_hmm_penampang_C_v1.png: 4752 x 2067 px
+  s3_strip_hmm_penampang_Lain_v1.png: 4761 x 2067 px
+  s3_strip_hmm_kembar_005_014_v1.png: 4062 x 2067 px
+  s3_strip_hmm_kembar_010_011_v1.png: 4062 x 2067 px
+  s3_strip_hmm_kembar_016_017_v1.png: 4062 x 2067 px
+  s3_box_status_hmm_v1.png: 4764 x 2073 px
+  s3_xy_Cu_Au_status_hmm_v1.png: 2040 x 1272 px
+  s3_xy_As_Au_status_hmm_v1.png: 2040 x 1272 px
+  s3_peta3d_status_hmm_v1.png: 1536 x 1512 px
+  saved outputs\iogas_project\RJ_bor_s3_v1.gas: 3057 rows, EPSG 32647 kept
+alterasi project: 3057 composites
+  s3_strip_alterasi_penampang_A_v1.png: 4752 x 2163 px
+  s3_strip_alterasi_penampang_B_v1.png: 4752 x 2067 px
+  s3_strip_alterasi_penampang_C_v1.png: 4752 x 2067 px
+  s3_strip_alterasi_penampang_Lain_v1.png: 4203 x 2067 px
+  s3_strip_alterasi_kembar_005_014_v1.png: 2802 x 2067 px
+  s3_strip_alterasi_kembar_010_011_v1.png: 2802 x 2067 px
+  s3_strip_alterasi_kembar_016_017_v1.png: 2802 x 2067 px
+  saved outputs\iogas_project\s3\RJ_bor_s3_alterasi_v1.gas: 3057 rows, EPSG 32647 kept
+oksidasi project: 3057 composites
+  s3_strip_oksidasi_penampang_A_v1.png: 4752 x 2163 px
+  s3_strip_oksidasi_penampang_B_v1.png: 4752 x 2067 px
+  s3_strip_oksidasi_penampang_C_v1.png: 4752 x 2067 px
+  s3_strip_oksidasi_penampang_Lain_v1.png: 4203 x 2067 px
+  saved outputs\iogas_project\s3\RJ_bor_s3_oksidasi_v1.gas: 3057 rows, EPSG 32647 kept
+22 figures; Stage 1-2 figures unchanged (83)
+kolom                              Ag_ppm  As_ppm  Au_ppm  CuCN_Cu_rasio  Cu_ppm  S_sulfida_SCIS_pct
+status_hmm                                                                                          
+S1 Au rendah, Cu rendah (Sulfida)   0.250   50.00   0.020          0.212    25.0               2.745
+S2 Au rendah, Cu rendah (Oksida)    0.678   87.00   0.070          0.193    50.0               1.484
+S3 Au sedang, Cu rendah (Oksida)    2.600   58.85   0.736          0.431     7.0               0.528
+S4 Au sedang, Cu tinggi (Sulfida)   4.400  168.50   0.740          0.595   332.0               2.085
+S5 Au tinggi, Cu rendah (Oksida)    3.000   83.00   1.011          0.517    55.0               0.810
+ HoleID  S1 Au rendah, Cu rendah (Sulfida)  S2 Au rendah, Cu rendah (Oksida)  S3 Au sedang, Cu rendah (Oksida)  S4 Au sedang, Cu tinggi (Sulfida)  S5 Au tinggi, Cu rendah (Oksida)  total_m
+RJDH001                               15.0                              72.0                              10.0                               89.0                              96.0    282.0
+RJDH002                              120.0                              72.0                               0.0                                8.0                               0.0    200.0
+RJDH003                               84.0                              25.0                               3.0                               14.0                              26.0    152.0
+RJDH004                               26.0                              13.0                               0.0                               85.0                               0.0    124.0
+RJDH005                               37.0                              30.0                              33.0                                5.0                              46.0    151.0
+RJDH006                               19.0                              43.0                               3.0                               30.0                              60.0    155.0
+RJDH007                               49.0                              29.0                               0.0                               53.0                              15.0    146.0
+RJDH008                                4.0                              33.0                              71.0                               48.7                              65.0    221.7
+RJDH009                               72.0                              49.0                               7.0                               33.0                              39.0    200.0
+RJDH010                               11.0                              66.6                               0.0                               99.0                              69.0    245.6
+RJDH011                                0.0                              68.5                               0.0                               30.0                              36.0    134.5
+RJDH012                               40.0                              33.0                              60.0                               11.0                               7.0    151.0
+RJDH013                                9.0                              39.0                               5.0                               16.0                              30.0     99.0
+RJDH014                               18.0                              10.7                               0.0                               32.0                              55.0    115.7
+RJDH015                               20.0                              66.0                               7.0                                0.0                              57.0    150.0
+RJDH016                                6.0                              42.0                              21.0                                0.0                              51.9    120.9
+RJDH017                                0.0                              26.0                              87.0                               10.0                              17.0    140.0
+RJDH018                                0.0                              44.0                              10.0                               65.0                              21.0    140.0
+RJDH019                                3.0                              13.0                              51.0                               14.0                              45.6    126.6

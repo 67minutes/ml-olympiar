@@ -1,0 +1,436 @@
+1. Print message at start of main()
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+02:59:29.242 [main] INFO  net.ioglobal.gas - end GASLogger static init
+02:59:29.245 [main] INFO  net.ioglobal.gas - 2. TEST GasLogger message at start of main()
+02:59:29.259 [main] INFO  net.ioglobal.gas - *** New log file init.log.txt opened in C:\Users\mauli\AppData\Local\Temp\_gas.temp\log at Fri Nov 06 02:59:29 WIB 2026
+3. Another print message at start of main()
+02:59:29.266 [main] INFO  net.ioglobal.gas - 4. GasLogger message at start of main() after initial log
+02:59:29.268 [main] INFO  net.ioglobal.gas - No args files found: null
+02:59:29.268 [main] INFO  net.ioglobal.gas - Main.main(), user file: null   args: []
+02:59:29.272 [main] INFO  net.ioglobal.gas - read: 0 from C:\Program Files\IMDEX\ioGAS-64.8.3\args.ini
+02:59:29.272 [main] INFO  net.ioglobal.gas - Main.main(), app file args: []
+02:59:29.272 [main] INFO  net.ioglobal.gas - Main.main(), param args: [-appdir, C:\Program Files\IMDEX\ioGAS-64.8.3, -brand, ioGAS, -gaslink2, -notracker, -nogaslink, -noacquire]
+02:59:29.274 [main] INFO  net.ioglobal.gas -    => combined args are  [, -appdir, C:\Program Files\IMDEX\ioGAS-64.8.3, -brand, ioGAS, -gaslink2, -notracker, -nogaslink, -noacquire]
+02:59:29.278 [main] DEBUG net.ioglobal.gas - ArgProcessor.init :: Arg processor setup OK with 27 possible  options
+02:59:29.283 [main] INFO  net.ioglobal.gas - mkdirs for C:\Users\mauli\AppData\Roaming/ioGAS/ result false
+02:59:29.285 [main] INFO  net.ioglobal.gas - *** New log file log-20261106_025929.txt opened in C:\Users\mauli\AppData\Roaming\ioGAS\log at Fri Nov 06 02:59:29 WIB 2026
+02:59:29.286 [main] INFO  net.ioglobal.gas - Log init ok. 
+02:59:29.294 [main] INFO  net.ioglobal.gas - 5. GasLogger message after main log file set up  (temp log in C:\Users\mauli\AppData\Local\Temp/_gas.temp//)
+02:59:29.295 [main] INFO  net.ioglobal.gas - Launch: Processing args
+02:59:29.295 [main] INFO  net.ioglobal.gas - Setting application directory to C:\Program Files\IMDEX\ioGAS-64.8.3/: absolute path C:\Program Files\IMDEX\ioGAS-64.8.3
+02:59:29.296 [main] INFO  net.ioglobal.gas - Reading from C:\Program Files\IMDEX\ioGAS-64.8.3\gas.version.ini
+02:59:29.297 [main] INFO  net.ioglobal.gas -     got {patch=.2, buildID=300608, major.version=8.3}
+02:59:29.297 [main] INFO  net.ioglobal.gas - Reading from C:\Program Files\IMDEX\ioGAS-64.8.3\gas.version.ini
+02:59:29.298 [main] INFO  net.ioglobal.gas -     got {patch=.2, buildID=300608, major.version=8.3}
+02:59:29.298 [main] INFO  net.ioglobal.gas - Reading from C:\Program Files\IMDEX\ioGAS-64.8.3\gas.version.ini
+02:59:29.299 [main] INFO  net.ioglobal.gas -     got {patch=.2, buildID=300608, major.version=8.3}
+02:59:29.299 [main] INFO  net.ioglobal.gas - looking for C:\Program Files\IMDEX\ioGAS-64.8.3\viewer.ini
+02:59:29.299 [main] INFO  net.ioglobal.gas - NOT running as viewer
+02:59:29.299 [main] INFO  net.ioglobal.gas - Build Processing args  
+02:59:29.300 [main] INFO  net.ioglobal.gas - BRAND being set to ioGAS
+02:59:29.300 [main] INFO  net.ioglobal.gas - Processing components args  
+02:59:29.300 [main] INFO  net.ioglobal.gas - Processing limits args  
+02:59:29.301 [main] INFO  net.ioglobal.gas - >> Argument processing complete.  Used: 
+ File args []
+ Param args [-appdir, C:\Program Files\IMDEX\ioGAS-64.8.3, -brand, ioGAS, -gaslink2, -notracker, -nogaslink, -noacquire]
+ Combined args [, -appdir, C:\Program Files\IMDEX\ioGAS-64.8.3, -brand, ioGAS, -gaslink2, -notracker, -nogaslink, -noacquire... [1 removed]
+02:59:29.316 [main] INFO  net.ioglobal.gas - Loaded properties....
+02:59:29.320 [main] INFO  net.ioglobal.gas -      getBuildDate() Checking file C:\Program Files\IMDEX\ioGAS-64.8.3\libs\GAS.jar, can read=true, got mod date=1793076106000
+02:59:29.320 [main] INFO  net.ioglobal.gas - COMMAND:  cmd.exe /c "VOL C:"
+02:59:29.360 [main] INFO  net.ioglobal.gas - OUPUT: [ Volume in drive C is OS,  Volume Serial Number is 3030-1694]
+02:59:29.360 [main] INFO  net.ioglobal.gas - COMMAND:  cmd.exe /c "wmic csproduct get uuid"
+02:59:29.407 [main] INFO  net.ioglobal.gas - OUPUT: []
+02:59:29.407 [main] INFO  net.ioglobal.gas - COMMAND:  cmd.exe /c "powershell (Get-CimInstance -Class Win32_ComputerSystemProduct).UUID"
+02:59:29.991 [main] INFO  net.ioglobal.gas - OUPUT: [6A984FEC-5A3C-DB40-9E66-F022CBE31E17]
+02:59:29.992 [main] INFO  net.ioglobal.gas - powershell (Get-CimInstance -Class Win32_ComputerSystemProduct).UUID   - OK
+02:59:29.992 [main] INFO  net.ioglobal.gas - 
+02:59:29.992 [main] INFO  net.ioglobal.gas - >> Info:
+02:59:29.992 [main] INFO  net.ioglobal.gas -    Product Name=ioGAS-64
+02:59:29.993 [main] INFO  net.ioglobal.gas -    Product Long Name=ioGAS-64 - Geoscience Analytics System
+02:59:29.993 [main] INFO  net.ioglobal.gas -    Viewer=false
+02:59:29.993 [main] INFO  net.ioglobal.gas -    Started at Fri Nov 06 02:59:29 WIB 2026
+02:59:29.994 [main] INFO  net.ioglobal.gas -    Started in C:\Program Files\IMDEX\ioGAS-64.8.3
+02:59:29.994 [main] INFO  net.ioglobal.gas -    Build Date Tue Oct 27 11:41:46 WIB 2026
+02:59:29.994 [main] INFO  net.ioglobal.gas -    App dir: C:\Program Files\IMDEX\ioGAS-64.8.3/
+02:59:29.994 [main] INFO  net.ioglobal.gas -    App data dir: C:\Users\mauli\AppData\Roaming\ioGAS\
+02:59:29.995 [main] INFO  net.ioglobal.gas -    App data dir (all): C:\ProgramData/ioGAS/
+02:59:30.167 [main] INFO  net.ioglobal.gas -    User default dir: C:\Users\mauli\Documents\
+02:59:30.168 [main] INFO  net.ioglobal.gas -    Major version (branch): 8.3
+02:59:30.169 [main] INFO  net.ioglobal.gas -    Version / File Version / Compatibility Version 8.3.2 / 8.3.2 / 8.3.2
+02:59:30.169 [main] INFO  net.ioglobal.gas -    Build: 300608
+02:59:30.169 [main] INFO  net.ioglobal.gas -    Vol ID: 808457876
+02:59:30.169 [main] INFO  net.ioglobal.gas -    K2 ID: K1883346307
+02:59:30.169 [main] INFO  net.ioglobal.gas -    OS.User: mauli
+02:59:30.169 [main] INFO  net.ioglobal.gas -    OS.name: Windows 11
+02:59:30.170 [main] INFO  net.ioglobal.gas -    Tracking ID: b61feb90-97ed-4fe2-9e23-805d6ce8520a
+02:59:30.170 [main] INFO  net.ioglobal.gas -    Java JRE: 17.0.2
+02:59:30.170 [main] INFO  net.ioglobal.gas -    JVM Arch: amd64
+02:59:30.170 [main] INFO  net.ioglobal.gas -    Processors: 16
+02:59:30.173 [main] INFO  net.ioglobal.gas -    Memory: Used / Taken From OS / Max Avail from OS 18 MB Used,  248 MB Allocated, 6144 MB Max
+02:59:30.182 [main] INFO  net.ioglobal.gas -    Limits=Limits [splomPointLimit=131376540, gridCellLimit=131376540, importCellLimit=65688270, columnLimit_7_3=509, m_attributeLimit=2500, attributeLimitForFilter=2500]
+02:59:30.182 [main] INFO  net.ioglobal.gas -    Default Charset=windows-1252
+02:59:30.183 [main] INFO  net.ioglobal.gas -    System Temp: C:\Users\mauli\AppData\Local\Temp/
+02:59:30.183 [main] INFO  net.ioglobal.gas -    Locale: en_US
+02:59:30.183 [main] INFO  net.ioglobal.gas -    Mac: false
+02:59:30.186 [main] INFO  net.ioglobal.gas -    Admin: true
+02:59:30.193 [main] INFO  net.ioglobal.gas -    URLs: 
+http://iogas.update.ioanalytics.net
+http://iogas.website.ioanalytics.net
+http://iogas.onlinepurchase.ioanalytics.net
+http://iogas.versions.eng.ioanalytics.net
+https://iogas.imdexlimited.com/customer/products/iogas/config.txt
+
+02:59:30.195 [main] INFO  net.ioglobal.gas -    Emails: 
+iogas.licence@imdexlimited.com
+iogas.support@imdexlimited.com
+
+02:59:30.196 [main] INFO  net.ioglobal.gas -    Properties from java System.getProperties(): {java.specification.version=17, sun.cpu.isalist=amd64, sun.jnu.encoding=Cp1252, java.class.path=C:\Program Files\IMDEX\ioGAS-64.8.3\libs\GAS.jar, sun.awt.enableExtraMouseButtons=true, java.vm.vendor=Eclipse Adoptium, sun.arch.data.model=64, user.variant=, java.vendor.url=https://adoptium.net/, user.timezone=Asia/Jakarta, log4j2.formatMsgNoLookups=true, java.vm.specification.version=17, os.name=Windows 11, sun.java.launcher=SUN_STANDARD, user.country=US, sun.boot.library.path=C:\Program Files\IMDEX\ioGAS-64.8.3\jre\bin, sun.java.command=net.ioglobal.gas.main.Main -appdir C:\Program Files\IMDEX\ioGAS-64.8.3 -brand ioGAS -gaslink2 -notracker -nogaslink -noacquire, jdk.debug=release, sun.cpu.endian=little, user.home=C:\Users\mauli, user.language=en, java.specification.vendor=Oracle Corporation, java.version.date=2022-01-18, java.home=C:\Program Files\IMDEX\ioGAS-64.8.3\jre, file.separator=\, java.vm.compressedOopsMode=Zero based, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, user.script=, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=17.0.2+8, user.name=mauli, path.separator=;, os.version=10.0, java.runtime.name=OpenJDK Runtime Environment, file.encoding=Cp1252, java.vm.name=OpenJDK 64-Bit Server VM, java.vendor.version=Temurin-17.0.2+8, install4j.appDir=C:\Program Files\IMDEX\ioGAS-64.8.3, java.vendor.url.bug=https://github.com/adoptium/adoptium-support/issues, java.io.tmpdir=C:\Users\mauli\AppData\Local\Temp\, java.version=17.0.2, user.dir=C:\Program Files\IMDEX\ioGAS-64.8.3, os.arch=amd64, java.vm.specification.name=Java Virtual Machine Specification, sun.os.patch.level=, native.encoding=Cp1252, java.library.path=C:\Program Files\IMDEX\ioGAS-64.8.3\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\mauli\Documents\ml-olympiar\.venv\Scripts;C:\Users\mauli\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\mauli\bin;C:\Program Files\Eclipse Adoptium\jdk-21.0.12.101-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\libnvvp;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet;C:\Program Files\Microsoft SQL Server\150\Tools\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;C:\Program Files\Git\cmd;C:\Program Files\Calibre2;C:\Program Files\Cloudflare\Cloudflare WARP;C:\Program Files\Topaz Labs LLC\Topaz Gigapixel AI\bin;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\NVIDIA Corporation\Nsight Compute 2025.2.0;C:\Program Files\GitHub CLI;C:\Program Files (x86)\ZeroTier\One;C:\Program Files\MATLAB\R2025b\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\CMake\bin;C:\Program Files\nodejs;C:\Users\mauli\.local\bin;C:\Users\mauli\AppData\Local\pnpm;C:\Users\mauli\miniconda3;C:\Users\mauli\miniconda3\Library\mingw-w64\bin;C:\Users\mauli\miniconda3\Library\usr\bin;C:\Users\mauli\miniconda3\Library\bin;C:\Users\mauli\miniconda3\Scripts;C:\Users\mauli\AppData\Local\Microsoft\WindowsApps;C:\Users\mauli\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\mauli\AppData\Local\Programs\Antigravity\bin;C:\Users\mauli\.lmstudio\bin;C:\Users\mauli\AppData\Local\Microsoft\WinGet\Packages\Ninja-build.Ninja_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\mauli\AppData\Roaming\npm;C:\Users\mauli\AppData\Local\Programs\HatchZip;C:\PROGRA~1\IMDEX\acQuireDirectClient8.3\acQuireDirect;C:\Program Files\nodejs;C:\Program Files\Git\mingw64\bin;C:\Program Files\GitHub CLI;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;., java.vm.info=mixed mode, java.vendor=Eclipse Adoptium, java.vm.version=17.0.2+8, sun.io.unicode.encoding=UnicodeLittle, java.class.version=61.0}
+02:59:30.197 [main] INFO  net.ioglobal.gas - Copying user config file: colouring1.xml
+02:59:30.201 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//colouring1.xml NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\colouring1.xml
+02:59:30.201 [main] INFO  net.ioglobal.gas - Copying user config file: sizing2.xml
+02:59:30.204 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//sizing2.xml NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\sizing2.xml
+02:59:30.205 [main] INFO  net.ioglobal.gas - Copying user config file: binning.4.xml
+02:59:30.209 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//binning.4.xml NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\binning.4.xml
+02:59:30.209 [main] INFO  net.ioglobal.gas - Copying user config file: attribute.colours.xml
+02:59:30.212 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//attribute.colours.xml NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\attribute.colours.xml
+02:59:30.213 [main] INFO  net.ioglobal.gas - Copying user config file: xrf.dl5.xml
+02:59:30.216 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//xrf.dl5.xml NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\xrf.dl5.xml
+02:59:30.216 [main] INFO  net.ioglobal.gas - Copying user config file: geotiff.epsg.LL.4.txt
+02:59:30.219 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//geotiff.epsg.LL.4.txt NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\geotiff.epsg.LL.4.txt
+02:59:30.219 [main] INFO  net.ioglobal.gas - Copying user config file: geotiff.epsg.other.3.txt
+02:59:30.222 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//geotiff.epsg.other.3.txt NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\geotiff.epsg.other.3.txt
+02:59:30.223 [main] INFO  net.ioglobal.gas - Copying user config file: geotiff.epsg.UTM.5.txt
+02:59:30.226 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//geotiff.epsg.UTM.5.txt NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\geotiff.epsg.UTM.5.txt
+02:59:30.227 [main] INFO  net.ioglobal.gas - Copying user config file: OGIS.WKP.txt
+02:59:30.231 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//OGIS.WKP.txt NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\OGIS.WKP.txt
+02:59:30.232 [main] INFO  net.ioglobal.gas - Copying user config file: robust.xml
+02:59:30.236 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//robust.xml NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\robust.xml
+02:59:30.236 [main] INFO  net.ioglobal.gas - Copying user config file: link.ini
+02:59:30.239 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//link.ini NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\link.ini
+02:59:30.240 [main] INFO  net.ioglobal.gas - Copying user config file: gas.licence.ini
+02:59:30.243 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//gas.licence.ini NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\gas.licence.ini
+02:59:30.243 [main] INFO  net.ioglobal.gas - Copying user config file: aliasing.exceptions.txt
+02:59:30.246 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//aliasing.exceptions.txt NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\aliasing.exceptions.txt
+02:59:30.247 [main] INFO  net.ioglobal.gas - Copying user config file: python.ini
+02:59:30.250 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//python.ini NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\python.ini
+02:59:30.250 [main] INFO  net.ioglobal.gas - Copying user config file: spider.locations.ini
+02:59:30.254 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//spider.locations.ini NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\spider.locations.ini
+02:59:30.254 [main] INFO  net.ioglobal.gas - Copying user config file: diagram.locations.ini
+02:59:30.258 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//diagram.locations.ini NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\diagram.locations.ini
+02:59:30.258 [main] INFO  net.ioglobal.gas - Copying user config file: calculation.locations.ini
+02:59:30.261 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//calculation.locations.ini NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\calculation.locations.ini
+02:59:30.262 [main] INFO  net.ioglobal.gas - Copying user config file: node.locations.ini
+02:59:30.266 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//node.locations.ini NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\node.locations.ini
+02:59:30.267 [main] INFO  net.ioglobal.gas - Copying user config file: template.locations.ini
+02:59:30.269 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//template.locations.ini NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\template.locations.ini
+02:59:30.270 [main] INFO  net.ioglobal.gas - Copying user config file: som.locations.2.ini
+02:59:30.273 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//som.locations.2.ini NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\som.locations.2.ini
+02:59:30.274 [main] INFO  net.ioglobal.gas - Copying user config file: workflow.locations.ini
+02:59:30.277 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//workflow.locations.ini NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\workflow.locations.ini
+02:59:30.277 [main] INFO  net.ioglobal.gas - Copying user config file: postgres.params
+02:59:30.280 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//postgres.params NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\postgres.params
+02:59:30.281 [main] INFO  net.ioglobal.gas - Copying user config file: gaslink2.ini
+02:59:30.284 [main] INFO  net.ioglobal.gas -    C:\Program Files\IMDEX\ioGAS-64.8.3///uct//gaslink2.ini NOT overwriting C:\Users\mauli\AppData\Roaming\ioGAS\userConfig\gaslink2.ini
+02:59:30.284 [main] INFO  net.ioglobal.gas - Copying example files:
+02:59:30.287 [main] ERROR net.ioglobal.gas - Cannot load file C:\Users\mauli\AppData\Roaming\ioGAS\state\ps.gsp (The system cannot find the file specified)
+02:59:30.296 [main] INFO  net.ioglobal.gas -    Copied 1 xml files from C:\Program Files\IMDEX\ioGAS-64.8.3\uct\Spider  to C:\Users\mauli\AppData\Roaming\ioGAS\Spider  o/w = true
+02:59:30.299 [main] INFO  net.ioglobal.gas -    Copied 1 xml files from C:\Program Files\IMDEX\ioGAS-64.8.3\uct\Diagrams  to C:\Users\mauli\AppData\Roaming\ioGAS\Diagrams  o/w = true
+02:59:30.303 [main] INFO  net.ioglobal.gas -    Copied 1 xml files from C:\Program Files\IMDEX\ioGAS-64.8.3\uct\Calculations  to C:\Users\mauli\AppData\Roaming\ioGAS\Calculations  o/w = true
+02:59:30.307 [main] INFO  net.ioglobal.gas -    Copied 1 xml files from C:\Program Files\IMDEX\ioGAS-64.8.3\uct\SOMs  to C:\Users\mauli\AppData\Roaming\ioGAS\Analysis\SOMs  o/w = true
+02:59:30.308 [main] INFO  net.ioglobal.gas -    Copied 0 xml files from C:\Program Files\IMDEX\ioGAS-64.8.3\uct\Template  to C:\Users\mauli\AppData\Roaming\ioGAS\Templates  o/w = true
+02:59:30.309 [main] INFO  net.ioglobal.gas -    Copied 0 xml files from C:\Program Files\IMDEX\ioGAS-64.8.3\uct\Schemas  to C:\Users\mauli\AppData\Roaming\ioGAS\Schemas  o/w = false
+02:59:30.310 [main] INFO  net.ioglobal.gas -    - not overwriting existing file aiSIRIS.glg
+02:59:30.311 [main] INFO  net.ioglobal.gas -    - not overwriting existing file USGS.glg
+02:59:30.311 [main] INFO  net.ioglobal.gas -    Copied 0 glg files from C:\Program Files\IMDEX\ioGAS-64.8.3\uct\Legends  to C:\Users\mauli\AppData\Roaming\ioGAS\Legends  o/w = false
+02:59:30.312 [main] INFO  net.ioglobal.gas -    - not overwriting existing file ioGAS Defaults.xml
+02:59:30.312 [main] INFO  net.ioglobal.gas -    Copied 0 xml files from C:\Program Files\IMDEX\ioGAS-64.8.3\uct\Nodes  to C:\Users\mauli\AppData\Roaming\ioGAS\Nodes  o/w = false
+02:59:30.313 [main] INFO  net.ioglobal.gas -    - not overwriting existing file import_random_data.py
+02:59:30.314 [main] INFO  net.ioglobal.gas -    - not overwriting existing file row_diffs.py
+02:59:30.314 [main] INFO  net.ioglobal.gas -    - not overwriting existing file run_hdbscan.py
+02:59:30.315 [main] INFO  net.ioglobal.gas -    - not overwriting existing file run_pacmap.py
+02:59:30.315 [main] INFO  net.ioglobal.gas -    Copied 0 py files from C:\Program Files\IMDEX\ioGAS-64.8.3\uct\Python  to C:\Users\mauli\AppData\Roaming\ioGAS\python  o/w = false
+02:59:30.316 [main] INFO  net.ioglobal.gas -    - not overwriting existing file UserNodes.xlsx
+02:59:30.316 [main] INFO  net.ioglobal.gas -    Copied 0 xlsx files from C:\Program Files\IMDEX\ioGAS-64.8.3\uct\Nodes  to C:\Users\mauli\AppData\Roaming\ioGAS\Nodes  o/w = false
+02:59:30.317 [main] INFO  net.ioglobal.gas -    Copied 0 xls files from C:\Program Files\IMDEX\ioGAS-64.8.3\uct\Nodes  to C:\Users\mauli\AppData\Roaming\ioGAS\Nodes  o/w = false
+02:59:30.321 [main] INFO  net.ioglobal.gas - FOUND EXISTING dir C:\Users\mauli\AppData\Roaming\ioGAS\res.cache
+02:59:30.327 [main] INFO  net.ioglobal.gas - Provided: buildID property in C:\Program Files\IMDEX\ioGAS-64.8.3//iodz_v is 300608 returning 300608
+02:59:30.329 [main] INFO  net.ioglobal.gas - Provided: buildID property in C:\Users\mauli\AppData\Roaming\ioGAS\/res.cache//iodz_v is 300608 returning 300608
+02:59:30.331 [main] INFO  net.ioglobal.gas - Provided: version check, new: 300608 ours: 300608 need to copy = false
+02:59:30.368 [main] INFO  net.ioglobal.gas - Setting Look and Feel to com.sun.java.swing.plaf.windows.WindowsLookAndFeel
+02:59:30.384 [main] INFO  net.ioglobal.gas - Client config loaded {OAuth2=DISABLED, ActiveDaysClassic=28, ActiveDaysFloating=7, Port=31415, Enabled=false, Host=PutHostHere, AutoRefresh=true}
+02:59:31.185 [main] INFO  net.ioglobal.gas - powershell (Get-CimInstance -Class Win32_ComputerSystemProduct).UUID   - OK
+02:59:31.221 [main] INFO  net.ioglobal.gas - Reading from file C:\Users\mauli\AppData\Roaming\ioGAS\gas.single.eval.glc
+02:59:31.254 [main] INFO  net.ioglobal.gas -  read: Licence Kind:gas.single.eval,  Brand:ioGAS,  Machine:808457876,  User/Site:(Evaluation User),  Expires:19 Nov 2026 - 20:53:06 [GMT +07],  Maintenance expires:19 Nov 2026 - 20:53:06 [GMT +07],  Classic user limit:0,  Floating user limit:0,  Extra features:[Link.GOCAD]
+02:59:31.255 [main] INFO  net.ioglobal.gas -      getBuildDate() Checking file C:\Program Files\IMDEX\ioGAS-64.8.3\libs\GAS.jar, can read=true, got mod date=1793076106000
+02:59:31.255 [main] INFO  net.ioglobal.gas - Licence processing:
+02:59:31.255 [main] INFO  net.ioglobal.gas -    Lic brand key=ioGAS build brand key=ioGAS
+02:59:31.256 [main] INFO  net.ioglobal.gas -    Lic machine key=808457876 this machine key=808457876
+02:59:31.256 [main] INFO  net.ioglobal.gas -    Lic expiry=Thu Nov 19 20:53:06 WIB 2026 now=Fri Nov 06 02:59:31 WIB 2026
+02:59:31.256 [main] INFO  net.ioglobal.gas -    Maint expiry=Thu Nov 19 20:53:06 WIB 2026 build date=Tue Oct 27 11:41:46 WIB 2026
+02:59:31.256 [main] INFO  net.ioglobal.gas -    Licence processed OK
+02:59:31.256 [main] INFO  net.ioglobal.gas - 
+02:59:31.256 [main] INFO  net.ioglobal.gas - >> Licence Info:
+02:59:31.257 [main] INFO  net.ioglobal.gas - Licence Kind:gas.single.eval,  Brand:ioGAS,  Machine:808457876,  User/Site:(Evaluation User),  Expires:19 Nov 2026 - 20:53:06 [GMT +07],  Maintenance expires:19 Nov 2026 - 20:53:06 [GMT +07],  Classic user limit:0,  Floating user limit:0,  Extra features:[Link.GOCAD]
+02:59:31.257 [main] INFO  net.ioglobal.gas - 
+02:59:31.257 [main] INFO  net.ioglobal.gas - Attempting to load geochem canonical set
+02:59:31.268 [main] INFO  net.ioglobal.gas - Canonical loading, version = 5
+02:59:31.277 [main] ERROR net.ioglobal.gas - Cannot load file C:\Users\mauli\AppData\Roaming\ioGAS\state\ps.gsp (The system cannot find the file specified)
+02:59:31.285 [main] INFO  net.ioglobal.gas - Properties loaded from python.ini: {Port=12345}
+02:59:31.286 [main] INFO  net.ioglobal.gas - [Port]
+02:59:31.327 [main] INFO  net.ioglobal.gas - 
+=== SETTING UP MAIN FRAME
+02:59:31.328 [main] INFO  net.ioglobal.gas - === Showing splash
+02:59:32.953 [main] INFO  net.ioglobal.gas - DEFAULT properties....
+02:59:34.788 [main] INFO  net.ioglobal.gas - gaslink configured OFF
+02:59:34.788 [main] ERROR net.ioglobal.gas - not starting acquire link as disabled by command line argument
+02:59:34.790 [main] INFO  net.ioglobal.gas - gas file state change  332  listeners 
+02:59:34.805 [main] INFO  net.ioglobal.gas - VC - STARTING
+02:59:34.820 [CheckNewerVersion] INFO  net.ioglobal.gas - VC READ OUR V= 300608
+02:59:34.821 [CheckNewerVersion] INFO  net.ioglobal.gas - VC, my version is  300608
+02:59:34.825 [CheckNewerVersion] INFO  net.ioglobal.gas - VC, about to connect to http://iogas.versions.eng.ioanalytics.net
+02:59:34.834 [main] INFO  net.ioglobal.gas - Setting handler for Uncaught Exceptions
+02:59:34.835 [DiagCalcUpdate] INFO  net.ioglobal.gas - NEW PROVIDED RESOURCE UPDATES - STARTING
+02:59:34.839 [DiagCalcUpdate] INFO  net.ioglobal.gas - Deleting C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\iod
+02:59:34.838 [pool-4-thread-1] INFO  net.ioglobal.gas - IOA config load, about to connect to https://iogas.imdexlimited.com/customer/products/iogas/config.txt
+02:59:34.841 [DiagCalcUpdate] INFO  net.ioglobal.gas - Deleting NON EMPTY C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\iod
+02:59:34.958 [main] INFO  net.ioglobal.gas - Properties loaded from gaslink2.ini: {remotePort=25100, serverPort=25000}
+02:59:35.349 [main] INFO  net.ioglobal.gas - GASLink2 created with version 2.1
+02:59:35.352 [main] INFO  net.ioglobal.gas - Starting GASLink2 server on port 25000
+02:59:35.706 [DiagCalcUpdate] INFO  net.ioglobal.gas -   result true
+02:59:35.707 [DiagCalcUpdate] INFO  net.ioglobal.gas - mkdirs for C:\Users\mauli\AppData\Roaming\ioGAS\/res.cache//iod/ result true
+02:59:35.707 [DiagCalcUpdate] INFO  net.ioglobal.gas - Unzipping C:\Users\mauli\AppData\Roaming\ioGAS\/res.cache//iodz   to C:\Users\mauli\AppData\Roaming\ioGAS\/res.cache//iod/
+02:59:35.866 [main] INFO  net.ioglobal.gas - Processing post launch args  
+02:59:35.866 [main] INFO  net.ioglobal.gas - ... main thread, exit.
+02:59:36.392 [grpc-default-executor-0] INFO  net.ioglobal.gas - ADDING openGASFile in thread 69
+02:59:36.409 [pool-5-thread-1] INFO  net.ioglobal.gas - gas closing file
+02:59:36.409 [pool-5-thread-1] INFO  net.ioglobal.gas - >>>type set to  NON_GAS_FILE
+02:59:36.410 [pool-5-thread-1] INFO  net.ioglobal.gas - Loaded file is null type=NON_GAS_FILE
+02:59:36.410 [pool-5-thread-1] INFO  net.ioglobal.gas - gas file state change  333  listeners 
+02:59:36.413 [pool-5-thread-1] INFO  net.ioglobal.gas - File Close: BEFORE GC 38 MB Used,  76 MB Allocated, 6144 MB Max
+02:59:36.505 [pool-5-thread-1] INFO  net.ioglobal.gas - AFTER GC 35 MB Used,  76 MB Allocated, 6144 MB Max
+02:59:36.511 [pool-5-thread-1] INFO  net.ioglobal.gas - === START GAS LOAD C:\Users\mauli\Documents\ml-olympiar\data\interim\iogas_s1\tanah_kelas_As_masuk.gas
+02:59:36.513 [pool-5-thread-1] INFO  net.ioglobal.gas - MAKING Temp root C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main result= true
+02:59:36.519 [pool-5-thread-1] INFO  net.ioglobal.gas - Making Temp dir C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-36.518.GASLoader.init result= true
+02:59:36.519 [pool-5-thread-1] INFO  net.ioglobal.gas - Unzipping C:\Users\mauli\Documents\ml-olympiar\data\interim\iogas_s1\tanah_kelas_As_masuk.gas   to C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-36.518.GASLoader.init\
+02:59:36.525 [pool-5-thread-1] INFO  net.ioglobal.gas - read: 3 from C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-36.518.GASLoader.init\version.txt
+02:59:36.526 [pool-5-thread-1] INFO  net.ioglobal.gas - determined encoding to be UTF-8 for 8.3
+02:59:36.527 [pool-5-thread-1] INFO  net.ioglobal.gas - read: 3 from C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-36.518.GASLoader.init\version.txt
+02:59:36.527 [pool-5-thread-1] INFO  net.ioglobal.gas - gas file version 8.3
+02:59:36.532 [pool-5-thread-1] INFO  net.ioglobal.gas - Starting to parse C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-36.518.GASLoader.init\metadata.xml
+02:59:36.549 [pool-5-thread-1] INFO  net.ioglobal.gas - OPENING session fd155702-e867-49c6-b3d3-b9339c4b2acc
+02:59:36.586 [pool-5-thread-1] INFO  net.ioglobal.gas - SETTING EPSG 32647
+02:59:36.605 [pool-5-thread-1] INFO  net.ioglobal.gas - Selected label columns already []
+02:59:36.607 [pool-5-thread-1] INFO  net.ioglobal.gas - Completed parsing C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-36.518.GASLoader.init\metadata.xml
+02:59:36.608 [DiagCalcUpdate] INFO  net.ioglobal.gas - Checking for maint expiry, now = Fri Nov 06 02:59:36 WIB 2026 maint = Thu Nov 19 20:53:06 WIB 2026
+02:59:36.611 [DiagCalcUpdate] INFO  net.ioglobal.gas - Provided Res: Normal load from provided.url.7.ini
+02:59:36.616 [pool-5-thread-1] INFO  net.ioglobal.gas - >>> READING FILE (using encoding UTF-8) C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-36.518.GASLoader.init\data.csv
+02:59:36.664 [pool-5-thread-1] INFO  net.ioglobal.gas - read: 62 from C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-36.518.GASLoader.init\changelog.txt
+02:59:36.687 [pool-5-thread-1] INFO  net.ioglobal.gas - read: 3 from C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-36.518.GASLoader.init\version.txt
+02:59:36.687 [pool-5-thread-1] INFO  net.ioglobal.gas - >>>type set to  GAS_FILE
+02:59:36.742 [pool-5-thread-1] INFO  net.ioglobal.gas - Loaded  file stripLogPreferences,  got net.ioglobal.gas.chart.line.MultiLineUserPreferences@29148f61
+02:59:36.742 [pool-5-thread-1] INFO  net.ioglobal.gas - Loaded file is C:\Users\mauli\Documents\ml-olympiar\data\interim\iogas_s1\tanah_kelas_As_masuk.gas type=GAS_FILE
+02:59:36.743 [pool-5-thread-1] WARN  net.ioglobal.gas - Could not load last importer
+02:59:36.761 [pool-5-thread-1] INFO  net.ioglobal.gas - Loaded  file rf,  got [C:\Users\mauli\Documents\ml-olympiar\outputs\iogas_project\s1_kelas\RJ_tanah_s1_kelas_Cu_v1.gas, C:\Users\mauli\Documents\ml-olympiar\data\interim\iogas_s1\tanah_kelas_Cu_masuk.gas, C:\Users\mauli\Documents\ml-olympiar\outputs\iogas_project\s1_kelas\RJ_tanah_s1_kelas_Ag_v1.gas... [3836 removed]
+02:59:36.762 [pool-5-thread-1] INFO  net.ioglobal.gas - Adding recent file C:\Users\mauli\Documents\ml-olympiar\data\interim\iogas_s1\tanah_kelas_As_masuk.gas
+02:59:36.764 [CheckNewerVersion] INFO  net.ioglobal.gas - VC, available =[101592, 101597, 101628, 101742, 101757, 101771, 101890, 102097, 102148, 102304, 102306, 102443, 102462, 102591, 102635, 102712, 103149, 103283, 103457, 103523, 103605, 103805, 103826, 103992, 104088, 104362, 104607, 104772, 104841, 200429, 200831, 201034, 201041, 201460, 201683, 2017... [27 removed]
+02:59:36.764 [CheckNewerVersion] INFO  net.ioglobal.gas - VC, newer= false
+02:59:36.766 [CheckNewerVersion] INFO  net.ioglobal.gas - VC  NO NEW GAS FOUND : count= 0
+02:59:36.781 [pool-5-thread-1] INFO  net.ioglobal.gas -    writing: 5334 characters to C:\Users\mauli\AppData\Roaming\ioGAS\state\rf.1.gsx
+02:59:36.783 [pool-5-thread-1] INFO  net.ioglobal.gas - No stripLogSchema.xml in .gas file
+02:59:36.784 [pool-5-thread-1] INFO  net.ioglobal.gas - read: 3 from C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-36.518.GASLoader.init\version.txt
+02:59:36.784 [pool-5-thread-1] INFO  net.ioglobal.gas - File version 8.3
+02:59:36.785 [pool-5-thread-1] INFO  net.ioglobal.gas - xml workspace: 
+02:59:36.797 [pool-5-thread-1] INFO  net.ioglobal.gas - 
+================================================================================
+Imported gas file C:\Users\mauli\Documents\ml-olympiar\data\interim\iogas_s1\tanah_kelas_As_masuk.gas with 188 rows, 24 columns
+================================================================================
+02:59:36.797 [pool-5-thread-1] INFO  net.ioglobal.gas - Deleting C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-36.518.GASLoader.init
+02:59:36.798 [pool-5-thread-1] INFO  net.ioglobal.gas - Deleting NON EMPTY C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-36.518.GASLoader.init
+02:59:36.800 [pool-5-thread-1] INFO  net.ioglobal.gas -   result true
+02:59:36.800 [pool-5-thread-1] INFO  net.ioglobal.gas - === END GAS LOAD
+02:59:36.802 [AWT-EventQueue-0] INFO  net.ioglobal.gas - gas file state change  333  listeners 
+02:59:36.821 [grpc-default-executor-0] INFO  net.ioglobal.gas - ADDING runWorkflow in thread 69
+02:59:36.824 [pool-5-thread-1] INFO  net.ioglobal.gas - workflow loader is net.ioglobal.gas.workflow.WorkflowLoader@38f8c6b
+02:59:36.847 [pool-5-thread-1] INFO  net.ioglobal.gas - Loading class named net.ioglobal.gas.ui.select.SelectVariablesAction
+02:59:36.849 [pool-5-thread-1] INFO  net.ioglobal.gas - Loading class named net.ioglobal.gas.chart.xy.pp.DisplayPP$Combined
+02:59:36.850 [pool-5-thread-1] INFO  net.ioglobal.gas - Loading class named net.ioglobal.gas.chart.xy.LogYAction
+02:59:36.850 [pool-5-thread-1] INFO  net.ioglobal.gas - Loading class named net.ioglobal.gas.action.copy.ExportPlotWindowAction
+02:59:36.852 [pool-5-thread-1] INFO  net.ioglobal.gas - Loading class named net.ioglobal.gas.action.file.SaveAction
+02:59:36.853 [pool-5-thread-1] INFO  net.ioglobal.gas - 
+02:59:36.856 [pool-5-thread-1] INFO  net.ioglobal.gas -  ---> RUNNING WORKFLOW  's1 ambang tanah As'  (5 ops from 5)
+02:59:37.193 [pool-5-thread-1] INFO  net.ioglobal.gas - Desktop frame count is now 2   -- Added Workflow Output: s1 ambang tanah As
+02:59:37.200 [pool-4-thread-1] INFO  net.ioglobal.gas - IOA config loaded 
+02:59:37.217 [AWT-EventQueue-0] INFO  net.ioglobal.gas -  ------> Running operation 1 of 5: Select Variables [As_ppm]....
+02:59:37.222 [AWT-EventQueue-0] INFO  net.ioglobal.gas - Sync acquired lock: class net.ioglobal.gas.ui.select.SelectVariablesAction
+02:59:37.223 [AWT-EventQueue-0] INFO  net.ioglobal.gas - Selected variables [As_ppm]
+02:59:37.248 [AWT-EventQueue-0] INFO  net.ioglobal.gas - Sync released lock after 25 ms: class net.ioglobal.gas.ui.select.SelectVariablesAction
+02:59:37.249 [AWT-EventQueue-0] INFO  net.ioglobal.gas -  ------> Running operation 2 of 5: Probability Plot....
+02:59:37.290 [AWT-EventQueue-0] INFO  net.ioglobal.gas - Async acquired lock: net.ioglobal.gas.chart.xy.pp.DisplayPP$Combined
+02:59:37.472 [SwingWorker-pool-3-thread-6] INFO  net.ioglobal.gas - Loaded  file pss,  got net.ioglobal.gas.chart.FrameChartSettings@54dca257
+02:59:37.532 [AWT-EventQueue-0] INFO  net.ioglobal.gas - Desktop frame count is now 3   -- Added Probability Plot [As_ppm] 
+02:59:37.649 [AWT-EventQueue-0] INFO  net.ioglobal.gas - Async released lock after 358 ms: net.ioglobal.gas.chart.xy.pp.DisplayPP$Combined
+02:59:37.651 [AWT-EventQueue-0] INFO  net.ioglobal.gas -  ------> Running operation 3 of 5: Log Y axis....
+02:59:37.652 [AWT-EventQueue-0] INFO  net.ioglobal.gas - Sync acquired lock: class net.ioglobal.gas.chart.xy.LogYAction
+02:59:37.681 [AWT-EventQueue-0] INFO  net.ioglobal.gas - Attempt to set log axis range <=0 so autoranging
+02:59:37.703 [AWT-EventQueue-0] INFO  net.ioglobal.gas - Sync released lock after 50 ms: class net.ioglobal.gas.chart.xy.LogYAction
+02:59:37.703 [AWT-EventQueue-0] INFO  net.ioglobal.gas -  ------> Running operation 4 of 5: Export Window....
+02:59:38.063 [DiagCalcUpdate] INFO  net.ioglobal.gas -    copied 101 bytes from https://iogas.imdexlimited.com/customer/products/ioGAS/diagram.version.txt to C:\Users\mauli\AppData\Roaming\ioGAS\/res.cache//iodz_v_new
+02:59:38.065 [DiagCalcUpdate] INFO  net.ioglobal.gas - Provided: buildID property in C:\Users\mauli\AppData\Roaming\ioGAS\/res.cache//iodz_v_new is 300080 returning 300080
+02:59:38.066 [DiagCalcUpdate] INFO  net.ioglobal.gas - Provided: buildID property in C:\Users\mauli\AppData\Roaming\ioGAS\/res.cache//iodz_v is 300608 returning 300608
+02:59:38.066 [DiagCalcUpdate] INFO  net.ioglobal.gas - Provided: version check, new: 300080 ours: 300608 need to copy = false
+02:59:38.066 [DiagCalcUpdate] INFO  net.ioglobal.gas -    Provided diagram check: DID NOT GET NEW FILE
+02:59:38.066 [DiagCalcUpdate] INFO  net.ioglobal.gas - NEW USER RESOURCE UPDATES - STARTING
+02:59:38.066 [DiagCalcUpdate] INFO  net.ioglobal.gas - 
+02:59:38.067 [DiagCalcUpdate] INFO  net.ioglobal.gas - === NODE
+02:59:38.068 [DiagCalcUpdate] INFO  net.ioglobal.gas - BUILD NAME LISTS
+02:59:38.069 [DiagCalcUpdate] INFO  net.ioglobal.gas - built: 
+02:59:38.069 [DiagCalcUpdate] INFO  net.ioglobal.gas - [C:\Users\mauli\AppData\Roaming\ioGAS\/Nodes]
+02:59:38.069 [DiagCalcUpdate] INFO  net.ioglobal.gas - [Nodes]
+02:59:38.069 [DiagCalcUpdate] INFO  net.ioglobal.gas - PASS 1 DELETE UNCONFIGURED CACHE ENTRIES
+02:59:38.071 [DiagCalcUpdate] INFO  net.ioglobal.gas - read: 42 from C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\NODE\Nodes/orig.txt
+02:59:38.071 [DiagCalcUpdate] INFO  net.ioglobal.gas -   =comparing configured C:\Users\mauli\AppData\Roaming\ioGAS\/Nodes  to in cache C:\Users\mauli\AppData\Roaming\ioGAS\Nodes
+02:59:38.072 [DiagCalcUpdate] INFO  net.ioglobal.gas -     found
+02:59:38.072 [DiagCalcUpdate] INFO  net.ioglobal.gas - 
+02:59:38.072 [DiagCalcUpdate] INFO  net.ioglobal.gas - PASS 2 RECOPY CONFIGURED ITEMS
+02:59:38.073 [DiagCalcUpdate] INFO  net.ioglobal.gas - Deleting C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\NODE\Nodes
+02:59:38.074 [DiagCalcUpdate] INFO  net.ioglobal.gas - Deleting NON EMPTY C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\NODE\Nodes
+02:59:38.076 [DiagCalcUpdate] INFO  net.ioglobal.gas -   result true
+02:59:38.080 [DiagCalcUpdate] INFO  net.ioglobal.gas -    Copied 0 xls files from C:\Users\mauli\AppData\Roaming\ioGAS\Nodes  to C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\NODE\Nodes  o/w = true
+02:59:38.083 [DiagCalcUpdate] INFO  net.ioglobal.gas -    Copied 1 xlsx files from C:\Users\mauli\AppData\Roaming\ioGAS\Nodes  to C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\NODE\Nodes  o/w = true
+02:59:38.084 [DiagCalcUpdate] INFO  net.ioglobal.gas -    writing: 42 characters to C:\Users\mauli\AppData\Roaming\ioGAS\/res.cache//ud/NODE//Nodes/orig.txt
+02:59:38.085 [DiagCalcUpdate] INFO  net.ioglobal.gas - 
+02:59:38.085 [DiagCalcUpdate] INFO  net.ioglobal.gas - === DIAG
+02:59:38.087 [DiagCalcUpdate] INFO  net.ioglobal.gas - BUILD NAME LISTS
+02:59:38.087 [DiagCalcUpdate] INFO  net.ioglobal.gas - built: 
+02:59:38.088 [DiagCalcUpdate] INFO  net.ioglobal.gas - [C:\Users\mauli\AppData\Roaming\ioGAS\/Diagrams]
+02:59:38.088 [DiagCalcUpdate] INFO  net.ioglobal.gas - [Diagrams]
+02:59:38.088 [DiagCalcUpdate] INFO  net.ioglobal.gas - PASS 1 DELETE UNCONFIGURED CACHE ENTRIES
+02:59:38.090 [DiagCalcUpdate] INFO  net.ioglobal.gas - read: 45 from C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\DIAG\Diagrams/orig.txt
+02:59:38.090 [DiagCalcUpdate] INFO  net.ioglobal.gas -   =comparing configured C:\Users\mauli\AppData\Roaming\ioGAS\/Diagrams  to in cache C:\Users\mauli\AppData\Roaming\ioGAS\Diagrams
+02:59:38.090 [DiagCalcUpdate] INFO  net.ioglobal.gas -     found
+02:59:38.090 [DiagCalcUpdate] INFO  net.ioglobal.gas - 
+02:59:38.090 [DiagCalcUpdate] INFO  net.ioglobal.gas - PASS 2 RECOPY CONFIGURED ITEMS
+02:59:38.091 [DiagCalcUpdate] INFO  net.ioglobal.gas - Deleting C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\DIAG\Diagrams
+02:59:38.093 [DiagCalcUpdate] INFO  net.ioglobal.gas - Deleting NON EMPTY C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\DIAG\Diagrams
+02:59:38.096 [DiagCalcUpdate] INFO  net.ioglobal.gas -   result true
+02:59:38.100 [DiagCalcUpdate] INFO  net.ioglobal.gas -    Copied 1 xml files from C:\Users\mauli\AppData\Roaming\ioGAS\Diagrams  to C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\DIAG\Diagrams  o/w = true
+02:59:38.101 [DiagCalcUpdate] INFO  net.ioglobal.gas -    writing: 45 characters to C:\Users\mauli\AppData\Roaming\ioGAS\/res.cache//ud/DIAG//Diagrams/orig.txt
+02:59:38.102 [DiagCalcUpdate] INFO  net.ioglobal.gas - 
+02:59:38.102 [DiagCalcUpdate] INFO  net.ioglobal.gas - === CALC
+02:59:38.103 [DiagCalcUpdate] INFO  net.ioglobal.gas - BUILD NAME LISTS
+02:59:38.105 [DiagCalcUpdate] INFO  net.ioglobal.gas - built: 
+02:59:38.105 [DiagCalcUpdate] INFO  net.ioglobal.gas - [C:\Users\mauli\AppData\Roaming\ioGAS\/Calculations]
+02:59:38.105 [DiagCalcUpdate] INFO  net.ioglobal.gas - [Calculations]
+02:59:38.105 [DiagCalcUpdate] INFO  net.ioglobal.gas - PASS 1 DELETE UNCONFIGURED CACHE ENTRIES
+02:59:38.110 [DiagCalcUpdate] INFO  net.ioglobal.gas - read: 49 from C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\CALC\Calculations/orig.txt
+02:59:38.110 [DiagCalcUpdate] INFO  net.ioglobal.gas -   =comparing configured C:\Users\mauli\AppData\Roaming\ioGAS\/Calculations  to in cache C:\Users\mauli\AppData\Roaming\ioGAS\Calculations
+02:59:38.110 [DiagCalcUpdate] INFO  net.ioglobal.gas -     found
+02:59:38.110 [DiagCalcUpdate] INFO  net.ioglobal.gas - 
+02:59:38.110 [DiagCalcUpdate] INFO  net.ioglobal.gas - PASS 2 RECOPY CONFIGURED ITEMS
+02:59:38.110 [DiagCalcUpdate] INFO  net.ioglobal.gas - Deleting C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\CALC\Calculations
+02:59:38.111 [DiagCalcUpdate] INFO  net.ioglobal.gas - Deleting NON EMPTY C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\CALC\Calculations
+02:59:38.115 [DiagCalcUpdate] INFO  net.ioglobal.gas -   result true
+02:59:38.119 [DiagCalcUpdate] INFO  net.ioglobal.gas -    Copied 1 xml files from C:\Users\mauli\AppData\Roaming\ioGAS\Calculations  to C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\CALC\Calculations  o/w = true
+02:59:38.120 [DiagCalcUpdate] INFO  net.ioglobal.gas -    writing: 49 characters to C:\Users\mauli\AppData\Roaming\ioGAS\/res.cache//ud/CALC//Calculations/orig.txt
+02:59:38.120 [DiagCalcUpdate] INFO  net.ioglobal.gas - 
+02:59:38.121 [DiagCalcUpdate] INFO  net.ioglobal.gas - === SPIDER
+02:59:38.122 [DiagCalcUpdate] INFO  net.ioglobal.gas - BUILD NAME LISTS
+02:59:38.123 [DiagCalcUpdate] INFO  net.ioglobal.gas - built: 
+02:59:38.123 [DiagCalcUpdate] INFO  net.ioglobal.gas - [C:\Users\mauli\AppData\Roaming\ioGAS\/Spider]
+02:59:38.123 [DiagCalcUpdate] INFO  net.ioglobal.gas - [Spider]
+02:59:38.123 [DiagCalcUpdate] INFO  net.ioglobal.gas - PASS 1 DELETE UNCONFIGURED CACHE ENTRIES
+02:59:38.125 [DiagCalcUpdate] INFO  net.ioglobal.gas - read: 43 from C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\SPIDER\Spider/orig.txt
+02:59:38.126 [DiagCalcUpdate] INFO  net.ioglobal.gas -   =comparing configured C:\Users\mauli\AppData\Roaming\ioGAS\/Spider  to in cache C:\Users\mauli\AppData\Roaming\ioGAS\Spider
+02:59:38.126 [DiagCalcUpdate] INFO  net.ioglobal.gas -     found
+02:59:38.126 [DiagCalcUpdate] INFO  net.ioglobal.gas - 
+02:59:38.126 [DiagCalcUpdate] INFO  net.ioglobal.gas - PASS 2 RECOPY CONFIGURED ITEMS
+02:59:38.126 [DiagCalcUpdate] INFO  net.ioglobal.gas - Deleting C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\SPIDER\Spider
+02:59:38.127 [DiagCalcUpdate] INFO  net.ioglobal.gas - Deleting NON EMPTY C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\SPIDER\Spider
+02:59:38.130 [DiagCalcUpdate] INFO  net.ioglobal.gas -   result true
+02:59:38.133 [DiagCalcUpdate] INFO  net.ioglobal.gas -    Copied 1 xml files from C:\Users\mauli\AppData\Roaming\ioGAS\Spider  to C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\SPIDER\Spider  o/w = true
+02:59:38.133 [DiagCalcUpdate] INFO  net.ioglobal.gas -    writing: 43 characters to C:\Users\mauli\AppData\Roaming\ioGAS\/res.cache//ud/SPIDER//Spider/orig.txt
+02:59:38.135 [DiagCalcUpdate] INFO  net.ioglobal.gas - 
+02:59:38.136 [DiagCalcUpdate] INFO  net.ioglobal.gas - === TEMPLATE
+02:59:38.137 [DiagCalcUpdate] INFO  net.ioglobal.gas - BUILD NAME LISTS
+02:59:38.138 [DiagCalcUpdate] INFO  net.ioglobal.gas - built: 
+02:59:38.138 [DiagCalcUpdate] INFO  net.ioglobal.gas - [C:\Users\mauli\AppData\Roaming\ioGAS\/Templates]
+02:59:38.138 [DiagCalcUpdate] INFO  net.ioglobal.gas - [Templates]
+02:59:38.138 [DiagCalcUpdate] INFO  net.ioglobal.gas - PASS 1 DELETE UNCONFIGURED CACHE ENTRIES
+02:59:38.141 [DiagCalcUpdate] INFO  net.ioglobal.gas - read: 46 from C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\TEMPLATE\Templates/orig.txt
+02:59:38.141 [DiagCalcUpdate] INFO  net.ioglobal.gas -   =comparing configured C:\Users\mauli\AppData\Roaming\ioGAS\/Templates  to in cache C:\Users\mauli\AppData\Roaming\ioGAS\Templates
+02:59:38.142 [DiagCalcUpdate] INFO  net.ioglobal.gas -     found
+02:59:38.142 [DiagCalcUpdate] INFO  net.ioglobal.gas - 
+02:59:38.142 [DiagCalcUpdate] INFO  net.ioglobal.gas - PASS 2 RECOPY CONFIGURED ITEMS
+02:59:38.142 [DiagCalcUpdate] INFO  net.ioglobal.gas - Deleting C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\TEMPLATE\Templates
+02:59:38.143 [DiagCalcUpdate] INFO  net.ioglobal.gas - Deleting NON EMPTY C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\TEMPLATE\Templates
+02:59:38.146 [DiagCalcUpdate] INFO  net.ioglobal.gas -   result true
+02:59:38.147 [DiagCalcUpdate] INFO  net.ioglobal.gas -    Copied 0 xml files from C:\Users\mauli\AppData\Roaming\ioGAS\Templates  to C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\TEMPLATE\Templates  o/w = true
+02:59:38.148 [DiagCalcUpdate] INFO  net.ioglobal.gas -    writing: 46 characters to C:\Users\mauli\AppData\Roaming\ioGAS\/res.cache//ud/TEMPLATE//Templates/orig.txt
+02:59:38.149 [DiagCalcUpdate] INFO  net.ioglobal.gas - 
+02:59:38.149 [DiagCalcUpdate] INFO  net.ioglobal.gas - === SOM
+02:59:38.150 [DiagCalcUpdate] INFO  net.ioglobal.gas - BUILD NAME LISTS
+02:59:38.151 [DiagCalcUpdate] INFO  net.ioglobal.gas - built: 
+02:59:38.151 [DiagCalcUpdate] INFO  net.ioglobal.gas - [C:\Users\mauli\AppData\Roaming\ioGAS\/Analysis/SOMs]
+02:59:38.151 [DiagCalcUpdate] INFO  net.ioglobal.gas - [SOMs]
+02:59:38.151 [DiagCalcUpdate] INFO  net.ioglobal.gas - PASS 1 DELETE UNCONFIGURED CACHE ENTRIES
+02:59:38.154 [DiagCalcUpdate] INFO  net.ioglobal.gas - read: 50 from C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\SOM\SOMs/orig.txt
+02:59:38.154 [DiagCalcUpdate] INFO  net.ioglobal.gas -   =comparing configured C:\Users\mauli\AppData\Roaming\ioGAS\/Analysis/SOMs  to in cache C:\Users\mauli\AppData\Roaming\ioGAS\Analysis\SOMs
+02:59:38.154 [DiagCalcUpdate] INFO  net.ioglobal.gas -     found
+02:59:38.154 [DiagCalcUpdate] INFO  net.ioglobal.gas - 
+02:59:38.155 [DiagCalcUpdate] INFO  net.ioglobal.gas - PASS 2 RECOPY CONFIGURED ITEMS
+02:59:38.155 [DiagCalcUpdate] INFO  net.ioglobal.gas - Deleting C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\SOM\SOMs
+02:59:38.156 [DiagCalcUpdate] INFO  net.ioglobal.gas - Deleting NON EMPTY C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\SOM\SOMs
+02:59:38.159 [DiagCalcUpdate] INFO  net.ioglobal.gas -   result true
+02:59:38.165 [DiagCalcUpdate] INFO  net.ioglobal.gas -    Copied 1 xml files from C:\Users\mauli\AppData\Roaming\ioGAS\Analysis\SOMs  to C:\Users\mauli\AppData\Roaming\ioGAS\res.cache\ud\SOM\SOMs  o/w = true
+02:59:38.165 [DiagCalcUpdate] INFO  net.ioglobal.gas -    writing: 50 characters to C:\Users\mauli\AppData\Roaming\ioGAS\/res.cache//ud/SOM//SOMs/orig.txt
+02:59:38.166 [DiagCalcUpdate] INFO  net.ioglobal.gas - 
+02:59:38.167 [DiagCalcUpdate] INFO  net.ioglobal.gas - === WORKFLOW
+02:59:38.170 [DiagCalcUpdate] INFO  net.ioglobal.gas - NON CACHING BUILD NAME LISTS
+02:59:38.171 [DiagCalcUpdate] INFO  net.ioglobal.gas - !Building name list: cannot find  C:\Users\mauli\AppData\Roaming\ioGAS\/Workflows
+02:59:38.171 [DiagCalcUpdate] INFO  net.ioglobal.gas - built: 
+02:59:38.171 [DiagCalcUpdate] INFO  net.ioglobal.gas - [C:\Users\mauli\AppData\Roaming\ioGAS\/Workflows]
+02:59:38.172 [DiagCalcUpdate] INFO  net.ioglobal.gas - !Cannot find configured root C:\Users\mauli\AppData\Roaming\ioGAS\/Workflows
+02:59:38.172 [DiagCalcUpdate] INFO  net.ioglobal.gas - ------------ Completed cache rebuild -----------
+02:59:38.173 [Indexing search database] INFO  net.ioglobal.gas - Indexing provided resources for search
+02:59:38.483 [AWT-EventQueue-0] INFO  net.ioglobal.gas - Setting extension filter to Portable Network Graphic (.png)
+02:59:38.576 [AWT-EventQueue-0] INFO  net.ioglobal.gas - Async acquired lock: net.ioglobal.gas.action.copy.ExportPlotWindowAction
+02:59:38.577 [SwingWorker-pool-3-thread-7] INFO  net.ioglobal.gas - File provider export filename is C:\Users\mauli\Documents\ml-olympiar\outputs\figures\iogas\s1_pp_kelas_tanah_As_v1.png(saved in workflow)
+02:59:38.625 [SwingWorker-pool-3-thread-7] INFO  net.ioglobal.gas - >>> WRITING FILE (using encoding windows-1252) C:\Users\mauli\Documents\ml-olympiar\outputs\figures\iogas\s1_pp_kelas_tanah_As_v1.png
+02:59:38.626 [SwingWorker-pool-3-thread-7] INFO  net.ioglobal.gas - About to create graphics size 2040 x 1272
+02:59:38.648 [SwingWorker-pool-3-thread-7] INFO  net.ioglobal.gas - Exporting 1 components.  Detail = Detail[x=1.0, y=1.0] Scale=Scale[x=3.0, y=3.0] bounds [java.awt.Rectangle[x=0,y=0,width=2040,height=1272]]
+02:59:39.040 [SwingWorker-pool-3-thread-7] INFO  net.ioglobal.gas - File provider export filename is C:\Users\mauli\Documents\ml-olympiar\outputs\figures\iogas\s1_pp_kelas_tanah_As_v1.png(saved in workflow)
+02:59:39.098 [AWT-EventQueue-0] INFO  net.ioglobal.gas - Async released lock after 522 ms: net.ioglobal.gas.action.copy.ExportPlotWindowAction
+02:59:39.101 [AWT-EventQueue-0] INFO  net.ioglobal.gas -  ------> Running operation 5 of 5: Save As....
+02:59:39.208 [AWT-EventQueue-0] INFO  net.ioglobal.gas - Async acquired lock: net.ioglobal.gas.action.file.SaveAction
+02:59:39.210 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - Saving C:\Users\mauli\Documents\ml-olympiar\outputs\iogas_project\s1_kelas\RJ_tanah_s1_kelas_As_v1.gas
+02:59:39.214 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - STARTING GAS SAVE C:\Users\mauli\Documents\ml-olympiar\outputs\iogas_project\s1_kelas\RJ_tanah_s1_kelas_As_v1.gas
+02:59:39.214 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - NOT MAKING Temp root (exists already)  C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main
+02:59:39.223 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - Making Temp dir C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-39.222.GASSaverWithWorkspace.save result= true
+02:59:39.225 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas -    writing: 208 characters to C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-39.222.GASSaverWithWorkspace.save\changelog.txt
+02:59:39.231 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas -    writing: 5 characters to C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-39.222.GASSaverWithWorkspace.save\version.txt
+02:59:39.368 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - >>> WRITING FILE (using encoding windows-1252) C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-39.222.GASSaverWithWorkspace.save\data.csv
+02:59:39.574 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - Creating  zip : C:\Users\mauli\Documents\ml-olympiar\outputs\iogas_project\s1_kelas\RJ_tanah_s1_kelas_As_v1.gas
+02:59:39.576 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas -    adding: changelog.txt
+02:59:39.580 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas -    adding: data.csv
+02:59:39.586 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas -    adding: metadata.1.xml
+02:59:39.591 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas -    adding: metadata.xml
+02:59:39.593 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas -    adding: stripLogSchema.xml
+02:59:39.598 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas -    adding: version.txt
+02:59:39.603 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas -    adding: workspace.xml
+02:59:39.605 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - ENDED GAS SAVE C:\Users\mauli\Documents\ml-olympiar\outputs\iogas_project\s1_kelas\RJ_tanah_s1_kelas_As_v1.gas
+02:59:39.605 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - Deleting C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-39.222.GASSaverWithWorkspace.save
+02:59:39.606 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - Deleting NON EMPTY C:\Users\mauli\AppData\Local\Temp\_gas.temp\GD-2026-11-06T02-59-29.302.Main.main\2026-11-06T02-59-39.222.GASSaverWithWorkspace.save
+02:59:39.616 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas -   result true
+02:59:39.619 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - >>>type set to  GAS_FILE
+02:59:39.619 [SwingWorker-pool-3-thread-8] WARN  net.ioglobal.gas - Load complete in unexpected state TransactionInProgress
+02:59:39.645 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - Loaded  file stripLogPreferences,  got net.ioglobal.gas.chart.line.MultiLineUserPreferences@90753d1
+02:59:39.648 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - Loaded file is C:\Users\mauli\Documents\ml-olympiar\outputs\iogas_project\s1_kelas\RJ_tanah_s1_kelas_As_v1.gas type=GAS_FILE
+02:59:39.689 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - Loaded  file rf,  got [C:\Users\mauli\Documents\ml-olympiar\data\interim\iogas_s1\tanah_kelas_As_masuk.gas, C:\Users\mauli\Documents\ml-olympiar\outputs\iogas_project\s1_kelas\RJ_tanah_s1_kelas_Cu_v1.gas, C:\Users\mauli\Documents\ml-olympiar\data\interim\iogas_s1\tanah_kelas_Cu_masuk.gas, C:\Users\m... [3921 removed]
+02:59:39.689 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - Adding recent file C:\Users\mauli\Documents\ml-olympiar\outputs\iogas_project\s1_kelas\RJ_tanah_s1_kelas_As_v1.gas
+02:59:39.717 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas -    writing: 5451 characters to C:\Users\mauli\AppData\Roaming\ioGAS\state\rf.1.gsx
+02:59:39.723 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - gas file state change  355  listeners 
+02:59:39.730 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - ChartData struct listener removed class net.ioglobal.gas.grpc.GASLink2, count=3
+02:59:39.731 [SwingWorker-pool-3-thread-8] INFO  net.ioglobal.gas - ChartData struct listener removed class net.ioglobal.gas.grpc.GASLink2, count=4
+02:59:40.103 [AWT-EventQueue-0] INFO  net.ioglobal.gas - Async released lock after 895 ms: net.ioglobal.gas.action.file.SaveAction
+02:59:40.109 [AWT-EventQueue-0] WARN  net.ioglobal.gas - Couldn't match frame Probability Plot [As_ppm]  (0)

@@ -1,0 +1,43 @@
+tanah: 188 rows, 113 columns
+  s5_pp_Au_tanah.png: 2040 x 1272 px
+  s5_pp_As_tanah.png: 2040 x 1272 px
+  s5_box_zona_tanah.png: 4764 x 2073 px
+  s5_xy_As_Au_tanah.png: 2040 x 1272 px
+  s5_xy_Pb_Au_tanah.png: 2040 x 1272 px
+  s5_peta_zona_tanah.png: 2040 x 1272 px
+  saved outputs\iogas_project\RJ_tanah_final_v1.gas: 188 rows, EPSG 32647 kept
+  RJ_tanah_final_v1.gas: {'baris': 188, 'jendela': 7, 'epsg_32647': True, 'judul_warna': 'Zona ML'}
+batuan: 382 rows, 144 columns
+  s5_pp_Au_batuan.png: 2040 x 1272 px
+  s5_pp_As_batuan.png: 2040 x 1272 px
+  s5_box_zona_batuan.png: 4764 x 2073 px
+  s5_xy_As_Au_batuan.png: 2040 x 1272 px
+  s5_xy_Cu_Au_batuan.png: 2040 x 1272 px
+  s5_peta_zona_batuan.png: 2040 x 1272 px
+  saved outputs\iogas_project\RJ_batuan_final_v1.gas: 382 rows, EPSG 32647 kept
+  RJ_batuan_final_v1.gas: {'baris': 382, 'jendela': 7, 'epsg_32647': True, 'judul_warna': 'Zona ML'}
+komposit: 3057 rows, 118 columns
+  s5_pp_Au_komposit.png: 2040 x 1272 px
+  s5_pp_Cu_komposit.png: 2040 x 1272 px
+  s5_strip_penampang_A.png: 4752 x 2067 px
+  s5_strip_penampang_B.png: 4752 x 2067 px
+  s5_strip_penampang_C.png: 4752 x 2067 px
+  s5_strip_kembar_005_014.png: 4062 x 2067 px
+  s5_box_status_hmm.png: 4764 x 2073 px
+  s5_xy_Cu_Au_komposit.png: 2040 x 1272 px
+  s5_peta3d_status_hmm.png: 1536 x 1512 px
+  saved outputs\iogas_project\RJ_bor_komposit_final_v1.gas: 3057 rows, EPSG 32647 kept
+  RJ_bor_komposit_final_v1.gas: {'baris': 3057, 'jendela': 10, 'epsg_32647': True, 'judul_warna': 'Status HMM'}
+lingkungan: 2466 rows, 208 columns
+  s5_xy_phNAG_Stotal.png: 2040 x 1272 px
+  s5_xy_kapNAG_SCIS.png: 2040 x 1272 px
+  s5_halley_FeS.png: 1536 x 1512 px
+  s5_box_kelola.png: 4764 x 2073 px
+  s5_strip_kelola_penampang_A.png: 4752 x 2067 px
+  s5_strip_kelola_penampang_B.png: 4752 x 2067 px
+  s5_strip_kelola_penampang_C.png: 4752 x 2067 px
+  s5_peta3d_kelola.png: 1536 x 1512 px
+  saved outputs\iogas_project\RJ_lingkungan_final_v1.gas: 2466 rows, EPSG 32647 kept
+  RJ_lingkungan_final_v1.gas: {'baris': 2466, 'jendela': 9, 'epsg_32647': True, 'judul_warna': 'Kelas pengelolaan PAF/NAF'}
+29 check exports; Stage 1-4 outputs unchanged (176 files)
+indexes: 129 figures, 51 projects (4 final)

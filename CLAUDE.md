@@ -29,3 +29,15 @@ duplicate it here.
   map step; if it's absent, follow the "GIS tooling" fallback in AGENTS.md §7.
 - When a result contradicts AGENTS.md §4 (verified findings), stop and report it rather
   than "fixing" either side.
+
+## ioGAS
+
+- The repo owner now does all ioGAS work on this PC (IMDEX trial licence), driven by agents
+  (AGENTS.md §1 "Roles", §10). Use the ioGAS skill `.claude/skills/iogas/SKILL.md` for any
+  ioGAS step, and follow its stage pattern in AGENTS.md §10.
+- Never drive, click in or close the human's own ioGAS window. Start or kill only our own
+  `-gaslink2` instance (`src/iogas_link.py` `IoGAS()` does this; it kills only what it started).
+- Localhost only: the gRPC server listens on 127.0.0.1; never expose the port or send ioGAS
+  data anywhere else.
+- Never quote the licence password or the committee contact numbers from the brief
+  (slides 17 and 21), in logs, code, workflow XML or replies.

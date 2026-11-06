@@ -32,8 +32,8 @@ Novelty matters only if it stays accurate and reliable.
   - The bonus counts only **if all sub-parameters are complete**.
   - Every reference must be linked and attached in the reference list.
   - The presentation is a PowerPoint exported to PDF.
-  - ioGAS v8.3.1; **one licence per team, on one laptop/PC**. Only the ioGAS teammate's
-    machine runs it (see "Roles" below).
+  - ioGAS v8.3.1; **one licence per team, on one laptop/PC**. The team's ioGAS machine
+    is now the repo owner's PC (see "Roles" below).
 - The brief contains the ioGAS licence key and committee contacts. Never copy them into
   logs, code or replies.
 - **Shared repo (human instruction, 2026-11-04):** the whole repo, data and brief included,
@@ -43,16 +43,19 @@ Novelty matters only if it stays accurate and reliable.
   (`gh repo view 67minutes/ml-olympiar --json visibility`).
 
 ### Roles
-- **This repo's owner (the human agents work with) is responsible for the ML and data
-  analysis only:** cleaning, validation flags, the ML in §6, and the CSV/GIS outputs that
-  feed the report.
-- **ioGAS is not the repo owner's job.** Another team member builds the ioGAS project
-  (probability plots, downhole plots, classification diagrams) on the team's single
-  licensed machine. Agents and the repo owner deliver ioGAS-ready CSVs as a
-  **hand-off**; they never plan, schedule or wait on ioGAS work inside this repo.
+- **This repo's owner (the human agents work with) is responsible for the ML, the data
+  analysis and the ioGAS work:** cleaning, validation flags, the ML in §6, the CSV/GIS
+  outputs that feed the report, and the ioGAS project (deliverable 2).
+- **ioGAS (human decision, 2026-11-05).** The owner runs ioGAS on this PC with an IMDEX
+  14-day trial licence (expires **19 Nov 2026**; the committee brief does not forbid a
+  trial). The old "ioGAS teammate" role is retired: nothing is handed off any more.
+- **Agents drive ioGAS** through the project skill `.claude/skills/iogas/SKILL.md`
+  (local gRPC server, workflow XML, `.gas` projects built in Python; see §2.3 and §10).
+  Agents never click through the GUI by default and never touch the human's own ioGAS
+  window.
 - Where an ML step compares against ioGAS output (e.g. probability-plot breaks in §6
-  task 1), produce the ML side on its own and leave a clearly marked slot for the
-  teammate's ioGAS result. Never block on it.
+  task 1), the ioGAS side is produced in this repo by the §10 stages. Keep the ML side
+  independent of it, so neither result is tuned to the other.
 
 ### Deadlines
 - Submission: **7 Nov 2026, 23:59 WIB** by email to the committee.
@@ -61,8 +64,8 @@ Novelty matters only if it stays accurate and reliable.
 
 ### Required deliverables
 1. Data validation (CSV)
-2. ioGAS project (built in ioGAS by the ioGAS teammate, not the repo owner; this repo
-   only supplies the input CSVs; see "Roles")
+2. ioGAS project (built by the repo owner in ioGAS on this PC, driven by agents through
+   the ioGAS skill; staged plan in §10; see "Roles")
 3. Geochemistry analysis (CSV)
 4. Comprehensive report (PDF)
 5. Presentation (PDF)
@@ -105,10 +108,18 @@ Novelty matters only if it stays accurate and reliable.
 2. **Allowed software:** Microsoft Office, IMDEX ioGAS, QGIS, and other software only if it
    is **free and not pirated**. Python and its open-source libraries are fine. Every
    output must be reproducible locally.
-3. **ioGAS must visibly do real work** (Software is worth 25 points). Prepare
-   ioGAS-ready CSVs (clean headers, flag columns, cluster labels) so the ioGAS teammate
-   can do the plotting, probability plots, downhole plots, and classification diagrams in
-   ioGAS. Agents cannot drive ioGAS, and the repo owner does not run it (§1 "Roles").
+3. **ioGAS must visibly do real work** (Software is worth 25 points). The plots, probability
+   plots, downhole strip logs, classification diagrams and outlier tools are drawn by ioGAS
+   itself, not by Python. How it works:
+   - `src/iogas_project.py` builds the `.gas` projects straight from the cleaned tables
+     (same rows and columns, EPSG 32647, ML colour attributes, Bahasa aliases on non-element
+     columns and legend titles) and writes the workflow XML.
+   - `src/iogas_link.py` runs those workflows through ioGAS's own gRPC server: a second
+     ioGAS instance launched with `-gaslink2` on 127.0.0.1 only, so no data leaves the PC.
+   - ioGAS exports the figures (PNG, no watermark in exports) and saves the `.gas`
+     projects with their plot windows, which form the ioGAS project deliverable.
+   - The ioGAS-ready CSVs in `data/processed/iogas/` stay as the source tables.
+   See §10 and the skill `.claude/skills/iogas/SKILL.md`.
 4. **Report language is Bahasa Indonesia (EYD), Times New Roman** (16 heading /
    14 subheading / 12 body and captions), black text, portrait, one column, HD figures.
    Some maps or sections may be landscape if needed (allowed by the committee brief, §1).
@@ -288,7 +299,7 @@ statistical ML is the right tool. No deep learning.
 
 | # | Task (report §) | Method | Validation and must-haves |
 |---|---|---|---|
-| 1 | Element thresholds (§3) | Gaussian mixture on log10 values per element (BIC to pick components), the objective analogue of Sinclair probability plots | Compare against probability-plot breaks (ioGAS), median+2·MAD, and Tukey fences. Table of thresholds per element per dataset. |
+| 1 | Element thresholds (§3) | Gaussian mixture on log10 values per element (BIC to pick components), the objective analogue of Sinclair probability plots | Compare against probability-plot breaks (ioGAS), median+2·MAD, and Tukey fences. Table of thresholds per element per dataset. `thr_probplot_iogas` is filled by Claude's visual picks on ioGAS probability plots, made **blind to the GMM values** (never open `thr_gmm_*` before picking), written back into ioGAS as colour ranges and re-exported; the human spot-checks 3 elements in the ioGAS GUI (§10 Stage 1). |
 | 2 | Alteration / oxidation / mineralisation from chemistry (§3) | Random Forest or LightGBM; optional **local** TabPFN (never the cloud client) | **GroupKFold by `SiteID`** (no hole in both train and test). Confusion matrices vs logged labels, SHAP in element units. Expect lithology to score poorly: alteration overprint plus no immobile elements outside RJDH012. Report this as a geological finding, not a failure. |
 | 3 | Surface H/M/L grade zonation (§4) | Log or log-ratio transform → PCA → **GMM** (BIC); soil first, rock second | Rank clusters by median Au. Map membership probability (uncertainty map) in QGIS. Zone comparison vs threshold-based anomaly classes. Spatial sanity: clusters should honour NE structural trends. |
 | 4 | Downhole geochem-stratigraphy (§5) | **Gaussian HMM** (`hmmlearn`) on 1 m composites (log Au, Ag, As, Cu, CN/total ratios where present); one model across all holes so states are comparable | States by BIC plus interpretability. Check continuity across twin-ish pads. Feeds ≤3 sections. |
@@ -311,11 +322,19 @@ General ML rules:
 data/raw/          # frozen copy of the committee package (read-only; committed to the private repo)
 data/interim/      # stage outputs from §5 (ml6_gp.joblib is gitignored: rebuild with 16_… --stage gp)
 data/processed/    # final tables: validation_flags.csv, geochem_analysis.csv, ioGAS inputs
+                   #   (data/processed/iogas/: ioGAS-ready CSVs + .gas projects built by 22_iogas_link.py)
 src/               # importable modules (io, cleaning, desurvey, ml_*)
+src/iogas_project.py  # builds .gas projects (data, attributes, EPSG) and workflow XML; no ioGAS needed
+src/iogas_link.py     # starts/reuses the local ioGAS gRPC server (-gaslink2) and runs workflows
 scripts/           # numbered runnable steps: 01_semantics.py, 02_coords.py, …
 notebooks/         # exploration only; anything used in the report must live in src/ or scripts/
 outputs/figures/   # 300 dpi PNG; Bahasa Indonesia labels; versioned names (_v1, _v2)
+outputs/figures/iogas/  # PNGs exported by ioGAS itself (sM_<name>_v1.png, one prefix per §10 stage)
+outputs/iogas_project/  # saved ioGAS projects with plot windows (RJ_<dataset>_sM_v1.gas, *_final_v1.gas)
 outputs/maps/      # QGIS projects and exports
+iogas/workflows/   # ioGAS workflow XML written by the stage scripts (sM_*.xml)
+.claude/skills/iogas/  # agent skill for driving ioGAS (SKILL.md + reference/actions.md)
+.cache/            # gitignored: gRPC stubs generated from the local GAS.jar (no IMDEX file in the repo)
 gis/               # derived layers: lidar_dem.tif, hillshade.tif, drainage.gpkg (all EPSG:32647)
 LOG.md             # append-only decision and results log
 README.md          # English overview: status, deliverables, how to reproduce
@@ -428,3 +447,60 @@ folds only). Compare with our Gaussian HMM (ML-4). Validate with GroupKFold by `
   ("drill core"); its venue and year are unconfirmed. Do not fill them in.
 - Attribute no detail beyond §9.1 and §9.2 without the full text (§2.5: no invented
   references, titles, years, DOIs or quotes).
+
+---
+
+## 10. ioGAS work (staged)
+
+Approved plan (2026-11-05): the repo owner does all ioGAS work on this PC (§1 "Roles"), with
+agents driving ioGAS through `.claude/skills/iogas/SKILL.md`. Every agent (Codex included: the
+skill is plain Markdown) reads it and `reference/actions.md` before any ioGAS step. Why it matters (brief slides 8–10, 12, 14, 19): ioGAS is the named tool for plotting,
+statistics and downhole plots; deliverable 2 is the ioGAS project; Software is worth 25 points,
+and ioGAS figures feed QAQC, Surface, Drillhole and Environmental (100 points each).
+
+Stages are ordered by report need. Every stage saves its own `.gas`, so a usable deliverable
+exists after each one.
+
+| Stage | Report § / rubric | ioGAS content |
+|---|---|---|
+| 0 Foundation | (all) | Action catalogue in `src/iogas_project.py` and `.claude/skills/iogas/reference/actions.md`. Verified live from workflows (6 Nov): probability plot, XY, histogram (log ok), box plots common/tiled, summary stats, attribute map, 3D map (plan view only), ternary, Scott Halley Fe-vs-S / Ca-Fe-S / Al-K-Mg diagrams, strip logs per hole and stacked (Bar trace), HD export at scale 3 (1,500–4,100 px wide, no watermark), Save As. Drillhole support in `build_gas`; Bahasa alias rule (below); the skill; these doc updates |
+| 1 QAQC & thresholds | §3: QAQC 30, outliers 35, thresholds 35 | Probability-plot grids (soil, rock, DH composites; usable elements only); blind threshold picks → `thr_probplot_iogas` in `element_thresholds.csv` plus a comparison table vs GMM/MAD/Tukey (new versioned file); Tukey outliers + Anomaly Assessment Tool; AuCN vs Au and duplicate-pair scatters (precision); box plots by lab year and by hole (finding 14) |
+| 2 Surface | §4: soil 25, rock 25, zonation 50 | Attribute maps of soil/rock coloured by ML zone and by threshold class; Au–As–Cu scatters by zone; box plots per zone (zone comparison); rock by alteration (`IntrpAltFa`); Al-K-Mg ternary (Halley) on the 26 full-ICP rocks |
+| 3 Drillhole | §5: correlation 40, geochem-strat 40 | Stacked strip logs per hole (Au, Ag, Cu, As as `*_log10` columns) coloured by HMM state / alteration / oxidation; twin pads 005/014, 010/011, 016/017 side by side; XYZ view of section lines A–C (rotation is not scriptable: plan view from workflows, any rotated view set by hand in the GUI) |
+| 4 Environmental | §6: AMD 40, PAF/NAF 60 | RJDH012: NAG pH vs S by oxidation, Halley Fe vs S pyrite line and Ca-Fe-S ternary (need an element-named `S_pct` column, e.g. `S_pct = S_total_pct`, stated in the caption), AMD-element box plots by PAF class, strip log of PAF class + NAG pH; DH assays coloured by `ML_paf_kelas` |
+| 5 Project & polish | Deliverable 2, Software 25 | Done 6 Nov (`scripts/27_iogas_s5_final.py`, `src/iogas_s5.py`): four final projects `outputs/iogas_project/RJ_{tanah,batuan,bor_komposit,lingkungan}_final_v1.gas` (all CSV columns + stage-derived columns, key windows); Bahasa indexes `indeks_proyek_iogas.csv`, `BACA_SAYA.txt`, `outputs/figures/iogas/indeks_gambar_iogas.csv`; threshold statement → `laporan_ml_v2.html`; glossary in README/PANDUAN; submission folder `outputs/kirim/` (`scripts/28_kirim.py`). **No GUI screenshots** (human decision 6 Nov) |
+
+**Pattern per stage (1–5).** LOG plan entry → `scripts/2N_iogas_sM_<name>.py` builds the `.gas`
+(Bahasa aliases, ML colours, EPSG 32647) and workflow XML into `iogas/workflows/sM_*.xml` → runs them
+through `src/iogas_link.py` → exports `outputs/figures/iogas/sM_<name>_v1.png` → saves
+`outputs/iogas_project/RJ_<dataset>_sM_v1.gas` (windows kept) → asserts (files exist, row counts read
+back from ioGAS equal the CSV, EPSG kept in the saved `.gas`, PNG ≥ 2,000 px wide where scale 3 allows; small windows give ~1,500 px) → the agent reviews
+the exported thumbnails (right variables, log axes, Bahasa labels, legend) → LOG results, numbers and a
+3–5 line spoken explanation → human gate.
+
+**Gates.**
+- Stage 0: the human reviews the skill and docs diff, plus one sample export per new plot type, before
+  Stage 1 starts.
+- Every later stage ends at a human gate (above). Thresholds: the human spot-checks the picks for
+  3 elements in the ioGAS GUI, and the comparison table states agreement with the GMM honestly (no
+  "better" claims).
+
+**Rules for all stages.**
+- Data only on localhost. Start or kill only our own `-gaslink2` instance; never drive or close the
+  human's own ioGAS window. Never quote the brief's licence password or contact numbers.
+- Flag, don't delete. Frozen outputs: write `_v2` instead of overwriting.
+- Bahasa Indonesia where ioGAS lets us set it: aliases of non-element columns and legend titles (e.g.
+  `ML_hmm_nama` → "Status HMM"). **Never alias element columns** (`Au_ppm`, `Fe_pct`, `AuCN_ppm`): ioGAS
+  parses element and unit from the display name for unit conversion and built-in diagrams, and
+  `build_gas` refuses such aliases. Element axes therefore read `Au_ppm`; explain this in the caption.
+  Workflows refer to columns by alias, so pass the same aliases to `Workflow`.
+- Known limits: box plots and strip logs ignore log toggles (plot `<el>_log10` columns instead); the
+  Summary Statistics and Legend windows cannot be exported as images (keep them in the saved `.gas`);
+  ioGAS prompts stall a workflow unless pre-answered (`Workflow.respond`, `diagram(overwrite=...)`).
+- No new ML method: Tukey/Anomaly Assessment results are reported as ioGAS outputs, not as replacements
+  for the §6 methods.
+- Always open data from a `.gas` (`open_gas`), never `open_csv`, when the workflow saves the project.
+- If time runs short, cut within a stage (fewer elements); never skip saving that stage's `.gas`.
+- Check: `uv run pytest -q` after each stage; `IOGAS_LIVE=1 uv run pytest tests/test_iogas_link.py`
+  for the live round trip.
+- Nothing is committed or pushed unless the human asks.

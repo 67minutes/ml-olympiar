@@ -1,0 +1,52 @@
+﻿file,jenis,tahap,bab_laporan,data,warna,baris,jendela_plot,epsg_32647
+RJ_batuan_final_v1.gas,akhir,Tahap ioGAS 5: proyek akhir,"Bab 3, 4",Sampel batuan prospek RJ,Zona kadar ML (Tinggi/Sedang/Rendah),382,7,True
+RJ_bor_komposit_final_v1.gas,akhir,Tahap ioGAS 5: proyek akhir,Bab 5,"Komposit bor 1 m, 19 lubang",Satuan geokimia HMM S1-S5,3057,10,True
+RJ_lingkungan_final_v1.gas,akhir,Tahap ioGAS 5: proyek akhir,"Bab 3, 6",Interval assay bor (semua lubang; uji NAG hanya RJDH012),Kelas pengelolaan PAF/NAF; bentuk simbol = zona oksidasi,2466,9,True
+RJ_tanah_final_v1.gas,akhir,Tahap ioGAS 5: proyek akhir,"Bab 3, 4",Sampel tanah prospek RJ,Zona kadar ML (Tinggi/Sedang/Rendah),188,7,True
+RJ_DH_s4_kelola_v1.gas,pendukung,Tahap ioGAS 4: lingkungan,Bab 6 (lingkungan),"Interval assay bor, semua lubang",Kelas pengelolaan PAF/NAF,2466,7,True
+RJ_RJDH012_s4_v1.gas,pendukung,Tahap ioGAS 4: lingkungan,Bab 6 (lingkungan),"Lubang RJDH012 (satu-satunya dengan uji NAG), interval assay",Kelas NAG (uji),118,7,True
+RJ_batuan_s1_duplikat_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Pasangan sampel ulang batuan (koordinat sama),Jenis duplikat,13,2,True
+RJ_batuan_s1_pp_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel batuan prospek RJ,tanpa warna,382,7,True
+RJ_batuan_s1_qaqc_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel batuan prospek RJ,tanpa warna,382,1,True
+RJ_batuan_s1_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel batuan prospek RJ,Kelas ambang Au (plot probabilitas),382,1,True
+RJ_batuan_s2_v1.gas,pendukung,Tahap ioGAS 2: permukaan,Bab 4 (data permukaan),Sampel batuan prospek RJ,Zona ML,352,4,True
+RJ_bor_s1_lubang_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Interval assay bor (tanpa interval tidak disampel),Lubang bor,2466,1,True
+RJ_bor_s1_pp_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Interval assay bor (tanpa interval tidak disampel),tanpa warna,2466,5,True
+RJ_bor_s1_qaqc_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Interval assay bor (tanpa interval tidak disampel),Zona oksidasi,2466,3,True
+RJ_bor_s1_tahun_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Interval assay bor (tanpa interval tidak disampel),Tahun lab,2466,1,True
+RJ_bor_s1_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Interval assay bor (tanpa interval tidak disampel),Kelas ambang Au (plot probabilitas),2466,1,True
+RJ_bor_s3_v1.gas,pendukung,Tahap ioGAS 3: pemboran,Bab 5 (data pemboran),"Komposit bor 1 m, 19 lubang",Status HMM,3057,11,True
+RJ_tanah_s1_pp_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel tanah prospek RJ,tanpa warna,188,10,True
+RJ_tanah_s1_qaqc_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel tanah prospek RJ,tanpa warna,188,1,True
+RJ_tanah_s1_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel tanah prospek RJ,Kelas ambang Au (plot probabilitas),188,1,True
+RJ_tanah_s2_v1.gas,pendukung,Tahap ioGAS 2: permukaan,Bab 4 (data permukaan),Sampel tanah prospek RJ,Zona ML,188,5,True
+s1_kelas/RJ_batuan_s1_kelas_As_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel batuan prospek RJ,Kelas ambang As (plot probabilitas),382,1,True
+s1_kelas/RJ_batuan_s1_kelas_Cu_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel batuan prospek RJ,Kelas ambang Cu (plot probabilitas),382,1,True
+s1_kelas/RJ_batuan_s1_kelas_Hg_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel batuan prospek RJ,Kelas ambang Hg (plot probabilitas),382,1,True
+s1_kelas/RJ_batuan_s1_kelas_Pb_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel batuan prospek RJ,Kelas ambang Pb (plot probabilitas),382,1,True
+s1_kelas/RJ_batuan_s1_kelas_Sb_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel batuan prospek RJ,Kelas ambang Sb (plot probabilitas),382,1,True
+s1_kelas/RJ_batuan_s1_kelas_Zn_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel batuan prospek RJ,Kelas ambang Zn (plot probabilitas),382,1,True
+s1_kelas/RJ_bor_s1_kelas_Ag_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Interval assay bor (tanpa interval tidak disampel),Kelas ambang Ag (plot probabilitas),2466,1,True
+s1_kelas/RJ_bor_s1_kelas_As_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Interval assay bor (tanpa interval tidak disampel),Kelas ambang As (plot probabilitas),2466,1,True
+s1_kelas/RJ_bor_s1_kelas_Cu_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Interval assay bor (tanpa interval tidak disampel),Kelas ambang Cu (plot probabilitas),2466,1,True
+s1_kelas/RJ_bor_s1_kelas_SCIS_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Interval assay bor (tanpa interval tidak disampel),Kelas ambang SCIS (plot probabilitas),2466,1,True
+s1_kelas/RJ_tanah_s1_kelas_Ag_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel tanah prospek RJ,Kelas ambang Ag (plot probabilitas),188,1,True
+s1_kelas/RJ_tanah_s1_kelas_As_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel tanah prospek RJ,Kelas ambang As (plot probabilitas),188,1,True
+s1_kelas/RJ_tanah_s1_kelas_Ba_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel tanah prospek RJ,Kelas ambang Ba (plot probabilitas),188,1,True
+s1_kelas/RJ_tanah_s1_kelas_Cu_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel tanah prospek RJ,Kelas ambang Cu (plot probabilitas),188,1,True
+s1_kelas/RJ_tanah_s1_kelas_Hg_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel tanah prospek RJ,Kelas ambang Hg (plot probabilitas),188,1,True
+s1_kelas/RJ_tanah_s1_kelas_Pb_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel tanah prospek RJ,Kelas ambang Pb (plot probabilitas),188,1,True
+s1_kelas/RJ_tanah_s1_kelas_Sb_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel tanah prospek RJ,Kelas ambang Sb (plot probabilitas),188,1,True
+s1_kelas/RJ_tanah_s1_kelas_W_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel tanah prospek RJ,Kelas ambang W (plot probabilitas),188,1,True
+s1_kelas/RJ_tanah_s1_kelas_Zn_v1.gas,pendukung,Tahap ioGAS 1: QAQC dan ambang,"Bab 3 (QAQC, pencilan, ambang)",Sampel tanah prospek RJ,Kelas ambang Zn (plot probabilitas),188,1,True
+s2/RJ_batuan_s2_alterasi_v1.gas,pendukung,Tahap ioGAS 2: permukaan,Bab 4 (data permukaan),Sampel batuan prospek RJ,Fasies alterasi,382,4,True
+s2/RJ_batuan_s2_halley_v1.gas,pendukung,Tahap ioGAS 2: permukaan,Bab 4 (data permukaan),"Batuan dengan analisis ICP lengkap (Al, K, Mg)",Fasies alterasi,26,1,True
+s2/RJ_batuan_s2_kelas_Au_v1.gas,pendukung,Tahap ioGAS 2: permukaan,Bab 4 (data permukaan),Sampel batuan prospek RJ,Kelas ambang Au (plot probabilitas),382,4,True
+s2/RJ_tanah_s2_kelas_As_v1.gas,pendukung,Tahap ioGAS 2: permukaan,Bab 4 (data permukaan),Sampel tanah prospek RJ,Kelas ambang As (plot probabilitas),188,4,True
+s2/RJ_tanah_s2_kelas_Au_v1.gas,pendukung,Tahap ioGAS 2: permukaan,Bab 4 (data permukaan),Sampel tanah prospek RJ,Kelas ambang Au (plot probabilitas),188,4,True
+s2/RJ_tanah_s2_keyakinan_v1.gas,pendukung,Tahap ioGAS 2: permukaan,Bab 4 (data permukaan),Sampel tanah prospek RJ,Keyakinan zona,188,4,True
+s3/RJ_bor_s3_alterasi_v1.gas,pendukung,Tahap ioGAS 3: pemboran,Bab 5 (data pemboran),"Komposit bor 1 m, 19 lubang",Fasies alterasi (log),3057,7,True
+s3/RJ_bor_s3_oksidasi_v1.gas,pendukung,Tahap ioGAS 3: pemboran,Bab 5 (data pemboran),"Komposit bor 1 m, 19 lubang",Zona oksidasi (log),3057,4,True
+s4/RJ_DH_s4_kelas_v1.gas,pendukung,Tahap ioGAS 4: lingkungan,Bab 6 (lingkungan),"Interval assay bor, semua lubang",Kelas konformal,2466,4,True
+s4/RJ_DH_s4_uji_nag_v1.gas,pendukung,Tahap ioGAS 4: lingkungan,Bab 6 (lingkungan),"Interval assay bor, semua lubang",Prioritas uji NAG,2466,4,True
+s4/RJ_RJDH012_s4_oksidasi_v1.gas,pendukung,Tahap ioGAS 4: lingkungan,Bab 6 (lingkungan),"Lubang RJDH012 (satu-satunya dengan uji NAG), interval assay",Zona oksidasi (log),118,2,True

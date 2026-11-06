@@ -1,0 +1,23 @@
+dataset,element,pick1,pick2,ns1,ns2,pct_above_read_1,pct_above_read_2,confidence,rationale,source_png,picked_by,picked_at
+tanah,Au,0.36,0.75,0.95,1.57,17.1,5.8,medium,plateau/inflection near 0.36 ppm; clear gap 0.64-0.83 ppm above NS 1.55,outputs/figures/iogas/s1_pp_tanah_Au_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+tanah,Ag,0.6,1.0,0.95,1.65,17.1,4.9,low,"lab resolution 0.1 ppm, mode at 0.5; tail from 0.6; slope steepens above 1 ppm",outputs/figures/iogas/s1_pp_tanah_Ag_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+tanah,Cu,75.0,100.0,0.85,1.5,19.8,6.7,medium,step 68->75 ppm then flatter segment; steeper tail above ~100 ppm,outputs/figures/iogas/s1_pp_tanah_Cu_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+tanah,As,120.0,300.0,0.8,2.05,21.2,2.0,medium,slope increases above ~120 ppm; gap 260-370 ppm,outputs/figures/iogas/s1_pp_tanah_As_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+tanah,Ba,320.0,500.0,1.4,2.1,8.1,1.8,low,"near-straight 170-330 ppm, slight steepening above ~320; gap 390-600 ppm",outputs/figures/iogas/s1_pp_tanah_Ba_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+tanah,Hg,0.28,0.42,1.1,1.9,13.6,2.9,low,gentle steepening above ~0.28 ppm; second step 0.40->0.46 ppm,outputs/figures/iogas/s1_pp_tanah_Hg_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+tanah,Pb,110.0,180.0,0.47,1.55,31.9,6.1,medium,jump 103->112 ppm at NS 0.47; steeper tail above ~180 ppm,outputs/figures/iogas/s1_pp_tanah_Pb_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+tanah,Sb,10.0,38.0,0.6,1.95,27.4,2.6,medium,slope increases above 10 ppm; step 34->42 ppm,outputs/figures/iogas/s1_pp_tanah_Sb_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+tanah,W,10.0,20.0,1.3,1.8,9.7,3.6,low,"31% at DL/2, integer resolution; tail steepens above 10 ppm, again above 20 ppm",outputs/figures/iogas/s1_pp_tanah_W_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+tanah,Zn,30.0,45.0,0.5,1.25,30.9,10.6,low,concave (leached) curve; short steep segment from ~30 ppm; step 43->46 ppm,outputs/figures/iogas/s1_pp_tanah_Zn_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+batuan,Au,0.7,4.0,0.7,1.65,24.2,4.9,medium,slope steepens above ~0.7 ppm; gap 3.5-4.5 ppm (and 9->25 ppm at NS 2.3),outputs/figures/iogas/s1_pp_batuan_Au_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+batuan,Cu,110.0,300.0,0.7,1.75,24.2,4.0,medium,steepening above ~110 ppm; plateau ~220 ppm then steep tail above ~300 ppm,outputs/figures/iogas/s1_pp_batuan_Cu_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+batuan,As,560.0,7000.0,1.05,2.2,14.7,1.4,medium,"gap 530-600 ppm with steeper slope above; large gap 3,900-12,000 ppm",outputs/figures/iogas/s1_pp_batuan_As_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+batuan,Hg,0.17,1.0,0.9,2.3,18.4,1.1,medium,steepening above ~0.17 ppm; large gap 0.56-2.2 ppm,outputs/figures/iogas/s1_pp_batuan_Hg_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+batuan,Pb,350.0,750.0,1.3,2.0,9.7,2.3,low,lower segment break ~65 ppm (background); upper steepening ~350 ppm; gap 660-880 ppm,outputs/figures/iogas/s1_pp_batuan_Pb_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+batuan,Sb,40.0,350.0,0.78,1.82,21.8,3.4,medium,steepening above ~40 ppm; gap 270-500 ppm,outputs/figures/iogas/s1_pp_batuan_Sb_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+batuan,Zn,28.0,75.0,1.5,1.75,6.7,4.0,medium,strong steepening above ~28 ppm; gap 63-85 ppm,outputs/figures/iogas/s1_pp_batuan_Zn_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+bor,Au,0.3,5.5,-0.2,2.1,57.9,1.8,high,clear inflection ~0.3 ppm between steep low population and mineralised population; weak break ~5.5 ppm,outputs/figures/iogas/s1_pp_bor_Au_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+bor,Ag,10.0,48.0,1.2,2.5,11.5,0.6,low,"32% censored; near-straight above DL, faint change ~10 ppm; gap 45-52 ppm",outputs/figures/iogas/s1_pp_bor_Ag_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+bor,Cu,110.0,550.0,0.5,1.35,30.9,8.9,medium,curve turns concave-up above ~110 ppm; jump ~520-570 ppm at NS 1.35,outputs/figures/iogas/s1_pp_bor_Cu_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+bor,As,200.0,850.0,1.0,2.27,15.9,1.2,medium,"concave-up above ~200 ppm; gap 830-890 ppm, further jump 1,200-1,500 ppm",outputs/figures/iogas/s1_pp_bor_As_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29
+bor,SCIS,0.5,6.0,-0.45,1.8,67.4,3.6,medium,main inflection ~0.5 % between low-S (oxide) and sulfide populations; flattening ~6 %,outputs/figures/iogas/s1_pp_bor_SCIS_v1.png,"Claude (visual, blind to GMM)",2026-11-06T02:55:29

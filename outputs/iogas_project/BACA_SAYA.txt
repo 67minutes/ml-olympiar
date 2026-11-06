@@ -1,0 +1,51 @@
+PROYEK ioGAS - PROSPEK RAMBA JORING (RJ), DISTRIK MARTABE
+OlympiAR 2026 Babak 2 - Deliverable 2 (Proyek ioGAS)
+
+Semua plot di proyek ini digambar oleh ioGAS 8.3 (IMDEX) dari tabel data yang sudah divalidasi.
+Koordinat: UTM WGS84 Zona 47N (EPSG:32647). Buka file .gas dengan File > Open di ioGAS.
+
+1. PROYEK AKHIR (mulai dari sini)
+   RJ_batuan_final_v1.gas
+      Sampel batuan prospek RJ; 382 baris; warna: Zona kadar ML (Tinggi/Sedang/Rendah);
+      7 jendela plot; Bab 3, 4
+   RJ_bor_komposit_final_v1.gas
+      Komposit bor 1 m, 19 lubang; 3057 baris; warna: Satuan geokimia HMM S1-S5;
+      10 jendela plot; Bab 5
+   RJ_lingkungan_final_v1.gas
+      Interval assay bor (semua lubang; uji NAG hanya RJDH012); 2466 baris; warna: Kelas pengelolaan PAF/NAF; bentuk simbol = zona oksidasi;
+      9 jendela plot; Bab 3, 6
+   RJ_tanah_final_v1.gas
+      Sampel tanah prospek RJ; 188 baris; warna: Zona kadar ML (Tinggi/Sedang/Rendah);
+      7 jendela plot; Bab 3, 4
+
+   Setiap proyek akhir memuat semua kolom data untuk sampel yang dianalisis: unsur (ppm atau %),
+   kolom log10, kelas ambang dari plot probabilitas, dan keluaran model machine learning (kolom
+   berawalan ML_). Jendela plot tersimpan di dalam proyek (plot probabilitas, box plot, scatter,
+   strip log bawah-lubang, peta, diagram Scott Halley, Summary Statistics).
+
+2. PROYEK PENDUKUNG (di file zip kiriman: folder pendukung/)
+   Satu proyek per skema warna (ioGAS menyimpan satu skema warna per proyek), misalnya kelas
+   ambang tiap unsur, keyakinan zona, alterasi hasil log, zona oksidasi, kelas konformal PAF/NAF.
+   Nama file: _s1_ sampai _s4_ = tahap kerja ioGAS (1 QAQC, pencilan dan ambang; 2 data permukaan;
+   3 data pemboran; 4 lingkungan); tanah / batuan / bor / DH (drillhole) = jenis data; _v1 = versi.
+   Daftar lengkap: indeks_proyek_iogas.csv (kolom: file, tahap, bab laporan, data, warna, jumlah
+   baris, jumlah jendela plot).
+
+3. ISTILAH
+   Zona kadar ML    : zona Tinggi / Sedang / Rendah dari pengelompokan tanpa label (PCA + model
+                      campuran Gauss) pada log unsur; "Tanpa zona ML" = sampel tanpa data cukup.
+   Kelas ambang     : Latar / Anomali lemah / Anomali kuat, dari dua patahan pada plot
+                      probabilitas ioGAS (kolom Kelas_<unsur>_pp).
+   Satuan HMM S1-S5 : satuan geokimia bawah permukaan dari hidden Markov model pada komposit 1 m
+                      (Au, Ag, Cu, As); nama satuan menyebut kadar Au, Cu dan zona oksidasi dominan.
+   NAF / PAF-LC / PAF-HC : batuan tidak membentuk asam / berpotensi asam dengan kapasitas rendah /
+                      kapasitas tinggi. Kelas NAG = hasil uji lab (hanya lubang RJDH012).
+                      Kelas pengelolaan = kelas terburuk yang masih mungkin menurut model
+                      (prediksi konformal), dipakai untuk penanganan batuan.
+   SCIS, S2         : dua metode lab untuk S sulfida, tidak dicampur. S total hanya ada di RJDH012.
+                      Kolom S_pct = S total, dibuat agar diagram Scott Halley mengenali sulfur.
+   Nama kolom unsur (mis. Au_ppm) sengaja tidak diterjemahkan: ioGAS membaca unsur dan satuan
+   dari nama kolom.
+
+Batasan: satu lubang dengan uji NAG (RJDH012); tidak ada ANC terukur; tidak ada sampel QAQC
+(standar, blank, duplikat) di data panitia.

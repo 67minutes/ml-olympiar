@@ -2292,3 +2292,618 @@ wording. `10_tanah_zona_v1.png` is a QGIS QC render (no legend) and is captioned
 map is still the map team's job. All `[VERIFY]` references remain unverified.
 
 ---
+
+## 2026-11-05 · ioGAS automation probe (feasibility only, no deliverable changed)
+
+**Context.** The human now owns the ioGAS work (14-day evaluation licence on this PC). Question: can an agent
+drive ioGAS 8.3.2 cheaply instead of GUI clicking?
+
+**Found (install `C:\Program Files\IMDEX\ioGAS-64.8.3`).**
+- `.gas` project = ZIP of `data.csv` (+ per-row colour/shape/size index columns), `metadata.xml` (columns,
+  attribute legends), `workspace.xml` (open plots, XStream XML).
+- Workflows = plain XML lists of operations (action class + parameters, column names in clear text). Demo
+  workflows in `%APPDATA%\ioGAS\res.cache\iod\DiagramAndCalc\Workflow` cover probability plots, histograms,
+  SPLOM, attribute maps, strip logs, classification diagrams, auto-attribute, PCA/UMAP/DBSCAN.
+- Launch flag `-gaslink2` (listed as "unsupported" in the jar's `config/help.txt`) starts a local gRPC server on
+  127.0.0.1:25000 with services `Server` (OpenCSVFile, OpenGASFile, RunWorkflow, GetChartData) and `GASLink2`
+  (read data/attributes). The `.proto` files ship inside `libs/GAS.jar`. `Server.SaveFile` is a file-transfer
+  helper, not "save project".
+
+**Tested.** Second instance launched via the bundled JRE with `-gaslink2` (the exe launcher is single-instance).
+`OpenCSVFile(RJ_tanah.csv)` succeeded in 0.3 s (auto-detected X/Y/Z, SampleID; EPSG left 0). A hand-written
+3-step workflow (Select Au/As/Cu → Probability Plot → Log Y) ran via `RunWorkflow` in 0.9 s and drew correct
+plots (checked by one screenshot). One NullPointerException (`m_filenames`) was logged but did not stop the run.
+All traffic is localhost, so no data left the machine. Test instance closed; the human's own ioGAS window was not touched.
+
+**Limitation.** The evaluation licence (`gas.single.eval`, expires 19 Nov 2026) draws a "DEMONSTRATION COPY"
+watermark on every chart (`ChartPanelio.m_evaluationWatermark`). Final report figures need the team's
+committee licence. Do not try to remove the watermark.
+
+**Not yet tested:** image export and project save as workflow steps; whether ioGAS opens hand-built `.gas` files;
+setting EPSG 32647 on import. Probe scripts are in the session scratchpad only (not in the repo).
+
+---
+
+## 2026-11-05 · ioGAS automation probe 2: export, save, EPSG, hand-built .gas (feasibility only)
+
+**Method.** Same setup as probe 1: second ioGAS instance via the bundled JRE with `-gaslink2`, workflows
+written as XML, run through gRPC `RunWorkflow`. Action parameters were read from class fields with `javap`
+and the XStream alias files in the install folder. Localhost only; test instance closed afterwards.
+
+**Results.**
+- **Image export works.** Op `net.ioglobal.gas.action.copy.ExportPlotWindowAction` with an
+  `ExportWindowState` (`m_exportedFilename`, `ComponentExportConfig` scaleX/Y, detailX/Y) plus a workflow-level
+  `<exportConfig>` (`recordedExportDir`, `exportOption=Overwrite`) writes PNGs. `RunWorkflow` returns the paths.
+  `scale` multiplies pixel size (1 → 680×424, 2 → 1360×848 at the default window); `detail` does not change size.
+- **The exported PNGs have no "DEMONSTRATION COPY" watermark.** It is drawn only on the on-screen chart under
+  the evaluation licence. The installed `eula.txt` says nothing about evaluation/trial use.
+- **Project save works** (`Creator.SaveFile`, `m_filename`, `m_saveAs=true`) when the data was opened from a
+  `.gas` file. It fails (NullPointerException, `GASSaver.m_filenames` null) when the data came from gRPC
+  `OpenCSVFile`, because that path records no source file. Workaround: always open a `.gas`.
+- **Hand-built `.gas` files load.** A ZIP with `data.csv` (+ `__gas__extra__/color/shape/size` index columns),
+  a minimal `metadata.xml` and a minimal `workspace.xml` opened via `OpenGASFile`. Column names use ioGAS
+  escaping (`_` → `_u`, etc.).
+- **EPSG works.** `specialColumns/map_epsg=32647` was accepted; ioGAS rewrote `map_proj` to
+  "WGS 84 N UTM Zone 47". The elevation tag is `map_elevation`.
+- **Attributes round-trip.** A colour attribute built from `ML_zona` (Tinggi/Sedang/Rendah with chosen colours)
+  survived open → plot → save, and the XY plot (log Au vs log As, coloured by zone) was stored in the saved workspace.
+
+**Pipeline that works end to end:** pandas → hand-built `.gas` (EPSG, ML colour attributes) → `OpenGASFile` →
+workflow (select variables → plot → log axes → export PNG → save `.gas`) → PNGs + saved project.
+
+**Not yet tested:** downhole strip logs, attribute maps, classification diagrams and probability-plot threshold
+lines in a workflow; larger export window sizes. The builder and runner (`gasbuild.py`, `wf.py`) are still in the session
+scratchpad, not the repo.
+
+---
+
+## 2026-11-05 · ioGAS link moved into the repo (code + tests), results
+
+**Added.**
+- `src/iogas_project.py` (no ioGAS needed): `build_gas()` writes a `.gas` (data.csv with ioGAS escaping and
+  attribute index columns, metadata.xml with columns/types, special columns incl. EPSG, colour legend,
+  minimal workspace.xml); `Workflow` writes workflow XML (select variables, plots, log axes, export window,
+  save as). Row order/count preserved; NaN → empty cell, never 0.
+- `src/iogas_link.py`: generates gRPC stubs from the protos inside the local GAS.jar into `.cache/iogas_grpc/`
+  (gitignored, so no IMDEX file in the repo), starts a second ioGAS with `-gaslink2` via the bundled JRE
+  when no server is listening (and kills only that instance afterwards), `open_gas`, `open_csv`, `run_workflow`.
+- `scripts/22_iogas_link.py`: builds `data/processed/iogas/RJ_tanah.gas`, `RJ_batuan.gas` (coloured by
+  `ML_zona`, zone colours from script 10), `RJ_DH_assay.gas` (coloured by `ML_paf_kelas`, PAF colours from
+  script 14) and `RJ_DH_komposit_1m.gas` (no colour); `--check DIR` runs a live probability-plot export + save.
+- Dependency group `iogas` (grpcio, grpcio-tools, protobuf), made a uv default group; `.cache/` gitignored.
+
+**Checks.** `tests/test_iogas_project.py` (6 tests), `tests/test_iogas_link.py` (2 offline + 1 live, opt-in via
+`IOGAS_LIVE=1`; passed live in 12 s). Full suite 139 passed, 1 skipped. `22_iogas_link.py --check` passed in
+10 s (PNG exported, saved copy keeps EPSG 32647). All four built projects opened in ioGAS with exactly the CSV
+shapes: tanah 259 × 92, batuan 469 × 128, DH_assay 2,476 × 186, komposit 3,108 × 113 (rows × columns read
+back from ioGAS via gRPC `GetChartData`).
+
+**Spoken explanation.** "We do not re-type anything into ioGAS. A script writes the ioGAS project straight from
+our cleaned tables, already in UTM 47N and coloured by the ML classes, and ioGAS itself draws and exports the
+plots from a saved workflow, so every figure can be regenerated identically."
+
+**Still open.** AGENTS.md/CLAUDE.md role text still says ioGAS is a teammate's job (human will update).
+Strip logs, attribute maps and classification diagrams in workflows are untested.
+
+---
+
+## 2026-11-06 — ioGAS Stage 0: action catalogue verified live (probes 3–6), builder extended, skill written
+
+**Plan followed.** Approved plan "own the ioGAS work" (Stage 0, steps 1–3 and 5). Docs (step 4) are done in a
+separate session ("Update docs for ioGAS ownership"); its facts were sent to it.
+
+**Code.** `src/iogas_project.py`:
+- `build_gas` gains `shape_by`/`shapes`/`shape_order` (codes 0–8 filled, 9–17 open), `aliases` (display names;
+  legend titles default to the alias), `colour_title`/`shape_title`, and `drillhole=Drillhole(hole, from, to)`
+  (writes `DHOptions`, `DownholeVariable_8_2`, `DrillholeConfig`); `SpecialColumns.group` = hole ID. Refuses
+  aliases on element columns and duplicate display names.
+- `Workflow` gains `aliases` (translated in every column reference), `diagram()` (built-in or file, returns a
+  Frame), `configure_downhole()`, `strip_log(stacked=)`, `trace_mode()`, `respond()` + `userResponses`, and
+  constants for histogram, box plots (common/tiled), Tukey, stats, attribute map, variable map, 3D map,
+  ternary, legend, tile, log toggles. Export default scale 2 → 3.
+- Skill: `.claude/skills/iogas/SKILL.md`, `reference/actions.md` (verified-action table).
+
+**Findings (live, own ioGAS instance; the human's window was not open).**
+1. Workflows refer to columns by **alias**: a workflow naming `Au_ppm` failed with "unable to find or make
+   required columns" when the column was aliased "Au (ppm)".
+2. Element columns must keep `El_unit` display names: with alias "Au (ppm)" ioGAS logged "Can't find conversion
+   method"; built-in diagrams look up elements the same way. Decision (supersedes the plan's "Au (ppm)" example):
+   Bahasa labels go on non-element columns and legend titles only; element axes stay `Au_ppm`.
+3. Halley "Fe vs S with Pyrite Line" failed with "S_ppm missing" on `S_total_pct`; with an extra `S_pct` column
+   all three Halley diagrams (Fe–S, Ca–Fe–S, Al–K–Mg) opened. Stage 4 will add `S_pct` = `S_total_pct` in the
+   .gas and state it in captions.
+4. Plot windows are found by the UUID of the opening operation; a deliberately wrong title still exported.
+5. Opened and exported from a workflow: histogram, box plots (common and tiled; one box per colour group),
+   attribute map, 3D map (plan view), ternary, Halley diagrams, strip log per hole and stacked (Bar trace,
+   colour attribute shown as a category track), probability plot. Sizes at scale 3: 1,536–4,095 px wide.
+6. Not exportable (ioGAS NullPointerException in the exporter): Summary Statistics and Legend windows.
+7. Log toggles: work on histograms (`LogHistAction`) and probability/XY plots (`LogYAction`); **ignored** on box
+   plots and strip logs (saved state `m__isLog=false`). Stages will plot `<el>_log10` columns there.
+8. An unanswered prompt ("OK to overwrite columns Ca_ppm, Fe_ppm, S_ppm to open diagram?.") stalled a run for
+   3.5 min; pre-answering it in `<userResponses>` removed the stall (whole 22-op run 17 s).
+9. Tukey (`AttributeRowsByOutlierStatus`) runs without error; its effect on attributes is not yet checked.
+
+**Checks.** `tests/test_iogas_project.py` 10 tests (4 new: drillhole/shape/alias metadata, alias and duplicate
+guards, title truncation, workflow aliases/strip log/diagram/responses XML). Full suite 143 passed, 1 skipped;
+live round trip (`IOGAS_LIVE=1`) 3 passed in 11 s. `22_iogas_link.py` rebuilt the four hand-off .gas files with
+unchanged shapes (259×92, 469×128, 2,476×186, 3,108×113).
+
+**Spoken explanation.** "ioGAS draws every figure itself from a saved workflow. We checked each plot type
+we need actually opens and exports from a script before using it, and we wrote down the ones that don't (for
+example ioGAS ignores a log axis on box plots, so we plot log10 values there). Element names stay as ioGAS
+expects them so its built-in Scott Halley diagrams recognise Fe and S."
+
+**Open.** Legend images (draw from the same palette in Python or a GUI screenshot), XYZ section rotation,
+Tukey effect check. Gate: human reviews skill + docs diff and the sample exports before Stage 1.
+
+---
+
+## 2026-11-06 · ioGAS Stage 1 plan (QAQC & thresholds), approved by the human
+
+**Goal.** Report §3 (QAQC 30, outliers 35, thresholds 35) drawn by ioGAS; fill `thr_probplot_iogas` with
+probability-plot picks made blind to the GMM (AGENTS.md §6 task 1, §10 Stage 1).
+
+**Inputs.** `data/processed/iogas/RJ_tanah|RJ_batuan|RJ_DH_assay.csv` on the ML-1 row subsets (surface
+`prospek_RJ = Y`: soil 188, rock 382; drillholes `NS_SEL = N`: 2,466; counts checked equal to ML-1 `n_analysed`).
+22 elements with an ML-1 fit (bor Au Ag Cu As SCIS; batuan Au Cu As Hg Pb Sb Zn; tanah Au Ag Cu As Ba Hg Pb Sb
+W Zn); batuan Ag has no fit and is skipped.
+
+**Blindness.** The pick phase drops `ML_thr_*` columns and reads only dataset/element/column/n from
+`element_thresholds.csv`. Picks go to `data/interim/s1_probplot_picks.csv`; its SHA-256 is logged here before the
+comparison runs.
+
+**Script** `scripts/23_iogas_s1_qaqc.py --phase blind|qaqc|ambang`:
+- `blind`: uncoloured log probability plot per element → `outputs/figures/iogas/s1_pp_<ds>_<el>_v1.png`.
+- `qaqc`: AuCN vs Au and AgCN vs Ag (by oxidation), rock duplicate pairs, box plots of log10 Au/Cu/As by lab
+  year and by hole (finding 14), Tukey / Anomaly Assessment Tool if a live probe shows they work.
+- `ambang`: `element_thresholds_v2.csv` (v1 untouched), `s1_ambang_perbandingan_v1.csv` (pick vs GMM main and
+  nearest T_k with bootstrap CI, MAD, Tukey, % above), probability plots re-exported coloured by the picked
+  classes; stage projects `outputs/iogas_project/RJ_<ds>_s1_v1.gas`.
+
+**Checks.** Row counts read back from ioGAS, EPSG kept, PNG sizes, v1 table hash unchanged, pytest. Gate: the human
+spot-checks picks for tanah Au, batuan Au and bor Cu in the ioGAS GUI.
+
+---
+
+## 2026-11-06 · ioGAS Stage 1: probability-plot picks frozen (blind)
+
+22 picks (1–2 breaks per element) read by eye from the uncoloured ioGAS log probability plots
+`outputs/figures/iogas/s1_pp_<ds>_<el>_v1.png` (`23_iogas_s1_qaqc.py --phase blind`), before any GMM, MAD or Tukey
+value, `ML_thr_*` column or ML-1 figure was opened in this session. Rationale, normal-score position and confidence
+per pick are in the file. Confidence: 1 high, 14 medium, 7 low (censored or lab-resolution steps: tanah Ag/W, bor Ag).
+
+`data/interim/s1_probplot_picks.csv` SHA-256 `0eeb088a28595be5e1af6dabc514b4f390a0e6e1dbda657175f511563de6922c`
+
+---
+
+## 2026-11-06 · ioGAS Stage 1 results (QAQC, outliers, thresholds)
+
+**Ran.** `scripts/23_iogas_s1_qaqc.py --phase blind`, `--phase qaqc`, then `--phase ambang` (after the picks hash
+above). Our own `-gaslink2` ioGAS instance only; localhost only.
+
+**New ioGAS action (verified live).** Anomaly Assessment Tool (`analysis.aat.AATCalculateAction`, builder
+`Workflow.aat`). With several variables selected it uses only complete-case rows (soil Ba covers 114 of 188, so
+fences moved), so the script runs it **one element per call**. Then all 22 ioGAS counts (high/low, near/far)
+equal a Python Tukey on log10 values (`data/processed/s1_aat_ringkasan_v1.csv`, column `sama` all True). The
+box-plot Tukey toolbar action (`A_TUKEY`) has no effect from a workflow; it is dropped. Skill and
+`reference/actions.md` updated.
+
+**Outputs.**
+- Figures `outputs/figures/iogas/`: 22 blind probability plots `s1_pp_*`, 22 coloured by picked class
+  `s1_pp_kelas_*` (Latar / Anomali lemah / Anomali kuat), Tukey box plots of log10 values for soil and rock,
+  drillhole boxes by oxidation, lab year and hole (finding 14), AuCN vs Au and AgCN vs Ag (coloured by
+  oxidation), rock field-duplicate scatters for Au and Cu (13 pairs). 2,040–4,764 px wide.
+- Projects `outputs/iogas_project/`: `RJ_<ds>_s1_pp_v1.gas`, `RJ_<ds>_s1_qaqc_v1.gas` (AAT columns),
+  `RJ_bor_s1_tahun_v1.gas`, `RJ_bor_s1_lubang_v1.gas`, `RJ_batuan_s1_duplikat_v1.gas`, `RJ_<ds>_s1_v1.gas`
+  (coloured by the Au class, all `Kelas_*_pp` columns kept), `s1_kelas/` (one per other element). Every saved
+  project read back: row count equals the ML-1 subset, EPSG 32647 kept.
+- Tables: `data/processed/element_thresholds_v2.csv` (v1 + `thr_probplot_iogas`, `thr_probplot_iogas_2`,
+  `pct_above_probplot`; v1 hash unchanged), `s1_ambang_perbandingan_v1.csv`.
+
+**Outlier counts (log10 Tukey, AAT).** Rock high outliers: Au 4, Cu 5, As 7, Hg 3, Sb 9, Zn 11. Soil: no high
+outliers except Ag 2 and Ba 2 (log scale; low-side outliers are DL steps). Drillholes: Au 0 high, Cu 28 high,
+As 37 high; SCIS 79 low (DL/2 step).
+
+**Thresholds: probability plot vs GMM (agreement, not ranking).**
+- Pick 1 vs nearest GMM break T_k: 3 inside the bootstrap CI, 5 within 2×, 14 differ by more than 2×.
+- Best of the two picks vs nearest T_k: **15 of 22 within 2×**. Of the 15 elements where the GMM found ≥2
+  populations, 9 agree within 2×.
+- The 7 GMM fits with K = 1 have no population break; their "main" threshold is a single-population tail cut
+  (≈0.5–3 % above), so a slope-break pick is not expected to match it.
+- Disagreements beyond 2× for both picks: tanah As, Pb, Zn; batuan As, Pb; bor Ag, SCIS. In soil As, Pb, Zn
+  and in rock Pb the GMM main break sits low (76–87 % of samples above), i.e. it separates the lower
+  populations, while the visual picks target the upper tail. Bor Ag (32 % censored) and SCIS (strong
+  oxide/sulfide curvature) were low/medium-confidence picks.
+- MAD and Tukey thresholds sit above both picks for most elements (e.g. bor Au: pick 0.3 / 5.5, MAD 22, Tukey 94 ppm).
+
+**Spoken explanation.** "ioGAS drew the probability plots and we picked the breaks by eye before looking at
+the machine-learning thresholds, then compared. For about two thirds of the elements, at least one of our
+breaks lies within a factor of two of a break the Gaussian-mixture model found on its own. Where they differ,
+it is mostly because the two methods are answering different questions: the model sometimes splits the low
+background populations, while a geologist's eye goes to the upper tail. ioGAS's own Tukey outlier tool gives
+exactly the same outlier counts as our Python check."
+
+**Open / gate.** Human spot-checks the picks for tanah Au, batuan Au and bor Cu in the ioGAS GUI
+(`outputs/iogas_project/RJ_*_s1_pp_v1.gas` and `RJ_*_s1_v1.gas`). Deliverable 3 still holds v1 thresholds
+(refresh to `_v2` is a Stage 5 decision). Tests: 149 passed, 1 skipped; live round trip 3 passed.
+
+---
+
+## 2026-11-06 · ioGAS Stage 1 gate passed
+
+The human checked the Stage 1 picks in the ioGAS GUI (tanah Au, batuan Au, bor Cu) and approved Stage 1
+("all fine"). No picks changed. Work paused here at the human's request; Stage 2 (Surface) is next.
+
+---
+
+## 2026-11-06 · ioGAS Stage 2 plan (Surface), approved by the human
+
+**Goal.** Report §4 (soil 25, rock 25, zonation 50) drawn by ioGAS (AGENTS.md §10 Stage 2). No new ML: ML-3 zones
+(`ML_zona*`) and Stage 1 probability-plot classes (frozen picks, `s1.classify`) are inputs.
+
+**Inputs.** `RJ_tanah.csv` RJ subset 188 (zones R 30 / S 92 / T 66), `RJ_batuan.csv` RJ subset 382 (zone on 352:
+R 204 / S 131 / T 17; logged `Fasies_Alterasi`), Stage 1 picks (hash checked against this LOG). Halley Al-K-Mg on
+the 26 full-ICP rocks (10 inside RJ), shape inside/outside RJ.
+
+**Figures** (`outputs/figures/iogas/s2_*_v1.png`): soil maps by zone, zone confidence (`ML_zona_p_maks` bins),
+Au and As threshold class; soil log As-Au and Pb-Au by zone; tiled log10 box plots per zone; Au probability plot
+by zone. Rock maps by zone (shape float/outcrop) and Au class; As-Au and Cu-Au by zone; box plots per zone; map and
+boxes by logged alteration; Al-K-Mg ternary.
+
+**Tables.** `s2_zona_vs_kelas_v1.csv` (zone × Au/As threshold class, Cramér's V), `s2_zona_ringkasan_v1.csv`
+(n, median per element per zone, read back from the saved .gas).
+
+**Code.** Shared helpers to `src/iogas_stage.py`; `src/iogas_s2.py` + `tests/test_iogas_s2.py`;
+`scripts/24_iogas_s2_surface.py`. Projects `outputs/iogas_project/RJ_tanah_s2_v1.gas`, `RJ_batuan_s2_v1.gas`
+(+ per-scheme in `s2/`). Checks: row counts read back, EPSG kept, no failed ops, PNG sizes, pytest + live test.
+Gate: human opens the two stage projects in the GUI.
+
+---
+
+## 2026-11-06 · ioGAS Stage 2 results (Surface: soil, rock, zonation)
+
+**Ran.** `scripts/24_iogas_s2_surface.py` (8 workflows, our own `-gaslink2` instance, localhost only). Stage 1 picks
+hash checked; Stage 1 figures unchanged (hash before/after). Shared ioGAS plumbing moved to `src/iogas_stage.py`
+(Stage 1 script and `22_iogas_link.py` now import it; behaviour unchanged). Helpers `src/iogas_s2.py`.
+
+**Two ioGAS findings (skill updated).** (1) Exporting an attribute map right after opening it raced the map
+rendering (ConcurrentModificationException, 0-byte PNG); exporting it last, after 3-4 other exports, worked in all
+8 runs. (2) A saved .gas stores data columns under their aliases; the script renames them back before the tables.
+The Halley run logged "Couldn't match frame" at Save As: the PNG is fine, the window may not be kept in that .gas.
+
+**Outputs.** 30 PNGs `outputs/figures/iogas/s2_*_v1.png` (2,040-4,764 px; Halley 1,536 px, small window):
+- soil (188): maps by zone, by Au and As threshold class, by zone confidence; As-Au and Pb-Au log scatters and tiled
+  log10 box plots in each of those colourings; Au probability plot by zone.
+- rock: zone (352; shape outcrop vs float), Au class (382), logged alteration (382) maps, As-Au / Cu-Au scatters and
+  box plots in each colouring; Halley Al-K-Mg on the 26 full-ICP rocks (10 inside RJ).
+- Projects: `outputs/iogas_project/RJ_tanah_s2_v1.gas` (188), `RJ_batuan_s2_v1.gas` (352), coloured by zone with
+  class/confidence columns kept; `outputs/iogas_project/s2/` (kelas_Au, kelas_As, keyakinan, alterasi, halley).
+  All read back: rows equal the subset, EPSG 32647 kept.
+- Tables `data/processed/s2_zona_vs_kelas_v1.csv`, `s2_zona_ringkasan_v1.csv`.
+
+**Numbers.**
+- Zone medians (read back from ioGAS) equal the ML-3 LOG: soil Au 0.007 / 0.065 / 0.335 ppm (R/S/T), As 13 / 54 /
+  129, Pb 17 / 57 / 129, Sb 0.6 / 3.95 / 16.5, Zn flat (22.5 / 25 / 18.5). Rock Au 0.12 / 0.53 / 5.04 g/t, As 86 /
+  351 / 2,270, Sb 8 / 29 / 256; Zn and Hg flat.
+- Zone vs Stage 1 threshold class (Cramér's V): soil Au 0.39, soil As 0.42, rock Au 0.48, rock As 0.54. All soil
+  Rendah samples are Latar for Au and As; soil Tinggi is 47 % above the lower Au pick (14 % Anomali kuat), so the
+  soil Tinggi zone is broader than the Au anomaly (a multi-element footprint, As-Pb-Sb driven). Rock Tinggi: 88 %
+  above the lower Au pick, 53 % Anomali kuat; rock Rendah 92 % Latar.
+- Soil zone confidence (`ML_zona_p_maks`): >= 0.9: 36, 0.7-0.9: 94, 0.5-0.7: 57, < 0.5: 1.
+- Halley Al-K-Mg: logged Silika and Argilik rocks plot near the Al apex / advanced-argillic field, none in the
+  least-altered field (visual reading of the exported plot).
+
+**Spoken explanation.** "ioGAS drew every surface figure from our cleaned tables. The machine-learning zones and
+the probability-plot thresholds were made independently, and they agree where it matters: every low-zone soil sample
+is background, and the high zone carries the anomalies. The high soil zone is wider than the gold anomaly alone
+because it is defined by gold together with arsenic, lead and antimony, the pathfinders of a high-sulfidation
+system. We also map how sure the model is, so a judge can see which samples sit on a zone boundary."
+
+**Open / gate.** Human opens `RJ_tanah_s2_v1.gas` and `RJ_batuan_s2_v1.gas` in the ioGAS GUI, recolours once by
+"Kelas ambang Au", and confirms maps and box plots. Legends are not exportable (Stage 0): captions or a Python
+legend from the same palette. Tests: 155 passed, 1 skipped; live round trip 3 passed.
+
+---
+
+## 2026-11-06 · ioGAS Stage 2 gate passed
+
+The human checked `RJ_tanah_s2_v1.gas` and `RJ_batuan_s2_v1.gas` in the ioGAS GUI (recoloured by "Kelas ambang Au")
+and approved Stage 2 ("all fine"). Nothing changed. Stage 3 (Drillhole) is next.
+
+---
+
+## 2026-11-06 · ioGAS Stage 3 plan (Drillhole), approved by the human
+
+**Goal.** Report §5 (correlation 40, geochem-stratigraphy 40) drawn by ioGAS (AGENTS.md §10 Stage 3). No new ML:
+ML-4 HMM states (`ML_hmm_*`), logged alteration and oxidation are inputs. The QGIS sections A–C (ML-4, true
+elevation) stay the report's sections; ioGAS adds strip-log correlation panels by depth, twin-pad panels and
+per-state statistics. Full plan: `C:\Users\mauli\.claude\plans\plan-stage-3-of-luminous-lynx.md`.
+
+**Inputs.** `RJ_DH_komposit_1m.csv`, subset `comp_ok = Y` (3,057 composites; HMM S1 533 / S2 776 / S3 368 / S4 643 /
+S5 737). Section holes from `data/processed/ml4_sections.csv` (A 6, B 6, C 4 holes; 004, 010, 011 off-section),
+ordered along the section. Twin pads 005/014, 010/011, 016/017. Palettes: HMM `geostrat.STATE_PALETTE[5]`,
+alteration `iogas_s2.ALT_COLOURS`, oxidation `OX_COLOURS` (moved to `src/iogas_stage.py`).
+
+**Figures** (`outputs/figures/iogas/s3_*_v1.png`): stacked strip logs per section A/B/C + off-section set (log10 Au,
+Ag, Cu, As + HMM stability; coloured by HMM state); the same stacks coloured by logged alteration and logged
+oxidation (Au, Cu, As); twin pads in HMM and alteration colours; tiled log10 box plots by state (Au, Ag, Cu, As,
+SCIS, CuCN/Cu); log Cu-Au and As-Au by state; XYZ map plan view by state (exported last).
+
+**Projects / tables.** `outputs/iogas_project/RJ_bor_s3_v1.gas` (HMM), `s3/RJ_bor_s3_{alterasi,oksidasi}_v1.gas`;
+`data/processed/s3_status_ringkasan_v1.csv` (n, holes, medians per state, read back from the saved .gas),
+`s3_status_per_lubang_v1.csv` (state metres per hole). Code `src/iogas_s3.py`, `tests/test_iogas_s3.py`,
+`scripts/25_iogas_s3_drillhole.py`. Checks: no failed ops, PNGs exist, saved rows 3,057 with EPSG 32647, read-back
+state counts equal ML-4, Stage 1–2 figure hashes unchanged, pytest + live test. Gate: human opens
+`RJ_bor_s3_v1.gas` in the GUI (one section stack, one twin pad; optional rotated XYZ screenshot).
+
+---
+
+## 2026-11-06 · ioGAS Stage 3 results (Drillhole: correlation panels, geochem-stratigraphy)
+
+**Ran.** `scripts/25_iogas_s3_drillhole.py` (3 workflows, our own `-gaslink2` instance, localhost only), after a
+scratch probe (`--probe`, `data/interim/iogas_s3/probe/`, not a deliverable). Helpers `src/iogas_s3.py`, tests
+`tests/test_iogas_s3.py`. `OX_COLOURS` moved to `src/iogas_stage.py` (same values; Stage 1 imports it).
+
+**ioGAS finding (skill updated).** The "stacked" strip log adds all selected variables into one cumulative bar per
+hole: wrong for geochem tracks, seen in the first probe and dropped. The normal strip log with our config puts all
+configured holes in one window, in the order given (checked against `kolar_x`), one track per variable plus the
+colour attribute as a category track. Depth axis is shared; **each hole/track has its own x-scale**, so captions must
+say "compare patterns, not bar lengths between holes".
+
+**Outputs.** 22 PNGs `outputs/figures/iogas/s3_*_v1.png` (1,536-4,764 px):
+- strip logs per section A (001, 008, 019, 015, 009, 003), B (018, 012, 017, 016, 005, 014), C (007, 013, 006, 002)
+  and "Lain" (004, 010, 011), SE→NW as in the QGIS sections: coloured by HMM state (tracks log10 Au, Ag, Cu, As +
+  `ML_hmm_stabil`), by logged alteration and by logged oxidation (log10 Au, Cu, As);
+- twin pads 005/014, 010/011, 016/017 in HMM and alteration colours;
+- tiled log10 box plots (Au, Ag, Cu, As, SCIS, CuCN/Cu) and log Cu-Au, As-Au scatters by HMM state; XYZ map (plan).
+- Projects: `outputs/iogas_project/RJ_bor_s3_v1.gas` (HMM colours, all windows), `s3/RJ_bor_s3_alterasi_v1.gas`,
+  `s3/RJ_bor_s3_oksidasi_v1.gas`. All read back: 3,057 rows, EPSG 32647 kept, HMM counts 533/776/368/643/737.
+- Tables `data/processed/s3_status_ringkasan_v1.csv`, `s3_status_per_lubang_v1.csv`. Stage 1-2 figures unchanged
+  (83 hashes). Tests: 162 passed, 1 skipped; live round trip 3 passed.
+
+**Numbers (medians read back from ioGAS, equal to the CSV).** Au ppm S1 0.02 / S2 0.07 / S3 0.74 / S4 0.74 /
+S5 1.01; Cu ppm 25 / 50 / 7 / 332 / 55; As 50 / 87 / 59 / 169 / 83; SCIS % 2.75 / 1.48 / 0.53 / 2.09 / 0.81;
+CuCN/Cu 0.21 / 0.19 / 0.43 / 0.60 / 0.52. (ML-4 table gives geometric means; these are medians.)
+
+**Twin pads (visual reading of the exports).** 005/014: both S5 at the top, a S1 band at ~70-88 m in both; S4 is
+thick in 014 (~35-65 m) but thin in 005, where S3 takes its place. 010/011: same order S2 → S5 → S4 in both, the
+units thinner in 011 (134 m vs 246 m deep). 016/017: S2 over S3 over S5 in both, but the S3/S5 boundary is at
+~68 m in 016 and ~110 m in 017. Logged alteration differs more between twins than the HMM (e.g. 005 Silika over
+Argilik vs 014 Silika / Argilik lanjut / Argilik), consistent with ML-4 / §9.2 (twin agreement HMM 0.93 vs logs 0.40).
+
+**Spoken explanation.** "ioGAS drew the drill strip logs from our 1 m composites, hole by hole along the same three
+section lines as our QGIS sections. The left column is the chemical unit the HMM found; the bars are gold, silver,
+copper and arsenic, and the last track shows how stable each unit is when we resample. In the twin holes, drilled a
+few metres apart, the same units come in the same order and often at the same depth, which is what correlation
+means. The copper-rich sulphide unit S4 has the highest copper and arsenic and the barren unit S1 the lowest gold, so
+the units are geochemically distinct, not just colours."
+
+**Open / gate.** Human opens `outputs/iogas_project/RJ_bor_s3_v1.gas` in the ioGAS GUI, checks section B and twin
+pad 005/014; optionally rotates the XYZ view to section B and screenshots it. Legends are not exportable: captions
+or a Python legend from `geostrat.STATE_PALETTE`.
+
+---
+
+## 2026-11-06 · ioGAS Stage 3 gate passed
+
+The human checked `RJ_bor_s3_v1.gas` in the ioGAS GUI (section B, twin pad 005/014) and approved Stage 3
+("all fine"). Nothing changed. Stage 4 (Environmental) is next.
+
+---
+
+## 2026-11-06 · ioGAS Stage 4 plan (Environmental), approved by the human
+
+**Goal.** Report §6 (AMD elements 40, PAF/NAF classification & treatment 60) drawn by ioGAS (AGENTS.md §10
+Stage 4). No new ML: ML-5 outputs (`ML_paf_*`), RJDH012 NAG labels and logged oxidation are inputs. The ML-5 Python
+figures (flowchart, conformal coverage, NAPP proxy) stay. Full plan:
+`C:\Users\mauli\.claude\plans\plan-stage-4-of-curious-pike.md`.
+
+**Human decisions.** (1) All-holes panels coloured by `ML_paf_kelola` (conservative management class) as the main
+project, plus a second project coloured by `ML_paf_kelas` (singleton vs `ambigu`). Deviation from the AGENTS §10
+wording (`ML_paf_kelas` only), because `ML_paf_kelas` is `ambigu` for 1,955 of 2,466 rows. (2) A NAG-testing
+priority strip-log set (`ML_paf_prioritas_uji`) is added; it is the first thing cut if time runs short.
+
+**Inputs.** `RJ_DH_assay.csv`: 2,466 sampled rows (management metres NAF 42.8 / PAF-LC 796.6 / PAF-HC 2,215.6);
+RJDH012 118 rows, 106 with NAG (NAF 37 / PAF-LC 48 / PAF-HC 21). `S_pct = S_total_pct` added for the Halley
+diagrams (stated in captions). SCIS and S2 stay separate tracks (§4.2.10). Ca censored in 106/118 RJDH012 rows
+(Ca-Fe-S caveat).
+
+**Projects / figures** (`outputs/figures/iogas/s4_*_v1.png`): P1 RJDH012 by NAG class (shape = oxidation): NAG pH vs
+S total and vs SCIS, NAG capacity vs SCIS, Halley Fe vs S (pyrite line) and Ca-Fe-S, AMD-element box plots, strip
+log. P2 RJDH012 by oxidation: strip log, NAG pH vs S. P3 all holes by management class: section strip logs (SCIS,
+S2, Cu, As, conformal set size), box plots, XYZ map. P4 by conformal class and P5 by NAG priority: section strip
+logs. Tables `s4_kelas_nag_ringkasan_v1.csv`, `s4_kelola_per_lubang_v1.csv` (read back from the saved .gas).
+Code `src/iogas_s4.py`, `tests/test_iogas_s4.py`, `scripts/26_iogas_s4_environmental.py`. Gate: human opens
+`RJ_RJDH012_s4_v1.gas` and `RJ_DH_s4_kelola_v1.gas`, checks the Halley Fe-S plot and one section strip log.
+
+---
+
+## 2026-11-06 · ioGAS Stage 4 results (Environmental: NAG, PAF/NAF, AMD elements)
+
+**Ran.** `scripts/26_iogas_s4_environmental.py` (5 workflows, our own `-gaslink2` instance, localhost only), after a
+scratch probe (`--probe`, `data/interim/iogas_s4/probe/`, not a deliverable). Helpers `src/iogas_s4.py`, tests
+`tests/test_iogas_s4.py`. `PAF_COLOURS`/`PAF_ORDER` moved from `scripts/22_iogas_link.py` to `src/iogas_stage.py`
+(same values); `st.element_column` knows S total, S2, Fe, Ca and NAG capacity (Stage 1-3 aliases unchanged, tested).
+
+**ioGAS findings (skill updated).** (1) ioGAS writes aliases unescaped into its saved `data.csv` header: the probe
+alias "Kapasitas NAG pH 4,5" split into two columns. `build_gas` now refuses commas in aliases; the alias reads
+"pH 4.5" (captions give "pH 4,5"). (2) Halley Fe vs S then Ca-Fe-S ran with no overwrite prompt (no `User asked`
+in any log). (3) "Couldn't match frame" warnings at Save As, as in Stages 2-3 (those projects passed the GUI gate).
+
+**Outputs.** 24 PNGs `outputs/figures/iogas/s4_*_v1.png` (1,536-4,764 px):
+- RJDH012 by NAG class, shape = logged oxidation: NAG pH vs S total and vs SCIS (log x), NAG capacity pH 4.5 vs
+  SCIS (log-log), Halley Fe vs S (pyrite line) and Ca-Fe-S, tiled log10 box plots of S total, SCIS, Fe, As, Cu, Zn,
+  Pb, Cd, Mn, Sb, strip log (NAG pH, log10 capacity, SCIS, S total); strip log and NAG pH vs S total by oxidation.
+- All holes (2,466 intervals): section strip logs A/B/C/Lain (log10 SCIS, S2, Cu, As + conformal set size) coloured
+  by management class, conformal class and NAG-testing priority; box plots, Cu-SCIS scatter, XYZ map (plan) by
+  management class.
+- Projects: `outputs/iogas_project/RJ_RJDH012_s4_v1.gas` (118), `RJ_DH_s4_kelola_v1.gas` (2,466),
+  `s4/RJ_RJDH012_s4_oksidasi_v1.gas`, `s4/RJ_DH_s4_{kelas,uji_nag}_v1.gas`. All read back: rows equal, EPSG 32647.
+- Tables `data/processed/s4_kelas_nag_ringkasan_v1.csv` (sha256 6c84af81…), `s4_kelola_per_lubang_v1.csv`
+  (0b4c9231…). Stage 1-3 figures unchanged (105 hashes). Tests 169 passed, 1 skipped; live round trip 3 passed.
+
+**Numbers (read back from ioGAS, equal to the CSV).** NAG classes NAF 37 / PAF-LC 48 / PAF-HC 21 / untested 12.
+Medians NAF / PAF-LC / PAF-HC: NAG pH 4.99 / 3.89 / 2.36; capacity pH 4.5 0.002 (censored) / 1.47 / 57.8 kg H2SO4/t;
+S total 0.90 / 0.62 / 3.03 %; SCIS 0.30 / 0.14 / 2.32 %; Fe 2.92 / 2.23 / 5.27 %. Management metres per hole sum to
+NAF 42.8 / PAF-LC 796.6 / PAF-HC 2,215.6 (= ML-5).
+- Halley Fe vs S: 105/118 RJDH012 samples plot on the Fe-rich side of the pyrite line (Fe/S mass ratio 0.871),
+  13 on the S-rich ("probable sulfates") side (oxide 7/98, sulphide 6/20); PAF-HC samples cluster nearest the line.
+  Excess Fe (hematite/limonite in the oxide zone) dominates, so this plot cannot show the non-sulfide S fraction
+  of AGENTS §4.3 (SCIS 0.32 vs total S 1.10 %); it neither confirms nor contradicts it. Say so in the caption.
+- Ca-Fe-S: all points on the Fe-S base because Ca is censored in 106/118 samples; shown for completeness, no
+  interpretation beyond "Ca-poor, no carbonate buffer visible" (no ANC measured).
+
+**Spoken explanation.** "ioGAS drew every acid-drainage figure from our tables. In the one hole with NAG tests, the
+high-capacity acid rock stands out clearly: low NAG pH, high sulfur, and it sits closest to the pyrite line on
+Scott Halley's iron-sulfur plot. Non-acid and low-capacity oxide rock overlap on every element, which is the same
+thing our machine-learning model found, so we manage untested rock by its worst plausible class. The strip logs
+along our three sections show, hole by hole, which intervals are managed as high-capacity acid rock and where a new
+NAG test would change that decision."
+
+**Limits.** One NAG hole, 16 sulphide samples; no ANC; Ca censored; S2 uncalibrated against SCIS; RJDH001 has no S
+(empty tracks); each hole/track in a strip log has its own x-scale.
+
+**Open / gate.** Human opens `RJ_RJDH012_s4_v1.gas` and `RJ_DH_s4_kelola_v1.gas` in the ioGAS GUI, checks the
+Halley Fe-S plot and one section strip log. Legends are not exportable: captions or a Python legend from
+`st.PAF_COLOURS`.
+
+---
+
+## 2026-11-06 · ioGAS Stage 4 gate passed
+
+The human checked `RJ_RJDH012_s4_v1.gas` and `RJ_DH_s4_kelola_v1.gas` in the ioGAS GUI (Halley Fe-S plot, a section
+strip log) and approved Stage 4 ("all fine"). Nothing changed. Stage 5 (project & polish) is next.
+
+---
+
+## 2026-11-06 · ioGAS Stage 5 plan (final projects, team and committee hand-off), approved by the human
+
+**Goal.** Deliverable 2 (the ioGAS project) and the polish that lets teammates write the report from the private
+GitHub repo, and the committee read our files, without knowing our internal shorthand. Full plan:
+`C:\Users\mauli\.claude\plans\plan-stage-5-iogas-piped-stallman.md`.
+
+**Human decisions.** (1) Four consolidated final projects, each with all columns used by the stage projects and
+the key report windows: `RJ_tanah_final_v1.gas` (soil, ML zone), `RJ_batuan_final_v1.gas` (rock, ML zone),
+`RJ_bor_komposit_final_v1.gas` (1 m composites, HMM state), `RJ_lingkungan_final_v1.gas` (assays, PAF/NAF management
+class). The 47 stage projects stay as supporting files, listed in a Bahasa index. (2) **No GUI screenshots**
+(deviation from AGENTS §10 Stage 5 wording): exported PNGs plus the saved projects are the evidence of ioGAS use.
+(3) Build `outputs/kirim/` with deliverables 1-3 ready to attach to the 7 Nov email (< 25 MB).
+
+**Steps.** `scripts/27_iogas_s5_final.py` (+ `src/iogas_s5.py`): final projects, check exports only to
+`data/interim/iogas_s5/cek/`. Indexes: `outputs/iogas_project/indeks_proyek_iogas.csv` + `BACA_SAYA.txt`,
+`outputs/figures/iogas/indeks_gambar_iogas.csv`. ML findings report v2 (threshold comparison replaces the stale
+"ioGAS teammate" limit). Guides: glossary of terms and file naming first in PANDUAN_TIM.md and README.md;
+"Tahap ioGAS 1-5" vs "satuan HMM S1-S5" always written out. `scripts/28_kirim.py` builds the submission folder
+with a manifest. Tests `tests/test_iogas_s5.py`. Gate: human opens the four final projects in the ioGAS GUI.
+Commit/push only on the human's go, after checking the repo is still private.
+
+---
+
+## 2026-11-06 · ioGAS Stage 5 results (final projects, indexes, ML report v2, guides, submission folder)
+
+**Ran.** `scripts/27_iogas_s5_final.py` (4 workflows, our own `-gaslink2` instance, localhost only), then
+`--index`; `scripts/21_laporan_ml.py`; `scripts/28_kirim.py`. Helpers `src/iogas_s5.py`, tests `tests/test_iogas_s5.py`.
+`load_surface` and its constants moved unchanged from `scripts/24_iogas_s2_surface.py` to `src/iogas_s2.py`
+(Stage 2 tests pass; no Stage 1-4 output changed: 176 figure and project hashes checked before/after).
+
+**Final projects** (`outputs/iogas_project/`; every column of the ioGAS-ready CSV for the analysed rows + stage-derived
+columns: threshold classes for all picked elements from the frozen Stage 1 picks, log10 columns, zone confidence,
+NAG label, `S_pct` = S total; Bahasa aliases; EPSG 32647 read back in every saved file):
+- `RJ_tanah_final_v1.gas`: 188 soils x 113 columns, coloured by ML zone; 7 windows (Au, As probability plots, zone
+  box plots, As-Au, Pb-Au, summary statistics, attribute map).
+- `RJ_batuan_final_v1.gas`: 382 rocks x 144 columns (30 without zone shown as "Tanpa zona ML", grey), shape
+  outcrop/float; 7 windows (As-Au, Cu-Au). The Halley Al-K-Mg ternary stays in the supporting project
+  `s2/RJ_batuan_s2_halley_v1.gas` (only 10 of its 26 rocks are inside RJ).
+- `RJ_bor_komposit_final_v1.gas`: 3,057 composites x 118 columns, coloured by HMM unit; 10 windows (Au, Cu probability
+  plots, strip logs sections A/B/C and twin pad 005/014, box plots, Cu-Au, statistics, XYZ map).
+- `RJ_lingkungan_final_v1.gas`: 2,466 assay intervals x 208 columns, coloured by PAF/NAF management class, shape =
+  oxidation; 9 windows (NAG pH vs S total and NAG capacity vs SCIS: only RJDH012 plots, as the only NAG hole;
+  Halley Fe vs S: only RJDH012 has total S; box plots; strip logs A/B/C; statistics; XYZ map). The Ca-Fe-S ternary
+  stays in `RJ_RJDH012_s4_v1.gas`.
+- 29 check exports in `data/interim/iogas_s5/cek/` (gitignored, review only; no new report figures). Reviewed: right
+  variables, log axes, colours; NAG plots show RJDH012 only.
+
+**Indexes (Bahasa, regenerated by `--index`).** `outputs/iogas_project/indeks_proyek_iogas.csv` (51 projects: 4 final
++ 47 supporting; stage, chapter, data, colour scheme, rows, windows, EPSG) and `BACA_SAYA.txt` (committee-facing,
+defines every term); `outputs/figures/iogas/indeks_gambar_iogas.csv` (all 129 ioGAS PNGs: chapter, plot type, colour,
+content, caption notes such as "axis reads Au_ppm", "each hole/track has its own x-scale", "S_pct = S total").
+
+**ML findings report v2** (`outputs/laporan_ml/laporan_ml_v2.html`; v1 frozen). The stale ML-1 limit ("for the ioGAS
+teammate") is replaced by the comparison, filled from `s1_ambang_perbandingan_v1.csv`: in 15 of 22 element/dataset
+pairs at least one probability-plot break is within 2x of the nearest GMM break (5 inside the bootstrap CI); 7 differ
+by > 2x for both picks (soil As, Pb, Zn; rock As, Pb; drillhole Ag, SCIS). Figure `s1_pp_kelas_bor_Au_v1.png` added;
+ioGAS figure and final-project pointers per chapter.
+
+**Guides.** PANDUAN_TIM.md rewritten: a "start here" table, then section 1 glossary (ML-1..6 with report names;
+"Tahap ioGAS 1-5" vs "satuan HMM S1-S5" always written out; PAF/NAF classes incl. kelas NAG / konformal / pengelolaan /
+prioritas uji; SCIS, S2, S total, S_pct; NS-SEL, DL, CN, pads; column patterns; file and folder naming incl. `Lain`,
+`kembar`, `_v1`), ioGAS figures per chapter, the final projects, the submission folder, open items (done items marked).
+README.md: "Terms and file naming" section, status 6 Nov, Stage 5 and submission rows, test counts no longer hard-coded.
+`README_iogas.txt` (and its template in `scripts/07_export.py`): pointer to the final projects and ML_* prefixes.
+AGENTS.md §10 Stage 5 row marked done (no screenshots). `.gitignore`: probe folders and Stage 5 check exports.
+
+**Submission folder** `outputs/kirim/` (copies only, rebuilt each run; 23 files, 4.61 MB < 25 MB): `1_validasi_data/`
+(validation flags, summary, precision), `2_proyek_iogas/RJ_proyek_ioGAS.zip` (4 final at top, 47 in `pendukung/`,
+README, index), `3_analisis_geokimia/` (geochem analysis + dictionary, statistics, `element_thresholds_v2.csv` as
+`ambang_unsur.csv` — this settles the Stage 1 open point: deliverable 3 ships the v2 thresholds with the ioGAS picks,
+plus the Stage 1-4 summary tables), empty `4_laporan/`, `5_presentasi/`, `MANIFEST.csv` (sha256 of every source).
+Checked: no brief, raw data, LOG or AGENTS inside; copies byte-identical to sources.
+
+**Tests.** 175 passed, 1 skipped; live round trip 3 passed.
+
+**Spoken explanation.** "Our ioGAS project is four files, one per dataset: soil, rock, drill composites and the
+environmental assay table. Each one holds every analysed sample with all the cleaned chemistry and every
+machine-learning result as a column, and the key plots are already open inside it: probability plots, box plots,
+scatters, downhole strip logs along our three sections, Scott Halley diagrams and maps. The many smaller projects
+behind them are the same data in other colour schemes, listed in an index, and every figure in our report that
+ioGAS drew is listed with the chapter it belongs to."
+
+**Open / gate.** Human opens the four `*_final_v1.gas` in the ioGAS GUI and skims PANDUAN_TIM.md section 1 and
+`outputs/kirim/`. Nothing committed or pushed yet: on the human's go, check the repo is still private, pull, commit,
+push.
+
+---
+
+## 2026-11-06 — ML findings report v2: glossary and ioGAS section (rebuilt in place)
+- `reports/laporan_ml_src.html` → `outputs/laporan_ml/laporan_ml_v2.html` (v2 is new and uncommitted, not yet
+  used in the report, so it was rebuilt in place; v1 stays frozen).
+- Added "Istilah data dan nama file" (`#istilah`): 13 terms (ML-1…6, satuan HMM S1–S5 vs ioGAS `s1_` prefixes,
+  NAF/PAF-LC/PAF-HC, kelas NAG/konformal/pengelolaan, tier 1–4, tier A/B, U1/U2, NAG/NAPP/ANC/AMD, SCIS/S2/S total,
+  pads/twins, sections A–C and D–D', column names, file names). The lead paragraph links to it.
+- Added "Proyek ioGAS dan berkas kiriman" (`#iogas`): the 4 final projects, the figure index, `outputs/kirim/`,
+  and caption notes. Both sections are in the table of contents. "PANDUAN_TIM.md §4" corrected to "bagian 7".
+- Checks (browser preview): 121 facts filled, no `{{` left, 20 figures, 0 broken images, 0 dead internal links.
+
+
+---
+
+## 2026-11-06 — Plan: commit all pending changes; push only to private team repo
+
+Human instruction: commit all changes and push. This explicitly authorizes the local
+commit and push within the existing confidentiality constraints.
+Inputs: all tracked modifications and non-ignored untracked files. Method: inspect
+pending paths and file sizes, check for accidentally included credentials, run the local
+pytest suite (including raw-manifest integrity), and commit the existing work on main.
+Outputs: one local commit containing the ioGAS stages, figures/projects, submission
+package, report updates, and documentation. Checks: clean working tree after commit;
+remote identity and visibility before any push.
+GitHub currently reports 67minutes/ml-olympiar as PUBLIC. Per AGENTS.md sections 1 and 2,
+no push is permitted while it is public. Do not change repository visibility without
+the human's approval; finish the local commit and report the push blocker.
+
+### Commit verification results
+
+- `uv run pytest -q`: 175 passed, 1 skipped (opt-in live ioGAS round trip),
+  519 library warnings; raw-manifest integrity passed.
+- All 415 pending files reviewed by path/size; 403 new files total 56.4 MiB,
+  largest 9.05 MiB. No raw-data changes and no file exceeds GitHub's size limit.
+- Credential-pattern scan: the only match is a coincidental character sequence
+  inside an embedded report image, not a credential.
+- `git diff --check` passes with CRLF permitted (`cr-at-eol`).
+- Commit all existing non-ignored changes on main as requested. Push remains
+  blocked because the allowed team repository is PUBLIC; no push attempted.
+
+- Clarification after staging: the check above covered tracked modifications. The
+  full staged check also reports trailing whitespace in newly added ioGAS-generated
+  logs and artifacts; preserve these existing outputs as requested rather than
+  rewriting them for formatting. Local commit completed; no push attempted.
