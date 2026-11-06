@@ -1,0 +1,46 @@
+# Ordered phrases in the figure inventory shared by many datasets and elements.
+Strip log RJDH012: pH NAG, kapasitas NAG, S sulfida, S total|RJDH012 downhole profile of NAG pH, acid capacity, sulfide sulfur and total sulfur
+Ternary Al-K-Mg (Scott Halley): mineral alterasi dari kimia, 26 batuan ICP lengkap|Halley Al–K–Mg alteration chemistry of the 26 rocks with complete ICP analyses
+Ternary Ca-Fe-S (Scott Halley); Ca tersensor pada 106 dari 118 sampel|Halley Ca–Fe–S ternary diagram with censored calcium in 106 of 118 samples
+Unsur pembentuk air asam tambang (AMD) per kelas NAG, RJDH012|Elements relevant to acid drainage by measured NAG class in RJDH012
+Pencilan Tukey per unsur (pagar 1,5 dan 3 IQR)|Element outliers using Tukey fences at 1.5 and 3 interquartile ranges
+Au per lubang bor (cek bias lokasi)|Gold by hole to check location effects
+Au per tahun lab (cek bias era lab)|Gold by laboratory year to check era effects
+Sebaran unsur bor per zona oksidasi|Drill assay distributions by oxidation zone
+Lubang di luar penampang A-C (RJDH004, 010, 011)|Off-section holes RJDH004, 010 and 011
+(urut tenggara ke barat laut)|(ordered southeast to northwest)
+Lubang bor sepanjang penampang|Drillholes along section
+Pasangan lubang kembar|Nearby holes on the same pad:
+Pasangan sampel ulang batuan,|Paired rock resamples,
+jalur log10 unsur|log10 element tracks
+presisi lapangan|field precision
+terlarut sianida|cyanide soluble
+presisi emas/perak (efek nugget)|internal gold/silver precision check (nugget effect)
+Plot probabilitas|Probability plot of
+dengan dua ambang hasil pembacaan plot sebagai kelas warna|with the two visually picked breaks shown as coloured classes
+untuk membaca patahan populasi (ambang)|for reading slope changes and picking breaks
+Sebaran sampel diwarnai|Sample locations coloured by
+Sebaran log10 unsur per|Log10 element distributions by
+tanah per zona kadar ML|in soil by modelled grade zone
+kelas NAG hasil uji lab; bentuk = zona oksidasi|measured NAG class; shape denotes logged oxidation
+kelas konformal PAF/NAF (satu kelas pasti atau 'ambigu')|conformal PAF/NAF class (single or ambiguous)
+prioritas uji NAG|NAG testing priority
+kelas pengelolaan PAF/NAF|PAF/NAF handling class
+kelas ambang|threshold class for
+(Latar / Anomali lemah / Anomali kuat)|(background / weak anomaly / strong anomaly)
+keyakinan zona ML (peluang maks)|zone confidence (maximum probability)
+fasies alterasi hasil log|logged alteration facies
+satuan geokimia HMM S1-S5|HMM chemical states S1–S5
+jenis pasangan duplikat|duplicate-pair type
+zona kadar ML (Tinggi/Sedang/Rendah)|modelled grade zone (high/medium/low)
+zona oksidasi hasil log|logged oxidation zone
+tanpa warna (dipilih buta)|uncoloured for blind picking
+tanpa warna (kotak Tukey)|uncoloured Tukey box plot
+lubang bor|drillhole
+tahun lab|lab year
+Fe vs S dengan garis pirit (Scott Halley); S_pct = S total|Halley Fe vs S diagram with pyrite line; S_pct is total sulfur
+kapasitas NAG pH 4,5|NAG capacity at pH 4.5
+pH NAG|NAG pH
+S sulfida|sulfide sulfur
+S total|total sulfur
+ dan | and 

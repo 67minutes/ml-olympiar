@@ -1,0 +1,47 @@
+# Patterns; chapter; what a writer can obtain from the source, in both languages
+1|Technical Meeting*.pdf|Petunjuk panitia mengenai tema, struktur laporan dan penilaian.|Committee guidance on the theme, report structure and scoring.
+2|Geological Resume*.pdf|Kerangka stratigrafi, struktur, alterasi dan oksidasi prospek.|Committee geological account of stratigraphy, structure, alteration and oxidation.
+9|PANDUAN_TIM.md|Daftar sumber yang perlu diperiksa dan pekerjaan tim per bab.|Team chapter guide and register of sources awaiting verification.
+1|indeks_gambar_iogas.csv;indeks_proyek_iogas.csv|Inventaris asli gambar atau proyek ioGAS beserta metadata untuk penulis.|Original ioGAS figure or project register with metadata for report writers.
+1|MANIFEST.csv|Pemetaan berkas kiriman ke sumber, ukuran dan sidik berkas.|Submission files mapped to their source, size and checksum.
+1|geochem_analysis.csv|Hasil per sampel beserta identitas, koordinat dan keluaran analisis.|Sample-level results with identifiers, coordinates and analytical outputs.
+1|geochem_analysis_kolom.csv;kolom_iogas.csv|Definisi kolom, satuan dan cakupan tabel.|Column definitions, units and data coverage.
+3|validation_flags.csv|Jejak audit per masalah dan per baris data.|Row-level audit trail of individual data issues.
+3|validation_summary.csv|Jumlah baris yang ditandai menurut pemeriksaan dan dataset.|Counts of flagged records by validation check and dataset.
+3|code_dictionary.csv|Padanan kode litologi, alterasi dan mineral beserta dasar interpretasinya.|Lithology, alteration and mineral code crosswalk with interpretation basis.
+3|qaqc_precision.csv;07_au*|Bandingkan variasi kadar dan pemeriksaan konsistensi internal.|Check grade variability and internal consistency.
+3|element_thresholds*;s1_ambang*;08_ambang*;*__ml1*;08_batuan*;08_tanah*|Ambang unsur dan populasi anomali untuk penapisan.|Element breaks and anomaly populations used for screening.
+3|s1_aat*|Ringkasan pencilan per unsur menurut alat penilaian anomali ioGAS.|Element outlier counts from the ioGAS anomaly assessment tool.
+3|08_bic*|Pemilihan jumlah populasi model campuran berdasarkan BIC.|Compare mixture component counts by Bayesian information criterion.
+3|ml2_scores*;09_skor*;09_matriks*;ml2_per_pad*;ml2_rock_transfer*|Kinerja prediksi log, termasuk kesalahan kelas atau variasi antar-tapak.|Assess geological log prediction, including class errors or variation between pads.
+3|ml2_review*;*__ml2*|Prediksi per sampel dan interval untuk ditinjau terhadap log geologi.|Sample-level predictions and candidates for checking against geological logs.
+3|*shap*|Sumbangan unsur terhadap prediksi model.|Element contributions to model predictions.
+3|09_reliabilitas*|Kesesuaian peluang kelas dengan hasil pengamatan.|Compare predicted probabilities with observed class frequencies.
+4|ml3_summary*;s2_zona_ring*;10_zona_unsur*|Median dan sebaran unsur di setiap zona permukaan.|Element medians and distributions across surface zones.
+4|ml3_comparisons*;s2_zona_vs*|Kesesuaian zona multielemen dengan pengelompokan lain.|Compare multielement zones with alternative classifications.
+4|ml3_model*;10_pca*;10_bic*|Peubah pembentuk indeks, dukungan jumlah zona dan kestabilan.|Inspect index variables, support for the zone count and assignment stability.
+4|*__ml3*;ml3_zonasi*;ml3_tanah*;10_tanah_zona*|Sebaran zona dan indeks tanah atau ketidakpastian spasialnya.|Locate zone assignments, soil index estimates or spatial uncertainty.
+4|10_variogram*;10_gp_cv*|Arah kesinambungan tanah dan kinerja prediksi di blok yang ditahan.|Soil continuity direction and prediction in withheld spatial blocks.
+4|geochem_statistik*|Distribusi kadar menurut unsur, media atau kelompok geologi.|Grade distributions by element, sample medium or geological group.
+5|ml4_states*;s3_status*;11_profil_status*;*__ml4*|Sifat satuan kimia, kadar tipikal dan distribusi sepanjang lubang.|Chemical-state profiles, typical grades and downhole distribution.
+5|ml4_comparisons*;11_kontinuitas*;11_matriks*|Peralihan satuan dan kesesuaian antarlubang menurut jarak.|State transitions and between-hole agreement by separation distance.
+5|ml4_cv*;ml4_summary*;11_pemilihan*|Pemilihan jumlah satuan dan validasi per tapak bor.|State-count selection and validation on withheld pads.
+5|ml4_sections*;11_penampang*;11_peta*;11_ml4*;11_strip*;ml4_hmm*;ml4_penampang*;11_profil_elevasi*|Korelasikan satuan menurut posisi, kedalaman dan penampang A–C.|Correlate states by position, depth and section along A–C.
+6|ml5_uji*|Interval prioritas pengujian asam menurut kedalaman dan alasan.|Prioritized acid-testing intervals with depths and reasons.
+6|ml5_napp*;12_napp*|Perkiraan NAPP berdasarkan proksi, dengan keterbatasan ANC.|Proxy acid-potential estimates subject to ANC limitations.
+6|ml5_clusters*;12_gmm*|Kesesuaian pengelompokan kimia dengan kelas NAG dan oksidasi.|Compare chemical clusters with NAG classes and oxidation.
+6|ml5_conformal*;ml5_scores*;12_cakupan*;12_matriks*|Cakupan, ukuran himpunan dan kemampuan membedakan kelas asam.|Prediction-set coverage, size and discrimination between acid classes.
+6|ml5_*;*__ml5*;s4_kelola*;12_ringkasan*|Kelas penanganan, panjang interval dan tingkat keyakinan.|Handling classes, interval lengths and confidence.
+6|s4_kelas*;12_nag*;12_profil*|Hubungan antara pH, kapasitas dan oksidasi pada lubang uji.|Relate pH, capacity and logged oxidation in the tested hole.
+6|12_diagram*|Ikuti keputusan dari pengukuran atau prediksi menuju penanganan.|Follow the decision from a measurement or prediction to handling.
+6|drain*;13_drain*|Aliran dan daerah tangkapan turunan lidar untuk pemeriksaan lingkungan.|Lidar-derived channels and catchments for environmental screening.
+7|ml6_usulan*;13_ml6*;13_peta*;13_penampang*;ml6_penampang*|Kolar, lintasan atau penampang rancangan untuk pemboran lanjutan.|Proposed collars, traces or design sections for follow-up drilling.
+7|ml6_kandidat*;13_peringkat*;ml6_target*;ml6_ucb*;ml6_meter*;ml6_sd*;*__ml6*|Prioritas spasial, meter harapan atau ketidakpastian per lokasi.|Spatial priority, expected metres or uncertainty at candidate locations.
+7|ml6_*;13_cv*;13_profil*;13_variogram*|Periksa orientasi, variasi spasial dan kemampuan prediksi antar-tapak.|Inspect direction, spatial variability and predictive skill across pads.
+9|s9_*;14_*;*__s9*|Pembanding literatur yang diuji pada data RJ dan dampak pemilihan metode.|Literature-style comparisons on RJ samples and effects of method choice.
+2|dem*;lidar_dem*;hillshade*;slope_deg*|Topografi, dukungan elevasi atau kemiringan yang diturunkan dari kontur lidar.|Terrain, elevation support or slope derived from lidar contours.
+5|drillholes*;RJ_DH_collar*;RJ_DH_survey*;RJ_DH_komposit*|Lokasi dan geometri lubang atau komposit untuk membaca profil.|Hole positions, geometry or composites for downhole interpretation.
+3|RJ_DH_assay*;RJ_tanah*;RJ_batuan*;surface_samples*|Tabel sampel dengan posisi dan kadar untuk penelusuran nilai sumber.|Located samples and assays for tracing reported values.
+3|03_*;05_*;06_*;07_*;08_ml1*|Proyek pemeriksaan koordinat, penggabungan log, komposit atau ambang.|Review project for coordinates, log joins, composites or thresholds.
+4|10_ml3*|Proyek pemeriksaan zonasi permukaan.|Surface zonation review project.
+6|12_ml5_check*|Proyek pemeriksaan spasial klasifikasi asam.|Spatial review of acid classifications.

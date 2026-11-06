@@ -1,0 +1,48 @@
+# Suffixes following the model family; exact field names take priority over shared suffixes.
+p_maks|Peluang terbesar dari semua kelas.|Largest predicted class probability.
+ambigu|Tanda bahwa penugasan kelas tidak pasti.|Uncertain class-assignment flag.
+entropi|Entropi distribusi peluang; meningkat bila beberapa kelas sama-sama mungkin.|Entropy of class probabilities; higher values indicate competing plausible classes.
+prediksi|Kelas geologi hasil prediksi dari kimia.|Geological class predicted from chemistry.
+tier|Tingkat ketersediaan fitur atau dukungan data untuk prediksi ini.|Feature availability or data-support tier used for this prediction.
+p|Peluang keberadaan mineral yang menjadi target.|Estimated probability that the target mineral is present.
+stabil|Proporsi pengambilan ulang yang mempertahankan penugasan ini.|Fraction of resampled fits retaining this assignment.
+ML_zona|Kelas keputusan kadar permukaan yang diurutkan menurut median Au.|Surface grade decision class ranked by median gold.
+id|Kode angka untuk zona kadar.|Numeric grade-zone code.
+indeks|Skor kontinu multielemen pembentuk zona kadar.|Continuous multielement score used to define grade zones.
+K2|Penugasan alternatif dengan dua zona.|Alternative assignment using two zones.
+float|Tanda sampel batuan berupa bongkah lepas.|Rock sample flagged as loose float.
+nama|Nama geokimia untuk satuan yang ditetapkan.|Descriptive name of the assigned chemical state.
+status|Nomor satuan kimia bawah permukaan.|Assigned downhole chemical-state number.
+viterbi|Satuan pada urutan keadaan paling mungkin untuk satu lubang.|State on the most likely sequence for a hole.
+S_status|Satuan pada uji sensitivitas dengan sulfur.|State in the sensitivity fit including sulfur.
+ML_hmm_gmm|Penugasan model campuran tanpa urutan kedalaman.|Mixture assignment without downhole sequence information.
+label|Kelas berdasarkan hasil uji NAG pada sampel yang diuji.|Class derived from a NAG measurement on a tested sample.
+set|Daftar kelas NAG yang masih didukung oleh prediksi konformal.|Set of NAG classes retained by conformal prediction.
+n_set|Jumlah kelas dalam himpunan prediksi.|Number of classes in the prediction set.
+kelas|Ringkasan kelas tunggal atau ambigu untuk pelaporan.|Reported singleton or ambiguous classification.
+kelola|Kelas yang digunakan untuk penanganan material.|Class used for material handling.
+kelola_sumber|Asal keputusan penanganan, misalnya uji NAG atau model.|Basis of handling assignment, such as a NAG test or model.
+model|Varian model yang digunakan untuk jenis data yang tersedia.|Model variant used for the available measurements.
+luar_domain|Tanda bahwa data berada di luar dukungan material kalibrasi.|Flag for material outside calibration support.
+alasan|Alasan penandaan keterbatasan domain.|Reason for a domain limitation.
+uji_NAG|Tanda usulan pengujian NAG lanjutan.|Flag for follow-up NAG testing.
+prioritas_uji|Urutan prioritas pengujian NAG lanjutan.|Priority for follow-up NAG testing.
+napp_min|Estimasi proksi NAPP berbasis SCIS. ANC belum diukur.|SCIS-based NAPP proxy estimate. ANC was unmeasured.
+gmm|Nomor kelompok kimia tanpa label.|Unsupervised chemical cluster number.
+gmm_nama|Nama kelompok kimia berdasarkan hasil interpretasi.|Interpretive name of the chemical cluster.
+gmm_p_maks|Peluang terbesar keanggotaan kelompok kimia.|Maximum chemical-cluster membership probability.
+gmm_stabil|Kestabilan pengelompokan kimia terhadap pengambilan ulang.|Chemical-cluster stability under resampling.
+mu|Rerata prediksi log10 Au dari kriging.|Kriging predictive mean of log10 gold.
+sd|Simpangan baku prediksi log10 Au.|Predictive standard deviation of log10 gold.
+blok2m|Identitas blok dua meter untuk pemodelan kadar.|Two-metre block identifier used for grade modelling.
+cv_mu|Rerata prediksi log10 Au saat tapak dikeluarkan dari pelatihan.|Predictive mean of log10 gold with the pad withheld.
+cv_sd|Simpangan baku prediksi ketika tapak dikeluarkan.|Predictive standard deviation on the withheld pad.
+cv_resid|Selisih nilai pengamatan dan prediksi saat validasi.|Observed minus predicted value during validation.
+cv_p05|Peluang melebihi batas Au 0,5 g/t pada prediksi validasi.|Probability of exceeding 0.5 g/t Au in validation.
+kmeans|Kelompok k-means dari pembanding bergaya Jansson.|K-means cluster from the Jansson-style comparison.
+kmeans_k|Jumlah kelompok yang dipilih dari kurva siku.|Cluster count selected from the elbow curve.
+kmeans_k3|Penugasan k-means ketika jumlah kelompok dipatok tiga.|K-means assignment with three clusters.
+rf_alt|Kelas alterasi dari pembanding Random Forest.|Alteration class from the Random Forest comparison.
+rf_oks|Kelas oksidasi dari pembanding Random Forest.|Oxidation class from the Random Forest comparison.
+rf_alt_p_maks|Peluang alterasi tertinggi pada pembanding Random Forest.|Highest alteration probability in the Random Forest comparison.
+rf_oks_p_maks|Peluang oksidasi tertinggi pada pembanding Random Forest.|Highest oxidation probability in the Random Forest comparison.

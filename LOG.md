@@ -2922,3 +2922,18 @@ Plan: commit this append-only decision record, fetch origin/main, verify that th
 push is a fast-forward, and push main to the existing origin without force.
 The ioGAS/submission commit e1e7673 passed 175 tests (1 skipped); this follow-up
 changes only LOG.md. Verify the remote branch matches local HEAD after the push.
+
+## 2026-11-06 — Approved plan: bilingual findings handbook
+Use the committee chapter structure, cleaned results, stage inventories, figure exports and local sources to build an offline bilingual writer's handbook. Use shared facts, paired interpretations, chapter evidence links and a searchable glossary/index. Preserve existing reports. Verify inventory, both languages, local links, browser reading routes, and narrow layout before handing over.
+
+## 2026-11-06 — Bilingual writer's handbook built and checked
+
+Built outputs/laporan_final/laporan_final_v1.html from chapter text, processed tables, local evidence registers and original exports. README and PANDUAN_TIM now link to it. Both previous ML reports and raw data are untouched. Reproduce with uv run python scripts/29_laporan_final.py.
+
+Nine chapters, 403 searchable terms/codes/columns, 358 indexed files and 23 embedded figures. Verified all 129 ioGAS figures and 51 saved stage/final projects against their own registers and the filesystem. The English and Indonesian chapter text and captions use matching numbers and fact placeholders. Workbook-level evidence is linked by relative path from the checkout.
+
+Offline Chromium opened the HTML directly from disk. Both languages passed the soil-As threshold, paired-hole/section B and NAG management routes, including opening a full-resolution image and retrieving the evidence CSV. All 473 local file-link occurrences resolved, all embedded images decoded, all anchors resolved and no HTTP requests were made. Technical and ordinary-language searches worked. The same figure stayed within 1 px on language switch. Desktop (1366 x 900) and narrow (390 x 844) figure/caption screenshots reviewed; original exports open at full resolution. Existing test suite: 175 passed, 1 opt-in live ioGAS test skipped.
+
+Interpretation correction: the measured NAG-by-oxidation table gives 14 PAF-HC and 2 PAF-LC among 16 acidic sulfide samples, superseding the earlier HTML caption. Use that table to distinguish pH from capacity. Design interpretation: tier A includes two extensions and one gap test, with two soil tests in tier B. Open items include regional map, final surface zoning layout, field/imagery checks of derived drainage, human geological review and reference verification. The handbook supports team writing; final submission PDFs remain with the team.
+## 2026-11-06 — Handbook publication
+The owner requested a commit and push of the completed bilingual handbook in the same conversation where the public team origin was identified. Verified 67minutes/ml-olympiar is PUBLIC and is not a fork. Publish the handbook, its reproducible sources and the team guide updates to that origin on main.

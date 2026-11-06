@@ -13,6 +13,7 @@ dan cara memakai repo.
 
 | Untuk | Buka |
 |---|---|
+| Mulai menulis sembilan bab: bukti geologi, ioGAS, ML, peta, hasil uji dan batas interpretasi | **[Buku temuan Ramba Joring](outputs/laporan_final/laporan_final_v1.html)**. Pilih Bahasa Indonesia atau English. Buka dari salinan repo untuk mengakses sumber asli. |
 | Temuan ML, angka kunci, cara membaca gambar, ucapan presentasi, pertanyaan juri | **[Laporan ML v2](outputs/laporan_ml/laporan_ml_v2.html)** (satu file, buka dengan browser; bisa dicetak ke PDF) |
 | Istilah dan singkatan di repo ini | Bagian 1 di bawah |
 | File per bab laporan | Bagian 3 |

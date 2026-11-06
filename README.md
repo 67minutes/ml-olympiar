@@ -9,10 +9,9 @@ Joring (RJ) high-sulfidation epithermal Au-Cu prospect, Martabe district, North 
 > never upload the data to cloud ML services or chatbots, and never paste the licence key or
 > committee contacts anywhere. See [AGENTS.md](AGENTS.md) §2.
 
-**Bahasa Indonesia:** report writers and presenters should start with [PANDUAN_TIM.md](PANDUAN_TIM.md)
-(terms first, then every file per report chapter) and the ML findings report
-[outputs/laporan_ml/laporan_ml_v2.html](outputs/laporan_ml/laporan_ml_v2.html) (one local file, open in a
-browser). The submission files for the 7 Nov email are in [outputs/kirim/](outputs/kirim/).
+Report writers should start with the [bilingual Ramba Joring findings handbook](outputs/laporan_final/laporan_final_v1.html). Open it from the checkout, choose Bahasa Indonesia or English, and follow the chapter links to the original evidence. Rebuild locally with `uv run python scripts/29_laporan_final.py`.
+
+The [team guide](PANDUAN_TIM.md) covers handover and submission. The [earlier ML report](outputs/laporan_ml/laporan_ml_v2.html) provides additional model details. Submission files are in [outputs/kirim/](outputs/kirim/).
 
 ## Terms and file naming
 
